@@ -1,0 +1,104 @@
+
+.Section-1 {
+  display: flex; /* Enable Flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Center vertically */
+  height: 100%; /* Full viewport height */
+ background-color: black;
+}
+
+
+/* Gallery */ 
+
+.gallery2 {
+    background: radial-gradient(
+        rgba(50, 50, 50, 0.5), 
+        rgba(100, 100, 100, 0.5), 
+        rgba(50, 50, 50, 0.5));
+    /*background-color: red;*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    backdrop-filter: blur(10px);
+    transform: translateY(-50px);
+    border-radius: 30px;
+    
+    perspective: 1000px;
+    z-index: 100;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Default: 5 images per row */
+    gap: 20px;
+    padding: 5rem;
+    width: 80%;
+    max-width: 90%;
+    margin: 0px;
+    
+}
+@media (max-width: 1920px) {
+    .gallery2 {
+      z-index: 100;
+        grid-template-columns: repeat(4, 1fr); /* 3 images per row for tablets */
+        padding: 3rem;
+        /*background-color: #ff5b33;*/
+    }
+}
+
+@media (max-width: 1024px) {
+    .gallery2 {
+      z-index: 100;
+        width: 90%;
+        grid-template-columns: repeat(3, 1fr); /* 3 images per row for tablets */
+        padding: 2.5rem;
+        /*background-color: green;*/
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery2 {
+        width: 90%;
+        grid-template-columns: repeat(2, 1fr); /* 2 images per row for mobile devices */
+        padding: 2rem;
+        /*background-color: blue;*/
+    }
+}
+
+
+
+.gallery2 img {
+    /*box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);*/
+    /*filter: blur(5px);*/
+    width: 100%;
+    background-size: cover;
+    height: auto;inset: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: transform 1s ease-out; /* Smooth animation for rotation */
+    transform-style: preserve-3d;
+    will-change: transform; /* Optimizes performance for frequent transform updates */  
+}
+
+.gallery2 img::before {
+     background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+      width: 190px;
+  height: 254px;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+ 
+}
+
+
+.gallery2 img:hover {
+    transform: translateY(-5px) rotateY(5deg) rotateX(5deg) scale(1.1); 
+    box-shadow: 0 0 200px rgba(0, 123, 255, 0.8), 
+                0 0 20px rgba(0, 123, 255, 0.6);
+}
+
+
+.fancybox__container {
+    background-color: rgba(5, 5,5, 1);
+}
+
+.fancybox__content img {
+    border-radius: 15px;
+    background-color: transparent;
+}

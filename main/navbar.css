@@ -1,0 +1,105 @@
+/*@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');*/
+
+
+.navbar {
+    position: fixed;            /* Fix the navbar at the bottom of the screen */
+    left: 50%;                  /* Center the navbar horizontally */
+    bottom: 30px;               /* 50px gap from the bottom of the screen */
+    transform: translateX(-50%) translateY(1px);
+    
+    width: 256px;                 
+    height: 60px; 
+    border-radius: 20px;
+    padding: 8px 0;
+    
+    background: var(--bar-color);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    z-index: 1000;  
+    backdrop-filter: blur(5px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition-delay: 5s;
+    transition: 1s;
+}
+
+.navbar:hover { 
+    width: 512px;
+}
+
+.navbar:hover .logo { 
+    left: 40px;  transition-delay: .5s;  
+}
+
+.navbar:hover .nav__links { 
+    opacity: 1; 
+    transform: translateX(170px)  translateY(1.5px);
+    transition-delay: .5s;
+}
+
+.navbar:hover .nav__links li a { 
+    margin-left: 33px;
+    padding: 7px 10px;
+    pointer-events: auto;
+}
+
+
+
+/* Logo styling */
+.logo {
+    position: absolute;
+    left: 66px;                 /* Align logo to the left */
+    height: 30px;               /* Ensure the logo fits within the navbar height */
+    width: auto;                /* Maintain the logo's aspect ratio */
+    object-fit: contain;        /* Ensure the logo is contained within its bounding box */
+    transition: 1s;
+}
+
+/* Navbar button container (links) */
+.nav__links {
+  
+opacity: 0;
+    display: flex;
+    list-style: none;
+    margin: 0; transform: translateX(184px)  translateY(1.5px);
+    justify-content: space-between;
+    width: 100;                  
+    padding: 0 0;               
+    flex-grow: 1; 
+    transition: 1s;
+}
+
+
+/* Navigation button (links) styling */
+.nav__links li a {
+ pointer-events: none;
+    text-decoration: none;
+    color: grey;                  /* White text color */
+    font-size: 18px;               /* Font size for the links */
+    padding: 7px 0;   
+    margin-left: -100px;
+    border-radius: 15px;           /* Rounded button edges */
+    display: inline-block; 
+    transition: 1s;
+}
+
+/* Hover effect for the links */
+.nav__links li a:hover {
+background-color: rgba(200,200,200,.1);
+    color: var(--ba-text);
+}
+
+.nav__links li a.active {
+border: 1px solid var(--ba-border); 
+
+
+    color: var(--ba-text);
+}
+
+
+
+
+
