@@ -1,20 +1,22 @@
 .container {
   width: 100%;
-  max-width: 800px;
+  max-width: 720px;
   height: 500px;
   display: flex;
   justify-content: center;
   align-items: stretch;
   gap: 1.25rem;
-  transition: all 400ms;
+  transition: all 2s;
+  transition-delay: 1s;
 }
 
 .card {
   flex: 1;
   height: 100%;
-  background: url('https://picsum.photos/200/300?random=1') no-repeat center center/cover;
   transition: all 400ms;
   cursor: pointer;
+  filter: grayscale(100%);
+  border-radius: 20px;
 }
 
 .card:nth-child(odd) {
@@ -26,15 +28,16 @@
 }
 
 .container:hover > .card:not(:hover) {
-  filter: grayscale(100%);
+  filter:  grayscale(100%) blur(5px);
+  
 }
 
-.card:hover {
-  flex: 3;
+.card:hover { filter: grayscale(0);
+  flex: 15;
 }
 
 .card:nth-child(1) { background-image: url('https://picsum.photos/800/500?random=1'); }
-    .card:nth-child(2) { background-image: url('https://picsum.photos/800/500?random=2'); }
-    .card:nth-child(3) { background-image: url('https://picsum.photos/800/500?random=3'); }
-    .card:nth-child(4) { background-image: url('https://picsum.photos/800/500?random=4'); }
-    .card:nth-child(5) { background-image: url('https://picsum.photos/800/500?random=5'); }
+.card:nth-child(2) { background-image: url('https://picsum.photos/800/500?random=2'); }
+.card:nth-child(3) { background-image: url('https://picsum.photos/800/500?random=3'); }
+.card:nth-child(4) { background-image: url('https://picsum.photos/800/500?random=4'); }
+.card:nth-child(5) { background-image: url('https://picsum.photos/800/500?random=5'); }
