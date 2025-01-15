@@ -1,12 +1,12 @@
 :root {
     /*Palette*/
-    --color-0: rgba(25,25,25);
-    --color-1: rgba(30,30,30);
+    --0: rgba(25,25,25);
+    --1: rgba(30,30,30);
     
-    --color-2: #118ba7;  /* Darker Cyan (Secondary) */
-    --color-3: #f0f8ff;  /* Very light Cyan (Accent/Background) */
-    --color-4: #ffffff;  /* White (Text/Background) */
-    --color-5: #2c3e50;  /* Dark Gray (Text and borders) */
+    --2: #118ba7;  /* Darker Cyan (Secondary) */
+    --3: #f0f8ff;  /* Very light Cyan (Accent/Background) */
+    --4: #ffffff;  /* White (Text/Background) */
+    --5: #2c3e50;  /* Dark Gray (Text and borders) */
 
     --P-1: rgba(113, 31, 195, 1);
     
@@ -19,15 +19,16 @@
  /* Nav Bar */
 
 --bar-color: rgba(30, 30, 30, .5);
+
+    /* Buttons Hover */
+--Hover-text: var(--p-1);
+--Hover-border: var(--4);
+--Hover-fill: rgba(10, 10, 10,.2);   
     
-    
-    
-    
---ba-text: var(--color-3);
---ba-border: var(--color-2);
---ba-fill: rgba(10, 10, 10, .2);
+    /* Buttons Active */
+--Active-text: var(--3); 
+--Active-border: var(--2);
+--Active-fill: rgba(10, 10, 10, .2);
   
---bh-text: var(--color-4);
---bh-border: var(--color-4);
---bh-fill: rgba(10, 10, 10,.2);
+
 }

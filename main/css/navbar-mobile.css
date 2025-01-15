@@ -7,7 +7,7 @@
     bottom: 30px;               /* 50px gap from the bottom of the screen */
     transform: translateX(-50%) translateY(1px);
     
-    width: 200px;                 
+    width: 150px;                 
     height: 60px; 
     border-radius: 20px;
     padding: 8px 0;
@@ -15,8 +15,9 @@
     background: var(--bar-color);
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    /*overflow: hidden;*/
     
     z-index: 1000;  
     backdrop-filter: blur(5px);
@@ -32,11 +33,11 @@
 
 .logo-mobile {
     position: absolute;
-    left: 40px;                 /* Align logo to the left */
+    /*left: 40px;                  Align logo to the left */
     height: 30px;               /* Ensure the logo fits within the navbar height */
     width: auto;                /* Maintain the logo's aspect ratio */
     object-fit: contain;        /* Ensure the logo is contained within its bounding box */
-    transition: 1s;
+    transition: 1s; transition-delay: .2s;
 }
 
 .navbar-mobile:hover .logo-mobile { 
@@ -50,54 +51,57 @@
 }
 
 .nav__links-mobile {
-  opacity: 0;
+  opacity: 1;
+    /*position: absolute;*/
     display: flex;
     list-style: none;
     margin: 0; 
-    /*transform: translateX(180px)  translateY(1.5px);*/
-    justify-content: space-between;
+    transform: translateX(-.8rem) translateY(3rem);
+    justify-content: center;
     width: 100%;                  
     padding: 0 0;               
-    flex-grow: 1; 
-    transition: 1s;
+    flex-grow: 0; 
+    transition: 1s; 
 }
 
 .navbar-mobile:hover .nav__links-mobile { 
     opacity: 1; 
-    /*transform: translateX(170px)  translateY(1.5px);*/
+    transform: translateX(-.8rem) translateY(0);
     transition-delay: .5s;
 }
 
 .nav__links-mobile li a {
  pointer-events: none;
     text-decoration: none;
-    color: grey;                  /* White text color */
+    color: red;                  /* White text color */
     font-size: 18px;               /* Font size for the links */
     padding: 7px 0;   
-    margin-left: -3rem;
-    transform: translateX(7rem);
+    margin-left: 1.5rem;
+    /*transform: translateX(-0.2rem) translateY(3rem);*/
     border-radius: 10px;           /* Rounded button edges */
     display: inline-block; 
     transition: 1s;
 }
 
 .navbar-mobile:hover .nav__links-mobile li a { 
-    margin-left: 1.5rem;
-    transform: translateX(-.5rem);
+    /*margin-left: 1.5rem;*/
+    /*transform: translatey(0);*/
     padding: 7px 10px;
-    pointer-events: auto;
+    pointer-events: auto; transition: transform 1s ease, padding 1s ease;
+    transition-delay: .2s;
 }
+
 
 
 /* Hover effect for the links */
 .nav__links-mobile li a:hover {
 background-color: rgba(200,200,200,.1);
-    color: var(--ba-text);
+    color: var(--Active-text);
 }
 
 .nav__links-mobile li a.active {
-border: 1px solid var(--ba-border); 
-    color: var(--ba-text);
+border: 1px solid var(--Active-border); 
+    color: var(--Active-text);
 }
 
 

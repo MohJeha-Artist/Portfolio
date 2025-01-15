@@ -27,7 +27,7 @@ section {
   text-align: left; /* Centers content inside the section */
     
   /*border: 1px solid rgba(100,100,100,.1);*/
-  background-color: var(--color-1); /* Green background for sections */
+  background-color: var(--1); /* Green background for sections */
   margin: 20px auto; /* Creates a gap between sections and centers them */
     
   padding: 5rem 5rem; /* Adds space inside the section */
