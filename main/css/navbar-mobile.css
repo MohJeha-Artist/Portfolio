@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /*overflow: hidden;*/
+    overflow: hidden;
     
     z-index: 1000;  
     backdrop-filter: blur(5px);
@@ -73,7 +73,7 @@
 .nav__links-mobile li a {
  pointer-events: none;
     text-decoration: none;
-    color: red;                  /* White text color */
+    color: var(--5);                  /* White text color */
     font-size: 18px;               /* Font size for the links */
     padding: 7px 0;   
     margin-left: 1.5rem;
