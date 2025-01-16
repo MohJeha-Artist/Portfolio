@@ -14,7 +14,9 @@
   height: 720px;
   
   box-sizing: border-box; /* Ensures padding doesn't affect the total width */
-  color: white; /* Optional: text color for readability */     
+  color: white; /* Optional: text color for readability */  
+  
+  aspect-ratio: 16 / 9;
 }
 
 
