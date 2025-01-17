@@ -13,13 +13,59 @@ html {
 */
 
 body, html {
+  scroll-behavior: smooth;
+
+  
+  
   margin: 0;
   padding: 0;
+  height: 100%;
   box-sizing: border-box;
-  font-family: intercom-font, "Helvetica Neue", "Apple Color Emoji", Helvetica, Arial, sans-serif;
+  font-family: 
+    intercom-font, 
+    "Helvetica Neue", 
+    "Apple Color Emoji", 
+    Helvetica, Arial, 
+    sans-serif;
   
 }
 body {
+  /*
+  display: flex;
+  flex-direction: column;
+  */
   background-color: var(--0);
 }
+
+
+/* General styles for sections */
+section {
+ scroll-snap-align: start;
+  display: flex; /* Enable Flexbox */
+  flex-direction: column;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  overflow: hidden;
+  text-align: left; /* Centers content inside the section */
+    
+  /*border: 1px solid rgba(100,100,100,.1);*/
+  background-color: var(--1); /* Green background for sections */
+  margin: 20px auto; /* Creates a gap between sections and centers them */
+    height: 50dvh;
+  padding: 5rem 5rem; /* Adds space inside the section */
+    
+  border-radius: 25px; /* Rounded edges for sections */
+  width: 97%; /* 95% width of the viewport */
+  box-sizing: border-box; /* Ensures padding doesn't affect the total width */
+  color: white; /* Optional: text color for readability */    
+}
+
+/* Scroll snap Sections */
+.content {
+  scroll-snap-align: start; /* Ensure sections snap to the start of the container */
+}
+
+
+
+
 
