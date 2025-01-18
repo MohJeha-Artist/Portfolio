@@ -26,10 +26,18 @@
     transition: 1s;
 }
 
+.navlogo {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    
+}
+
 /* Logo styling */
 .logo {
     position: absolute;
-    left: 66px;                 /* Align logo to the left */
+    left: 4rem;
+    bottom: -1rem;
     height: 30px;               /* Ensure the logo fits within the navbar height */
     width: auto;                /* Maintain the logo's aspect ratio */
     object-fit: contain;        /* Ensure the logo is contained within its bounding box */
