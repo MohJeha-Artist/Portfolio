@@ -74,7 +74,7 @@
 .nav__links-mobile li a {
  pointer-events: auto;
     text-decoration: none;
-    color: var(--5);                  /* White text color */
+    color: grey;                  /* White text color */
     font-size: 18px;               /* Font size for the links */
     padding: 7px 10px;   
     margin-left: 1.5rem;
@@ -102,6 +102,8 @@ background-color: rgba(200,200,200,.1);
 border: 1px solid var(--Active-border); 
     color: var(--Active-text);
 }
+
+
 
 
 

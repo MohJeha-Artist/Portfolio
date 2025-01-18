@@ -1,106 +1,163 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-    <title>MohJeha-Artist</title>
-    <link rel="icon" href="fav/icon.webp" type="image/x-icon"> <!-- Basic -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="main/css/page.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="color-scheme" content="light">
+        <meta name="supported-color-schemes" content="light">
+
+        <title>Web Agency</title>
+
+        <link rel="stylesheet" href="https://api.fontshare.com/css?f[]=satoshi@1,300,301,700&f[]=clash-grotesk@1,200,201,600&f[]=quicksand@1,500,600,700&display=swap">
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css'>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+
+        <link rel="stylesheet" href="main/css/page.css">
     <link rel="stylesheet" href="main/css/colorpaletter.css">
     <link rel="stylesheet" href="main/css/styles.css">
     <link rel="stylesheet" href="main/css/navbar.css">
     <link rel="stylesheet" href="main/css/navbar-mobile.css">
     <link rel="stylesheet" href="main/css/banner.css">
-    <link rel="stylesheet" href="main/css/footer.css">  
+    <link rel="stylesheet" href="main/css/footer.css">
 
-
-</head>
-    <body> 
-
-      <!-- Navigation Bar -->
-       <header class="navbar">
-            <img class="logo" src="Assets/fav/Logo.svg" alt="logo">
-            <nav>
-                <ul class="nav__links">   
-                    <li><a class="nav-link scroll" href="#head" > Home </a></li>
-                    <li><a class="nav-link scroll" href="#port" > Portfolio </a></li>
-                    <li><a class="nav-link scroll" href="#me"> About </a></li>
-                </ul>
-            </nav>
-       </header>
-       <header class="navbar-mobile">
+        
+    </head>
+    <body>
+   
+        <header class="navbar">
+                <img class="logo" src="Assets/fav/Logo.svg" href="#headerCover" alt="logo">
+                <nav>
+                    <ul class="nav__links">   
+                        <li><a class="nav-link scroll" href="#"> Home </a></li>
+                        <li><a class="nav-link scroll" href="#port"> Portfolio </a></li>
+                        <li><a class="nav-link scroll" href="#me"> About </a></li>
+                    </ul>
+                </nav>
+           </header>
+        <header class="navbar-mobile">
             <img class="logo-mobile" src="Assets/fav/Logo.svg" alt="logo">
             <nav>
                 <ul class="nav__links-mobile">   
-                    <li><a class="nav-link scroll" href="#head" > Home </a></li>
-                    <li><a class="nav-link scroll" href="#port" > Portfolio </a></li>
+                    <li><a class="nav-link scroll" href="#headerCover"> Home </a></li>
+                    <li><a class="nav-link scroll" href="#port"> Portfolio </a></li>
                     <li><a class="nav-link scroll" href="#me"> About </a></li>
                 </ul>
             </nav>
-       </header>
+        </header>
 
+        <main data-scroll-container class="contentsmooth" id="top">
 
+            <!-- HEADER -->
+            <div class="header" data-scroll-section>
+                <header class="Header-C" id="headerCover">
+                    <img class="H-Cover" alt="cover">
+                    <div class="text-overlay">
+                        <h1 class="heading">MohJeha</h1>
+                        <h2 class="subheading">Crafting Immersive Visual Experiences in 3D and Beyond</h2>
+                        <p>
+                               Specializing in 3D Product Rendering, Concept Design, and Dynamic Digital Media. 
+                               Expertise in Unreal Engine, Substance 3D Painter, and Advanced Animation Techniques.
+                        </p>
+                    </div>
+                </header> 
+          </div> 
 
-    <!-- Banner -->
-    <header class="Header-B" id="header-Banner">
-      <img class="Header-Banner" src="https://placehold.co/1280x512" alt="cover">
-       <img class="H-Avatar-1" src="Assets/fav/AvatarImage.webp" alt="avatar">
-    </header>
+            <!-- Section -->
+            <section id="home" class="main-section" data-scroll-section>
+            <h1 class="title-section" data-scroll data-scroll-speed="1">Welcome to Our Studio</h1>
+            <p class="subtitle-section" data-scroll data-scroll-speed="1.5">We create ergonomic spaces with individual designs.</p>
 
-<section class="content">
-        <p>
-          Sed minus alias quidem error fuga sint temporibus, accusamus totam!
-          Voluptates, deserunt? Dolore nulla iure asperiores quibusdam officia
-          pariatur deleniti aspernatur, assumenda numquam blanditiis cumque
-          voluptatem deserunt nesciunt, ea atque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum
-          aspernatur nesciunt rem, officiis atque deserunt architecto excepturi
-          ducimus consectetur suscipit dolore sed tempora, assumenda corporis
-          eius quasi quas pariatur.<br><br>
-        </p>
-</section>
-    
-<!-- IMAGE HOVER SECTION-->
-<link rel="stylesheet" href="main/css/imggal.css">
+            <div class="swiper-container slider-column">
+              <div class="swiper swiper-slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <h1 class="slide-title"></h1>
+                    <img src="https://picsum.photos/780/400?text=Slide+1" alt="Swiper">
+                  </div>
+                  <div class="swiper-slide">
+                    <h1 class="slide-title"></h1>
+                    <img src="https://picsum.photos/780/400?text=Slide+2" alt="Swiper">
+                  </div>
+                  <div class="swiper-slide">
+                    <h1 class="slide-title"></h1>
+                    <img src="https://picsum.photos/780/400?text=Slide+3" alt="Swiper">
+                  </div>
+                  <div class="swiper-slide">
+                    <h1 class="slide-title"></h1>
+                    <img src="https://picsum.photos/780/400?text=Slide+4" alt="Swiper">
+                  </div>
+                  <div class="swiper-slide">
+                    <h1 class="slide-title"></h1>
+                    <img src="https://picsum.photos/780/400?text=Slide+5" alt="Swiper">
+                  </div>
+                </div>
+              </div>
+              <span class="progressbar"></span>
+            </div>
+          </section>
 
-<section class="content">
-    <div class="container">
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-  </div>
-</section>
+            <section id="about" class="main-section" data-scroll-section>
+            <h2 class="title-section" data-scroll data-scroll-speed="1">About Us</h2>
+            <p class="subtitle-section" data-scroll data-scroll-speed="1.5">We are a creative agency specializing in modern, responsive design.</p>
+            </section>
 
-    
-<!-- FOOTER -->       
-            
-    <footer class="footer">
-    <div class="footer-line"></div>
-    <div class="footer-content">
-        <img src="../../fav/3d-art-designer.webp" alt="Logo" class="footer-logo">
-        <div class="social-icons">
-            <a href="https://www.facebook.com" target="_blank" class="social-icon">
-                <img src="../../fav/fb.svg" alt="Facebook">
-            </a>
-            <a href="https://www.instagram.com" target="_blank" class="social-icon">
-                <img src="../../fav/ins.svg" alt="Instagram">
-            </a>
-            <a href="https://www.linkedin.com" target="_blank" class="social-icon">
-                <img src="../../fav/linked.svg" alt="LinkedIn">
-            </a>
-        </div>
-    </div>
-</footer>
-    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="main/js/scroll.js" defer></script>
-        <script src="main/js/navbar.js"></script>
-        <script src="main/js/sectionslider.js"></script>
-    </body>   
+            <section id="case-studies" class="main-section" data-scroll-section>
+            <h2 class="title-section" data-scroll data-scroll-speed="1">Case Studies</h2>
+            <p class="subtitle-section" data-scroll data-scroll-speed="1.5">Explore our latest case studies showcasing our work.</p>
+            </section>
+
+            <section id="portfolio" class="main-section" data-scroll-section>
+            <h2 class="title-section" data-scroll data-scroll-speed="1">Portfolio</h2>
+            <p class="subtitle-section" data-scroll data-scroll-speed="1.5">Check out our portfolio of recent projects.</p>
+            </section>
+
+            <section id="team" class="main-section" data-scroll-section>
+            <h2 class="title-section" data-scroll data-scroll-speed="1">Our Team</h2>
+            <p class="subtitle-section" data-scroll data-scroll-speed="1.5" class="team"> old but gold</p>
+
+            <div class="team-member" data-scroll data-scroll-speed="2">
+              <img src="https://via.placeholder.com/150" alt="Team Member">
+              <h3>John Doe</h3>
+              <p>Designer</p>
+            </div>
+
+            <div class="team-member" data-scroll data-scroll-speed="3">
+              <img src="https://via.placeholder.com/150" alt="Team Member">
+              <h3>Jane Smith</h3>
+              <p>Developer</p>
+            </div>
+
+            </section>
+
+            <section id="contact" class="main-section" data-scroll-section>
+            <h2 class="title-section"  data-scroll data-scroll-speed="1">Contact Us</h2>
+            <p class="subtitle-section" data-scroll data-scroll-speed="1.5">Get in touch with us for your next project.</p>
+            </section>
+
+            <footer class="footer" data-scroll-section>
+            <div class="footer-content">
+                <img src="../../fav/3d-art-designer.webp" alt="Logo" class="footer-logo">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank" class="social-icon">
+                        <img src="../../fav/fb.svg" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                        <img src="../../fav/ins.svg" alt="Instagram">
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" class="social-icon">
+                        <img src="../../fav/linked.svg" alt="LinkedIn">
+                    </a>
+                </div>
+            </div>
+          </footer>
+        </main>
+
+        <script src="main/js/scrollsnap.js" defer></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    </body>
 </html>

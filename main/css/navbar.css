@@ -34,7 +34,7 @@
     width: auto;                /* Maintain the logo's aspect ratio */
     object-fit: contain;        /* Ensure the logo is contained within its bounding box */
     transition: 1s;
-    
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {

@@ -1,39 +1,75 @@
-// Get all the section elements
-const sections = document.querySelectorAll('.content');
+//  tutorial : https://codepen.io/ebinabo/pen/WNwjEaL
 
-// Function to snap to the closest section on scroll
-function snapToSection() {
-  let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-  let closestSection = null;
-  let closestDistance = Infinity;
-
-  // Loop through each section to find the closest one
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-
-    // Calculate the distance between the scroll position and the section's top
-    const distance = Math.abs(scrollTop - sectionTop);
-
-    // If this section is closer than the previous one, make it the closest
-    if (distance < closestDistance) {
-      closestDistance = distance;
-      closestSection = section;
-    }
+/*
+https://gsap.com/
+*/
+document.getElementById('dark-mode-toggle').addEventListener('click', function () {
+  
+  const body = document.body;
+  const footer = document.querySelector('footer');
+  const isDark = body.classList.toggle('dark-mode');
+  
+  gsap.to(body, {
+    backgroundColor: isDark ? '#2f2f2f' : '#fbfbf0',
+    color: isDark ? '#f6f6dc' : '#2f2f2f',
+    duration: 0.25
   });
 
-  // Scroll to the closest section (snap to it)
-  if (closestSection) {
-    window.scrollTo({
-      top: closestSection.offsetTop,
-      behavior: 'smooth', // Smooth scroll to the section
-    });
-  }
-}
-
-// Listen for scroll events to trigger the snapping behavior
-window.addEventListener('scroll', () => {
-  // Throttle the scroll event to prevent excessive snapping
-  clearTimeout(window.scrollTimeout);
-  window.scrollTimeout = setTimeout(snapToSection, 150); // Delay to allow smooth scrolling
+  gsap.to(footer, {
+    borderColor:isDark ? '#f6f6dc' : '#2f2f2f',
+    duration: 0.15});
 });
+
+/* 
+https://swiperjs.com
+*/
+const swiper = new Swiper(".swiper-slider", {
+  centeredSlides: true,
+  speed:800,
+  slidesPerView: 1,
+  grabCursor: true,
+  freeMode: false,
+  loop: true,
+  touchRatio: 1.5,
+  spaceBetween: 0.0,
+  mousewheel: false,
+  keyboard: {
+    enabled: true
+  },
+  autoplay:true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "progressbar",
+  }
+});
+
+/* 
+https://github.com/locomotivemtl/locomotive-scroll 
+*/
+const scroller = new LocomotiveScroll({
+  el: document.querySelector('[data-scroll-container]'),
+  smooth: true
+});
+
+// Navigation
+document.querySelectorAll('.nav-bar a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+    scroller.scrollTo(targetSection);
+  });
+});
+
+// go top
+document.querySelector('.go').addEventListener('click', function (e) {
+  e.preventDefault();
+  const targetId = this.getAttribute('href').substring(1);
+  const targetSection = document.getElementById(targetId);
+  scroller.scrollTo(targetSection);
+});
+

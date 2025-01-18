@@ -2,31 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
     
     
     <title>MohJeha-Artist</title>
+    
     <link rel="icon" href="fav/icon.webp" type="image/x-icon"> <!-- Basic -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-
+    
+    <link rel="stylesheet" href="https://api.fontshare.com/css?f[]=satoshi@1,300,301,700&f[]=clash-grotesk@1,200,201,600&f[]=quicksand@1,500,600,700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+   
     <link rel="stylesheet" href="main/css/page.css">
     <link rel="stylesheet" href="main/css/colorpaletter.css">
     <link rel="stylesheet" href="main/css/styles.css">
     <link rel="stylesheet" href="main/css/navbar.css">
     <link rel="stylesheet" href="main/css/navbar-mobile.css">
     <link rel="stylesheet" href="main/css/banner.css">
-   
     <link rel="stylesheet" href="main/css/footer.css">  
 </head>
     <body> 
 
       <!-- Navigation Bar -->
        <header class="navbar">
-            <img class="logo" src="Assets/fav/Logo.svg" alt="logo">
+            <img class="logo" src="Assets/fav/Logo.svg" href="#headerCover" alt="logo">
             <nav>
                 <ul class="nav__links">   
-                    <li><a class="nav-link scroll" href="#headerCover"> Home </a></li>
+                    <li><a class="nav-link scroll" href="#"> Home </a></li>
                     <li><a class="nav-link scroll" href="#port"> Portfolio </a></li>
                     <li><a class="nav-link scroll" href="#me"> About </a></li>
                 </ul>
@@ -43,20 +48,24 @@
             </nav>
        </header>
 
+   
+<main data-scroll-container class="content" id="top">
     <!-- Banner -->
-    <header class="Header-C" id="headerCover">
-      <img class="H-Cover" src="https://placehold.co/1280x720" alt="cover">
-       <img class="H-Avatar" src="Assets/fav/AvatarImage.webp" alt="avatar">
-        <!--
-        <h1>MOHJEHA</h1>
-        <p>Your success, our design!</p>
-        -->
+     <header class="Header-C" id="headerCover">
+        <img class="H-Cover" alt="cover">
+        <div class="text-overlay">
+            <h1 class="heading">MohJeha</h1>
+            <h2 class="subheading">Crafting Immersive Visual Experiences in 3D and Beyond</h2>
+            <p>
+               Specializing in 3D Product Rendering, Concept Design, and Dynamic Digital Media. 
+               Expertise in Unreal Engine, Substance 3D Painter, and Advanced Animation Techniques.
+            </p>
+        </div>
     </header>
     
     
-    
 <!-- Section HEADER -->
-    <section class="Section-1" id="port"> 
+    <section class="Section-1" id="xx" > 
    <header class="testtitle">
       <h1>Test Title Here 1.6</h1>
       <p>Subtext or description can go here.</p>
@@ -73,9 +82,9 @@
 
         
 <!-- Section Slider -->
-<link rel="stylesheet" href="main/css/sectionslider.css">
+    <link rel="stylesheet" href="main/css/sectionslider.css">
 
-<section class="section-slider">
+    <section class="section-slider">
   <div class="box0" id="box0">
     <button id="slide1">SLIDE 1</button>
     <button id="slide2">SLIDE 2</button>
@@ -98,7 +107,7 @@
 
 
 
-<section class="content">
+    <section class="content" id="port">
         <p>
           Sed minus alias quidem error fuga sint temporibus, accusamus totam!
           Voluptates, deserunt? Dolore nulla iure asperiores quibusdam officia
@@ -111,9 +120,9 @@
 </section>
     
 <!-- IMAGE HOVER SECTION-->
-<link rel="stylesheet" href="main/css/imggal.css">
+    <link rel="stylesheet" href="main/css/imggal.css">
 
-<section class="content">
+    <section class="content">
     <div class="container">
     <div class="card"></div>
     <div class="card"></div>
@@ -129,42 +138,43 @@
 
    
 
+<!-- SECTION -->
 
-<section class="content">
-        <p>
-          Sed minus alias quidem error fuga sint temporibus, accusamus totam!
-          Voluptates, deserunt? Dolore nulla iure asperiores quibusdam officia
-          pariatur deleniti aspernatur, assumenda numquam blanditiis cumque
-          voluptatem deserunt nesciunt, ea atque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum
-          aspernatur nesciunt rem, officiis atque deserunt architecto excepturi
-          ducimus consectetur suscipit dolore sed tempora, assumenda corporis
-          eius quasi quas pariatur.<br><br>
-        </p>
-</section>
-<section class="content">
-        <p>
-          Dolor tenetur error similique, voluptatibus blanditiis deleniti
-          distinctio! Officia a, porro nobis provident illum deleniti nulla
-          consequuntur voluptatum enim repellat, architecto quas mollitia
-          consectetur assumenda rem magnam maiores ad nostrum. <br><br>
-        </p>
-</section>
+    <section class="content">
+            <p>
+              Sed minus alias quidem error fuga sint temporibus, accusamus totam!
+              Voluptates, deserunt? Dolore nulla iure asperiores quibusdam officia
+              pariatur deleniti aspernatur, assumenda numquam blanditiis cumque
+              voluptatem deserunt nesciunt, ea atque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum
+              aspernatur nesciunt rem, officiis atque deserunt architecto excepturi
+              ducimus consectetur suscipit dolore sed tempora, assumenda corporis
+              eius quasi quas pariatur.<br><br>
+            </p>
+    </section>
+    <section class="content">
+            <p>
+              Dolor tenetur error similique, voluptatibus blanditiis deleniti
+              distinctio! Officia a, porro nobis provident illum deleniti nulla
+              consequuntur voluptatum enim repellat, architecto quas mollitia
+              consectetur assumenda rem magnam maiores ad nostrum. <br><br>
+            </p>
+    </section>
 
-<section class="content">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum
-          aspernatur nesciunt rem, officiis atque deserunt architecto excepturi
-          ducimus consectetur suscipit dolore sed tempora, assumenda corporis
-          eius quasi quas pariatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum
-          aspernatur nesciunt rem, officiis atque deserunt architecto excepturi
-          ducimus consectetur suscipit dolore sed tempora, assumenda corporis
-          eius quasi quas pariatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum
-          aspernatur nesciunt rem, officiis atque deserunt architecto excepturi
-          ducimus consectetur suscipit dolore sed tempora, assumenda corporis
-          eius quasi quas pariatur.<br><br>
-        </p>
- </section>
-<section class="content" id="me"> <h1> THIS IS ME SECTION </h1>
+    <section class="content">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum
+              aspernatur nesciunt rem, officiis atque deserunt architecto excepturi
+              ducimus consectetur suscipit dolore sed tempora, assumenda corporis
+              eius quasi quas pariatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum
+              aspernatur nesciunt rem, officiis atque deserunt architecto excepturi
+              ducimus consectetur suscipit dolore sed tempora, assumenda corporis
+              eius quasi quas pariatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum
+              aspernatur nesciunt rem, officiis atque deserunt architecto excepturi
+              ducimus consectetur suscipit dolore sed tempora, assumenda corporis
+              eius quasi quas pariatur.<br><br>
+            </p>
+     </section>
+    <section class="content" id="me"> <h1> THIS IS ME SECTION </h1>
         <p>
           Sed minus alias quidem error fuga sint temporibus, accusamus totam!
           Voluptates, deserunt? Dolore nulla iure asperiores quibusdam officia
@@ -176,75 +186,10 @@
         </p>
 </section>   
 
-                        
-<!--  Image Gallery Script -->
-                        
-    <script class="fancy_box">
-    const relatedImages = {
-        image1: [
-            { src: "https://placehold.co/512x512?text=Related+Image+1A", caption: "Related Image 1A" },
-            { src: "https://placehold.co/512x512?text=Related+Image+1B", caption: "Related Image 1B" }
-        ],
-        image2: [
-            { src: "https://placehold.co/512x512?text=Related+Image+2A", caption: "Related Image 2A" },
-            { src: "https://placehold.co/512x512?text=Related+Image+2B", caption: "Related Image 2B" }
-        ],
-        image3: [
-            { src: "https://placehold.co/512x512?text=Related+Image+3A", caption: "Related Image 3A" },
-            { src: "https://placehold.co/512x512?text=Related+Image+3B", caption: "Related Image 3B" }
-        ],
-        image4: [
-            { src: "https://placehold.co/512x512?text=Related+Image+4A", caption: "Related Image 4A" },
-            { src: "https://placehold.co/512x512?text=Related+Image+4B", caption: "Related Image 4B" }
-        ],
-        image5: [
-            { src: "https://placehold.co/512x512?text=Related+Image+5A", caption: "Related Image 5A" },
-            { src: "https://placehold.co/512x512?text=Related+Image+5B", caption: "Related Image 5B" }
-        ]
-    };
 
-    const mainImages = [
-        { id: 'image1', thumbnail: "3d/axe.webp", caption: "Main Image 1" },
-        { id: 'image2', thumbnail: "3d/Bow.webp", caption: "Main Image 2" },
-        { id: 'image3', thumbnail: "3d/ClockTower.webp", caption: "Main Image 3" },
-        { id: 'image4', thumbnail: "3d/Crate.webp", caption: "Main Image 4" },
-        { id: 'image5', thumbnail: "3d/Dagger.webp", caption: "Main Image 5" },
-        { id: 'image1', thumbnail: "3d/Earpud.webp", caption: "Main Image 1" },
-        { id: 'image2', thumbnail: "3d/Grnd.webp", caption: "Main Image 2" },
-        { id: 'image3', thumbnail: "3d/Hammer.webp", caption: "Main Image 3" },
-        { id: 'image4', thumbnail: "3d/Handgun.webp", caption: "Main Image 4" },
-        { id: 'image5', thumbnail: "3d/incursio.webp", caption: "Main Image 5" }
-    ];
-
-    function renderGallery() {
-        const gallery = document.getElementById('gallery');
-        mainImages.forEach(image => {
-            const anchor = document.createElement('a');
-            anchor.dataset.fancybox = image.id;
-            anchor.setAttribute('data-caption', image.caption);
-
-            const img = document.createElement('img');
-            img.src = image.thumbnail;
-            img.alt = image.caption;
-
-            anchor.appendChild(img);
-            anchor.addEventListener('click', (e) => {
-                e.preventDefault();
-                Fancybox.show(
-                    relatedImages[image.id].map(item => ({ src: item.src, caption: item.caption })),
-                    { infinite: false, buttons: ["arrowLeft", "arrowRight"] }
-                );
-            });
-            gallery.appendChild(anchor);
-        });
-    }
-
-    renderGallery();
-</script>
-
+    
      
-<!-- FOOTER -->       
-            
+<!-- FOOTER -->                  
     <footer class="footer">
     <div class="footer-line"></div>
     <div class="footer-content">
@@ -262,10 +207,85 @@
         </div>
     </div>
 </footer>
-    
+
+<!-- ------------------------------------------------------------------------------ -->
+</main>   
+      
+<!-- ----------------------------------------------- Scripts ------ -->    
+       
+        <!--  Image Gallery Script -->                       
+        <script class="fancy_box">
+        const relatedImages = {
+            image1: [
+                { src: "https://placehold.co/512x512?text=Related+Image+1A", caption: "Related Image 1A" },
+                { src: "https://placehold.co/512x512?text=Related+Image+1B", caption: "Related Image 1B" }
+            ],
+            image2: [
+                { src: "https://placehold.co/512x512?text=Related+Image+2A", caption: "Related Image 2A" },
+                { src: "https://placehold.co/512x512?text=Related+Image+2B", caption: "Related Image 2B" }
+            ],
+            image3: [
+                { src: "https://placehold.co/512x512?text=Related+Image+3A", caption: "Related Image 3A" },
+                { src: "https://placehold.co/512x512?text=Related+Image+3B", caption: "Related Image 3B" }
+            ],
+            image4: [
+                { src: "https://placehold.co/512x512?text=Related+Image+4A", caption: "Related Image 4A" },
+                { src: "https://placehold.co/512x512?text=Related+Image+4B", caption: "Related Image 4B" }
+            ],
+            image5: [
+                { src: "https://placehold.co/512x512?text=Related+Image+5A", caption: "Related Image 5A" },
+                { src: "https://placehold.co/512x512?text=Related+Image+5B", caption: "Related Image 5B" }
+            ]
+        };
+
+        const mainImages = [
+            { id: 'image1', thumbnail: "3d/axe.webp", caption: "Main Image 1" },
+            { id: 'image2', thumbnail: "3d/Bow.webp", caption: "Main Image 2" },
+            { id: 'image3', thumbnail: "3d/ClockTower.webp", caption: "Main Image 3" },
+            { id: 'image4', thumbnail: "3d/Crate.webp", caption: "Main Image 4" },
+            { id: 'image5', thumbnail: "3d/Dagger.webp", caption: "Main Image 5" },
+            { id: 'image1', thumbnail: "3d/Earpud.webp", caption: "Main Image 1" },
+            { id: 'image2', thumbnail: "3d/Grnd.webp", caption: "Main Image 2" },
+            { id: 'image3', thumbnail: "3d/Hammer.webp", caption: "Main Image 3" },
+            { id: 'image4', thumbnail: "3d/Handgun.webp", caption: "Main Image 4" },
+            { id: 'image5', thumbnail: "3d/incursio.webp", caption: "Main Image 5" }
+        ];
+
+        function renderGallery() {
+            const gallery = document.getElementById('gallery');
+            mainImages.forEach(image => {
+                const anchor = document.createElement('a');
+                anchor.dataset.fancybox = image.id;
+                anchor.setAttribute('data-caption', image.caption);
+
+                const img = document.createElement('img');
+                img.src = image.thumbnail;
+                img.alt = image.caption;
+
+                anchor.appendChild(img);
+                anchor.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    Fancybox.show(
+                        relatedImages[image.id].map(item => ({ src: item.src, caption: item.caption })),
+                        { infinite: false, buttons: ["arrowLeft", "arrowRight"] }
+                    );
+                });
+                gallery.appendChild(anchor);
+            });
+        }
+
+        renderGallery();
+    </script> 
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="main/js/scroll.js" defer></script>
+        <script src="main/js/scrollsnap.js" defer></script>
         <script src="main/js/navbar.js"></script>
         <script src="main/js/sectionslider.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     </body>   
 </html>
