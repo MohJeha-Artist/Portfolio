@@ -7,7 +7,7 @@ header.Header-C {
     position: relative;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
+    overflow: hidden; z-index: -1;
 }
 
 header.Header-C .H-Cover {
@@ -21,7 +21,16 @@ header.Header-C .H-Cover {
 url(https://cdnb.artstation.com/p/assets/images/images/057/715/815/large/mohjeha-img-5.jpg?1672439444);
 }
 
-header.Header-C .text-overlay {
+header.Header-C .H-Coveredge {
+    position: absolute;
+    background-color: yellow;
+    height: 30px;
+    width: 100%;
+    
+}
+
+header.Header-C 
+.text-overlay {
     position: absolute;
     top: 30%;
     left: 10%;
@@ -30,35 +39,43 @@ header.Header-C .text-overlay {
     max-width: 600px;
 }
 
-header.Header-C .text-overlay h1 {
-    font-size: 4rem; font-family: 'Inter', serif;
-    font-weight: 800;
+header.Header-C 
+.text-overlay h1 {
+    font-size: 5rem; font-family: 'Allerta', serif;
+    font-weight: 700;
     margin: 0;
 }
 
-header.Header-C .text-overlay h2 {
-    font-size: 1.8rem;
+header.Header-C 
+.text-overlay h2 {
+    font-family: 'Allerta', serif;
+    font-size: 1.5rem;
     font-weight: 600;
     margin: 10px 0;
 }
 
-header.Header-C .text-overlay p {
-    font-size: 1.2rem;
+header.Header-C 
+.text-overlay p {
+    font-family: 'Allerta', serif;
+    font-size: 1rem;
     font-weight: 400;
     margin-top: 20px;
     line-height: 1.8;
 }
 
 @media (max-width: 768px) {
-    header.Header-C .text-overlay h1 {
+    header.Header-C 
+    .text-overlay h1 {
         font-size: 3rem;
     }
 
-    header.Header-C .text-overlay h2 {
+    header.Header-C 
+    .text-overlay h2 {
         font-size: 1.5rem;
     }
 
-    header.Header-C .text-overlay p {
+    header.Header-C 
+    .text-overlay p {
         font-size: 1rem;
     }
 }

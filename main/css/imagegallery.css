@@ -10,6 +10,8 @@
   background-color: var(--1);
      /*background: radial-gradient(circle, var(--P-1), transparent);*/
   border-radius: 50px; /* Rounded edges */
+
+    outline: 40px solid var(--0);
   width: 100%;
   margin: 20px auto; /* Centers the section and adds gap */
   box-sizing: border-box;
