@@ -6,11 +6,23 @@
     
     <link rel="stylesheet" href="main/css/base.css">
     <link rel="stylesheet" href="main/css/base.css">
-    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        section {
+            height: 100vh;
+        }
+        .section-1 {
+            background-color: gray;
+        }
+    </style>
 </head>
 <body>
     <div data-scroll-container>
-    <section data-scroll-section>
+    <section data-scroll-section class="section-1">
         <h1 data-scroll>Hey</h1>
         <p data-scroll>👋</p>
     </section>
@@ -20,6 +32,6 @@
     </section>
 </div>
 
-<script src="main/js/scrollsnap.js"></script>
+<script src="main/js/index.js"></script>
 </body>
 </html>

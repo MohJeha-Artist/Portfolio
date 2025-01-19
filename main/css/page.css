@@ -39,42 +39,6 @@ body {
   background-color: var(--0);
 }
 
-.dark-mode {
-        background-color: #2f2f2f;
-        color: #f6f6dc;
-      }
-
-      .top-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem;
-        z-index:12;
-        position: -webkit-sticky;
-        position: sticky;
-        top:1rem;
-      }
-
-      .top-bar a {
-        font-weight: bold;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: inherit;
-        margin-right: 1rem;
-      }
-
-      .top-bar button {
-        font-weight: bold;
-        text-transform: uppercase;
-        cursor: pointer;
-        padding: 0.5rem 1rem;
-        border: none;
-        background-color: #2f2f2f;
-        color: #f6f6dc;
-        border-radius: 4px;
-      }
-
-
 
 /* General styles for sections */
 section {
@@ -89,7 +53,7 @@ section {
   /*border: 1px solid rgba(100,100,100,.1);*/
   background-color: var(--1); /* Green background for sections */
   margin: 20px auto; /* Creates a gap between sections and centers them */
-    height: 50dvh;
+    height: 100dvh;
   padding: 5rem 5rem; /* Adds space inside the section */
     
   border-radius: 25px; /* Rounded edges for sections */
