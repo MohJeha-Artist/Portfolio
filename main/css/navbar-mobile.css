@@ -4,11 +4,11 @@
 .navbar-mobile {
     position: fixed;            /* Fix the navbar at the bottom of the screen */
     left: 50%;                  /* Center the navbar horizontally */
-    bottom: 30px;               /* 50px gap from the bottom of the screen */
+    bottom: 10px;               /* 50px gap from the bottom of the screen */
     transform: translateX(-50%) translateY(1px);
     
     width: 150px;                 
-    height: 60px; 
+    height: 45px; 
     border-radius: 20px;
     padding: 8px 0;
     

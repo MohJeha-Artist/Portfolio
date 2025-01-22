@@ -1,5 +1,9 @@
 
 .section-slider {
+
+  scroll-snap-align: start;
+
+  
   position: relative;
   display: flex; /* Enable Flexbox */
   justify-content: center; /* Center horizontally */
@@ -33,7 +37,7 @@
 }
 
 .box0 {
-  background-color: red;
+  background-color: rgb(0, 0, 0);
   z-index: 3; /* Ensure box1 stays on top */
   position: absolute; /* This will allow everything inside to move together */
 }

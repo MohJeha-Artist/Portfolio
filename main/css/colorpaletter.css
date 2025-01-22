@@ -1,7 +1,7 @@
 :root {
     /*Palette*/
-    --0: rgba(25,25,25);
-    --1: rgba(30,30,30);
+    --0: rgba(10,10,10);
+    --1: rgba(25,25,25);
     
     --2: #118ba7;  /* Darker Cyan (Secondary) */
     --3: #f0f8ff;  /* Very light Cyan (Accent/Background) */

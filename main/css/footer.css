@@ -1,26 +1,37 @@
 /* Footer Styles */
 .footer {
-  display: flex; /* Enable Flexbox */
-  flex-direction: column;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */ 
-  text-align: center; /* Centers content inside the section */
+    position: relative;
+    display: flex; /* Enable Flexbox */
+    flex-direction: column;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */ 
+    text-align: center; /* Centers content inside the section */
     
-  margin: 0 auto; /* Creates a gap between sections and centers them */
-  
+    margin: 0 auto;
+
     background-color: var(--0);
-    padding: 20px 0;
+    padding: 20px 10px;
     border-radius: 30px 30px 0 0;
     color: #ffffff; /* Default text color */
 
     border-top: 3px solid var(--5); /* Separator line */
     width: 97%;
+    height: 50dvh;
+}
+.footer-content {
+    position: absolute;
+    display: flex; /* Enable Flexbox */
+    flex-direction: column;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */ 
+    top: 35px;
 }
 
 .footer-logo {
     width: 240px; /* Adjust size as needed */
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    
 }
 
 .social-icons {
