@@ -6,13 +6,14 @@
 header.HERO {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full viewport height */
-  display: flex; /* Flexbox for easy centering */
-  flex-direction: column; /* Stack elements vertically */
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
-  text-align: center; /* Align text inside elements */
-  overflow: hidden; /* Prevent overflow issues */
+  height: 100vh;
+  height: 100dvh; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  overflow: hidden; 
 
   border-bottom-left-radius: 50px; /* Adjust the radius as needed */
     border-bottom-right-radius: 50px; /* Adjust the radius as needed */
@@ -24,7 +25,7 @@ header.HERO .Hero-Image {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure the image covers the container */ 
+  object-fit: cover;
 }
 
 header.HERO .Hero-ImageA {
@@ -33,9 +34,10 @@ header.HERO .Hero-ImageA {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure the image covers the container */ 
+  object-fit: cover;
   z-index: 1;
 }
+
 
 .Hero-heading {
   position: absolute;
@@ -65,34 +67,72 @@ header.HERO .Hero-ImageA {
   text-stroke: 2px rgb(255, 255, 255); /* For modern browsers supporting this property */
 }
 
+.Hero-heading-mobile1 {
+  position: absolute;
+  top: 10%;
+  margin: 0;
+  padding: 0;
+  font-size: calc(120px);
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff; 
+  white-space: nowrap; 
+  z-index: 0; 
+  pointer-events: none;
+  transform: translateY(-20px);
+}
+
+.Hero-heading-mobile2 {
+  position: absolute;
+  top: 10%;
+  margin: 0;
+  padding: 0;
+  font-size: calc(120px);
+  font-family: 'Poppins', sans-serif;
+  transform: translateY(-15px);
+  z-index: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(255, 255, 255, .7);
+  text-stroke: 1px rgb(255, 255, 255); 
+}
+
 .Hero-subheading {
   position: absolute;
   bottom: 25%;
   margin: 0;
   padding: 0;
-  font-size: calc(5vw); /* Dynamically adjust font size based on viewport width */
+  font-size: calc(5vw);
   font-family: 'Poppins', sans-serif;
-  color: #fff; /* Contrast text color */
-  white-space: nowrap; /* Prevent text wrapping */
-  z-index: 1; /* Ensure it stays above the image */
+  color: #fff;
+  white-space: nowrap;
+  z-index: 1; 
 }
 
-@media (max-width: 768px) {
-    header.HERO 
-    .Hero-Text h1 {
-        font-size: 3rem;
-    }
 
-    header.HERO 
-    .Hero-Text h2 {
-        font-size: 1.5rem;
-    }
+@media (max-width: 768px) { 
+  h1
+  {
+ display: none;
+  }
+  h2 { 
+    line-height: 1;
+  }
 
-    header.HERO 
-    .Hero-Text p {
-        font-size: 1rem;
-    }
+  header.HERO {
+    height: 80vh;
+  height: 80dvh; 
+  }
+  .Hero-subheading {
+    font-size: calc(7vw);
+  }
+
 }
+
+@media (min-width: 768px) { 
+  h2
+  {
+    display: none;
+  }
+  }
 
 
 
