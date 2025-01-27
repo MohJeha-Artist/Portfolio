@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Offside&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allerta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+  --f0:  Arial, Helvetica, sans-serif;
+  --f1: 'Mulish', sans-serif;
+  --f2: 'Roboto', sans-serif;
+  --f3: 'Poppins', sans-serif;
+
+
+      /*Palette*/
+      --0: rgb(0, 0, 0);
+      --1: rgba(10,10,10);
+      
+      --2: #118ba7;
+      --3: #542cdb;  
+      --4: #ffffff;  
+      --5: #2c3e50;  
+  
+      --P-1: #542cdb;
+      
+      --gradient: 
+          linear-gradient(90deg, 
+          rgba(50, 50, 50, 0.5), 
+          rgba(100, 100, 100, 0.5), 
+          rgba(50, 50, 50, 0.5));
+      
+   /* Nav Bar */
+  
+  --bar-color: rgba(30, 30, 30, .5);
+  
+      /* Buttons Hover */
+  --Hover-text: var(--p-1);
+  --Hover-border: var(--4);
+  --Hover-fill: rgba(10, 10, 10,.2);   
+      
+      /* Buttons Active */
+  --Active-text: var(--3); 
+  --Active-border: var(--2);
+  --Active-fill: rgba(10, 10, 10, .2);
+  
+}
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body, html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  /* height: 100vh; */
+  min-height: 100%; /* Ensure the page can expand vertically */
+  box-sizing: border-box;
+
+
+}
+
+
+
+body {
+  font-family: var(--f1);
+  font-size: 10px;
+  background-image: url("../../Assets/backgrounds/dark-purple-abstract.avif");
+  background-color: var(--0);
+  background-size: cover;
+  background-repeat: no-repeat; 
+  background-position: center; Center the image
+}
+
+
+
+
+
+
+
+
+

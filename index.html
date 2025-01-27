@@ -6,22 +6,28 @@
     <meta name="color-scheme" content="light">
     <meta name="supported-color-schemes" content="light">
     
-    
     <title>MohJeha-Artist</title>
-    
-    <link rel="icon" href="fav/icon.webp" type="image/x-icon"> <!-- Basic -->
- 
-    <link rel="stylesheet" href="main/css/page.css">
-    <link rel="stylesheet" href="main/css/colorpaletter.css">
-    <link rel="stylesheet" href="main/css/grid.css">
+    <link rel="icon" href="Assets/fav/Fav.svg" type="image/x-icon"> 
+
+    <!-- Page-setup -->
+    <link rel="stylesheet" href="main/css/base.css">
+    <link rel="stylesheet" href="main/css/styles.css">
+    <!-- Navigation-Bar -->
     <link rel="stylesheet" href="main/css/navbar.css">
     <link rel="stylesheet" href="main/css/navbar-mobile.css">
+    <!-- Header | Footer -->
     <link rel="stylesheet" href="main/css/hero.css">
     <link rel="stylesheet" href="main/css/footer.css">
 
-    <link rel="stylesheet" href="main/css/scroll-tracker.css">  
-    <script src="scroll-tracker.js" type="module" defer></script> 
+    <!-- Sections -->
+    <link rel="stylesheet" href="main/css/logos.css">
     
+    <!-- Scroll Tracker -->
+    <!-- -------------- -->
+    <link rel="stylesheet" href="main/css/scroll-tracker.css"> 
+    <script src="main/js/animations.js" type="module" defer></script>     
+    <!-- -------------- -->
+    <!-- -------------- -->
 </head>
 
     <body> 
@@ -31,6 +37,7 @@
         <div data-scroll-container> <!-- WRAPPER -->
 
         <!-- Navigation Bar -->
+        <!-- -------------- -->
 
             <header class="navbar">
                 <a class="navlogo" href="#headerCover"><img class="logo" src="Assets/fav/Logo.svg" alt="logo"></a>
@@ -53,11 +60,29 @@
                 </nav>
             </header>
 
-        <!-- HERO -->
+        <!-- HERO COVER -->
+        <!-- ---------- -->
 
-            <header class="HERO" id="HERO">
-                <img class="Hero-Image" src="Assets/fav/robot.webp" alt="hero-image">
-                <img class="Hero-ImageA" src="Assets/fav/robotA.webp" alt="hero-imageA">
+            <header class="HERO" id="HERO"> 
+                <!--Waves Container-->
+                <div>
+                    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(0,0,0,0.2" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(0,0,0,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(0,0,0,0.2)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#000" />
+                    </g>
+                    </svg>
+                </div>
+                <!--Waves end-->
+
+                <img class="Hero-Image" src="Assets/fav/robotP.webp" alt="hero-image">
+                <img class="Hero-ImageA" src="Assets/fav/robotPA.webp" alt="hero-imageA">
 
                 <h1 class="Hero-heading">MOHJEHA</h1>
                 <h1 class="Hero-heading2">MOHJEHA</h1>
@@ -72,94 +97,268 @@
                     </p> -->
            
             </header>
-
-        <!-- Section Slider -->
-
-            <link rel="stylesheet" href="main/css/sectionslider.css">
-
-            <section class="section-slider">
-                <div class="box0" id="box0">
-                    <button id="slide1">SLIDE 1</button>
-                    <button id="slide2">SLIDE 2</button>
-                </div>
-
-                <div class="box1" id="box1">
-                    <button id="return1">return 1</button>
-                </div>
-
-                <div class="box2" id="box2">
-                    <button id="return2">return 2</button>
         
-                </div>
-            </section>
+        <!-- HERO SPACER | SHADOW BLEND -->
+        <section class="shadow" style="height:100px;"></section>    
+
+        <section class="spacer" style="height:100px;"></section>  
+
+
 
         <!-- SECTION 1 -->
-    
-            <section class="content" id="port">
-                <h1> <a href="page1.html"> Section 1 </a> </h1>
-                <p>
-                Sed minus alias quidem error fuga sint temporibus, accusamus totam!
-                Voluptates, deserunt? Dolore nulla iure asperiores quibusdam officia
-                pariatur deleniti aspernatur, assumenda numquam blanditiis cumque
-                voluptatem deserunt nesciunt, ea atque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum
-                aspernatur nesciunt rem, officiis atque deserunt architecto excepturi
-                ducimus consectetur suscipit dolore sed tempora, assumenda corporis
-                eius quasi quas pariatur.<br><br>
-                </p>
-            </section>
+        <!-- --------- -->
 
-        <!-- SECTION 2 -->
-    
+        <section class="sect1" id="port">
+            <h1 class="sect1-head">  Art in motion<br>depth in design </h1>
+            <div class="sect1-grid">
+                <div class="sect1-card">
+                    <div class="sect1-content">
+                        <h1 class="s1-title1">2D Graphics <br> & Design</h1>
+                        <h2 class="s1-title2">Crafting visuals that captivate and communicate, from striking illustrations to detailed graphic compositions.</h2>
+                    </div>
+                    <div class="sect1-image">
+                        <img  src="https://i.pinimg.com/736x/d0/66/57/d06657234384f0dc087a2a3d98a2451d.jpg" alt="3D">
+                    </div>
+                </div>
 
-        <!-- SECTION 3 -->
-    
-        <section class="content" id="port">
-            <h1> Section 3 </h1>
-            <p>
-            Sed minus alias quidem error fuga sint temporibus, accusamus totam!
-            Voluptates, deserunt? Dolore nulla iure asperiores quibusdam officia
-            pariatur deleniti aspernatur, assumenda numquam blanditiis cumque
-            voluptatem deserunt nesciunt, ea atque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum
-            aspernatur nesciunt rem, officiis atque deserunt architecto excepturi
-            ducimus consectetur suscipit dolore sed tempora, assumenda corporis
-            eius quasi quas pariatur.<br><br>
-            </p>
+                <div class="sect1-card">
+                <div class="sect1-content">
+                    <h1 class="s1-title1"> Artworks & <br>3D Modeling</h1>
+                    <h2 class="s1-title2">Exploring dimensions in creativity, bringing concepts to life through modeling, sculpting, and texturing.</h2>
+                </div>
+                <div class="sect1-image">
+                    <img  src="https://i.pinimg.com/736x/da/7c/49/da7c49177911ecf92059700d9ae5dd33.jpg" alt="3D">
+                </div>
+                </div>
+
+                <div class="sect1-card">
+                <div class="sect1-content">
+                    <h1 class="s1-title1">Animations <br>& Product Visualization
+                    </h1>
+                    <h2 class="s1-title2">Breathing life into designs with animations and showcasing products through immersive visual storytelling.</h2>
+                </div>
+                <div class="sect1-image">
+                    <img  src="https://i.pinimg.com/736x/bc/46/ea/bc46ea505f0fbb15fd4339f7f39f1638.jpg" alt="3D">
+                </div>
+                </div>
+                
+            </div>
         </section>
 
-        <!-- SECTION  -->
+
+        <!-- SECTION 2 -->
+        <!-- --------- -->
+        <section  class="sect5" id="me">
+            <div class="sect5-head">
+                <h1 class="sect5-title"> My Software Mastery </h1>
+                <h1 class="sect5-title2" >From 2D illustrations to intricate designs, my expertise ensures precision in every project.</h1>
+            </div>
+
+            <!-- LOGOS Infinite Slider -->
+            <!-- --------------------- -->
+            <div class="scroller" data-direction="left" data-speed="normal">
+                <div class="scroller__inner">
+                    <div class="slide">
+                    <svg role="icon" height="100px" width="250px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><title>Cinema 4D</title>
+                        <rect class="cls-1" fill="blue" width="30" height="30" rx="4" ry="4"/>
+                        <path class="cls-0" fill= "white" d="M15.1,3c-6.7,0-12.1,5.4-12.1,12,0,6.7,5.5,12,12,12,6.5,0,12.1-5.3,12-12,0-1.7-.5-5.4-1.8-5.3-2,.1-2.2,4.1-2.4,5.4-.4,2.5-1.3,5.1-3,7-1.9,2.4-4.7,3.6-7.7,3.2-3.6-.6-5.9-3.3-6.7-5.2-.8-1.7-1-4.2,0-6.3,1.2-2.8,3.7-4.6,6.3-5.6,2-.8,4.1-1.2,5.4-1.4,2.5-.5,2.9-1.5,2.8-2.1,0-.3-.3-.7-.8-.9-1.1-.4-2.8-.7-4-.7Z"/>
+                        <path class="cls-1" fill= "blue" d="M20.1,4.3c.1.4,0,.8-.1,1.3-.3.6-1,1-1.9,1.3-1.6.4-3,.6-4.3,1-1.3.4-3.4,1-5.3,2.6-.3.8-.3,1.9-.4,2.7.2,5,4.6,8.9,9.2,8.7.9,0,1.9-.3,2.9-.7.6-.8,1-1.7,1.4-2.7h0c.4-1,.6-1.8.8-2.8.3-1.6.2-2.9,1-4.8.3-.6.7-1.1,1.3-1.3.2-.1.5-.1.8,0-.9-2.5-3.1-4.3-5.3-5.1h0Z"/>
+                    </svg>
+                    </div>
+                    <div class="slide">
+                        <svg role="icon" height="100px" width="250px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><title>Blender</title>
+                            <path class="cls-1" fill= "#ff9800" d="M25.1,22c.7-.8,1.3-1.7,1.6-2.7h0c.2-.7.3-1.4.3-2.1,0-1.3-.4-2.6-1.1-3.8-.5-.8-1.1-1.5-1.8-2h0s0,0,0,0l-7.5-5.8c-.5-.4-1.3-.4-1.9,0-.5.4-.6,1-.1,1.4h0s3.1,2.5,3.1,2.5h-9.5c-.8,0-1.5.5-1.7,1.2-.2.7.4,1.2,1.2,1.2h0s4.8,0,4.8,0l-8.7,6.6c-.8.6-1.1,1.7-.6,2.3.5.7,1.6.7,2.4,0l4.7-3.8s0,.5,0,.8h0c0,.3.1.9.3,1.4.3,1,.9,2,1.6,2.8.8.8,1.7,1.5,2.7,2h0c1.1.5,2.4.8,3.6.8h0c1.3,0,2.5-.3,3.6-.8,1.1-.5,2-1.1,2.8-2,0,0,0,0,0,0ZM23.5,18c-.2.6-.6,1.2-1,1.6h0c-1,1-2.3,1.5-3.8,1.6-1.5,0-2.8-.6-3.8-1.5-.5-.5-.8-1-1-1.6h0c-.2-.5-.3-1-.3-1.5,0-.8.2-1.5.5-2.1.3-.5.7-1,1.1-1.4h0c.9-.8,2.1-1.2,3.4-1.2,1.3,0,2.5.4,3.4,1.2.5.4.9.9,1.2,1.4.3.5.5,1.1.5,1.7h0c0,.6,0,1.3-.2,1.8Z"/>
+                            <path class="cls-0" fill= "#1976d2" d="M18.8,13.4h0c-.8,0-1.6.3-2.2.8-.6.5-1,1.2-1,2h0c0,.8.3,1.6.9,2.2.6.6,1.4.9,2.3.9h0c.9,0,1.7-.4,2.3-.9.6-.6.9-1.3.9-2.2,0-.8-.4-1.5-1-2-.6-.5-1.4-.8-2.2-.8Z"/>
+                        </svg>
+                    </div>
+                    <div class="slide">
+                        <svg role="icon" height="100px" width="250px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><title>Cinema 4D</title>
+                            <path class="cls-0" fill= "white" d="M15.1,3c-6.7,0-12.1,5.4-12.1,12,0,6.7,5.5,12,12,12,6.5,0,12.1-5.3,12-12,0-1.7-.5-5.4-1.8-5.3-2,.1-2.2,4.1-2.4,5.4-.4,2.5-1.3,5.1-3,7-1.9,2.4-4.7,3.6-7.7,3.2-3.6-.6-5.9-3.3-6.7-5.2-.8-1.7-1-4.2,0-6.3,1.2-2.8,3.7-4.6,6.3-5.6,2-.8,4.1-1.2,5.4-1.4,2.5-.5,2.9-1.5,2.8-2.1,0-.3-.3-.7-.8-.9-1.1-.4-2.8-.7-4-.7Z"/>
+                            <path class="cls-1" fill= "blue" d="M20.1,4.3c.1.4,0,.8-.1,1.3-.3.6-1,1-1.9,1.3-1.6.4-3,.6-4.3,1-1.3.4-3.4,1-5.3,2.6-.3.8-.3,1.9-.4,2.7.2,5,4.6,8.9,9.2,8.7.9,0,1.9-.3,2.9-.7.6-.8,1-1.7,1.4-2.7h0c.4-1,.6-1.8.8-2.8.3-1.6.2-2.9,1-4.8.3-.6.7-1.1,1.3-1.3.2-.1.5-.1.8,0-.9-2.5-3.1-4.3-5.3-5.1h0Z"/>
+                        </svg>
+                    </div>
+                    <div class="slide">
+                        
+                        <svg role="icon" height="100px" width="250px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><title>Painter</title>
+                            <rect class="cls-1" fill="#fc2a31" width="30" height="30" rx="4" ry="4"/>
+                            <g>
+                                <circle class="cls-2" fill="white" cx="15" cy="15" r="8.5"/>
+                                <circle class="cls-2" fill="white" cx="22.6" cy="24.7" r="1.9"/>
+                                <circle class="cls-2" fill="white" cx="9.8" cy="4.6" r="1.2"/>
+                                <circle class="cls-2" fill="white" cx="6.3" cy="25.3" r=".8"/>
+                            </g>
+                            <polygon class="cls-1" fill="#fc2a31" points="15 8.3 9.3 11.7 9.3 14.7 17.3 17.2 15 18.6 11.3 16.5 11.3 16 9.3 15.3 9.3 18.3 14.9 21.6 20.7 18.3 20.7 15.3 12.7 12.8 15 11.4 18.7 13.5 18.7 14 20.7 14.6 20.7 11.7 15 8.3"/>
+                        </svg>
+                    </div>
+                    <div class="slide">
+                        <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" height="100px" width="250px" viewBox="0 0 30 30"><title>indesign</title>
+                            <rect class="cls-1" fill="#49021f" width="30" height="30" rx="4" ry="4"/>
+                            <path class="cls-2" fill= "#f36" d="M17.9,13.6c.1,0,.2,0,.3.2v4.3c0,.3-.2.5-.4.6-.2.1-.4.2-.7.2s-.6-.2-.8-.6c-.2-.4-.3-1.1-.3-1.9s.1-1.9.4-2.3c.2-.4.5-.6,1-.6s.4,0,.6,0ZM12.2,7.8c0,0,0-.1-.1-.1h-2.3c0,0-.1,0-.1.1v12.9c0,0,0,.1.1.1h2.3c0,0,.1,0,.1-.1V7.8ZM20.8,20.8s0,0,0,0c0-.6-.1-1.2-.1-1.7,0-.5,0-1,0-1.5V7.8c0,0,0-.1-.1-.1h-2.2c0,0-.1,0-.1.1v3.5c-.1,0-.3,0-.4-.1-.2,0-.5,0-.8,0-1.2,0-2.1.4-2.7,1.3-.6.9-.9,2.1-.9,3.8s.3,2.9.8,3.7c.6.8,1.3,1.2,2.3,1.2s1.7-.4,2.2-1.1l.2.8c0,0,0,.1.1.1h1.6c0,0,.1,0,.1-.1Z"/>
+                        </svg>
+                    </div>
+                    <div class="slide">
+
+                        <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" height="100px" width="250px" viewBox="0 0 30 30"><title>Photoshop</title>
+                            <rect class="cls-1" fill="#001e36" width="30" height="30" rx="4" ry="4"/>
+                            <g id="_2" data-name="2">
+                                <path class="cls-2" fill="#31a8ff" d="M6.8,14.5c0-2.1,0-4.2,0-6.3,0-.2,0-.2.2-.2,1.2,0,2.4,0,3.6,0,.8,0,1.6,0,2.3.3,1.3.4,2.3,1.1,2.8,2.3.3.7.5,1.5.4,2.3,0,.6-.1,1.1-.4,1.7-.4.9-1.1,1.6-2.1,2-.7.3-1.4.5-2.2.5-.6,0-1.3,0-1.9,0-.2,0-.2,0-.2.2,0,1.2,0,2.5,0,3.7,0,.3,0,.3-.3.3-.7,0-1.4,0-2.2,0-.2,0-.2,0-.2-.3,0-2.1,0-4.2,0-6.3ZM9.5,12.4c0,.7,0,1.3,0,2,0,.1,0,.2.1.2.3,0,.7,0,1,0,.5,0,1,0,1.5-.3.6-.2,1-.6,1.2-1.2,0-.3.1-.7,0-1,0-.4-.2-.8-.5-1.1-.3-.4-.8-.5-1.2-.6-.7-.1-1.4,0-2.2,0,0,0-.1,0-.1.1,0,.7,0,1.3,0,2Z"/>
+                                <path class="cls-2" fill="#31a8ff" d="M17.5,19.4c0-.3,0-.7,0-1,0-.2,0-.2.2-.1,1,.5,2,.8,3.1.8.3,0,.6,0,.8-.2.4-.2.5-.6.2-.9-.2-.2-.4-.3-.7-.4-.4-.2-.8-.3-1.2-.5-.6-.2-1.1-.5-1.5-.9-.9-.8-1.1-1.8-.7-3,.3-.9.9-1.4,1.7-1.8.6-.3,1.3-.4,2-.4.8,0,1.6,0,2.3.3.1,0,.2,0,.4.1.2,0,.2.1.2.3,0,.3,0,.6,0,.9,0,.3,0,.7,0,1,0,.2-.1.3-.3.2-.5-.3-1-.4-1.6-.5-.5,0-1-.1-1.5,0-.1,0-.3,0-.4,0-.4.2-.5.6-.2.9.1.1.3.2.5.3.5.2,1,.4,1.6.7.6.3,1.1.5,1.6,1,.7.6.9,1.4.8,2.3-.1,1.4-.9,2.2-2.2,2.6-.7.2-1.4.3-2.1.3-.8,0-1.7-.1-2.5-.4-.1,0-.2,0-.3-.1-.1,0-.2-.1-.2-.3,0-.4,0-.7,0-1.1Z"/>
+                            </g></svg>
+                    </div>
+                    <div class="slide">
+                        <svg role="icon" height="100px" width="250px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><title>aftereffect</title>
+                            <rect class="cls-1" fill="#000c60" width="30" height="30" rx="4" ry="4"/>
+                            <path class="cls-2" fill="#99f" d="M8.4,8.2h2.7l4.8,13.5h-2.6l-1.1-3.4h-5l-1.2,3.4h-2.4s4.8-13.5,4.8-13.5ZM9.7,10.8l-1.8,5.5h3.8l-1.8-5.5h-.2ZM21.9,11.1c2.9,0,4.5,2,4.5,5.2v.7h-7.1c0,1.8,1,2.9,2.6,2.9s1.9-.4,2.3-1.2h2.2c-.4,1.9-2.1,3-4.5,3s-4.8-2-4.8-5.3,1.8-5.3,4.8-5.3ZM21.7,13.1c-1.4,0-2.3,1-2.5,2.5h4.8c0-1.5-1-2.5-2.3-2.5Z"/>
+                    </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="scroller" data-direction="right" data-speed="normal">
+                <div class="scroller__inner">
+                    <div class="slide">
+                    <svg role="icon" height="100px" width="250px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><title>Cinema 4D</title>
+                        <rect class="cls-1" fill="blue" width="30" height="30" rx="4" ry="4"/>
+                        <path class="cls-0" fill= "white" d="M15.1,3c-6.7,0-12.1,5.4-12.1,12,0,6.7,5.5,12,12,12,6.5,0,12.1-5.3,12-12,0-1.7-.5-5.4-1.8-5.3-2,.1-2.2,4.1-2.4,5.4-.4,2.5-1.3,5.1-3,7-1.9,2.4-4.7,3.6-7.7,3.2-3.6-.6-5.9-3.3-6.7-5.2-.8-1.7-1-4.2,0-6.3,1.2-2.8,3.7-4.6,6.3-5.6,2-.8,4.1-1.2,5.4-1.4,2.5-.5,2.9-1.5,2.8-2.1,0-.3-.3-.7-.8-.9-1.1-.4-2.8-.7-4-.7Z"/>
+                        <path class="cls-1" fill= "blue" d="M20.1,4.3c.1.4,0,.8-.1,1.3-.3.6-1,1-1.9,1.3-1.6.4-3,.6-4.3,1-1.3.4-3.4,1-5.3,2.6-.3.8-.3,1.9-.4,2.7.2,5,4.6,8.9,9.2,8.7.9,0,1.9-.3,2.9-.7.6-.8,1-1.7,1.4-2.7h0c.4-1,.6-1.8.8-2.8.3-1.6.2-2.9,1-4.8.3-.6.7-1.1,1.3-1.3.2-.1.5-.1.8,0-.9-2.5-3.1-4.3-5.3-5.1h0Z"/>
+                    </svg>
+                    </div>
+                    <div class="slide">
+                        <svg role="icon" height="100px" width="250px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><title>Blender</title>
+                            <path class="cls-1" fill= "#ff9800" d="M25.1,22c.7-.8,1.3-1.7,1.6-2.7h0c.2-.7.3-1.4.3-2.1,0-1.3-.4-2.6-1.1-3.8-.5-.8-1.1-1.5-1.8-2h0s0,0,0,0l-7.5-5.8c-.5-.4-1.3-.4-1.9,0-.5.4-.6,1-.1,1.4h0s3.1,2.5,3.1,2.5h-9.5c-.8,0-1.5.5-1.7,1.2-.2.7.4,1.2,1.2,1.2h0s4.8,0,4.8,0l-8.7,6.6c-.8.6-1.1,1.7-.6,2.3.5.7,1.6.7,2.4,0l4.7-3.8s0,.5,0,.8h0c0,.3.1.9.3,1.4.3,1,.9,2,1.6,2.8.8.8,1.7,1.5,2.7,2h0c1.1.5,2.4.8,3.6.8h0c1.3,0,2.5-.3,3.6-.8,1.1-.5,2-1.1,2.8-2,0,0,0,0,0,0ZM23.5,18c-.2.6-.6,1.2-1,1.6h0c-1,1-2.3,1.5-3.8,1.6-1.5,0-2.8-.6-3.8-1.5-.5-.5-.8-1-1-1.6h0c-.2-.5-.3-1-.3-1.5,0-.8.2-1.5.5-2.1.3-.5.7-1,1.1-1.4h0c.9-.8,2.1-1.2,3.4-1.2,1.3,0,2.5.4,3.4,1.2.5.4.9.9,1.2,1.4.3.5.5,1.1.5,1.7h0c0,.6,0,1.3-.2,1.8Z"/>
+                            <path class="cls-0" fill= "#1976d2" d="M18.8,13.4h0c-.8,0-1.6.3-2.2.8-.6.5-1,1.2-1,2h0c0,.8.3,1.6.9,2.2.6.6,1.4.9,2.3.9h0c.9,0,1.7-.4,2.3-.9.6-.6.9-1.3.9-2.2,0-.8-.4-1.5-1-2-.6-.5-1.4-.8-2.2-.8Z"/>
+                        </svg>
+                    </div>
+                    <div class="slide">
+                        <svg role="icon" height="100px" width="250px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><title>Cinema 4D</title>
+                            <path class="cls-0" fill= "white" d="M15.1,3c-6.7,0-12.1,5.4-12.1,12,0,6.7,5.5,12,12,12,6.5,0,12.1-5.3,12-12,0-1.7-.5-5.4-1.8-5.3-2,.1-2.2,4.1-2.4,5.4-.4,2.5-1.3,5.1-3,7-1.9,2.4-4.7,3.6-7.7,3.2-3.6-.6-5.9-3.3-6.7-5.2-.8-1.7-1-4.2,0-6.3,1.2-2.8,3.7-4.6,6.3-5.6,2-.8,4.1-1.2,5.4-1.4,2.5-.5,2.9-1.5,2.8-2.1,0-.3-.3-.7-.8-.9-1.1-.4-2.8-.7-4-.7Z"/>
+                            <path class="cls-1" fill= "blue" d="M20.1,4.3c.1.4,0,.8-.1,1.3-.3.6-1,1-1.9,1.3-1.6.4-3,.6-4.3,1-1.3.4-3.4,1-5.3,2.6-.3.8-.3,1.9-.4,2.7.2,5,4.6,8.9,9.2,8.7.9,0,1.9-.3,2.9-.7.6-.8,1-1.7,1.4-2.7h0c.4-1,.6-1.8.8-2.8.3-1.6.2-2.9,1-4.8.3-.6.7-1.1,1.3-1.3.2-.1.5-.1.8,0-.9-2.5-3.1-4.3-5.3-5.1h0Z"/>
+                        </svg>
+                    </div>
+                    <div class="slide">
+                        
+                        <svg role="icon" height="100px" width="250px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><title>Painter</title>
+                            <rect class="cls-1" fill="#fc2a31" width="30" height="30" rx="4" ry="4"/>
+                            <g>
+                                <circle class="cls-2" fill="white" cx="15" cy="15" r="8.5"/>
+                                <circle class="cls-2" fill="white" cx="22.6" cy="24.7" r="1.9"/>
+                                <circle class="cls-2" fill="white" cx="9.8" cy="4.6" r="1.2"/>
+                                <circle class="cls-2" fill="white" cx="6.3" cy="25.3" r=".8"/>
+                            </g>
+                            <polygon class="cls-1" fill="#fc2a31" points="15 8.3 9.3 11.7 9.3 14.7 17.3 17.2 15 18.6 11.3 16.5 11.3 16 9.3 15.3 9.3 18.3 14.9 21.6 20.7 18.3 20.7 15.3 12.7 12.8 15 11.4 18.7 13.5 18.7 14 20.7 14.6 20.7 11.7 15 8.3"/>
+                        </svg>
+                    </div>
+                    <div class="slide">
+                        <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" height="100px" width="250px" viewBox="0 0 30 30"><title>indesign</title>
+                            <rect class="cls-1" fill="#49021f" width="30" height="30" rx="4" ry="4"/>
+                            <path class="cls-2" fill= "#f36" d="M17.9,13.6c.1,0,.2,0,.3.2v4.3c0,.3-.2.5-.4.6-.2.1-.4.2-.7.2s-.6-.2-.8-.6c-.2-.4-.3-1.1-.3-1.9s.1-1.9.4-2.3c.2-.4.5-.6,1-.6s.4,0,.6,0ZM12.2,7.8c0,0,0-.1-.1-.1h-2.3c0,0-.1,0-.1.1v12.9c0,0,0,.1.1.1h2.3c0,0,.1,0,.1-.1V7.8ZM20.8,20.8s0,0,0,0c0-.6-.1-1.2-.1-1.7,0-.5,0-1,0-1.5V7.8c0,0,0-.1-.1-.1h-2.2c0,0-.1,0-.1.1v3.5c-.1,0-.3,0-.4-.1-.2,0-.5,0-.8,0-1.2,0-2.1.4-2.7,1.3-.6.9-.9,2.1-.9,3.8s.3,2.9.8,3.7c.6.8,1.3,1.2,2.3,1.2s1.7-.4,2.2-1.1l.2.8c0,0,0,.1.1.1h1.6c0,0,.1,0,.1-.1Z"/>
+                        </svg>
+                    </div>
+                    <div class="slide">
+
+                        <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" height="100px" width="250px" viewBox="0 0 30 30"><title>Photoshop</title>
+                            <rect class="cls-1" fill="#001e36" width="30" height="30" rx="4" ry="4"/>
+                            <g id="_2" data-name="2">
+                                <path class="cls-2" fill="#31a8ff" d="M6.8,14.5c0-2.1,0-4.2,0-6.3,0-.2,0-.2.2-.2,1.2,0,2.4,0,3.6,0,.8,0,1.6,0,2.3.3,1.3.4,2.3,1.1,2.8,2.3.3.7.5,1.5.4,2.3,0,.6-.1,1.1-.4,1.7-.4.9-1.1,1.6-2.1,2-.7.3-1.4.5-2.2.5-.6,0-1.3,0-1.9,0-.2,0-.2,0-.2.2,0,1.2,0,2.5,0,3.7,0,.3,0,.3-.3.3-.7,0-1.4,0-2.2,0-.2,0-.2,0-.2-.3,0-2.1,0-4.2,0-6.3ZM9.5,12.4c0,.7,0,1.3,0,2,0,.1,0,.2.1.2.3,0,.7,0,1,0,.5,0,1,0,1.5-.3.6-.2,1-.6,1.2-1.2,0-.3.1-.7,0-1,0-.4-.2-.8-.5-1.1-.3-.4-.8-.5-1.2-.6-.7-.1-1.4,0-2.2,0,0,0-.1,0-.1.1,0,.7,0,1.3,0,2Z"/>
+                                <path class="cls-2" fill="#31a8ff" d="M17.5,19.4c0-.3,0-.7,0-1,0-.2,0-.2.2-.1,1,.5,2,.8,3.1.8.3,0,.6,0,.8-.2.4-.2.5-.6.2-.9-.2-.2-.4-.3-.7-.4-.4-.2-.8-.3-1.2-.5-.6-.2-1.1-.5-1.5-.9-.9-.8-1.1-1.8-.7-3,.3-.9.9-1.4,1.7-1.8.6-.3,1.3-.4,2-.4.8,0,1.6,0,2.3.3.1,0,.2,0,.4.1.2,0,.2.1.2.3,0,.3,0,.6,0,.9,0,.3,0,.7,0,1,0,.2-.1.3-.3.2-.5-.3-1-.4-1.6-.5-.5,0-1-.1-1.5,0-.1,0-.3,0-.4,0-.4.2-.5.6-.2.9.1.1.3.2.5.3.5.2,1,.4,1.6.7.6.3,1.1.5,1.6,1,.7.6.9,1.4.8,2.3-.1,1.4-.9,2.2-2.2,2.6-.7.2-1.4.3-2.1.3-.8,0-1.7-.1-2.5-.4-.1,0-.2,0-.3-.1-.1,0-.2-.1-.2-.3,0-.4,0-.7,0-1.1Z"/>
+                            </g></svg>
+                    </div>
+                    <div class="slide">
+                        <svg role="icon" height="100px" width="250px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><title>aftereffect</title>
+                            <rect class="cls-1" fill="#000c60" width="30" height="30" rx="4" ry="4"/>
+                            <path class="cls-2" fill="#99f" d="M8.4,8.2h2.7l4.8,13.5h-2.6l-1.1-3.4h-5l-1.2,3.4h-2.4s4.8-13.5,4.8-13.5ZM9.7,10.8l-1.8,5.5h3.8l-1.8-5.5h-.2ZM21.9,11.1c2.9,0,4.5,2,4.5,5.2v.7h-7.1c0,1.8,1,2.9,2.6,2.9s1.9-.4,2.3-1.2h2.2c-.4,1.9-2.1,3-4.5,3s-4.8-2-4.8-5.3,1.8-5.3,4.8-5.3ZM21.7,13.1c-1.4,0-2.3,1-2.5,2.5h4.8c0-1.5-1-2.5-2.3-2.5Z"/>
+                    </svg>
+                    </div>
+                </div>
+            </div>
+           
+        </section>  
+
+        <!-- <section class="spacer"></section>   -->
+        
+        
+
+        <!-- SECTION 3 -->
+        <!-- --------- -->
+        <section class="sect2" id="port">
+            <div class="sect2-head">
+                <h1 class="sect2-title"> Works showcase </h1>
+                <h1 class="link1" ><a  href="https://example.com" style="color: inherit; text-decoration: none;"> Explore My Portfolio and Experiments </a></h1>
+            </div>
+            <div class="sect2-grid">
+                <div class="div">
+                    <img src="https://i.pinimg.com/736x/0e/53/24/0e5324cd549b44ea52d7852fe4fd4894.jpg" alt="3D">
+                </div>
+                <div class="div">
+                    <img src="https://i.pinimg.com/736x/22/9f/55/229f551ae6e139c09cea64bbeaf78a6e.jpg" alt="3D">
+                </div>
+                <div class="div">
+                    <img src="https://i.pinimg.com/736x/bc/7b/7b/bc7b7b242ae42d467ca2dbe8ea83545f.jpg" alt="3D">
+                </div>
+                <div class="div">
+                    <img src="https://i.pinimg.com/736x/7b/a5/42/7ba542dca6953e47d9b2ff8328717b48.jpg" alt="3D">
+                </div>
+                <div class="div">
+                    <img src="https://i.pinimg.com/736x/20/23/23/2023237b2eb6539cc36301f743945734.jpg" alt="3D">
+                </div>
+                <div class="div">
+                    <img src="https://i.pinimg.com/736x/76/34/3c/76343c1fbafdbcfdddb274db605e3d4e.jpg" alt="3D">
+                </div>
+                <div class="div">
+                    <img src="https://i.pinimg.com/736x/63/97/71/6397710135df86dd6801f42cdd468abe.jpg" alt="3D">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 -->
+        <!-- --------- -->
+
+        <section class="sect3" id="port">
+
+            <div class="section3-head">
+                <h1 class="sect3-head"> ARTWORKS </h1>
+                <button class="btn-10"> See all </button>
+            </div>
+
+            <swiper-container class="mySwiper"  slides-per-view="4"
+                space-between="30" free-mode="true">
+                <swiper-slide><img src="https://i.pinimg.com/736x/2d/fa/de/2dfade9fbca2b307df232150cf32bf84.jpg"></swiper-slide>
+                <swiper-slide><img src="https://blenderartists.org/uploads/default/optimized/4X/7/7/9/7790825ed43806c183ec222a0fd9811b558504db_2_690x388.png"></swiper-slide>
+                <swiper-slide><img src="https://i.pinimg.com/736x/c7/f6/71/c7f67103559cc03de624083d435629c1.jpg"></swiper-slide>
+                <swiper-slide><img src="https://area-resources-prd.autodesk.com/user_content_images/031/695/block-1_original.jpg?t=1727375584"></swiper-slide>
+                <swiper-slide><img src="https://i.pinimg.com/736x/02/25/dc/0225dcc4e4a5d9ea61bc395255c29dcd.jpg"></swiper-slide>
+                <swiper-slide><img src="https://area-resources-prd.autodesk.com/user_content_images/031/695/block-7_original.jpg?t=1727375604"></swiper-slide>
+                <swiper-slide><img src="https://blenderartists.org/uploads/default/optimized/4X/2/e/a/2ea54b5d92651a6615f0a66f91390bdfbdc52012_2_500x500.jpeg"></swiper-slide>
+                <swiper-slide><img src="https://blenderartists.org/uploads/default/optimized/4X/5/0/4/504b65c6899398e8bde10c1ca05fd215957daa7e_2_394x500.jpeg"></swiper-slide>
+                <swiper-slide><img src="https://blenderartists.org/uploads/default/optimized/4X/5/6/1/561d274f9eaf3c0d05ad5c01d6f973ff8bc1fc71_2_500x500.jpeg"></swiper-slide>
+            </swiper-container>
+
+        </section>
+
+        <!-- SECTION 5 -->
+        <!-- --------- -->
     
-            <section class="content" id="port">
-                <h1> Section 4 </h1>
-                <p>
-                Sed minus alias quidem error fuga sint temporibus, accusamus totam!
-                Voluptates, deserunt? Dolore nulla iure asperiores quibusdam officia
-                pariatur deleniti aspernatur, assumenda numquam blanditiis cumque
-                voluptatem deserunt nesciunt, ea atque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum
-                aspernatur nesciunt rem, officiis atque deserunt architecto excepturi
-                ducimus consectetur suscipit dolore sed tempora, assumenda corporis
-                eius quasi quas pariatur.<br><br>
-                </p>
+            <section class="sect4" id="port">
+       
             </section>
-    
+
+        <!-- Section Slider -->
+        <!-- -------------- -->
+
+
         <!-- END SECTION -->
+        <!-- ----------- -->
 
-            <section  class="content" id="me"> <h1> THIS IS ME SECTION </h1>
-                <p>
-                    Sed minus alias quidem error fuga sint temporibus, accusamus totam!
-                    Voluptates, deserunt? Dolore nulla iure asperiores quibusdam officia
-                    pariatur deleniti aspernatur, assumenda numquam blanditiis cumque
-                    voluptatem deserunt nesciunt, ea atque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum
-                    aspernatur nesciunt rem, officiis atque deserunt architecto excepturi
-                    ducimus consectetur suscipit dolore sed tempora, assumenda corporis
-                    eius quasi quas pariatur.<br><br>
-                </p>
-            </section>   
+  
 
-        <!-- FOOTER -->  
+        
+
+
+        <!-- FOOTER -->
+        <!-- ------ -->  
 
             <footer class="footer">
                     <div class="footer-content">
-                        <img src="Assets/fav/3d-art-designer.webp" alt="Logo" class="footer-logo">
+                        <img src="Assets/fav/3d-art-designer.svg" alt="Logo" class="footer-logo">
                         <div class="social-icons">
                             <a href="https://www.facebook.com" target="_blank" class="social-icon">
                             <img src="Assets/fav/fb.svg" alt="Facebook">
@@ -184,11 +383,16 @@
     <!-- Smooth Scroll | Lenis -->  
 
         <script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script> 
-        <script src="index.js"></script>
+        <script src="main/js/lenis.js"></script>
         <script src="hero.js"></script> 
+        <script src="main/js/image-track.js"></script>
         <script src="animations.js"></script> 
-       
+        <script src="main/js/logos.js"></script> 
 
+    <!-- Swiper -->  
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+    <!-- navbar --> 
         <script src="main/js/navbar.js"></script>
         <script src="main/js/sectionslider.js"></script>
 
