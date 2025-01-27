@@ -59,32 +59,52 @@
     box-sizing: border-box;
 }
 
-
-body, html {
+html {
   scroll-behavior: smooth;
+}
+body, html {
   margin: 0;
   padding: 0;
-  /* height: 100vh; */
-  min-height: 100%; /* Ensure the page can expand vertically */
-  box-sizing: border-box;
-
-
+  min-height: 100%;
 }
 
 
 
 body {
+  box-sizing: border-box;
   font-family: var(--f1);
   font-size: 10px;
-  background-image: url("../../Assets/backgrounds/dark-purple-abstract.avif");
-  background-color: var(--0);
+  /* background: #000 url("../../Assets/backgrounds/dark-purple-abstract.avif") no-repeat center center ; */
   background-size: cover;
-  background-repeat: no-repeat; 
-  background-position: center; Center the image
+  overflow-x: hidden;  
+  /* background-attachment: fixed; */
 }
 
 
 
+
+/* --------------------------------------------- PRELOADER-------------*/
+
+/* #preloader {
+  background: #000 url("../../Assets/fav/preloader.gif") no-repeat center center;
+  height: 100vh;
+  width: 100%;
+  position:fixed;
+  z-index: 1000;
+} */
+
+/* --------------------------------------------- BACKGROUND -------------*/
+#bodybg {
+  background-image: url("../../Assets/backgrounds/dark-purple-abstract.avif");
+  inset: 0 0 auto;
+  background-position: no-repeat center top;
+  background-size: cover;
+  position: fixed;
+  width: 200%;
+aspect-ratio: 9 / 21;  
+
+  z-index: -10; 
+}
 
 
 

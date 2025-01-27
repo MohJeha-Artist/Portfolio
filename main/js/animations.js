@@ -1,6 +1,7 @@
 import 'https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js';
 
 const scrollTracker = document.querySelector(".scroll-tracker");
+const bgscroll = document.querySelector("#bodybg");
 
 const Heroheading = document.querySelector(".Hero-heading");
 const Heroheading2 = document.querySelector(".Hero-heading2");
@@ -12,6 +13,12 @@ const HeroImageA = document.querySelector(".Hero-ImageA");
 
 
 const scrollTrackingTimeline = new ScrollTimeline({
+    source: document.scrollingElement,
+    orientation: "block",
+    scrollOffsets: [CSS.percent(0), CSS.percent(100)]
+});
+
+const bgscrollTimeline = new ScrollTimeline({
     source: document.scrollingElement,
     orientation: "block",
     scrollOffsets: [CSS.percent(0), CSS.percent(100)]
@@ -59,6 +66,16 @@ scrollTracker.animate(
     {
         duration: 1,
         timeline: scrollTrackingTimeline,
+    }
+);
+
+bgscroll.animate(
+    {
+        transform: ['translateY(0)', 'translateY(-50%)']
+    },
+    {
+        duration: 10,
+        timeline: bgscrollTimeline,
     }
 );
 

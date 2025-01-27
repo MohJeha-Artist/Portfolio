@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0 0 auto;
   height: 0.5rem;
-  background-color: blue;
+  background-color: #542cdb;
   z-index: 100;
   transform-origin: left;
 }
@@ -85,7 +85,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1.2;
     position: relative;
     overflow: hidden;
     border-radius: 10px;
@@ -190,7 +190,7 @@ pointer-events: none;
   right: 0;
   bottom: 0; 
       
-  background: linear-gradient(45deg,  rgba(0, 0, 0, 1),rgba(0, 0, 0, .5));
+  background: linear-gradient(45deg,  rgba(0, 0, 0, 1),rgba(0, 0, 0, .2));
   opacity: .5;
   transition: 1s;
 }
@@ -221,11 +221,12 @@ pointer-events: none;
   align-items: center; /* Center items horizontally */
   height: auto; /* Make section take full viewport height */
   text-align: center; /* Center text inside elements */
-  /* overflow: hidden; */
+  overflow: hidden;
   /* background-color: coral; */
   /* border: 1px solid lime; */
+
   padding: 0 50px ;
-  padding-bottom: 20px;
+  padding-bottom: 10px; /* cyan */
 
 .sect2-head {
   display: flex;
@@ -233,10 +234,7 @@ pointer-events: none;
   align-items: center;
   width: 95%;
   height: 40px;
-  /* background-color: yellow; */
-  /* border: 1px solid lime; */
-  margin-bottom: 15px;
-  /* padding-top: 10px; */
+  margin-bottom: 20px;
   border-top: 1px solid rgba(128, 128, 128, 0.5);
 }
 
@@ -266,6 +264,8 @@ width: 95%;
 gap: 10px;
 overflow: hidden;
 /* border: 1px solid yellow; */
+
+padding: 10px 5px; /* cyan */
 }
 
 .sect2-grid > .div {
@@ -277,11 +277,15 @@ overflow: hidden;
 }
 
 .div img {
-  height: 100%;
+ height: 100%;
 width: 100%;
 object-fit: cover;
 transition: transform .5s ease , filter 1s ;
 }
+
+}
+
+/* ---------------------------------*/
 
 .div:not(:hover) {
   transform: translateY(5px);
@@ -290,18 +294,16 @@ img {
 }
 }
 
-}
-
 /* --- Sect 2 // Mobile --- */
 
 @media (max-width: 768px) {
 .sect2 {
-  padding: 10px;
+  padding: 05px ;
 }
 .sect2-grid {
   display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
 }
 
@@ -335,18 +337,25 @@ grid-template-rows: repeat(3, 1fr);
   height: 100dvh;
   text-align: center;
   overflow: hidden;
-  /* background-color: var(--0); */
 
+/* background-color: purple; */
+/* border: 1px solid lime; */
+
+padding: 10px;
+/* ------------------------------*/
 
 swiper-container {
   width: 100%;
   height: 55%;
+  
 }
 
 swiper-slide {
+
+
   text-align: center;
   font-size: 18px;
-  /* background: #fff; */
+
   display: flex;
   justify-content: center;
   align-items: center;  
@@ -378,6 +387,8 @@ swiper-slide img:hover {
   align-items: center; /* Aligns items vertically in the center */
   padding: 10px; /* Optional: Adds some spacing around the content */
   gap: 50%
+
+  /* border: 1px solid lime; */
 }
 
 .sect3-head { 
@@ -407,7 +418,22 @@ swiper-slide img:hover {
   color: #ffffff; 
 }
 
+@media (max-width: 768px) {
+  swiper-container {
+    height: 80%;
+  }
+
+  .section3-head {
+    flex-direction: column;
+    /* border: 1px solid lime; */
+  }
+  .sect3-head {
+    font-size: 3rem;
+  }
 }
+}
+
+
 
 
 /* ----------------------------------------------------------------------- SECTION 5 ----- */
