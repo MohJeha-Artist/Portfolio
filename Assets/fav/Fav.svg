@@ -3,20 +3,27 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #fff;
+        display: none;
       }
 
       .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
         stroke-width: 0px;
       }
 
-      .cls-2 {
+      .cls-3 {
         fill: #542cdb;
       }
     </style>
   </defs>
   <circle class="cls-1" cx="25" cy="25" r="25"/>
-  <polygon class="cls-1" points="38.7 13.7 38.7 14.1 33 22.2 33 18.8 38.7 13.7"/>
-  <polygon class="cls-2" points="38.7 14.1 38.7 32.9 33 38 25 45 17.8 38.7 17.8 30.9 25 37.3 33 30.1 33 22.2 38.7 14.1"/>
-  <polygon class="cls-2" points="38.6 5 38.6 12.7 33 17.8 30.6 19.9 25 25 17.1 17.8 17.1 38 11.4 32.9 11.4 5 17.1 10.1 25 17.3 33 10.1 38.6 5"/>
+  <rect class="cls-2" width="50" height="50" rx="15" ry="15"/>
+  <g>
+    <polygon class="cls-2" points="38.7 13.7 38.7 14.1 32.9 22.2 32.9 18.8 38.7 13.7"/>
+    <polygon class="cls-3" points="38.7 14.1 38.7 32.9 32.9 38 24.9 45 17.7 38.7 17.7 30.9 24.9 37.3 32.9 30.1 32.9 22.2 38.7 14.1"/>
+    <polygon class="cls-3" points="38.5 5 38.5 12.7 32.9 17.8 30.6 19.9 24.9 25 17.1 17.8 17.1 38 11.3 32.9 11.3 5 17.1 10.1 24.9 17.3 32.9 10.1 38.5 5"/>
+  </g>
 </svg>
