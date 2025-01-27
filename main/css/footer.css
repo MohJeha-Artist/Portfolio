@@ -1,34 +1,33 @@
 /* Footer Styles */
 .footer {
     position: relative;
-    display: flex; /* Enable Flexbox */
+    display: flex;
     flex-direction: column;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */ 
-    text-align: center; /* Centers content inside the section */
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
     
     margin: 0 auto;
 
-    /* background-color: var(--0); */
     padding: 20px 10px;
     border-radius: 30px 30px 0 0;
-    color: #ffffff; /* Default text color */
+    color: #ffffff; 
 
-    border-top: 3px solid var(--3); /* Separator line */
+    border-top: 3px solid var(--3);
     width: 97%;
     height: 50dvh;
 }
 .footer-content {
     position: absolute;
-    display: flex; /* Enable Flexbox */
+    display: flex;
     flex-direction: column;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */ 
+    justify-content: center;
+    align-items: center; 
     top: 35px;
 }
 
 .footer-logo {
-    width: 240px; /* Adjust size as needed */
+    width: 240px;
     height: auto;
     margin-bottom: 50px;
     
@@ -37,27 +36,28 @@
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 15px; /* Spacing between icons */
+    gap: 15px; 
 }
 
 .social-icon img {
-    width: 30px; /* Icon size */
+    width: 30px; 
     height: 30px;
-    transition: transform 0.3s ease; /* Hover effect */
+    transition: transform 0.3s ease; 
 }
 
 .social-icon img:hover {
-    transform: scale(1.2); /* Enlarges icon on hover */
+    transform: scale(1.2);
 }
 
 /* Responsive Design */
+
 @media (max-width: 600px) {
     .footer-logo {
-        width: 60px; /* Smaller logo for small screens */
+        width: 60px;
     }
 
     .social-icon img {
-        width: 25px; /* Smaller icons for small screens */
+        width: 25px; 
         height: 25px;
     }
 }
