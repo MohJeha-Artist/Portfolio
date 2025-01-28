@@ -52,6 +52,33 @@
   
 }
 
+
+
+
+
+Complementary Color:
+#dbb42c (Gold/Yellow): Adds contrast and warmth to the purple.
+Analogous Colors:
+#2c56db (Bright Blue): For a cohesive, cool-toned look.
+#6b2cdb (Deep Violet): For a monochromatic scheme with depth.
+Triadic Colors:
+#2cdb54 (Bright Green): A lively, energizing accent.
+#db2c54 (Bright Red-Pink): Adds boldness and vibrancy.
+Neutral Pairings:
+#ffffff (White): Clean and bright.
+#f4f4f4 (Soft Light Gray): For subtle elegance.
+#1a1a1a (Dark Charcoal): Adds drama and contrast.
+Muted Pairings:
+#a297eb (Soft Lavender): A softer, pastel complement.
+#8bb4db (Muted Cyan): Adds a gentle, fresh feel.
+
+
+
+
+
+
+
+
 /* Reset some default styles */
 * {
     margin: 0;
@@ -85,13 +112,13 @@ body {
 
 /* --------------------------------------------- PRELOADER-------------*/
 
-/* #preloader {
-  background: #000 url("../../Assets/fav/preloader.gif") no-repeat center center;
+#preloader {
+  background: #000 url("../../Assets/fav/loader.gif") no-repeat center center;
   height: 100vh;
   width: 100%;
   position:fixed;
   z-index: 1000;
-} */
+}
 
 /* --------------------------------------------- BACKGROUND -------------*/
 #bodybg {
