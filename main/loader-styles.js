@@ -4,25 +4,25 @@
 const stylesheets = [
 
     // Page Setup | Styling //
-    '/main/css/base.css',
-    '/main/css/styles.css',
-    '/main/css/transition-page.css',
-    '/main/css/scrollbar.css',
+    'main/css/base.css',
+    'main/css/styles.css',
+    'main/css/transition-page.css',
+    'main/css/scrollbar.css',
 
     // Sections | Styling //
-    '/main/css/2Services.css',
-    '/main/css/3Workgallery2.css',
-    '/main/css/4Arts.css',
+    'main/css/2Services.css',
+    'main/css/3Workgallery2.css',
+    'main/css/4Arts.css',
     // '/main/css/5Softwares.css',
 
     // Navigation bar //
-    '/main/navbar/navbar.css',
+    'main/navbar/navbar.css',
     
     // Header | Footer //
-    '/main/css/0Hero.css',
-    '/main/css/1Footer.css',
+    'main/css/0Hero.css',
+    'main/css/1Footer.css',
 
-    '/main/css/about.css',
+    'main/css/about.css',
 
   ];
   

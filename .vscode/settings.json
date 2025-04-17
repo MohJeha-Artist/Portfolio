@@ -1,0 +1,11 @@
+{
+    "liveServer.settings.root": "./",
+    "liveServer.settings.proxy": {
+      "enable": true,
+      "baseUri": "/",
+      "proxyUri": "http://localhost:5500"
+    },
+    "path-autocomplete.pathMappings": {
+      "/": "${workspaceFolder}"
+    }
+  }

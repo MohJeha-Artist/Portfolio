@@ -121,58 +121,208 @@ body
 } */
 
 
-/* --------------------------------------------- BACKGROUND -------------*/
-/* #bodybg 
+
+
+
+/* ----------------------------------------------------------*/
+
+/* Scrollbar Track */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+/* Scrollbar Handle (Thumb) */
+::-webkit-scrollbar-thumb {
+  background: var(--3); /* Color of the scrollbar handle */
+  border-radius: 6px; /* Rounded corners */
+  border: 4px solid transparent; /* Transparent border */
+  background-clip: content-box; /* Ensures the background doesn't cover the border */
+}
+
+/* Scrollbar Handle on Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--3); /* Darker color on hover */
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  background: transparent
+  border-radius: 6px; Rounded corners
+}
+
+/* Scrollbar Corner (optional) */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* ----------------------------------------------------------*/
+
+
+.scroll-tracker 
   {
-    background-image: url("../../Assets/backgrounds/dark-purple-abstract.avif");
-    background-color: var(--0);
-
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;
-
     position: fixed;
-    top: 0;
-    left: 0%;
-    
-
-    width: 100%;
-    aspect-ratio: 2 / 3 ;
-    
-    z-index: -100;  
-  } */
-
-/* #bodybgm 
-  {
-    display: none;
-    background-image: url("../../Assets/backgrounds/dark-purple-abstract.avif");
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;
-
-    position: fixed;
-    top: 0;
-    left: -100%;
-
-
-    width: 300%;
-    aspect-ratio: 2 / 3 ;
-
-    z-index: -100;  
+    inset: 0 0 auto;
+    height: 0.5rem;
+    background-color: #542cdb;
+    z-index: 100;
+    transform-origin: left;
   }
 
 
-@media (max-width: 768px) 
+.spacer, .shadow 
   {
-    #bodybg 
+    position: absolute;
+    width: 100%;
+    top: 0;
+    margin: auto;
+    position: relative;
+    z-index: -10;
+  }
+
+.spacer:before 
+  {
+    content: '';
+    position: absolute;
+
+    width: 5px;
+    height: 100%;
+    left: 0;
+
+    background-color: grey;
+  }
+
+.shadow::before 
+  {
+    content: '';
+    position: absolute;
+    width: 100%;
+
+    height: 150px;
+    background: 
+      linear-gradient(180deg, rgb(0, 0, 0) 20%, transparent 70%);
+      pointer-events: none;
+
+    }
+
+.shadow_B::before 
+  {
+    content: '';
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    height: 300px;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 70%, rgba(0,0,0, 0.7) );
+    pointer-events: none;
+  }
+
+/* --------------------------------------------------------------------------------------------*/
+
+
+
+
+.XX {
+  /* border: 1px dashed purple; */
+  position: fixed;
+  height: 100vh;
+  width:95%;
+  z-index: 5000;
+  pointer-events: none;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.XX2 {
+    /* border: 1px dashed rgb(0, 128, 9); */
+  position: fixed;
+  height: 100vh;
+  width:76%;
+  z-index: 5000;
+  pointer-events: none;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.child {
+  width: 95%;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* border: 2px solid rgba(255, 255, 255, 0.5); */
+  height: auto;
+  /* overflow: hidden; */
+
+  /* padding:  75px 0; */
+}
+
+.child-full {
+  width: 100;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* border: 5px solid rgba(8, 0, 255, 0.2); */
+  height: auto;
+  overflow: hidden;
+
+  /* padding:  75px 0; */
+}
+
+/* @media (min-width: 1440px) 
+  {
+    .child 
       {
-        display: none;
-      }
-    #bodybgm
-      {
-        display: block;
+        width: 88%;
       }
   } */
 
 
+.child.boxed {
+  margin: 10px auto;
+  width: 97%;
+  border-radius: 20px;
+  background: grey;
+  
+}
 
+
+
+    .fullframe
+    {
+      /* margin-top: 100px; */
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 420px;
+        /* border: 1px solid limegreen; */
+        object-fit: cover;
+        overflow: hidden;
+
+        align-items: center;
+    }
+
+    .fullframe::before
+    {
+      content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+  linear-gradient(3deg, 
+  var(--0) 15%, 
+  transparent 15.5%, 
+  transparent 85%, 
+  var(--0) 85.5%);
+  z-index: 1;
+  pointer-events: none; /* allows clicks through the overlay */
+   
+    }
+
+
+
+    .frame-depth {
+      width: 100%;
+      height: auto;
+    }
