@@ -1,0 +1,272 @@
+
+
+/* ----------------------------------------------------- Header Type | Cover -- */ 
+
+
+.HERO 
+  {
+    position: relative;
+    margin: 0 auto;
+    width: 95%;
+    height: 100vh;
+    height: 100dvh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    overflow: hidden; 
+border-bottom: 2px solid var(--3);
+border-radius: 0 0 25px 25px;
+  z-index: 10;
+
+
+  background: linear-gradient(45deg ,#030303 30%, #1f002e );
+  }
+
+.hero-banner 
+{
+  top: 30px;
+  width: 82%;
+  height: 35px;
+  position: absolute;
+  display: flex;
+/* border: 1px solid lime; */
+justify-content: space-between;
+z-index: 100;
+
+}
+
+
+
+.HERO .Hero-Image 
+  {
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   
+    z-index: 0;
+  }
+
+  .PRJ_banner {
+    height: 60dvh;
+  }
+
+  .HERO .PRJ_Image{
+    display: flex;
+    width: 50%;
+    right: 7%;
+    /* border: 1px solid lime; */
+  }
+
+
+.Hero-name
+  {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 2rem;
+    font-family: var(--f2);
+    font-weight: 100;
+    color: var(--1);
+    pointer-events: none;
+  }
+  
+  .Hero-head 
+  {
+    font-weight: 700;
+    font-size: 4rem;
+  }
+
+  .Hero-subhead 
+  {
+    line-height: .1;
+    font-size: 1rem;
+  }
+
+  @media (min-width: 1440px) 
+  {
+    .hero-banner 
+    {
+      top: 50px;
+      height: 60px;
+    }
+
+    .Hero-name 
+    {
+      font-size: 3rem;
+    }
+
+    .Hero-head 
+    {
+      font-size: 6rem;
+    }
+
+    .Hero-subhead 
+    {
+      font-size: 1.5rem;
+    }
+
+  }
+
+
+
+.Hero-heading-mobile1 
+  {
+    position: absolute;
+    top: 10%;
+    margin: 0;
+    padding: 0;
+    font-size: calc(120px);
+    font-family: 'Poppins', sans-serif;
+    color: var(--1); 
+    white-space: nowrap; 
+    z-index: 0; 
+    pointer-events: none;
+    transform: translateY(-20px);
+  }
+
+.Hero-heading-mobile2 
+  {
+    pointer-events: none;
+    position: absolute;
+    top: 10%;
+    margin: 0;
+    padding: 0;
+    font-size: calc(120px);
+    font-family: 'Poppins', sans-serif;
+    transform: translateY(-15px);
+    z-index: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--1);
+    text-stroke: 1px var(--1); 
+  }
+
+
+
+@media (max-width: 768px) 
+  { 
+    .Hero-heading, .Hero-heading2
+      {
+    display: none;
+      }
+
+    .Hero-heading-mobile1, .Hero-heading-mobile2 
+      { 
+        line-height: 1;
+      }
+
+    header.HERO
+      {
+        height: 80vh;
+        height: 80dvh; 
+      }
+    .Hero-subheading
+      {
+        font-size: calc(7vw);
+      }
+
+  }
+
+@media (min-width: 768px) 
+  { 
+    .Hero-heading-mobile1, .Hero-heading-mobile2 
+      {
+        display: none;
+      }
+  }
+
+.Hero-grad 
+  {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background: radial-gradient(ellipse, rgb(255, 255, 255), rgba(255, 255, 255, 0.3), transparent,transparent,transparent);
+    left: 50%;
+    transform: translate(-50%, -10px);
+    z-index: 100;
+  }
+
+
+
+
+
+
+
+/* ----------------------------------------------------- Header Type  |  Banner -- */  
+
+
+/* ----------------------------------------------------- WAVES  |  Shadow BLEND -- */ 
+
+.waves 
+  {
+    position:absolute;
+    width: 100vw;
+    height:5vh;
+    margin-bottom:-7px; /*Fix for safari gap*/
+    min-height:100px;
+    max-height:150px;
+    z-index: 11; 
+    
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+
+.content 
+  {
+    position:relative;
+    height:20vh;
+    text-align:center;
+    background-color: white;
+  }
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) 
+  {
+    .waves {
+      height:40px;
+      min-height:40px;
+    }
+    .content {
+      height:30vh;
+    }
+    h1 {
+      font-size:24px;
+    }
+  }

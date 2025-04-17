@@ -1,0 +1,29 @@
+ 
+  .transition-1 {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    background-color: #542cdb;
+    transition: 0.2s ease-out;
+    overflow: hidden; /* Prevents anything from overflowing outside the box */
+  }
+  
+  .transition-1::before {
+    content: ''; /* Ensure the pseudo-element renders */
+    background: url("../../Assets/fav/AvatarImage.webp") no-repeat center center;
+    background-size: contain; /* Ensures the logo scales to fit within the box */
+    position: absolute;
+    top: 50%; /* Centers the logo vertically */
+    left: 50%; /* Centers the logo horizontally */
+    transform: translate(-50%, -50%); /* Offsets the position to perfectly center the logo */
+    width: auto;
+    height: auto;
+  }
+  
+  
+  .transition-1.is-active {
+    top: 0;
+  }

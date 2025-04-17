@@ -12,50 +12,46 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-:root {
-  --f0:  Arial, Helvetica, sans-serif;
-  --f1: 'Mulish', sans-serif;
-  --f2: 'Roboto', sans-serif;
-  --f3: 'Poppins', sans-serif;
+:root 
+  {
+    --f0:  Arial, Helvetica, sans-serif;
+    --f1: 'Mulish', sans-serif;
+    --f2: 'Roboto', sans-serif;
+    --f3: 'Poppins', sans-serif;
 
 
-      /*Palette*/
-      --0: rgb(0, 0, 0);
-      --1: rgba(10,10,10);
+    /*Palette*/
+    --5: #118ba7;
+    --4: #00344d; 
+    --3: #542cdb;  
+    --2: #0c0613;
+    --1: #ddfef8;
+    --0: hsl(270, 50%, 2%);
+ 
+    --gradient: 
+        linear-gradient(90deg, 
+        rgba(50, 50, 50, 0.5), 
+        rgba(100, 100, 100, 0.5), 
+        rgba(50, 50, 50, 0.5));
       
-      --2: #118ba7;
-      --3: #542cdb;  
-      --4: #ffffff;  
-      --5: #2c3e50;  
-  
-      --P-1: #542cdb;
-      
-      --gradient: 
-          linear-gradient(90deg, 
-          rgba(50, 50, 50, 0.5), 
-          rgba(100, 100, 100, 0.5), 
-          rgba(50, 50, 50, 0.5));
-      
-   /* Nav Bar */
-  
-  --bar-color: rgba(30, 30, 30, .5);
-  
-      /* Buttons Hover */
-  --Hover-text: var(--p-1);
-  --Hover-border: var(--4);
-  --Hover-fill: rgba(10, 10, 10,.2);   
-      
-      /* Buttons Active */
-  --Active-text: var(--3); 
-  --Active-border: var(--2);
-  --Active-fill: rgba(10, 10, 10, .2);
-  
-}
+    /* Nav Bar */ 
+    --bar-color: rgba(0, 0, 0, 0.5);
+    --bar-border: rgba(255, 255, 255, 0.2);
+    --bar-shadow: rgba(0, 0, 0, 0.2);
+
+    --text-color: grey;
+    --text-hover: white;
+    --text-fill-hover: #542cdb;
+
+    --text-Active: white;
+    --text-border-Active : #542cdb;
+    
+  }
 
 
 
 
-
+/*
 Complementary Color:
 #dbb42c (Gold/Yellow): Adds contrast and warmth to the purple.
 Analogous Colors:
@@ -71,7 +67,7 @@ Neutral Pairings:
 Muted Pairings:
 #a297eb (Soft Lavender): A softer, pastel complement.
 #8bb4db (Muted Cyan): Adds a gentle, fresh feel.
-
+*/
 
 
 
@@ -84,57 +80,99 @@ Muted Pairings:
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+  }
 
-html {
-  scroll-behavior: smooth;
-}
-body, html {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-}
+html 
+  {
+    scroll-behavior: smooth;
+  }
+
+body, html 
+  {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;  
+  }
 
 
 
-body {
-  box-sizing: border-box;
-  font-family: var(--f1);
-  font-size: 10px;
-  /* background: #000 url("../../Assets/backgrounds/dark-purple-abstract.avif") no-repeat center center ; */
-  background-size: cover;
-  overflow-x: hidden;  
-  /* background-attachment: fixed; */
-}
+body 
+  {
+    box-sizing: border-box;
+    font-family: var(--f1);
+    font-size: 10px;
+    background: var(--0);
+    background-size: cover;
+  }
 
 
 
 
 /* --------------------------------------------- PRELOADER-------------*/
 
-#preloader {
-  background: #000 url("../../Assets/fav/loader.gif") no-repeat center center;
+/* #preloader {
+  background: url("../../Assets/fav/loader.gif") no-repeat center center;
+  background-size: cover;
   height: 100vh;
   width: 100%;
-  position:fixed;
-  z-index: 1000;
-}
+  position: fixed;
+  z-index: 1002;
+  display: none;
+} */
+
 
 /* --------------------------------------------- BACKGROUND -------------*/
-#bodybg {
-  background-image: url("../../Assets/backgrounds/dark-purple-abstract.avif");
-  inset: 0 0 auto;
-  background-position: no-repeat center top;
-  background-size: cover;
-  position: fixed;
-  width: 200%;
-aspect-ratio: 9 / 21;  
+/* #bodybg 
+  {
+    background-image: url("../../Assets/backgrounds/dark-purple-abstract.avif");
+    background-color: var(--0);
 
-  z-index: -10; 
-}
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+
+    position: fixed;
+    top: 0;
+    left: 0%;
+    
+
+    width: 100%;
+    aspect-ratio: 2 / 3 ;
+    
+    z-index: -100;  
+  } */
+
+/* #bodybgm 
+  {
+    display: none;
+    background-image: url("../../Assets/backgrounds/dark-purple-abstract.avif");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+
+    position: fixed;
+    top: 0;
+    left: -100%;
 
 
+    width: 300%;
+    aspect-ratio: 2 / 3 ;
 
+    z-index: -100;  
+  }
+
+
+@media (max-width: 768px) 
+  {
+    #bodybg 
+      {
+        display: none;
+      }
+    #bodybgm
+      {
+        display: block;
+      }
+  } */
 
 
 

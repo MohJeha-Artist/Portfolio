@@ -1,0 +1,235 @@
+
+.navbar {
+    position: fixed;            /* Fix the navbar at the bottom of the screen */
+    left: 50%;                  /* Center the navbar horizontally */
+    bottom: 30px;               /* 50px gap from the bottom of the screen */
+    transform: translateX(-50%) translateY(1px);
+    
+    width: 256px;                 
+    height: 50px; 
+    border-radius: 20px;
+    padding: 8px 0;
+    
+    background: var(--bar-color);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    z-index: 900;  
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--bar-border);
+    box-shadow: 0 4px 6px var(--bar-shadow);
+    transition-delay: 5s;
+    transition: 1s;
+}
+
+.navlogo {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* Logo styling */
+.logo {
+    position: absolute;
+    left: 4rem;
+    bottom: -1rem;
+    height: 30px;               /* Ensure the logo fits within the navbar height */
+    width: auto;                /* Maintain the logo's aspect ratio */
+    object-fit: contain;        /* Ensure the logo is contained within its bounding box */
+    transition: 1s;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+       display: none;
+    }
+}
+
+.nav__links {
+  
+opacity: 0;
+    display: flex;
+    list-style: none;
+    margin: 0; 
+    transform: translateX(200px);
+    justify-content: space-between;
+    width: 100;                  
+    padding: 0 0;               
+    flex-grow: 1; 
+    transition: 1s
+}
+
+.navbar:hover { 
+    width: 512px;
+}
+
+.navbar:hover .logo { 
+    left: 40px;  transition-delay: .5s;  
+}
+
+.navbar:hover .nav__links {
+    opacity: 1;
+}
+
+.navbar:hover .nav__links li a { 
+    margin-left: 25px;
+    padding: 7px 10px;
+    pointer-events: auto;
+}
+
+/* Navigation button (links) styling */
+.nav__links li a {
+    pointer-events: none;     
+    text-decoration: none;
+    color: var(--text-color);                  /* White text color */
+  
+    font-weight: normal;
+    font-size: 18px;               /* Font size for the links */
+    padding: 7px 0;   
+    margin-left: -100px;
+    border-radius: 15px;           /* Rounded button edges */
+    display: inline-block; 
+    transition: 1s;
+}
+
+/* Hover effect for the links */
+.nav__links li a:hover 
+    {
+        background-color: var(--text-fill-hover);
+        color: var(--text-hover);
+    }
+
+.nav__links li a.active 
+    {
+        border: 1px solid var(--text-border-Active); 
+        color: var(--text-Active);
+    }
+
+
+
+
+
+
+   /* ---------------------------------------------------------------------------*/
+
+
+.navbar-mobile {
+    position: fixed;            /* Fix the navbar at the bottom of the screen */
+    left: 50%;                  /* Center the navbar horizontally */
+    bottom: 10px;               /* 50px gap from the bottom of the screen */
+    transform: translateX(-50%) translateY(1px);
+    
+    width: 150px;                 
+    height: 45px; 
+    border-radius: 20px;
+    padding: 8px 0;
+    
+    background: var(--bar-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /*overflow: hidden;*/
+    
+    z-index: 1000;  
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--bar-border);
+    box-shadow: 0 4px 6px var(--bar-shadow);
+    transition-delay: 5s;
+    transition: 1s;
+}
+
+.navbar-mobile:hover { 
+    width: 300px;
+}
+
+.logo-mobile {
+    position: absolute;
+    /*left: 40px;                  Align logo to the left */
+    height: 30px;               /* Ensure the logo fits within the navbar height */
+    width: auto;                /* Maintain the logo's aspect ratio */
+    object-fit: contain;        /* Ensure the logo is contained within its bounding box */
+    transition: 1s; transition-delay: .2s;
+}
+
+.navbar-mobile:hover .logo-mobile { 
+    opacity: 0;  
+}
+
+@media (min-width: 768px) {
+    .navbar-mobile {
+       display: none;
+    }
+}
+
+.nav__links-mobile {
+  opacity: 1;
+    /*position: absolute;*/
+    display: flex;
+    list-style: none;
+    margin: 0; 
+    transform: translateX(-.8rem) translateY(0);
+    justify-content: center;
+    width: 100%;                  
+    padding: 0 0;               
+    flex-grow: 0; 
+    transition: .2s; 
+     
+}
+
+.navbar-mobile:hover .nav__links-mobile { 
+    opacity: 1;
+    transition-delay: .5s;
+}
+
+.nav__links-mobile li a {
+ pointer-events: auto;
+    text-decoration: none;
+    color: var(--text-color);                  /* White text color */
+    font-size: 18px;               /* Font size for the links */
+    padding: 7px 10px;   
+    margin-left: 1.5rem;
+    border-radius: 10px;           /* Rounded button edges */
+    display: inline-block; 
+    transition: scale 0.5s ease-out, transition-delay 0s;
+    scale: 0%;
+}
+
+.navbar-mobile:hover .nav__links-mobile li a { 
+    scale: 100%;  
+    transition: scale 1s ease-in, transition-delay 1s;
+    /*padding: 7px 10px;*/
+}
+
+
+
+/* Hover effect for the links */
+.nav__links-mobile li a:hover {
+background-color: var(--text-fill-hover);
+    color: var(--text-hover);
+}
+
+.nav__links-mobile li a.active {
+border: 1px solid var(--text-border-Active); 
+    color: var(--text-Active);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

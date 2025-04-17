@@ -1,0 +1,28 @@
+/* Scrollbar Track */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+  }
+  
+  /* Scrollbar Handle (Thumb) */
+  ::-webkit-scrollbar-thumb {
+    background: var(--3); /* Color of the scrollbar handle */
+    border-radius: 6px; /* Rounded corners */
+    border: 4px solid transparent; /* Transparent border */
+    background-clip: content-box; /* Ensures the background doesn't cover the border */
+}
+  
+  /* Scrollbar Handle on Hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--3); /* Darker color on hover */
+  }
+  
+  /* Scrollbar Track */
+  ::-webkit-scrollbar-track {
+    background: transparent
+    border-radius: 6px; Rounded corners
+  }
+  
+  /* Scrollbar Corner (optional) */
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
