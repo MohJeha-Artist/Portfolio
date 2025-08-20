@@ -1,0 +1,135 @@
+.platform
+  {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+  
+    aspect-ratio: 21/9;
+    object-position: center;
+    overflow: hidden;
+
+  }
+
+  .platform::before
+  {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: 
+      linear-gradient(2deg, 
+      var(--0) 10%, 
+      transparent 10.5%, 
+      transparent 90%, 
+      var(--0) 90.5%);
+      z-index: 1;
+      pointer-events: none; /* allows clicks through the overlay */
+   
+  }
+
+  .platform-bg
+  {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+
+  }
+
+  .viewer-container
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    width: 40%;
+    height: auto;
+    right: 10%;
+    aspect-ratio: 1/1;
+ 
+    /* border: 1px solid red; */
+  }
+
+
+  #view-image
+  {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    /* transform: translateX(100%); */
+  }
+
+  .platform-glow
+  {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 20%;
+background:
+      radial-gradient(
+        50% 50% at 50% 50%,
+        rgb(142, 27, 165) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    aspect-ratio: 1/1;
+ mix-blend-mode: color-dodge;
+    /* border: 5px solid cyan; */
+z-index: 1;
+  }
+/* _________________________________________________________________________ */
+
+
+
+.grid-container
+  {
+    position: absolute;
+    width:auto;
+    height: auto;
+cursor: pointer;
+    left: 10%;
+    gap: 10px;
+    /* transform: translateY(25vh); */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    transition: all 1s;
+    border: 1px solid red;
+  }
+
+.grid-image
+  {
+    /* position: absolute; */
+    width: 128px;
+    aspect-ratio: 5/4;
+    object-fit: cover;
+    /* object-position: center; */
+    transition: all 1s;
+  }
+
+  .grid-image img
+  {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 1s;
+  }
+
+
+
+  .viewer-image.active {
+    opacity: 1;
+    transform: scale(1) translateZ(0);
+    z-index: 2;
+}
+
+.viewer-image.inactive {
+    opacity: 0;
+    transform: scale(1.05) translateZ(-100px);
+    z-index: 1;
+}

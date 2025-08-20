@@ -24,7 +24,7 @@ scrollTracker.animate(
 
 // Scroll Trigger 
 document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll(".sect1-head, .sect1-grid, .wrk-fgrid, .sect5-title, .sect5-title2, .scroller"); // Select multiple elements
+    const elements = document.querySelectorAll(".services-head, .services-grid, .wrk-fgrid, .sect5-title, .sect5-title2, .scroller"); // Select multiple elements
 
     function checkVisibility() {
         elements.forEach(element => { // Loop through each element

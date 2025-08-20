@@ -1,0 +1,141 @@
+/* Footer Styles */
+.footer 
+    {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        text-align: center;
+
+        margin: 0 auto;
+        padding: 20px 10px;
+        border-radius: 30px 30px 0 0;
+        color: var(--1); 
+        border-top: 3px solid var(--3);
+        width: 97%;
+        height: 100px;
+        background-color: var(--0);
+        overflow: hidden;
+
+
+    }
+
+    #abt-footer 
+    {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        text-align: center;
+        margin-top: 100px;
+
+        /* padding: 20px 10px; */
+        border-radius: 30px 30px 0 0;
+        color: var(--1); 
+        border-top: 3px solid var(--3);
+        width: 100%;
+        height: 100px;
+        /* background-color: var(--4); */
+        overflow: hidden;
+
+    
+   
+        z-index: 200000;
+    }
+.footer-content 
+    {
+        display: flex;
+        width: 90%;
+        /* gap: 50px; */
+        justify-content: space-between;
+        align-items: center; 
+        height: 200px; 
+        /* border: 1px solid yellow; */
+    }
+
+    .ft-b {
+        display: flex;
+        width: auto;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+    /* border: 3px solid lime; */
+    }
+
+.footer-logo 
+    {
+        height: 40px;
+    }
+
+    .copyrights{
+        position: absolute;
+        font-size: 1rem;
+        justify-content: center;
+        align-self: center;
+    }
+
+
+
+
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; 
+}
+
+.scl-icon {
+    /* border: 1px solid red; */
+    align-items: center;
+
+}
+
+.arrowback {
+    margin-left: 50px;
+    fill: grey;
+    transition: .5s ease;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><circle cx="16" cy="16" r="8" fill="%23542cdb"/></svg>') 16 16, auto;
+
+}
+
+.arrowback:hover{
+        transform: translateY(-5px);
+    fill: var(--3);
+
+}
+
+.bk-btn {
+    background: rgba(255, 0, 0, 0);
+}
+
+.scl-icon img 
+    {
+        width: 30px; 
+        height: 30px;
+        transition: transform 0.3s ease; 
+    }
+
+.scl-icon img:hover 
+    {
+        transform: scale(1.2);
+    }
+
+/* Responsive Design */
+
+@media (max-width: 600px) 
+    {
+        .footer-logo 
+            {
+                width: 60px;
+            }
+
+        .social-icon img 
+            {
+                width: 25px; 
+                height: 25px;
+            }
+}

@@ -1,0 +1,130 @@
+.platform-viewer-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.platform-viewer-section::before
+  {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: 
+      linear-gradient(2deg, 
+      var(--0) 10%, 
+      transparent 10.5%, 
+      transparent 90%, 
+      var(--0) 90.5%);
+      z-index: 1;
+      pointer-events: none; /* allows clicks through the overlay */
+   
+  }
+.platform-viewer-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.platform-content {
+    display: flex;
+    height: 100%;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.grid-container {
+    position: absolute;
+    width:auto;
+    height: auto;
+/* cursor: pointer; */
+    left: 10%;
+    gap: 10px;
+    /* transform: translateY(25vh); */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    transition: all 1s;
+    border: 1px solid red;
+}
+.grid-card  
+    {
+        width: 128px;
+        height: auto;
+        aspect-ratio: 5/4;
+        border: 1px solid green;
+    }
+
+
+.grid-image {
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.grid-image:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.viewer-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    width: 40%;
+    height: auto;
+    right: 10%;
+    aspect-ratio: 1/1;
+    border: 1px solid blue;
+}
+
+.viewer-image {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transform: scale(0.95) translateZ(-100px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
+}
+
+.platform-glow
+  {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 20%;
+background:
+      radial-gradient(
+        50% 50% at 50% 50%,
+        rgb(142, 27, 165) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    aspect-ratio: 1/1;
+ mix-blend-mode: color-dodge;
+    /* border: 5px solid cyan; */
+z-index: 10;
+  }
+
+.viewer-image.active {
+    opacity: 1;
+    transform: scale(1) translateZ(0);
+    z-index: 2;
+}
+
+.viewer-image.inactive {
+    opacity: 0;
+    transform: scale(1.05) translateZ(-100px);
+    z-index: 1;
+}

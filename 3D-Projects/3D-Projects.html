@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    
+    <title> 3D Projects </title>
+    <link rel="icon" href="../Assets/fav/Fav.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../main/css/cursor.css">
+
+    <!-- ------------------------------------------------------ -->
+
+    <link rel="stylesheet" href="../main/css/3D-Projects.css">
+    <!-- BASE -->
+    <link rel="stylesheet" href="../main/css/base.css">
+    <link rel="stylesheet" href="../html/Hero-banner.css">
+    <link rel="stylesheet" href="../html/Footer.css">
+
+    <link rel="stylesheet" href="../main/css/Work-grid.css">
+
+
+</head>
+
+
+  <body>
+
+        <!-- HERO COVER -->
+        <!-- ---------- -->
+        <div id="hero-banner"
+         data-hero-image="../Assets/backgrounds/Banner_1.webp"
+         data-hero-title="3D PROJECTS"
+         data-hero-head="3D Environment Props"
+         data-hero-subhead="This is Sub Head Paragrapgh, its for testing Purposes, ">
+        </div>
+        <!-- HERO COVER /END -->
+        <!-- --------------- -->
+
+
+          <!-- HERO COVER -->
+        <!-- ---------- -->
+        <div id="section-banner" 
+          style="margin-top: 100px;"
+          data-section-image="../Assets/backgrounds/image_fx (3).webp"
+          data-section-title="Section Head"
+          data-section-head="Highlight">
+        </div>
+
+
+        <!-- HERO COVER /END -->
+        <!-- --------------- -->
+
+      <main>
+        <!-- ------------------------   ----------------------------------------------- -->
+        <div class="section-divider"></div>
+        <!-- ------------------------   ----------------------------------------------- -->
+        
+        <section class="child">
+          <div class="work" id="work-sct">
+
+              <div class="wrk-head">
+                  <h1 class="wrk-title"> Works showcase </h1>
+                  <h1 class="link1">
+                      <a  href="https://example.com" style="color: inherit; text-decoration: none;"> 
+                          Explore My Portfolio and Experiments </a>
+                  </h1>
+              </div>
+              <div class="filter">
+                  <div class="wrk-fgrid">
+                    <div id="card-container" data-thumbnail="../Assets/Thumbnails/3D-Axe.webp" data-text="Medieval Axe"></div>
+                    <div id="card-container" data-thumbnail="../Assets/Thumbnails/3D-Axe.webp" data-text="Medieval Axe"></div>
+              
+
+                  </div>
+              </div>
+
+  
+      </section>
+        <!-- ------------------------  Title  ----------------------------------------- -->
+      
+        <!-- -------------------------------------------------------------------------- -->
+
+
+        
+        <!-- ---------------------------- Gallery ------------------------------------- -->
+        <section class="child">
+          <!-- Grid of images -->
+          <div class="image-grid">
+
+            <div class="thumb">
+              <img src="images/Dw_1.webp" alt="Brand 1 cover" class="thumb-in">
+              <img src="images/Dw_0.webp" alt="Brand 1" class="thumb-img" onclick="openOverlay('branding-1.html')">
+            </div>
+
+            <div class="thumb">
+              <img src="images/Dwj_1.webp" alt="Brand 2 cover" class="thumb-in" >
+              <img src="images/Dwj_0.webp" alt="Brand 2" class="thumb-img" onclick="openOverlay('branding-2.html')">
+            </div>
+
+            <div class="thumb">
+              <img src="images/SS_1.webp" alt="Brand 3 cover" class="thumb-in" >
+              <img src="images/SS_1.webp" alt="Brand 3" class="thumb-img" onclick="openOverlay('branding-3.html')">
+            </div>
+
+            <div class="thumb">
+              <img src="images/Atelier_1.webp" alt="Brand 4 cover" class="thumb-in" >
+              <img src="images/Atelier_0.webp" alt="Brand 4" class="thumb-img" onclick="openOverlay('branding-4.html')">
+            </div>
+
+            <div class="thumb">
+              <img src="images/Arz_1.webp" alt="Brand 5 cover" class="thumb-in">
+              <img src="images/Arz_0.webp" alt="Brand 5" class="thumb-img" onclick="openOverlay('branding-5.html')">
+            </div>
+
+            <div class="thumb">
+              <img src="images/Dw_1.webp" alt="Brand 6 cover" class="thumb-in">
+              <img src="images/Dw_0.webp" alt="Brand 6" class="thumb-img" onclick="openOverlay('branding-6.html')">
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Overlay -->
+        <div id="overlay" class="overlay">
+          <div class="overlay-content">
+            <span class="close-btn" onclick="closeOverlay()">×</span>
+            <iframe id="overlayFrame" src="" frameborder="0"></iframe>
+          </div>
+        </div>
+
+        <!-- ------------------------   ----------------------------------------------- -->
+        <div class="section-divider"></div>
+        <!-- ------------------------   ----------------------------------------------- -->
+
+        <!-- ---------------------------- Image Banner ------------------------------------- -->
+        <section class="child-full">
+          <div class="sct-banner" id="sect1">
+            <div class="fullframe">
+              <div> <img src="../Assets/backgrounds/image_fx (5).webp" alt="" class="frame-depth"></div>
+
+              </div>
+          </div>
+        </section>
+
+        <!-- ---------------------------- Title ------------------------------------- -->
+
+        <section class="child-full">
+          <div class="sct-banner" id="sect1">
+            <h1 class="sct-head">  Brochures & Print Media <br>
+              <span class="highlight">  Informative and elegant print designs tailored for real-world communication. </span>  
+            </h1>
+          </div>
+        </section>
+
+        <!-- ------------------------   ----------------------------------------------- -->
+        <div class="section-divider"></div>
+        <!-- ------------------------   ----------------------------------------------- -->
+      </main>
+
+    <!-- FOOTER -->
+    <!-- ------ -->  
+    <div id="footer-container">
+      <!-- Fallback content (optional) -->
+      <footer style="padding: 1rem; text-align: center;">
+          © <span id="current-year"></span> MohJeha-Artist
+      </footer>
+    </div>
+
+
+<!-- ----------------------------------------------- Scripts ------ -->  
+<script src="../html/hero-banner.js"></script>
+<script src="../html/section-banner.js"></script>
+<script src="../html/card.js"></script>
+<script src="../html/footer.js"></script>
+
+
+
+
+<!-- Call iFrame html Page -->
+<script>
+  function openOverlay(page) {
+    const overlay = document.getElementById('overlay');
+    document.getElementById('overlayFrame').src = page;
+    overlay.style.display = 'flex';
+    // Add a small delay to ensure display:flex is applied before adding active class
+    requestAnimationFrame(() => {
+        overlay.classList.add('active');
+    });
+}
+
+function closeOverlay() {
+    const overlay = document.getElementById('overlay');
+    overlay.classList.remove('active');
+    // Wait for animation to complete before hiding
+    setTimeout(() => {
+        overlay.style.display = 'none';
+        document.getElementById('overlayFrame').src = "";
+    }, 300); // Match the transition duration
+}
+
+  // Listen for ESC key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+      closeOverlay();
+    }
+  });
+</script>
+
+<!-- Listen Inside Overlay   -->
+<script>
+window.addEventListener('message', function(event) {
+if (event.data === 'closeOverlay') {
+  closeOverlay();
+}
+});
+</script>
+      
+
+<script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
+<script src="../main/js/lenis.js"></script>
+<!-- ---------------- -->
+<script src="../main/js/scripts.js"></script>
+    </body>   
+</html>

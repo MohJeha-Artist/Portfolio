@@ -22,12 +22,15 @@
 
     /*Palette*/
     --5: #118ba7;
-    --4: #00344d; 
-    --3: #542cdb;  
-    --2: #0c0613;
-    --1: #ddfef8;
-    --0: hsl(270, 50%, 2%);
- 
+    --4: #2c2c2c;
+    --x: red; 
+    --3: rgb(84, 44, 219);  
+    --2: rgb(12, 6, 19);
+    --1: #fff;
+    --0: rgb(5, 3, 8);
+    --000: rgb(53, 43, 87);  
+
+
     --gradient: 
         linear-gradient(90deg, 
         rgba(50, 50, 50, 0.5), 
@@ -47,31 +50,6 @@
     --text-border-Active : #542cdb;
     
   }
-
-
-
-
-/*
-Complementary Color:
-#dbb42c (Gold/Yellow): Adds contrast and warmth to the purple.
-Analogous Colors:
-#2c56db (Bright Blue): For a cohesive, cool-toned look.
-#6b2cdb (Deep Violet): For a monochromatic scheme with depth.
-Triadic Colors:
-#2cdb54 (Bright Green): A lively, energizing accent.
-#db2c54 (Bright Red-Pink): Adds boldness and vibrancy.
-Neutral Pairings:
-#ffffff (White): Clean and bright.
-#f4f4f4 (Soft Light Gray): For subtle elegance.
-#1a1a1a (Dark Charcoal): Adds drama and contrast.
-Muted Pairings:
-#a297eb (Soft Lavender): A softer, pastel complement.
-#8bb4db (Muted Cyan): Adds a gentle, fresh feel.
-*/
-
-
-
-
 
 
 
@@ -103,10 +81,15 @@ body
     font-size: 10px;
     background: var(--0);
     background-size: cover;
+
+    /* cursor: none; */
   }
 
-
-
+/* ------------------------------------------ CURSOR --------------------------------------------------*/
+.element {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><circle cx="16" cy="16" r="8" fill="red"/></svg>') 16 16, auto;
+}
+/* ----------------------------------------------------------------------------------------------------*/
 
 /* --------------------------------------------- PRELOADER-------------*/
 
@@ -163,7 +146,7 @@ body
     position: fixed;
     inset: 0 0 auto;
     height: 0.5rem;
-    background-color: #542cdb;
+    background-color: var(--3);
     z-index: 100;
     transform-origin: left;
   }
@@ -243,6 +226,11 @@ body
   transform: translateX(-50%);
 }
 
+.section-divider
+{
+  height: 100px;
+}
+
 .child {
   width: 95%;
   margin: 50px auto;
@@ -250,79 +238,39 @@ body
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  /* border: 2px solid rgba(255, 255, 255, 0.5); */
+ 
   height: auto;
   /* overflow: hidden; */
 
   /* padding:  75px 0; */
 }
 
-.child-full {
-  width: 100;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  /* border: 5px solid rgba(8, 0, 255, 0.2); */
-  height: auto;
-  overflow: hidden;
 
-  /* padding:  75px 0; */
-}
 
-/* @media (min-width: 1440px) 
+
+.child.boxed 
   {
-    .child 
-      {
-        width: 88%;
-      }
-  } */
-
-
-.child.boxed {
-  margin: 10px auto;
-  width: 97%;
-  border-radius: 20px;
-  background: grey;
-  
-}
+    margin: 10px auto;
+    width: 97%;
+    border-radius: 20px;
+    background: grey;
+    
+  }
 
 
 
-    .fullframe
+.title-banner
     {
-      /* margin-top: 100px; */
-        display: flex;
-        position: relative;
-        width: 100%;
-        height: 420px;
-        /* border: 1px solid limegreen; */
-        object-fit: cover;
-        overflow: hidden;
-
-        align-items: center;
+      border: 1px solid rgb(0, 26, 255);
     }
 
-    .fullframe::before
-    {
-      content: "";
-  position: absolute;
-  inset: 0;
-  background: 
-  linear-gradient(3deg, 
-  var(--0) 15%, 
-  transparent 15.5%, 
-  transparent 85%, 
-  var(--0) 85.5%);
-  z-index: 1;
-  pointer-events: none; /* allows clicks through the overlay */
-   
-    }
+    
 
 
 
-    .frame-depth {
-      width: 100%;
-      height: auto;
-    }
+
+
+
+
+
+

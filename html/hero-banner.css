@@ -1,0 +1,245 @@
+
+
+/* ----------------------------------------------------- Header Type | Cover -- */ 
+
+
+.HERO 
+  {
+    position: relative;
+    margin: 0 auto;
+    width: 95%;
+    height: 100vh;
+    height: 100dvh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    overflow: hidden; 
+    border-bottom: 2px solid var(--3);
+    border-radius: 0 0 25px 25px;
+    z-index: 10;
+
+    background: linear-gradient(45deg ,#030303 30%, #1f002e );
+  }
+
+.hero-top-bar
+{
+  top: 30px;
+  width: 82%;
+  height: 35px;
+  position: absolute;
+  display: flex;
+/* border: 1px solid lime; */
+justify-content: space-between;
+align-items: center;
+z-index: 100;
+
+}
+
+.hero-top-bar .Hero-logo {
+  width: auto;
+  height: 35px;
+}
+
+.HERO .Hero-Image 
+  {
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   
+    z-index: 0;
+  }
+
+  .PRJ_banner {
+    height: 60dvh;
+  }
+
+  .HERO .PRJ_Image{
+    display: flex;
+    width: 50%;
+    right: 7%;
+    /* border: 1px solid lime; */
+  }
+
+
+.Hero-name
+  {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 2rem;
+    font-family: var(--f2);
+    font-weight: 100;
+    color: var(--1);
+    pointer-events: none;
+  }
+
+  
+  .Hero-head 
+  {
+    font-weight: 700;
+    font-size: 4rem;
+    
+  }
+
+
+  .Hero-subhead 
+  {
+    line-height: .1;
+    font-size: 1rem;
+  }
+
+  @media (min-width: 1440px) 
+  {
+    .hero-banner 
+    {
+      top: 50px;
+      height: 60px;
+    }
+
+    .Hero-name 
+    {
+      font-size: 3rem;
+    }
+
+    .Hero-head 
+    {
+      font-size: 6rem;
+    }
+
+    .Hero-subhead 
+    {
+      font-size: 1.5rem;
+    }
+
+  }
+
+
+
+.Hero-heading-mobile1 
+  {
+    position: absolute;
+    top: 10%;
+    margin: 0;
+    padding: 0;
+    font-size: calc(120px);
+    font-family: 'Poppins', sans-serif;
+    color: var(--1); 
+    white-space: nowrap; 
+    z-index: 0; 
+    pointer-events: none;
+    transform: translateY(-20px);
+  }
+
+.Hero-heading-mobile2 
+  {
+    pointer-events: none;
+    position: absolute;
+    top: 10%;
+    margin: 0;
+    padding: 0;
+    font-size: calc(120px);
+    font-family: 'Poppins', sans-serif;
+    transform: translateY(-15px);
+    z-index: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--1);
+    text-stroke: 1px var(--1); 
+  }
+
+
+
+
+/* ----------------------------------------------------- Header Type  |  Banner -- */  
+
+
+/* Ensure these selectors match your HTML structure */
+.PRJ_name 
+  {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-family: var(--f2);
+    font-weight: 100;
+    color: var(--1); /* Forced color for debugging */
+    pointer-events: none;
+    font-size: 1.5rem;
+    z-index: 10; /* Ensure it's above other elements */
+  }
+
+.PRJ_head 
+  {
+    position: absolute;
+    top: calc(50% + 2rem); /* Position below PRJ_name */
+    left: 10%;
+    font-weight: 700;
+    color: var(--1);
+    font-size: 2rem;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Improve readability */
+  }
+
+.PRJ_subhead 
+  {
+    position: absolute;
+    top: calc(50% + 5.5rem); /* Position below PRJ_name */
+    left: 10%;
+    font-weight: 100;
+    color: var(--1);
+    font-size: 1rem;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Improve readability */
+  }
+
+/* Debug styles - remove after testing */
+#hero-banner 
+  {
+    position: relative;
+    min-height: 300px;
+  }
+
+
+  /* ................................ */
+
+  .Cover {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+
+    /* border: 1px solid lime; */
+  }
+
+  .fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, var(--0), transparent);w
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  #cover-image {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    object-fit:cover;
+    
+  }
