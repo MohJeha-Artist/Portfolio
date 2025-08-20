@@ -18,7 +18,7 @@
         background-color: var(--0);
         overflow: hidden;
 
-
+        /* border: 1px solid red; */
     }
 
     #abt-footer 
@@ -48,12 +48,15 @@
     {
         display: flex;
         width: 90%;
-        /* gap: 50px; */
+     top: 0;
         justify-content: space-between;
+
         align-items: center; 
-        height: 200px; 
+        /* height: 200px;  */
         /* border: 1px solid yellow; */
     }
+
+
 
     .ft-b {
         display: flex;
@@ -69,11 +72,13 @@
         height: 40px;
     }
 
-    .copyrights{
+    .copyrights {
         position: absolute;
         font-size: 1rem;
         justify-content: center;
         align-self: center;
+
+        /* border: 1px solid greenyellow; */
     }
 
 
@@ -102,6 +107,8 @@
 
 }
 
+
+
 .arrowback:hover{
         transform: translateY(-5px);
     fill: var(--3);
@@ -124,18 +131,34 @@
         transform: scale(1.2);
     }
 
-/* Responsive Design */
+/* @MOBILE ----------- >>>>  */
 
-@media (max-width: 600px) 
-    {
+@media (max-width: 1280px) {
+    .footer
+        {
+            flex-direction: column;
+            min-height: 200px;
+        }
+        .footer-content 
+        {
+            flex-direction: column;
+           top: 1px;
+           gap: 30px;
+           margin-bottom: 30px;
+           /* height: 500px; */
+        }
         .footer-logo 
-            {
-                width: 60px;
-            }
+    {
+        max-height: 70px;
+    }
+    .copyrights
+        {
+            
+           bottom: 10%;
+        }
 
-        .social-icon img 
-            {
-                width: 25px; 
-                height: 25px;
-            }
+        .arrowback
+        {
+            display: none;
+        }
 }
