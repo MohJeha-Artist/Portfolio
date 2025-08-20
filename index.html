@@ -231,8 +231,28 @@
 
 <!-- Links -->
 <script src="main/js/href.js"></script>
+<<<<<<< HEAD
 
 
+=======
+        
+<script>
+    // Simple JavaScript fallback
+    document.addEventListener('scroll', function() {
+        const parallaxImages = document.querySelectorAll('.frame-depth');
+        const scrollPosition = window.pageYOffset;
+        
+        parallaxImages.forEach((img) => {
+            const imgPosition = img.getBoundingClientRect().top + scrollPosition;
+            const distance = scrollPosition - imgPosition;
+            const parallaxSpeed = 0.2;
+            
+            // Apply different translation for each image based on its position
+            img.style.transform = `translateY(${(distance * parallaxSpeed)}px)`;
+        });
+    });
+</script>
+>>>>>>> 4f5e15165a81f631e666a2291be9bfde2b850e3e
 
     </body>   
 </html>
