@@ -4,11 +4,11 @@
         width: 100%;
         min-height: 100vh;
         box-sizing: border-box;
-
+ 
         /* border: 5px solid white; */
     }
 
-/* Column 1: Profile Image */
+/* -----------------------------  Column 1: Profile Image ---------- */
 .profile-image 
     {
         display: flex;
@@ -25,7 +25,9 @@
         object-fit: cover;
         
         background: linear-gradient(45deg ,#030303 40px, #1f002e );
-  
+
+      
+
     }
 
 
@@ -74,7 +76,7 @@
 
 
 
-/* Column 2: About Me */
+/* ----------------------------- Column 2: About Me ---------- */
 
 .about-me 
     {
@@ -93,18 +95,12 @@
         /* background-color: var(--4); */
     }
 
-    @media ( min-width: 1440px) 
-    {
-        .about-me 
-        {
-            width: 60%;
-        }
-    }
+
 
 .abt-sct
     {
         margin-top: 100px;
-        /* border: 1px solid rgba(255, 0, 0, 0.74); */
+   
 
 
 
@@ -130,6 +126,7 @@
         margin-top: 20px;
         position: relative;
         display: flex;
+      
         gap: 20px;
         padding-left: 50px;
         justify-content: center;
@@ -145,7 +142,7 @@
         flex-direction: column;
         width: 100%;
         border-radius: 10px;
-        font-size: 1rem;
+        /* font-size: 1rem; border: 1px solid   lime; */
     }
 
     li.skl-blt::marker {
@@ -333,3 +330,26 @@ li.timeline-item::marker {
 
 
 
+
+
+/* @MOBILE ----------- >>>>  */
+
+@media (max-width: 1280px) 
+{
+    .profile-image
+    {
+        display: none;
+    }
+
+    .about-me 
+    {
+        padding: 5%;
+        width: 100%;
+    }
+
+    .Skills
+    {
+      flex-direction: column;
+    }
+
+}
