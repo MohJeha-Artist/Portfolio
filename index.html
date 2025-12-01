@@ -5,19 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light">
     <meta name="supported-color-schemes" content="light">
-    
+
+ 
+
     <title> MohJeha-Artist </title>
     <link rel="icon" href="Assets/fav/Fav.svg" type="image/x-icon">
+
     <!-- ------------------------------------------------------ -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+<!-- ---------------------------- HERO SECTON >  -->
+<script src="../sections/section-hero.js"></script>
+<link rel="stylesheet" href="../sections/section-hero.css">
+<!-- ---------------------------- SERVICES SECTON >  -->
+<script src="../sections/section-services.js"></script>
+<link rel="stylesheet" href="../sections/section-services.css">
+
+<!-- ---------------------------- 3dwork SECTON >  -->
+<script src="../sections/section-3dwork.js"></script>
+<link rel="stylesheet" href="sections/section-3dwork.css">
+<!-- ---------------------------- logos SECTON >  -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="section-cardswiper.css">
+<script src="../sections/section-cardswiper-loader.js"></script>
+<link rel="stylesheet" href="sections/section-logos.css">
+
+
+<link rel="stylesheet" href="sections/section-cardswipe.css">
+<!-- ---------------------------- Swiper SECTON >  -->
+<script src="../sections/section-swiper.js"></script>
+<link rel="stylesheet" href="sections/section-swiper.css">
+<!-- ---------------------------- Motion SECTON >  -->
+<script src="../sections/section-videos.js"></script>
+<link rel="stylesheet" href="sections/section-videos.css">
+
+<!-- ---------------------------- Footer SECTON >  -->
+<script src="../sections/section-footer.js"></script>
+<link rel="stylesheet" href="sections/section-footer.css">
+
+   
 
     <link rel="stylesheet" href="main/css/base.css">
-    <link rel="stylesheet" href="html/hero-banner.css">
+    <link rel="stylesheet" href="main/css/base-grid-card.css">
+
     <link rel="stylesheet" href="html/section-banner.css">
     <link rel="stylesheet" href="html/Footer.css">
-    <link rel="stylesheet" href="main/css/Services.css">
+
     <link rel="stylesheet" href="main/css/Workgallery.css">
     <link rel="stylesheet" href="main/css/swiper.css">
-    <link rel="stylesheet" href="html/card.css">
+   
     <link rel="stylesheet" href="html/pre-loader.css">
     <link rel="stylesheet" href="html/hero-banner.css">
 
@@ -28,88 +64,19 @@
     <!-- <div id="navbar"></div>
     <script src="main/navbar/navbar.js" defer></script> -->
     <!-- ------------- -->
-<style>
-    /* Section base */
-.construction {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-  /* background: linear-gradient(135deg, #3b0764, #111827, #000000); */
-  color: #fff;
-}
 
-/* Title */
-.construction h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  animation: pulse 1.5s infinite;
-}
 
-/* Description */
-.construction p {
-  font-size: 1.125rem;
-  max-width: 600px;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  color: #e5e7eb; /* soft gray */
-}
-
-.construction p span {
-  color: #a855f7; /* purple accent */
-  font-weight: 600;
-}
-
-/* Button */
-.construction a {
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  font-size: 1.125rem;
-  font-weight: 700;
-  background: #9333ea;
-  color: white;
-  border-radius: 1.5rem;
-  text-decoration: none;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
-}
-
-.construction a:hover {
-  background: #7e22ce;
-  transform: scale(1.05);
-}
-
-/* Pulse animation */
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.05);
-  }
-}
-
-</style>
-
-  
 </head>
 
-    <body>
+           
+    <body> 
         <!-- PRE-LOADER -->
         <!-- <div id="preloader-container" data-preloader-text="MohJeha-Artist"></div> -->
 
 
     <!-- PAGE SETUP -->
 
-    <div class="XX"></div>
-    <div class="XX2"></div>
-    
+
     <!-- PRE-LOADER  -->
     <!-- <div id="preloader"></div>  -->
 
@@ -121,117 +88,224 @@
 
     <!-- ---------- -->
 
-    
-            <!-- HERO COVER -->
-            <!-- ---------- -->
-            <section class="HERO" id="Top"> 
-                   
-              <div class="hero-top-bar">
-                  <a href="index.html">
-                      <img class="Hero-logo" src="Assets/fav/Logo.svg" alt="hero-image" id="home">
-                  </a>
 
-                  <div class="social-icons">
-                      <a href="https://www.facebook.com" target="_blank" class="scl-icon">
-                      <img src="Assets/fav/fb.svg" alt="Facebook">
-                      </a>
-                      <a href="https://www.instagram.com" target="_blank" class="scl-icon">
-                      <img src="Assets/fav/ins.svg" alt="Instagram">
-                      </a>
-                      <a href="https://www.linkedin.com" target="_blank" class="scl-icon">
-                      <img src="Assets/fav/linked.svg" alt="LinkedIn">
-                      </a>
-                  </div>
 
-              </div>
 
-              <img class="Hero-Image" src="Assets/fav/Hero-As2.webp" alt="hero-image" id="home">
-              
+<!-- ----- LOAD  SECTIONS ----- -->
 
-              <h1 class="Hero-name"> Mohamad Jeha <br>
-              <span class="Hero-head">3D ART DESIGNER</span><br>
-              <span class="Hero-subhead">Specializing in 3D Product Rendering, Concept Design, and Dynamic Digital Media. 
-                      <br>Expertise in Unreal Engine, Substance 3D Painter, and Advanced Animation Techniques.</span>
-              </h1>
-                    
-            </section>
-            <!-- HERO COVER /END -->
-            <!-- --------------- -->
-<section>
-    <section class="construction h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-900 via-gray-900 to-black text-white text-center p-6">
-        <h1 class="text-5xl font-extrabold mb-4 animate-pulse">
-          🚧 Work in Progress 🚧
+<section-hero></section-hero>
+
+<section class="spacer" style="height:100px;"></section> 
+
+<section-services></section-services>
+
+<section class="spacer" style="height:70px;"></section> 
+
+
+<section-3dwork></section-3dwork>
+
+
+
+
+
+
+<section class="container box style   desktop pad-x-100">
+
+<div class="containerZ fixLocation">
+    <div class="text-box  alignL  w75 index2 ">
+  
+        <h1 class="head s3 upper left "> Logo Design </h1>
+        <h1 class="head s1 left">
+          Explore my approach to logo design <br> clean, creative, and built to stand out. </a>
+        </h1>
+        <h1 class="head left link2"><a  href="3D-Projects/3D-Projects.html" style="color: inherit; text-decoration: none;"> 
+          Show more. </a>
+        </h1>
+    </div>
+  
+
+
+       <div class="swiper index2">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide card1">
+                <img  src="../Assets/Graphics/Logos/ibnbalad_Thumb.webp" alt="Brand 3 cover">
+            </div>
+            
+            <div class="swiper-slide card1">
+                <img  src="../Assets/Graphics/Logos/SIS_Thumb.webp" alt="Brand 3 cover">
+            </div>
+
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/Abusalah_Thumb.webp" alt="Brand 5 cover">
+            </div>
+
+             <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/Nova_Thumb.webp" alt="Brand 5 cover">
+            </div>
+
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/Arz_Thumb.webp" alt="Brand 5 cover">
+            </div>
+
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/Atelier_Thumb.webp" alt="Brand 5 cover">
+            </div>
+
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/vistamar_Thumb.webp" alt="Brand 5 cover">
+            </div>
+
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/Lebaniz_Thumb.webp" alt="Brand 5 cover">
+            </div>
+
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/DigitalWorld_Thumb.webp" alt="Brand 5 cover">
+            </div>
+
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/Sirius_Thumb.webp" alt="Brand 5 cover">
+            </div>
+
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/Dabbous_Thumb.webp" alt="Brand 5 cover">
+            </div>
+
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/Summer_Thumb.webp" alt="Brand 5 cover">
+            </div>
+
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/EarthLinks_Thumb.webp" alt="Brand 5 cover">
+            </div>
+
+          </div>
+        </div>
+      
+</div>
+
+</section>
+
+<section class="container  style1     pad-25 mobile">
+
+
+
+  <div class="containerZ">
+   <div class="text-box ">
+  
+        <h1 class="head s3 upper center"> Logo Design </h1>
+        <h1 class="head s1 center">
+          Explore my approach to logo design <br> clean, creative, and built to stand out. </a>
         </h1>
         
-        <p class="text-lg mb-8 max-w-xl leading-relaxed">
-            This portfolio is still under construction — a work in progress being shaped piece by piece.  
-            While I continue building, you can already step inside and learn more 
-        </p>
-        
-        <a href="about.html" 
-           class="px-6 py-3 rounded-2xl bg-purple-600 hover:bg-purple-700 transition-all shadow-lg hover:scale-105 font-bold text-lg">
-           About Me →
-        </a>
-      </section>
-      
-</section>
-        
+    </div>
 
- <!----------------------------------- Footer ----------------------->
+      <div class="swiper index2">
+          <div class="swiper-wrapper">
+<div class="swiper-slide card1">
+                <img  src="../Assets/Graphics/Logos/ibnbalad_Thumb.webp" alt="Brand 3 cover">
+            </div>
+            <div class="swiper-slide card1">
+                <img  src="../Assets/Graphics/Logos/SIS_Thumb.webp" alt="Brand 3 cover">
+            </div>
 
-<!-- FOOTER -->
-<!-- ------ -->  
-<div id="footer-container">
-  <footer style="padding: 1rem; text-align: center;"> © <span id="current-year"></span> MohJeha-Artist</footer>
-</div> 
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/Nova_Thumb.webp" alt="Brand 5 cover">
+            </div>
 
-<script>
-    // Simple JS that runs even if loaded via fetch()
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-</script>
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/Arz_Thumb.webp" alt="Brand 5 cover">
+            </div>
 
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/Atelier_Thumb.webp" alt="Brand 5 cover">
+            </div>
 
-<!-- ----------------------------------------------- Scripts ------ -->  
-<script src="html/pre-loader.js"></script>
-<script src="html/footer.js"></script> 
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/vistamar_Thumb.webp" alt="Brand 5 cover">
+            </div>
 
-<script src="html/hero-banner.js"></script>
-<script src="html/section-banner.js"></script>
-<script src="html/card.js"></script>
-<!-- Smooth Scroll -->
-<script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
-<script src="main/js/lenis.js"></script>
-<!-- ---------------- -->
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/Lebaniz_Thumb.webp" alt="Brand 5 cover">
+            </div>
 
-<!-- Swiper -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-<script src="main/js/swiper.js"></script>
-<!-- ---------------- -->
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/DigitalWorld_Thumb.webp" alt="Brand 5 cover">
+            </div>
 
-<!-- Links -->
-<script src="main/js/href.js"></script>
-<<<<<<< HEAD
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/Sirius_Thumb.webp" alt="Brand 5 cover">
+            </div>
 
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/Dabbous_Thumb.webp" alt="Brand 5 cover">
+            </div>
 
-=======
-        
-<script>
-    // Simple JavaScript fallback
-    document.addEventListener('scroll', function() {
-        const parallaxImages = document.querySelectorAll('.frame-depth');
-        const scrollPosition = window.pageYOffset;
-        
-        parallaxImages.forEach((img) => {
-            const imgPosition = img.getBoundingClientRect().top + scrollPosition;
-            const distance = scrollPosition - imgPosition;
-            const parallaxSpeed = 0.2;
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/Summer_Thumb.webp" alt="Brand 5 cover">
+            </div>
+
+            <div class="swiper-slide card1">
+              <img src="../Assets/Graphics/Logos/EarthLinks_Thumb.webp" alt="Brand 5 cover">
+            </div>
+
             
-            // Apply different translation for each image based on its position
-            img.style.transform = `translateY(${(distance * parallaxSpeed)}px)`;
-        });
-    });
-</script>
->>>>>>> 4f5e15165a81f631e666a2291be9bfde2b850e3e
+
+          </div>
+        </div>
+     
+
+<h1 class="head center alignC link2 index2"><a  href="3D-Projects/3D-Projects.html" style="color: inherit; text-decoration: none;"> 
+          Show more. </a>
+        </h1>
+</section>
+
+
+
+<!-- --------------------------- SPACE | Divider ------>
+<section class="spacer" style="height:100px;"></section> 
+
+
+
+<section-videos></section-videos>
+
+<!-- <section-swiper></section-swiper> -->
+
+<section-footer></section-footer>
+
+
+         
+
+<!-- --------------------------- SPACE | Divider ------>
+<section class="spacer" style="height:100px;"></section> 
+
+        
+
+
+
+        <!-- ----------------------------------------------- Scripts ------ -->  
+        <script src="html/pre-loader.js"></script>
+
+
+        <script src="html/hero-banner.js"></script>
+       
+       
+        <!-- Smooth Scroll -->
+        <script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
+        <script src="main/js/lenis.js"></script>
+        <!-- ---------------- -->
+
+        <!-- Swiper -->
+        
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+        <script src="main/js/swiper.js"></script>
+
+        <script src="sections/section-cardswiper.js"></script>
+        <!-- ---------------- -->
+
+        <!-- Links -->
+        <script src="main/js/href.js"></script>
 
     </body>   
 </html>

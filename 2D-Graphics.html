@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    
+    <title> 2D Graphics </title>
+    <link rel="icon" href="../Assets/fav/Fav.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../main/css/cursor.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css"> -->
+    <!-- ------------------------------------------------------ -->
+
+    
+    <!-- BASE -->
+    <link rel="stylesheet" href="main/css/base.css">
+    <link rel="stylesheet" href="main/css/base-grid-card.css">
+    
+    <link rel="stylesheet" href="sections/section-hero.css">
+    <link rel="stylesheet" href="sections/section-hero-text.css">
+    <link rel="stylesheet" href="html/Footer.css">
+
+    <!-- ---------------------------- logos SECTON >  -->
+    <script src="../sections/section-grid-logos.js"></script>
+    <link rel="stylesheet" href="sections/section-grid.css">
+
+    <!-- ---------------------------- hover-cards SECTON >  -->
+    <script src="../sections/section-hover-cards.js"></script>
+    <link rel="stylesheet" href="sections/section-hover-cards.css">
+
+    <!-- ---------------------------- image-swiper SECTON >  -->
+    <script src="../sections/section-image-swiper-loader.js"></script>
+    <link rel="stylesheet" href="sections/section-swiper.css">
+
+    <!-- ---------------------------- Footer SECTON >  -->
+    <script src="../sections/section-footer.js"></script>
+    <link rel="stylesheet" href="sections/section-footer.css">
+
+</head>
+
+
+  <body>
+
+    
+    <!-- HERO Banner -->
+        <!-- ---------- -->
+        <div id="section-hero-text"
+         data-hero-image="../Assets/temp/line.jpg"
+         data-hero-title=""
+         data-hero-head="Branding & Graphic Design "
+         data-hero-subhead="Logo, Print & Packaging Design Showcase">
+        </div>
+        <!-- HERO Banner /END -->
+        <!-- --------------- -->
+
+
+<section-grid-logos></section-grid-logos>
+
+
+<section-hover-cards></section-hover-cards>
+
+
+
+<main>
+<!-- ------------------------   ----------------------------------------------- -->
+<div class="section-divider"></div>
+<!-- ------------------------   ----------------------------------------------- -->
+
+        
+<!-- ------------------------  Title  ----------------------------------------- -->
+<section class="sct-title">
+  <div class="head f1 s2 center upper "> Business Branding & Logos </div>
+  <div class="head f2 s1 center color "> Professional identity designs crafted to deliver impact and recognition. </div>
+</section>
+<!-- -------------------------------------------------------------------------- -->
+
+<!-- ------------------------  Title  ----------------------------------------- -->
+<section class="sct-title">
+  <div class="head f1 s2 center upper "> Brochures & Print Media </div>
+  <div class="head f2 s1 center color "> Informative and elegant print designs tailored for real-world communication. </div>
+</section>
+<!-- -------------------------------------------------------------------------- -->
+   <section-image-swiper></section-image-swiper>    
+
+
+
+
+       
+
+
+
+
+
+<!-- ---------------------------- Overlay ------------------------------------- -->
+<div id="overlay" class="overlay">
+  <div class="overlay-content">
+    <span class="close-btn" onclick="closeOverlay()">×</span>
+    <iframe id="overlayFrame" src="" frameborder="0"></iframe>
+</div></div>
+<!-- -------------------------------------------------------------------------- -->
+
+<!-- ------------------------   ----------------------------------------------- -->
+<div class="section-divider"></div>
+<!-- ------------------------   ----------------------------------------------- -->
+
+
+
+<!-- ------------------------   ----------------------------------------------- -->
+<div class="section-divider"></div>
+<!-- ------------------------   ----------------------------------------------- -->
+</main>
+
+    <!-- FOOTER -->
+    <!-- ------ -->  
+<section-footer></section-footer>
+<!-- ----------------------------------------------- Scripts ------ -->  
+<script src="sections/section-hero-banner.js"></script>
+
+<script src="sections/section-hero-text.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+<!-- Call iFrame html Page ------------------------------------------------->
+<script>
+  function openOverlay(page) {
+    const overlay = document.getElementById('overlay');
+    document.getElementById('overlayFrame').src = page;
+    overlay.style.display = 'flex';
+    // Add a small delay to ensure display:flex is applied before adding active class
+    requestAnimationFrame(() => {
+        overlay.classList.add('active');
+    });
+}
+
+function closeOverlay() {
+    const overlay = document.getElementById('overlay');
+    overlay.classList.remove('active');
+    // Wait for animation to complete before hiding
+    setTimeout(() => {
+        overlay.style.display = 'none';
+        document.getElementById('overlayFrame').src = "";
+    }, 300); // Match the transition duration
+}
+
+  // Listen for ESC key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+      closeOverlay();
+    }
+  });
+</script>
+
+<!-- Listen Inside Overlay ------------------------------------------------ -->
+<script>
+window.addEventListener('message', function(event) {
+if (event.data === 'closeOverlay') {
+  closeOverlay();
+}
+});
+</script>
+<!-- ----------------------------------------------------------------------- -->
+     
+
+<script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
+<script src="../main/js/lenis.js"></script>
+<!-- ---------------- -->
+
+
+    </body>   
+</html>

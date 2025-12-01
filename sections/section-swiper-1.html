@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="../main/css/base.css">
+  <style>
+ 
+
+    swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    swiper-slide {
+   
+      border-radius: 20px;
+      text-align: center;
+      font-size: 18px;
+      background: #444;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     aspect-ratio: 16 / 9;
+      transition: transform 0.3s ease-in-out;
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      swiper-slide {
+        aspect-ratio: 2 / 3;
+      }
+    }
+
+    
+
+    swiper-slide img {   
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease-in-out;
+    }
+
+swiper-slide:hover {
+
+        .slideimage {
+            transform: scale(1.1) rotate(5deg);
+            
+        }
+}
+
+
+    swiper-container {
+        height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      background: rgba(0, 0, 0, 0.5);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      background: #542CDB;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+<section class="desktop">
+  <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="10"
+    slides-per-view="3" loop="true">
+    
+    <swiper-slide><img  src="../Assets/Graphics/Brochure/Neser-Crepe.webp" /></swiper-slide>
+    <swiper-slide><img  src="../Assets/Arts/2.jpg" /></swiper-slide>
+    <swiper-slide><img  src="../Assets/Arts/3.jpg" /></swiper-slide>
+    <swiper-slide><img  src="../Assets/Arts/4.jpg" /></swiper-slide>
+    <swiper-slide><img  src="../Assets/Arts/5.jpg" /></swiper-slide>
+    <swiper-slide><img  src="../Assets/Arts/6.jpg" /></swiper-slide>
+    <swiper-slide><img  src="../Assets/Arts/7.jpg" /></swiper-slide>
+    <swiper-slide><img  src="../Assets/Arts/9.jpg" /></swiper-slide>
+  </swiper-container>
+</section>
+
+<section class="mobile">
+  <swiper-container class="mySwiper" pagination="false" pagination-clickable="false" navigation="false" space-between="10"
+    slides-per-view="1" loop="true">
+    
+    <swiper-slide><img  src="../Assets/Arts/1.jpg" /></swiper-slide>
+    <swiper-slide><img  src="../Assets/Arts/2.jpg" /></swiper-slide>
+    <swiper-slide><img  src="../Assets/Arts/3.jpg" /></swiper-slide>
+    <swiper-slide><img  src="../Assets/Arts/4.jpg" /></swiper-slide>
+    <swiper-slide><img  src="../Assets/Arts/5.jpg" /></swiper-slide>
+    <swiper-slide><img  src="../Assets/Arts/6.jpg" /></swiper-slide>
+    <swiper-slide><img  src="../Assets/Arts/7.jpg" /></swiper-slide>
+    <swiper-slide><img  src="../Assets/Arts/9.jpg" /></swiper-slide>
+  </swiper-container>
+</section>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+</body>
+
+</html>

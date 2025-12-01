@@ -1,0 +1,54 @@
+.Herotext {
+ 
+  border-top: 2px solid var(--3);
+  position: relative;
+  overflow: hidden;;
+  box-shadow: inset 1px 1px 10px 0 var(--2);
+
+  /* aspect-ratio: 21 / 9; */
+  
+}
+
+
+.Herotext::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+  linear-gradient(to bottom, var(--4) , transparent 80%);
+  transition: transform 0.5s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+
+.hero-text
+{
+    position: relative;
+    /* z-index: 100; */
+}
+
+.glowframe
+{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 20%;
+    mix-blend-mode: screen;
+
+}
+
+
+.bannerimage
+{
+
+  width: 100%;
+mix-blend-mode: screen;
+opacity: 0.1;
+
+}

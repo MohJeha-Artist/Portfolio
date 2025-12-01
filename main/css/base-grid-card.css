@@ -1,0 +1,322 @@
+
+/* GRID STYLING   */
+
+
+.grid-container {
+     gap: 10px;
+    width: 100%;
+    height: auto; 
+    display: grid;
+  
+  grid-template-rows: auto;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    transition: all 1s;
+
+}
+
+
+.rep-2
+  {   
+ grid-template-columns: repeat(2, 1fr);
+ 
+  }
+
+.rep-3
+  {   
+ grid-template-columns: repeat(3, 1fr);
+  }
+
+.rep-4
+  {   
+ grid-template-columns: repeat(4, 1fr);
+  }
+
+.rep-5
+  {   
+ grid-template-columns: repeat(5, 1fr);
+  }
+
+
+
+
+@media (max-width: 768px)
+{
+
+.rep-3
+  {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+.rep-4
+  {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+ .rep-5
+  {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+
+
+
+
+.split{ display: grid; grid-template-columns:30% 10% 30%; }
+
+  .logos-grid 
+  {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 30px 0;
+
+    /* border-top: 2px solid var(--4); */
+    transition: all 1s ease;
+    /* border: 1px solid lime; */
+  }  
+
+  @media (max-width: 768px) {
+    .logos-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+.image-grid 
+{
+top: 0;
+right: 0;
+transform: translateX(-650px);
+  width:40%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+  gap: 10px;
+
+justify-content: center;
+justify-items: center;
+align-content: center;
+align-items: center;
+border-radius: 20px;
+ 
+  transition: all 1s ease;
+  
+/* z-index: -2; */
+
+            transform: skew(-15deg) rotate(15deg);
+}
+
+@media (max-width: 768px) {
+  .image-grid {
+    
+    z-index: -2;
+  }
+}
+
+
+
+
+
+/* CARDS STYLING  */
+
+.card
+  {
+    position: relative;
+    width: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   aspect-ratio: 16/9;
+    border-radius: 5px;
+    cursor: pointer;
+  
+    background: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+  
+    transition: all .5s, transform 1s ease;
+  }
+
+.square {aspect-ratio: 1/1;!important }
+.wide { max-height: 300px; aspect-ratio: 21/9;  }
+
+
+  @media (max-width: 768px) 
+  { .wide { aspect-ratio: 3/4; } }
+
+  .log-card
+  {
+    max-height: 300px;
+    aspect-ratio: 1/1;
+  }
+
+
+    .thumbnail
+      {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transform: scale(1.1);
+        transition: transform 1s ease , filter 1s ;
+        pointer-events: none;
+      }
+
+      .gradient {
+        position: absolute;
+        background: linear-gradient(0, black, transparent 50%);
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        opacity: 0;
+       pointer-events: none;
+        transition: all 1s;
+      }
+
+      .card:hover .gradient   { opacity: 100%; }
+    
+
+    .work-text
+      {
+
+        pointer-events: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+        font-family: var(--f3);
+        white-space: nowrap;
+        color: var(--1);
+
+        border-radius: 7px;
+
+        padding: 5px 20px;
+
+        position: absolute;
+        transform: translate(-50%, -10%);
+        bottom: 0;
+        left: 50%;
+        border: 1px solid rgba(0, 0, 0,.0);
+        transition: transform .7s ease, filter 1s;
+
+      }
+
+
+    .wrk-fgrid.animate .card
+      {
+
+          /* transform: translateY(0px) scale(1); */
+          transition: translate 0.5s ease scale 1s ease ;
+      }
+
+
+      
+
+
+
+
+
+
+
+  .filter:hover .card:not(:hover)
+  {
+  filter: grayscale(.5);
+  }
+
+.card:not(:hover) .thumbnail 
+  {
+    transform: scale(1.3);
+  }
+
+.card:not(:hover) .work-text {
+  transform: translate(-50%, 120%) rotate(5deg);
+}
+
+.card:hover {
+  border-bottom: 2px solid var(--3);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  flex: 3;
+}
+
+
+
+
+
+
+
+
+/* CARDS STYLING  */
+
+ .card1 {
+ 
+    position: relative;
+  width: 100%;
+  height: 100%;
+ 
+  align-items: center;
+ display: flex;
+  /* aspect-ratio: 1.2/1; */
+  overflow: hidden;
+  border-radius: 10px;
+  transition: 1s ease;
+
+  background-color: var(--0);
+  box-shadow: inset 3px 3px 10px 0 var(--4);
+  border: 1px solid var(--3);
+  
+}
+
+.card1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+  linear-gradient(to bottom, var(--4) , transparent 80%);
+  transition: transform 0.5s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+ .card2 {
+ 
+    position: relative;
+    width: 100%;
+   display: flex;
+    aspect-ratio: 4 /3;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: 1s ease;
+
+    border: 1px solid var(--2);
+    box-shadow: inset 3px 3px 10px 0 var(--2);
+    
+}
+
+.card2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+    linear-gradient(20deg, var(--2), transparent);
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+@media (max-width: 768px) {
+  .card2 {
+    aspect-ratio: 1/1;
+  }
+}
+
+

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Motion Graphics </title>
+
+    <link rel="stylesheet" href="main/css/base.css">
+    <link rel="stylesheet" href="sections/section-hero.css">
+    <link rel="stylesheet" href="sections/section-hero-text.css">
+    <link rel="stylesheet" href="html/Footer.css">
+
+    <style>
+        
+   
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .Video-grid {
+     
+         width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 30px 0;
+
+    /* border-top: 2px solid var(--4); */
+    transition: all 1s ease;
+    /* border: 1px solid lime; */
+  }  
+
+  @media (max-width: 768px) {
+    .Video-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+        }
+
+        .thumbnail {
+            aspect-ratio: 16 / 9;
+            /* background: white; */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .thumbnail:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            /* height: 200px; */
+            object-fit: cover;
+            /* display: block; */
+        }
+
+        .thumbnail-title {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #c40707;
+        }
+
+        /* Video Overlay Styles */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .video-container {
+            position: relative;
+            width: 90%;
+            max-width: 1280px;
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 0, 0, 0.7);
+        }
+
+        .video-player {
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            position: relative;
+        }
+
+        .video-player iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container style1 pad-xy-100">
+       <!-- ------------------------  Title  ----------------------------------------- -->
+<section class="sct-title">
+  <div class="head f2 s2 center upper "> 2D Motion Graphics </div>
+  <div class="head f2 s1 center color "> Professional identity designs crafted to deliver impact and recognition. </div>
+</section>
+<!-- -------------------------------------------------------------------------- -->
+
+        
+        <div class="Video-grid">
+            <!-- Video 1 -->
+            <div class="thumbnail" onclick="openVideo('1-iPgOj-8P4peuGogFJiHcACd0lIFbsrS', 'Microsoft')">
+                <img src="Assets/Thumbnails/Vthumbnail.webp" alt="Digital World">
+                <!-- <div class="thumbnail-title">Digital World</div> -->
+            </div>
+
+            <!-- Video 2 -->
+            <div class="thumbnail" onclick="openVideo('1COV5pq55Kddwei8jIYJ6vlfj0vq5ioQR', 'Project Alpha')">
+                <img src="Assets/Thumbnails/Vthumbnail.webp" alt="Project Alpha">
+                <div class="thumbnail-title">Project Alpha</div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="thumbnail" onclick="openVideo('1NJCuWvPGtnj1Tl5AhiVoAc4qy73zsc1q', 'Creative Studio')">
+                <img src="Assets/Thumbnails/Vthumbnail.webp" alt="Creative Studio">
+                <div class="thumbnail-title">Creative Studio</div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="thumbnail" onclick="openVideo('1tR4t12xtf-OqmZUxmAoGy8zlI03vnEY8', 'Creative Studio')">
+                <img src="Assets/Thumbnails/Vthumbnail.webp" alt="Creative Studio">
+                <div class="thumbnail-title">Creative Studio</div>
+            </div>
+
+             <!-- Video 5 -->
+            <div class="thumbnail" onclick="openVideo('1q2UBuKZMfbOzPnlkwnfiJn56mwAB7vS8', 'Creative Studio')">
+                <img src="Assets/Thumbnails/Vthumbnail.webp" alt="Creative Studio">
+                <div class="thumbnail-title">Creative Studio</div>
+            </div>
+
+             <!-- Video 6 -->
+            <div class="thumbnail" onclick="openVideo('1EDBjpccfHs62Ogwho0ikvp9pNdqLWd8e', 'Creative Studio')">
+                <img src="Assets/Thumbnails/Vthumbnail.webp" alt="Creative Studio">
+                <div class="thumbnail-title">Creative Studio</div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Video Overlay -->
+    <div class="overlay" id="videoOverlay">
+        <div class="video-container">
+            <!-- <button class="close-btn" onclick="closeVideo()">×</button> -->
+            <div class="video-player">
+                <iframe id="videoFrame" allowfullscreen allow="autoplay"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openVideo(videoId, title) {
+            const overlay = document.getElementById('videoOverlay');
+            const videoFrame = document.getElementById('videoFrame');
+            
+            // Set the video source
+            videoFrame.src = `https://drive.google.com/file/d/${videoId}/preview`;
+            
+            // Show the overlay
+            overlay.style.display = 'flex';
+            
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideo() {
+            const overlay = document.getElementById('videoOverlay');
+            const videoFrame = document.getElementById('videoFrame');
+            
+            // Hide the overlay
+            overlay.style.display = 'none';
+            
+            // Stop the video
+            videoFrame.src = '';
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close video when clicking outside the video container
+        document.getElementById('videoOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideo();
+            }
+        });
+
+        // Close video with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideo();
+            }
+        });
+    </script>
+</body>
+</html>

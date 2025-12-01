@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /* height: 100vh; */
+            /* overflow: hidden; */
+        }
+        .grid {
+            /* margin: 512px auto; */
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            height: 100%;
+            /* overflow-y: auto; */
+        }
+        .item {
+            background: #ddd;
+            padding: 60px 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 24px;
+            transition: all 0.3s;
+            min-height: 100px;
+        }
+        .item.center {
+            background: #4CAF50;
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <section style="height: 512px;"></section>
+    <div class="grid">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+    </div>
+<section style="height: 512px;"></section>
+    <script>
+        const items = document.querySelectorAll('.item');
+        
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                entry.target.classList.toggle('center', entry.isIntersecting);
+            });
+        }, {
+            threshold: 0.7,
+            rootMargin: '-30% 0px -30% 0px'
+        });
+        
+        items.forEach(item => observer.observe(item));
+    </script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expandable Grid System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .grid-container {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem auto;
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .grid-2x2 {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            max-width: 800px;
+        }
+        
+        .grid-4x3 {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            max-width: 1200px;
+        }
+        
+        .grid-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .grid-item i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #fdbb2d;
+        }
+        
+        .grid-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .grid-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+        
+        .btn {
+            background: linear-gradient(to right, #fdbb2d, #b21f1f);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        .delay-6 { animation-delay: 0.6s; }
+        .delay-7 { animation-delay: 0.7s; }
+        .delay-8 { animation-delay: 0.8s; }
+        .delay-9 { animation-delay: 0.9s; }
+        .delay-10 { animation-delay: 1s; }
+        .delay-11 { animation-delay: 1.1s; }
+        .delay-12 { animation-delay: 1.2s; }
+        
+        @media (max-width: 768px) {
+            .grid-4x3 {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .grid-2x2, .grid-4x3 {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Expandable Grid System</h1>
+        <p class="subtitle">Click the button to expand the grid and reveal more content</p>
+        
+        <div class="grid-container grid-2x2" id="gridContainer">
+            <!-- Initial 2x2 grid items -->
+            <div class="grid-item">
+                <i class="fas fa-palette"></i>
+                <h3>Design</h3>
+                <p>Beautiful and intuitive user interfaces that enhance user experience.</p>
+            </div>
+            <div class="grid-item">
+                <i class="fas fa-code"></i>
+                <h3>Development</h3>
+                <p>Clean, efficient code that powers modern web applications.</p>
+            </div>
+            <div class="grid-item">
+                <i class="fas fa-rocket"></i>
+                <h3>Performance</h3>
+                <p>Optimized solutions that deliver fast loading and smooth interactions.</p>
+            </div>
+            <div class="grid-item">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Responsive</h3>
+                <p>Seamless experiences across all devices and screen sizes.</p>
+            </div>
+            
+            <!-- Additional items that will be revealed -->
+            <div class="grid-item hidden">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Security</h3>
+                <p>Robust security measures to protect your data and applications.</p>
+            </div>
+            <div class="grid-item hidden">
+                <i class="fas fa-search"></i>
+                <h3>SEO</h3>
+                <p>Optimized content and structure to improve search engine rankings.</p>
+            </div>
+            <div class="grid-item hidden">
+                <i class="fas fa-chart-line"></i>
+                <h3>Analytics</h3>
+                <p>Data-driven insights to help you make informed decisions.</p>
+            </div>
+            <div class="grid-item hidden">
+                <i class="fas fa-cloud"></i>
+                <h3>Cloud</h3>
+                <p>Scalable cloud solutions for modern business needs.</p>
+            </div>
+            <div class="grid-item hidden">
+                <i class="fas fa-users"></i>
+                <h3>Collaboration</h3>
+                <p>Tools and features that enhance team productivity.</p>
+            </div>
+            <div class="grid-item hidden">
+                <i class="fas fa-bolt"></i>
+                <h3>Integration</h3>
+                <p>Seamless integration with popular tools and platforms.</p>
+            </div>
+            <div class="grid-item hidden">
+                <i class="fas fa-headset"></i>
+                <h3>Support</h3>
+                <p>Dedicated support team to help you every step of the way.</p>
+            </div>
+            <div class="grid-item hidden">
+                <i class="fas fa-cogs"></i>
+                <h3>Customization</h3>
+                <p>Tailored solutions to meet your specific requirements.</p>
+            </div>
+        </div>
+        
+        <button class="btn" id="expandBtn">Expand Grid</button>
+    </div>
+
+    <script>
+        const gridContainer = document.getElementById('gridContainer');
+        const expandBtn = document.getElementById('expandBtn');
+        let isExpanded = false;
+        
+        expandBtn.addEventListener('click', function() {
+            if (!isExpanded) {
+                // Expand the grid
+                gridContainer.classList.remove('grid-2x2');
+                gridContainer.classList.add('grid-4x3');
+                
+                // Show all hidden items with staggered animation
+                const hiddenItems = document.querySelectorAll('.grid-item.hidden');
+                hiddenItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.remove('hidden');
+                        item.style.animationDelay = `${(index + 1) * 0.1}s`;
+                    }, 100);
+                });
+                
+                expandBtn.textContent = 'Collapse Grid';
+                isExpanded = true;
+            } else {
+                // Collapse the grid
+                gridContainer.classList.remove('grid-4x3');
+                gridContainer.classList.add('grid-2x2');
+                
+                // Hide additional items
+                const allItems = document.querySelectorAll('.grid-item');
+                allItems.forEach((item, index) => {
+                    if (index >= 4) {
+                        setTimeout(() => {
+                            item.classList.add('hidden');
+                        }, 100);
+                    }
+                });
+                
+                expandBtn.textContent = 'Expand Grid';
+                isExpanded = false;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+@import url(https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css);
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.28) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(30px);
+  border-radius: 20px;
+  width: min(900px, 100%);
+  box-shadow: 0 0.5px 0 1px rgba(255, 255, 255, 0.23) inset,
+    0 1px 0 0 rgba(255, 255, 255, 0.66) inset, 0 4px 16px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+
+  border: 1px solid red;
+}
+
+
+
+@keyframes gelatine {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
+
+/* SWIPER */
+
+.swiper {
+ 
+  width: 250px;
+  height: 450px;
+  padding: 50px 0;
+}
+
+.swiper-slide {
+  position: relative;
+  /* box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2); */
+  /* border-radius: 10px; */
+  user-select: none;
+}
+
+.swiper-slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(1.4);
+}
+
+.img-position {
+  object-position: 50% 0%;
+}
+
+.fixLocation {  transform: translateX(8%); }

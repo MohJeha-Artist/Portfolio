@@ -1,0 +1,105 @@
+ .video-container {
+            display: flex;
+            /* flex-wrap: no-wrap; */
+            gap: 20px;
+           height: 512px;
+           aspect-ratio: 21/9;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+@media ( min-width: 769px ) 
+        
+        {
+       
+
+            .thumbnails-grid { 
+              flex-direction: column;
+               
+            }
+
+            
+        }
+        @media ( max-width: 768px ) 
+        
+        {
+            .video-container 
+                { 
+                
+                flex-direction: column;
+                width: 100%;
+                height: auto;
+                }
+        }
+        
+        .main-player {
+            width: 100%;
+            
+                        background-color: #111;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+        
+        .main-player iframe {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 16/9;
+            border: none;
+        }
+        
+        .thumbnails-grid {
+            display: flex;
+                       
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            width: auto;
+
+
+        }
+        
+        .video-thumbnail {
+            
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            cursor: pointer;
+            background-color: #222;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .video-thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-thumbnail::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+        
+        .video-thumbnail:hover::after {
+            opacity: 1;
+        }
+        
+        .active-thumbnail {
+            border: 2px solid #3498db;
+            transform: scale(1.05);
+        }

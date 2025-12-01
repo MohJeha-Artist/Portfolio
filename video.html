@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion Graphics Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            min-height: 100vh;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .border-t {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 3rem;
+        }
+        
+        .round {
+            border-radius: 16px;
+        }
+        
+        .border-r-l {
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .title {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .head {
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .s3 {
+            font-size: 1.2rem;
+            color: #a892fe;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .left {
+            text-align: left;
+        }
+        
+        .link a {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, #8A2BE2, #4A00E0);
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+        }
+        
+        .link a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+        }
+        
+        .video-container {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 16px;
+        }
+        
+        .pad-xy-50 {
+            padding: 2rem;
+        }
+        
+        .main-player {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .main-player iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .thumbnails-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            max-height: 500px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        
+        /* Scrollbar styling */
+        .thumbnails-grid::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .thumbnails-grid::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        
+        .thumbnails-grid::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #8A2BE2, #4A00E0);
+            border-radius: 10px;
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            cursor: pointer;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+            transform: scale(0.95);
+        }
+        
+        .video-thumbnail:hover {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .video-thumbnail.active-thumbnail {
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 0 0 2px #8A2BE2;
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .video-thumbnail::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(138, 43, 226, 0.3), rgba(74, 0, 224, 0.3));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .video-thumbnail:hover::after {
+            opacity: 1;
+        }
+        
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2rem;
+            opacity: 0.8;
+            z-index: 2;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 1024px) {
+            .video-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .thumbnails-grid {
+                grid-template-columns: repeat(3, 1fr);
+                max-height: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .thumbnails-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            body {
+                padding: 1rem;
+            }
+            
+            .video-container {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .thumbnails-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .head {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="container border-t round style1">
+        <div class="title">
+            <h1 class="head s3 center">Motion Graphics</h1>
+            <h1 class="head">
+                Explore my approach to motion graphics design — clean, creative, and built to stand out.
+            </h1>
+            <h1 class="head left link">
+                <a href="3D-Projects/3D-Projects.html" style="color: inherit; text-decoration: none;"> 
+                    show more.
+                </a>
+            </h1>
+        </div>
+
+        <div class="video-container pad-xy-50 border-r-l round">
+            <div class="main-player">
+                <iframe id="main-video" src="https://drive.google.com/file/d/1NJCuWvPGtnj1Tl5AhiVoAc4qy73zsc1q/preview" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+            </div>
+            <div class="thumbnails-grid">
+                <div class="video-thumbnail active-thumbnail" data-video="https://drive.google.com/file/d/1NJCuWvPGtnj1Tl5AhiVoAc4qy73zsc1q/preview">
+                    <img src="https://img.freepik.com/free-psd/dark-mode-mobile-app-screen-template_53876-111486.jpg" alt="Project 1">
+                    <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+                </div>
+                <div class="video-thumbnail" data-video="https://drive.google.com/file/d/1VgXYX0p6fCm33LmWbdLJ_7F_0P_5I4J5/preview">
+                    <img src="https://img.freepik.com/free-psd/dark-mode-mobile-app-screen-template_53876-111486.jpg" alt="Project 2">
+                    <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+                </div>
+                <div class="video-thumbnail" data-video="https://drive.google.com/file/d/1XyZzqRq8Q6vQvQvQvQvQvQvQvQvQvQvQv/preview">
+                    <img src="https://img.freepik.com/free-psd/dark-mode-mobile-app-screen-template_53876-111486.jpg" alt="Project 3">
+                    <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+                </div>
+                <div class="video-thumbnail" data-video="https://drive.google.com/file/d/1AbCDefGHiJkLmNoPqRsTuVwXyZzqRq8Q/preview">
+                    <img src="https://img.freepik.com/free-psd/dark-mode-mobile-app-screen-template_53876-111486.jpg" alt="Project 4">
+                    <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+                </div>
+                <div class="video-thumbnail" data-video="https://drive.google.com/file/d/1XyZzqRq8Q6vQvQvQvQvQvQvQvQvQvQvQv/preview">
+                    <img src="https://img.freepik.com/free-psd/dark-mode-mobile-app-screen-template_53876-111486.jpg" alt="Project 5">
+                    <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+                </div>
+                <div class="video-thumbnail" data-video="https://drive.google.com/file/d/1AbCDefGHiJkLmNoPqRsTuVwXyZzqRq8Q/preview">
+                    <img src="https://img.freepik.com/free-psd/dark-mode-mobile-app-screen-template_53876-111486.jpg" alt="Project 6">
+                    <div class="play-icon"><i class="fas fa-play-circle"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const thumbnails = document.querySelectorAll('.video-thumbnail');
+            const mainVideo = document.getElementById('main-video');
+            
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    // Remove active class from all thumbnails
+                    thumbnails.forEach(t => t.classList.remove('active-thumbnail'));
+                    
+                    // Add active class to clicked thumbnail
+                    this.classList.add('active-thumbnail');
+                    
+                    // Change the main video source
+                    const newVideoSrc = this.getAttribute('data-video');
+                    mainVideo.src = newVideoSrc;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

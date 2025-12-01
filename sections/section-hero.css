@@ -1,0 +1,255 @@
+
+
+/* ----------------------------------------------------- Header Type | Cover -- */ 
+
+.HERO 
+  {
+    position: relative;
+    margin: 0 auto;
+    width: 95%;
+    height: 100vh;
+    height: 100dvh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+
+
+
+    overflow: hidden; 
+    border-bottom: 2px solid var(--3);
+    border-radius: 0 0 25px 25px;
+    z-index: 10;
+    /* background-color: red; */
+    
+  }
+
+
+/* ----------------------------------------------------------------------------------------------- */
+
+.Hero-Image 
+  {
+    position: absolute;
+    top: 0;
+    /* right: -5%; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   
+    z-index: -1; 
+    
+    /* border: 1px solid blue; */
+  }
+
+  @media (max-width: 768px) {
+    .Hero-Image {
+      right: 0;
+    }
+
+  }
+
+
+
+.placeleft
+  {
+    left: 0;
+  }
+.placeright
+  {
+    right: 0;
+    /* transform: translateX(-30%);  */
+  }
+.flip
+  {
+    transform:  scaleX(-1); 
+  }
+
+
+
+.Hero-text
+  {
+    /* max-width: 30%; */
+    position: absolute;
+    bottom: 30%;
+    left: 10%;
+     text-shadow: 0 0 40px rgba(0,0,0,1);
+    margin: 0;
+    padding: 0;
+
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    .Hero-text {
+      bottom: 10%;
+      left: 5%;
+    }
+
+  }
+/* ------------------------------------- TOP BAR ---------------------------------------------------------- */
+
+  .hero-top-bar
+  {
+    top: 30px;
+    width: 82%;
+    height: 35px;
+    position: absolute;
+    display: flex;
+    /* border: 1px solid lime; */
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+  
+  }
+  
+  .hero-top-bar .Hero-logo {
+    width: auto;
+    height: 35px;
+  }
+  
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------- Header Type  |  Banner -- */  
+
+  .PRJ_banner {
+    height: 60dvh; 
+  }
+
+  .HERO .PRJ_Image{
+    display: flex;
+    width: 50%;
+    right: 7%;
+    /* border: 1px solid lime; */
+  }
+
+
+
+/* Ensure these selectors match your HTML structure */
+.PRJ_name 
+  {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-family: var(--f2);
+    font-weight: 100;
+    color: var(--1); /* Forced color for debugging */
+    pointer-events: none;
+    font-size: 1.5rem;
+    z-index: 10; /* Ensure it's above other elements */
+  }
+
+.PRJ_head 
+  {
+    position: absolute;
+    top: calc(50% + 2rem); /* Position below PRJ_name */
+    left: 10%;
+    font-weight: 700;
+    color: var(--1);
+    font-size: 2rem;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Improve readability */
+  }
+
+.PRJ_subhead 
+  {
+    position: absolute;
+    top: calc(50% + 5.5rem); /* Position below PRJ_name */
+    left: 10%;
+    font-weight: 100;
+    color: var(--1);
+    font-size: 1rem;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Improve readability */
+  }
+
+/* Debug styles - remove after testing */
+#hero-banner 
+  {
+    position: relative;
+    min-height: 300px;
+  }
+
+
+  /* ................................ */
+
+  .Cover {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+
+    /* border: 1px solid lime; */
+  }
+
+  .fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, var(--0), transparent);w
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  #cover-image {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    object-fit:cover;
+    
+  }
+
+
+
+
+  /* ----------------------    @MOBILE -------- >  */
+
+  @media (max-width: 720px) 
+  {
+    .Hero-Image
+    {
+      left: 0;
+      /* border: 1px solid rgb(0, 255, 42); */
+    }
+
+    .hero-banner 
+    {
+      top: 50px;
+      height: 60px;
+    }
+
+    .Hero-name 
+    {
+      top: 70%;
+      font-size: 1.3rem;
+     
+    }
+
+    .Hero-head 
+    {
+      font-size: 2rem;
+    }
+
+    .Hero-subhead 
+    {
+      /* display: none; */
+      font-size: 1rem; 
+    }
+
+  }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page-Viewer Graphics</title>
+  <style>
+    body {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      background: #000000;
+      font-family: sans-serif;
+    }
+
+    .preview {
+    
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgb(0, 0, 0);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .label {
+      text-align: center;
+      padding: 5px;
+      background: #333;
+      color: white;
+      font-size: 14px;
+    }
+
+    iframe {
+      display: block;
+      border: none;
+    }
+
+    /* Example device sizes */
+    .desktop iframe {
+      aspect-ratio: 16/9;
+      height: 800px;
+    }
+
+    .mobile iframe {
+      aspect-ratio: 9/17.5;
+      width: auto;
+      height: 800px;  /* iPhone height */
+    }
+  </style>
+</head>
+<body>
+  <div class="preview desktop">
+    <div class="label">Desktop</div>
+    <iframe src="http://127.0.0.1:5548/sections/section-cardswipe.html"></iframe>
+  </div>
+
+  <div class="preview mobile">
+    <div class="label">Mobile</div>
+    <iframe src="http://127.0.0.1:5548/sections/section-cardswipe.html"></iframe>
+  </div>
+
+  
+</body>
+</html>
