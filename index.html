@@ -14,6 +14,8 @@
 <!-- ------------------------------------------------------ -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
 
+<script src="Sections/section-hero.js"></script>
+
 <link rel="stylesheet" href="Styles/base.css">
 <link rel="stylesheet" href="Styles/base-grid-card.css">
 
@@ -29,6 +31,7 @@
 </head>
 
 <body>
+    <section-hero></section-hero>
 
 <!-- ----- LOAD Hero SECTIONS ----- -->
   <section class="HERO bg-grad1" id="Top"> 
@@ -70,6 +73,10 @@
   </section>
 <!-- ---------------------------------------------------------------------------------------------------------------------------  -->
 
+<!-- --------------------------- SPACE | Divider ------>
+<section class="spacer" style="height:100px;"></section> 
+<!-- -------------------------------------------------->
+
 <!-- ----- LOAD Services SECTIONS ----- -->
   <section class="container ">
 
@@ -85,7 +92,7 @@
     
                     <div class="services" id="services" >
                  
-                        <div class="services-grid round-t1 " >
+                        <div class="services-grid" >
 
                             <div class="services-card">
                                 <div class="services-content">
@@ -104,7 +111,7 @@
                             </div>
                             <div class="services-image">
                                 <!-- <img  src="https://i.pinimg.com/736x/da/7c/49/da7c49177911ecf92059700d9ae5dd33.jpg" alt="3D"> -->
-                                <img  src="Assets/img/3D2.jpg" alt="3D">
+                                <img  src="Assets/Thumbnails/Product2_thumbnail.jpeg" alt="3D">
                             </div>
                             </div>
     
@@ -125,11 +132,11 @@
 <!-- ---------------------------------------------------------------------------------------------------------------------------  -->
 
 <!-- --------------------------- SPACE | Divider ------>
-<section class="spacer" style="height:100px;"></section> 
+<section class="spacer" style="height:50px;"></section> 
 <!-- -------------------------------------------------->
 
 <!-- ----- LOAD 3D Work SECTIONS ----- -->
-  <section class="container box overflow border-t round-t3 pad-100 style3">
+  <section class="container box overflow border-t round-t3 pad-100 style3 desktop">
                 
                     <!-- <div class="wrk-bg ">
                         <img class="wrk-bg-img" src="Assets/backgrounds/bg.webp" alt="">
@@ -138,7 +145,7 @@
                    
                    
 
-                    <div class="wrk-port  index1"> 
+                    <div class="wrk-port  index1 "> 
                         <div class="wrk-head">
                             <h1 class="head f2 s3"> 3D Works </h1>
                             <h1 class="head s1 ">From concept to completion. assets modeled, textured, and crafted with detail.</h1>
@@ -178,7 +185,63 @@
                             <div class="card wide"><img class="thumbnail" src="Assets/Thumbnails/3D_Mortar_thumbnail.webp" alt="3D">
                                 <div class="gradient"></div><div class="blend-color"></div><span class="work-text">Mortar</span>
                             </div>
-                           
+                            
+                        </div>
+
+                        
+                    </div>
+                
+                </div>
+  </section>
+
+  <section class="container box overflow border-t round-t3 pad-100 style3 mobile">
+                
+                    <!-- <div class="wrk-bg ">
+                        <img class="wrk-bg-img" src="Assets/backgrounds/bg.webp" alt="">
+                    </div> -->
+                <div class="wrk-section ">
+                   
+                   
+
+                    <div class="wrk-port  index1 "> 
+                        <div class="wrk-head">
+                            <h1 class="head f2 s3"> 3D Works </h1>
+                            <h1 class="head s1 ">From concept to completion. assets modeled, textured, and crafted with detail.</h1>
+            
+                            <h1 class="head link1"><a  href="3D-Projects.html" style="color: inherit; text-decoration: none;"> 
+                                    Explore My Portfolio and Experiments </a>
+                            </h1>
+                        </div>
+                        <div class="grid-container rep-3">
+
+                            <div class="card wide"><img class="thumbnail" src="Assets/Thumbnails/3D_Axe_thumbnail.webp" alt="3D">
+                                <div class="gradient"></div><div class="blend-color"></div><span class="work-text">Medieval Axe</span>
+                            </div>
+
+                            <div class="card wide"><img class="thumbnail" src="Assets/Thumbnails/3D_katana1_thumbnail.webp" alt="3D">
+                                <div class="gradient"></div><div class="blend-color"></div><span class="work-text">Samurai Tachi</span>
+                            </div>
+                            <div class="card wide"><img class="thumbnail" src="Assets/Thumbnails/3D_Dagger_thumbnail.webp" alt="3D">
+                                <div class="gradient"></div><div class="blend-color"></div><span class="work-text">Dagger</span>
+                            </div>
+                            <div class="card wide"><img class="thumbnail" src="Assets/Thumbnails/3D_katana2_thumbnail.webp" alt="3D">
+                                <div class="gradient"></div><div class="blend-color"></div><span class="work-text">Katana Sword</span>
+                            </div>
+                            <div class="card wide"><img class="thumbnail" src="Assets/Thumbnails/3D_MilitaryCrate_thumbnail.webp" alt="3D">
+                                <div class="gradient"></div><div class="blend-color"></div><span class="work-text">Military Crate</span>
+                            </div>
+                            <div class="card wide"><img class="thumbnail" src="Assets/Thumbnails/3D_FireSword_thumbnail.webp" alt="3D">
+                                <div class="gradient"></div><div class="blend-color"></div><span class="work-text">FireSword</span>
+                            </div>
+                            
+                            <div class="card wide"><img class="thumbnail" src="Assets/Thumbnails/3D_Grenade_M67_thumbnail.webp" alt="3D">
+                                <div class="gradient"></div><div class="blend-color"></div><span class="work-text"> M67 Grenade </span>
+                            </div>
+                            <div class="card wide"><img class="thumbnail" src="Assets/Thumbnails/3D_Handgun_Scifi_thumbnail.webp" alt="3D">
+                                <div class="gradient"></div><div class="blend-color"></div><span class="work-text">Fictional Handgun</span>
+                            </div>
+                        
+                            
                         </div>
 
                         
@@ -189,7 +252,7 @@
 <!-- ---------------------------------------------------------------------------------------------------------------------------  -->
 
 <!-- ----- LOAD Logo SECTIONS ----- -->
-  <section class="container box style   desktop pad-x-100">
+  <section class="container box style   desktop pad-x-100 ">
 
   <div class="containerZ fixLocation">
       <div class="text-box  alignL  w75 index2 ">
@@ -283,11 +346,16 @@
 
         <div class="swiper index2">
             <div class="swiper-wrapper">
-  <div class="swiper-slide card1">
+              <div class="swiper-slide card1">
                   <img  src="Assets/Graphics/Logos/ibnbalad_Thumb.webp" alt="Brand 3 cover">
               </div>
+              
               <div class="swiper-slide card1">
                   <img  src="Assets/Graphics/Logos/SIS_Thumb.webp" alt="Brand 3 cover">
+              </div>
+
+              <div class="swiper-slide card1">
+                <img src="Assets/Graphics/Logos/Abusalah_Thumb.webp" alt="Brand 5 cover">
               </div>
 
               <div class="swiper-slide card1">
@@ -330,7 +398,6 @@
                 <img src="Assets/Graphics/Logos/EarthLinks_Thumb.webp" alt="Brand 5 cover">
               </div>
 
-              
 
             </div>
           </div>
