@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion-Graphics</title>
+<link rel="icon" href="Assets/fav/Fav.svg" type="image/x-icon">
+    <link rel="stylesheet" href="Styles/base.css">
+    <link rel="stylesheet" href="Styles/base-grid-card.css">
+
+    <link rel="stylesheet" href="Styles/section-footer.css">
+
+    <style>
+        /* Section base */
+.construction {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #3b0764, #111827, #000000);
+  color: #fff;
+}
+
+/* Title */
+.construction h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  animation: pulse 1.5s infinite;
+}
+
+/* Description */
+.construction p {
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: #e5e7eb; /* soft gray */
+}
+
+.construction p span {
+  color: #a855f7; /* purple accent */
+  font-weight: 600;
+}
+
+/* Button */
+.construction a {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  background: #9333ea;
+  color: white;
+  border-radius: 1.5rem;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.construction a:hover {
+  background: #7e22ce;
+  transform: scale(1.05);
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+    </style>
+</head>
+<body>
+
+    <section class="construction h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-900 via-gray-900 to-black text-white text-center p-6">
+  <h1 class="text-5xl font-extrabold mb-4 animate-pulse">
+    🚧 Work in Progress 🚧
+  </h1>
+  
+  <p class="text-lg mb-8 max-w-xl leading-relaxed">
+    My digital space is still being crafted — like a 3D model waiting for its final render.  
+    While I polish the details, you can explore the <span class="text-purple-400 font-semibold">About Page</span> that’s almost ready!
+  </p>
+  
+  <a href="about.html" 
+     class="px-6 py-3 rounded-2xl bg-purple-600 hover:bg-purple-700 transition-all shadow-lg hover:scale-105 font-bold text-lg">
+     Go to About Page →
+  </a>
+</section>
+
+</body>
+</html>
