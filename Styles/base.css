@@ -1,23 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Offside&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Allerta&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root 
   {
-    --f0:  Arial, Helvetica, sans-serif;
-    --f1: 'Mulish', sans-serif;
-    --f2: 'Roboto', sans-serif;
-    --f3: 'Poppins', sans-serif;
+
+    --f1: 'Poppins', sans-serif;
+    --f2:  'Inter', sans-serif;
+    --f3: 'Oswald', sans-serif;
 
 
     /*Palette*/
@@ -30,30 +19,6 @@
     --0: #050308;
     --000: rgb(53, 43, 87);  
 
-
-    --gradient: 
-        linear-gradient(90deg, 
-        rgba(50, 50, 50, 0.5), 
-        rgba(100, 100, 100, 0.5), 
-        rgba(50, 50, 50, 0.5));
-      
-    /* Nav Bar */ 
-    --bar-color: rgba(0, 0, 0, 0.5);
-    --bar-border: rgba(255, 255, 255, 0.2);
-    --bar-shadow: rgba(0, 0, 0, 0.2);
-
-    --text-color: grey;
-    --text-hover: white;
-    --text-fill-hover: #542cdb;
-
-    --text-Active: white;
-    --text-border-Active : #542cdb;
-
-
-    /* Paddings */
-    --pad1: 50px;
-    --pad2: 20px;
-    --pad3: 10px;
   }
 
 
@@ -234,6 +199,13 @@ body
       0 0 30px var(--3),
       0 0 40px var(--3),
       0 0 50px var(--3);
+}
+
+.shadow {
+  text-shadow: 
+      0 0 2px black,
+      0 0 10px black,
+      0 0 20px black;
 }
 
 .animation {  animation: float 6s ease-in-out infinite; }
@@ -421,9 +393,19 @@ padding: 50px 0;
  
 } 
 
-.s1 { font-size: 1.4rem; font-weight: 200; }
-.s2 { font-size: 2rem; font-weight: 600; }
-.s3 { font-size: 4rem; font-weight: 700; }
+.s1 { font-size: 1.4rem; }
+.s2 { font-size: 2rem; }
+.s3 { font-size: 4rem; }
+.s4 { font-size: 6rem; }
+.s5 { font-size: 15rem;}
+
+.b1 { font-weight: 200; font-style: normal;}
+.b2 { font-weight: 400; font-style: normal;}
+.b3 {  font-weight: 700; font-style: normal;}
+.b4 {  font-weight: 800; font-style: normal;}
+.b5 {  font-weight: 900; font-style: normal;}
+
+
 
 @media (max-width: 768px) {
   .s3 { font-size: 2rem;}
