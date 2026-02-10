@@ -68,4 +68,9 @@
   object-position: 50% 0%;
 }
 
-.fixLocation {  transform: translateX(8%); }
+.fixLocation {  transform: translateX(0); }
+
+@media (min-width: 768px) 
+{
+  .fixLocation {  transform: translateX(8%); }
+}

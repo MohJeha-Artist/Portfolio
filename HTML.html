@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Motion Graphics </title>
+
+    <link rel="stylesheet" href="Styles/base.css">
+<!-- <link rel="stylesheet" href="Styles/base-grid-card.css"> -->
+<link rel="stylesheet" href="Styles/section-hero.css">
+<link rel="stylesheet" href="Styles/section-footer.css">
+
+    <style>
+        
+   
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .Video-grid {
+     
+         width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 30px 0;
+
+    /* border-top: 2px solid var(--4); */
+    transition: all 1s ease;
+    /* border: 1px solid lime; */
+  }  
+
+  @media (max-width: 768px) {
+    .Video-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+        }
+
+        .Vid-thumbnail {
+            aspect-ratio: 16 / 9;
+            /* background: white; */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .Vid-thumbnail:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .Vid-thumbnail img {
+            width: 100%;
+            height: 100%;
+            /* height: 200px; */
+            object-fit: cover;
+            /* display: block; */
+        }
+
+        .thumbnail-title {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #c40707;
+        }
+
+        /* Video Overlay Styles */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .video-container {
+            position: relative;
+            width: 90%;
+            max-width: 1280px;
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 0, 0, 0.7);
+        }
+
+        .video-player {
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            position: relative;
+        }
+
+        .video-player iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    
+<!-- ----- LOAD Hero SECTIONS ----- -->
+  <section class="HERO banner bg-grad1" id="Top"> 
+          
+      <div class="hero-top-bar">
+          <a href="index.html">
+              <img class="Hero-logo" src="Assets/fav/Logo.svg" alt="hero-image" id="home">
+          </a>
+
+          <div class="social-icons">
+               <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
+                  <img src="Assets/fav/fb.svg" alt="Facebook">
+                  </a>
+                  <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
+                  <img src="Assets/fav/ins.svg" alt="Instagram">
+                  </a>
+                  <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
+                  <img src="Assets/fav/linked.svg" alt="LinkedIn">
+                  </a>
+
+              
+
+          </div>
+
+      </div>
+         <div class="Image-Container screen">
+             <img class="Hero-Image   " src="Assets/Thumbnails/3D_Axe_thumbnail.webp" alt="hero-image" id="home">
+         </div>
+         
+      
+   <div style="position: absolute; bottom: 50%;">
+    <div class="head s1 upper wrap " id="Hero-name"></div>
+    <div class="head s4   f3 upper wrap shadow" id="Hero-head">Motion Graphics</div>
+  </div>
+
+      
+      
+  </section>
+<!-- --------------------------- SPACE | Divider ------>
+<section class="spacer" style="height:50px;"></section> 
+<!-- -------------------------------------------------->
+
+
+    <div class="container box style1 pad-100 ">
+       <!-- ------------------------  Title  ----------------------------------------- -->
+<section class="sct-title">
+  <div class="head f3 b2 s3 center upper "> Design in motion </div>
+  <div class="head f1 b1 s1 center color ">  designed to communicate ideas through rhythm, timing, and flow. </div>
+</section>
+<!-- -------------------------------------------------------------------------- -->
+
+        
+        <div class="Video-grid ">
+            <!-- Video 1 -->
+            <div class="Vid-thumbnail" onclick="openVideo('1-iPgOj-8P4peuGogFJiHcACd0lIFbsrS', 'Microsoft')">
+                <img src="Assets/Thumbnails/Vthumbnail.webp" alt="Digital World">
+                <!-- <div class="thumbnail-title">Digital World</div> -->
+            </div>
+
+            <!-- Video 2 -->
+            <div class="Vid-thumbnail" onclick="openVideo('1COV5pq55Kddwei8jIYJ6vlfj0vq5ioQR', 'Project Alpha')">
+                <img src="Assets/Thumbnails/Vthumbnail.webp" alt="Project Alpha">
+                <div class="thumbnail-title">Project Alpha</div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="Vid-thumbnail" onclick="openVideo('1NJCuWvPGtnj1Tl5AhiVoAc4qy73zsc1q', 'Creative Studio')">
+                <img src="Assets/Thumbnails/Vthumbnail.webp" alt="Creative Studio">
+                <div class="thumbnail-title">Creative Studio</div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="Vid-thumbnail" onclick="openVideo('1tR4t12xtf-OqmZUxmAoGy8zlI03vnEY8', 'Creative Studio')">
+                <img src="Assets/Thumbnails/Vthumbnail.webp" alt="Creative Studio">
+                <div class="thumbnail-title">Creative Studio</div>
+            </div>
+
+             <!-- Video 5 -->
+            <div class="Vid-thumbnail" onclick="openVideo('1q2UBuKZMfbOzPnlkwnfiJn56mwAB7vS8', 'Creative Studio')">
+                <img src="Assets/Thumbnails/Vthumbnail.webp" alt="Creative Studio">
+                <div class="thumbnail-title">Creative Studio</div>
+            </div>
+
+             <!-- Video 6 -->
+            <div class="Vid-thumbnail" onclick="openVideo('1EDBjpccfHs62Ogwho0ikvp9pNdqLWd8e', 'Creative Studio')">
+                <img src="Assets/Thumbnails/Vthumbnail.webp" alt="Creative Studio">
+                <div class="thumbnail-title">Creative Studio</div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Video Overlay -->
+    <div class="overlay" id="videoOverlay">
+        <div class="video-container">
+            <!-- <button class="close-btn" onclick="closeVideo()">×</button> -->
+            <div class="video-player">
+                <iframe id="videoFrame" allowfullscreen allow="autoplay"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- --------------------------- SPACE | Divider ------>
+    <section class="spacer" style="height:50px;"></section> 
+    <!-- -------------------------------------------------->
+
+    <!-- ----- LOAD FOOTER ----- -->
+    <footer class="footer" id="footer">
+        <p class="copyrights">&copy; <span id="current-year"></span> MohJeha-Artist. All Rights Reserved.</p>
+        <div class="footer-content">
+            <div class="ft-b"><img src="Assets/fav/3d-art-designer.svg" alt="Logo" class="footer-logo"></div>
+            <div class="ft-b">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
+                    <img src="Assets/fav/fb.svg" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
+                    <img src="Assets/fav/ins.svg" alt="Instagram">
+                    </a>
+                    <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
+                    <img src="Assets/fav/linked.svg" alt="LinkedIn">
+                    </a>
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg"  width="50" height="50" class="arrowback" viewBox="0 0 16 16" class="bk-btn" onclick="document.getElementById('Top').scrollIntoView({ behavior: 'smooth' })">
+                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+                    </svg>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+    <!-- ---------------------------------------------------------------------------------------------------------------------------  -->
+
+    <script> document.getElementById("current-year").textContent = new Date().getFullYear(); </script>
+
+    <script>
+        function openVideo(videoId, title) {
+            const overlay = document.getElementById('videoOverlay');
+            const videoFrame = document.getElementById('videoFrame');
+            
+            // Set the video source
+            videoFrame.src = `https://drive.google.com/file/d/${videoId}/preview`;
+            
+            // Show the overlay
+            overlay.style.display = 'flex';
+            
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideo() {
+            const overlay = document.getElementById('videoOverlay');
+            const videoFrame = document.getElementById('videoFrame');
+            
+            // Hide the overlay
+            overlay.style.display = 'none';
+            
+            // Stop the video
+            videoFrame.src = '';
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close video when clicking outside the video container
+        document.getElementById('videoOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideo();
+            }
+        });
+
+        // Close video with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideo();
+            }
+        });
+    </script>
+
+    </body>
+</html>
