@@ -1,7 +1,5 @@
 const prevDesktop = document.getElementById("prev");
 const nextDesktop = document.getElementById("next");
-const prevMobile = document.getElementById("prev-mobile");
-const nextMobile = document.getElementById("next-mobile");
 
 // Apply the same logic to all
 function setupNavigation(prevBtn, nextBtn) {
