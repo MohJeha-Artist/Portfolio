@@ -117,15 +117,14 @@
         padding-bottom: 5px;
     }
 
-    .swiper-top
-    {
-        margin-top: 50px;
-        border-top: 2px solid var(--2); 
+    .swiper-top {
+        margin-top: 25px; !important; 
+        border-top: 3px solid var(--2);
     }
 
     .section-title {
-        margin-top: 10px;
-        margin-bottom: 0px;
+        margin-top: 15px;
+        margin-bottom: 10px;
         padding-left: 50px;
     }
 
@@ -146,7 +145,7 @@
     }
 
     .swiper-slide .card {
-        width: 350px;
+        width: 450px;
         /* Fixed width for cards in swiper */
         margin: 0;
     }
@@ -173,7 +172,8 @@
 
     @media (max-width: 768px) {
         .swiper-slide .card {
-            width: 280px;
+            width: 330px;
+            aspect-ratio: 1/1;
         }
 
         .swiper-button-next,
@@ -216,8 +216,8 @@
 
 
         <div style="position: absolute; bottom: 50%;">
-            <div class="head s1 upper wrap " id="Hero-name"></div>
-            <div class="head s4   f3 upper wrap shadow" id="Hero-head">3D Projects</div>
+            <div class="Banner-Title  upper wrap " id="Hero-name">3D Projects</div>
+            <div class="subhead   f3 upper wrap shadow" id="Hero-head"></div>
         </div>
 
 
@@ -233,11 +233,11 @@
     <!-- SECTION 2 -->
     <!-- 3D Works  -->
     <!-- --------- -->
-    
-    <section class="container overflow swiper-top">
-    <h2 class="title section-title ">- <span class="color">Melee Weapons</span> -</h2>
+
+    <section class="swiper-top overflow">
+        <h2 class="title section-title ">- <span class="color">Melee Weapons</span> -</h2>
         <!-- Swiper Melee Weapons-->
-        <div class="swiper mySwiper">
+        <div class="swiper mySwiper" id="swiperMelee">
             <div class="swiper-wrapper">
                 <!-- Slides -->
                 <div class="swiper-slide">
@@ -356,15 +356,15 @@
 
 
             </div>
-           
+
         </div>
     </section>
 
-    
-    <section class="container overflow swiper-top" style="margin: 0 auto !important;">
-    <h2 class="title section-title ">- <span class="color">Firearms & Tactical</span> -</h2>
+
+    <section class="swiper-top overflow">
+        <h2 class="title section-title">- <span class="color">Firearms & Tactical</span> -</h2>
         <!-- Swiper -->
-        <div class="swiper mySwiper">
+        <div class="swiper mySwiper" id="swiperFirearms">
             <div class="swiper-wrapper">
                 <!-- Slides -->
 
@@ -463,15 +463,15 @@
 
 
             </div>
-        
+
         </div>
     </section>
 
-    
-    <section class="container overflow swiper-top">
-    <h2 class="title section-title ">- <span class="color">Environment & Props</span> -</h2>
+
+    <section class="swiper-top overflow">
+        <h2 class="title section-title ">- <span class="color">Environment & Props</span> -</h2>
         <!-- Swiper a-->
-        <div class="swiper mySwiper">
+        <div class="swiper mySwiper" id="swiperEnvironment">
             <div class="swiper-wrapper">
                 <!-- Slides -->
 
@@ -567,19 +567,25 @@
                     </a>
                 </div>
             </div>
-           
+
         </div>
     </section>
 
-    
+
     <!-- ---------------------------- Overlay ------------------------------------- -->
     <div id="overlay" class="overlay">
         <div class="overlay-content">
             <span class="close-btn" onclick="closeOverlay()">×</span>
-            <iframe id="overlayFrame" src="" frameborder="0" scrolling="no"></iframe>
+            <iframe id="overlayFrame" src="" frameborder="0"></iframe>
         </div>
     </div>
     <!-- -------------------------------------------------------------------------- -->
+
+
+    <!-- --------------------------- SPACE | Divider ------>
+    <section class="spacer" style="height:50px;"></section>
+    <!-- -------------------------------------------------->
+
 
     <!-- ----- LOAD FOOTER ----- -->
     <footer class="footer" id="footer">
@@ -618,6 +624,9 @@
             overlay.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden'; // Prevent background scroll
 
+            // Push a state so the back button closes the overlay
+            history.pushState({ overlay: true }, "");
+
             // Add a small delay to ensure display:flex is applied before adding active class
             requestAnimationFrame(() => {
                 overlay.classList.add('active');
@@ -628,6 +637,8 @@
 
         function closeOverlay() {
             const overlay = document.getElementById('overlay');
+            if (!overlay.classList.contains('active')) return; // Avoid redundant calls
+
             overlay.classList.remove('active');
             overlay.setAttribute('aria-hidden', 'true');
 
@@ -637,7 +648,27 @@
                 document.getElementById('overlayFrame').src = "";
                 document.body.style.overflow = ''; // Restore scrolling
             }, 300); // Match the transition duration
+
+            // If we're closing and there's an overlay state, go back
+            if (history.state && history.state.overlay) {
+                history.back();
+            }
         }
+
+        // Listen for browser Back button
+        window.addEventListener('popstate', function (event) {
+            const overlay = document.getElementById('overlay');
+            if (overlay.classList.contains('active')) {
+                // Close without history.back() to avoid double-stepping
+                overlay.classList.remove('active');
+                overlay.setAttribute('aria-hidden', 'true');
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    document.getElementById('overlayFrame').src = "";
+                    document.body.style.overflow = '';
+                }, 300);
+            }
+        });
 
         // Listen for ESC key
         document.addEventListener('keydown', function (event) {
@@ -684,20 +715,44 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        const swiper = new Swiper('.mySwiper', {
+        // Shared configuration options
+        const sharedConfig = {
             loop: true,
             centeredSlides: true,
             slidesPerView: "auto",
             spaceBetween: 30,
             loopedSlides: 12,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
+        };
+
+        // Initialize Melee Weapons (Fast)
+        new Swiper('#swiperMelee', {
+            ...sharedConfig,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            }
+        });
+
+        // Initialize Firearms & Tactical (Medium)
+        new Swiper('#swiperFirearms', {
+            ...sharedConfig,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            }
+        });
+
+        // Initialize Environment & Props (Slow)
+        new Swiper('#swiperEnvironment', {
+            ...sharedConfig,
+            autoplay: {
+                delay: 5500,
+                disableOnInteraction: false,
+            }
         });
     </script>
 
