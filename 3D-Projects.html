@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,365 +11,613 @@
     <link rel="stylesheet" href="Styles/section-footer.css">
 
     <link rel="stylesheet" href="Styles/section-hero.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <style>
-    
-        /* Overlay Styles */
+    /* Overlay Styles */
+    .overlay {
+        display: none;
+        position: fixed;
+
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background: rgba(0, 0, 0, 0.8); */
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        /* transform: translateX(30%); */
+        transition: background 0.3s ease;
+        overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
         .overlay {
-            display: none;
-            position: fixed;
-            
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            /* background: rgba(0, 0, 0, 0.8); */
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            /* transform: translateX(30%); */
-            transition: background 0.3s ease;
-            overflow: hidden;
+            transform: translateX(0%);
+            margin-top: 0;
         }
 
-@media (max-width: 768px) 
-  {
-    .overlay { width: 100%;  transform: translateX(0%);  margin-top: 0;}
-    
-  }
+    }
 
+    .overlay-content {
+        position: relative;
+        /* margin-top: 100px; */
+        width: 100%;
+        height: 100%;
+        /* max-width: 1400px; */
+        /* background: white; */
+        border-radius: 12px;
+        /* overflow: hidden; */
+        opacity: 0;
+        transform: scale(0.9);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
         .overlay-content {
-            position: relative;
-            /* margin-top: 100px; */
-            width: 100%;
-            height: 100%;
-            /* max-width: 1400px; */
-            /* background: white; */
-            border-radius: 12px;
-            /* overflow: hidden; */
-            opacity: 0;
-            transform: scale(0.9);
-            transition: opacity 0.3s ease, transform 0.3s ease;
+            border-radius: 0;
         }
 
-        @media (max-width: 768px) 
-  {
-    .overlay-content { border-radius: 0;}
-    
-  }
+    }
 
-        .overlay.active .overlay-content {
-            opacity: 1;
-            transform: scale(1);
-        }
+    .overlay.active .overlay-content {
+        opacity: 1;
+        transform: scale(1);
+    }
 
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        background: rgba(84, 44, 219);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 28px;
+        cursor: pointer;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    @media (max-width: 768px) {
         .close-btn {
-            position: absolute;
-            top: 15px;
             right: 15px;
-            width: 40px;
-            height: 40px;
-            background: rgba(84, 44, 219);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            font-size: 28px;
-            cursor: pointer;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s ease, transform 0.2s ease;
+            !important
+        }
+    }
+
+    .close-btn:hover {
+        background: rgba(0, 0, 0, 0.9);
+        transform: rotate(90deg);
+    }
+
+    .close-btn:focus {
+        outline: 3px solid #4a9eff;
+        outline-offset: 2px;
+    }
+
+    #overlayFrame {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    /* Swiper Custom Styles */
+    .swiper {
+        width: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .swiper-top
+    {
+        margin-top: 50px;
+        border-top: 2px solid var(--2); 
+    }
+
+    .section-title {
+        margin-top: 10px;
+        margin-bottom: 0px;
+        padding-left: 50px;
+    }
+
+    @media (max-width: 768px) {
+        .section-title {
+            padding-left: 20px;
+            text-align: center;
+        }
+    }
+
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-slide .card {
+        width: 350px;
+        /* Fixed width for cards in swiper */
+        margin: 0;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: #542cdb;
+        background: rgba(255, 255, 255, 0.1);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        backdrop-filter: blur(5px);
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .swiper-pagination-bullet {
+        background: #542cdb;
+    }
+
+    @media (max-width: 768px) {
+        .swiper-slide .card {
+            width: 280px;
         }
 
-      @media (max-width: 768px) {
-  .close-btn { right: 15px;!important}
-}
-
-        .close-btn:hover {
-            background: rgba(0, 0, 0, 0.9);
-            transform: rotate(90deg);
+        .swiper-button-next,
+        .swiper-button-prev {
+            display: none;
+            /* Hide nav on mobile for cleaner look if preferred */
         }
-
-        .close-btn:focus {
-            outline: 3px solid #4a9eff;
-            outline-offset: 2px;
-        }
-
-        #overlayFrame {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+    }
 </style>
+
 <body>
+
+    <!-- ----- LOAD Hero SECTIONS ----- -->
+    <section class="HERO banner bg-grad1" id="Top">
+
+        <div class="hero-top-bar">
+            <a href="index.html">
+                <img class="Hero-logo" src="Assets/fav/Logo.svg" alt="hero-image" id="home">
+            </a>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
+                    <img src="Assets/fav/fb.svg" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
+                    <img src="Assets/fav/ins.svg" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
+                    <img src="Assets/fav/linked.svg" alt="LinkedIn">
+                </a>
+
+
+
+            </div>
+
+        </div>
+        <div class="Image-Container screen">
+            <img class="Hero-Image   " src="Assets/fav/Banner_projects.webp" alt="hero-image" id="home">
+        </div>
+
+
+        <div style="position: absolute; bottom: 50%;">
+            <div class="head s1 upper wrap " id="Hero-name"></div>
+            <div class="head s4   f3 upper wrap shadow" id="Hero-head">3D Projects</div>
+        </div>
+
+
+
+    </section>
+    <!-- ---------------------------------------------------------------------------------------------------------------------------  -->
+    <div class="container box">
+        <h1 class="head s2 b1 f2 center glow ">🚧 My digital space is still being crafted 🚧 <br>
+            <span class="head s2 b1 f2 center glow "> Some features and links may be temporarily unavailable.</span>
+    </div>
+
+
+    <!-- SECTION 2 -->
+    <!-- 3D Works  -->
+    <!-- --------- -->
     
-<!-- ----- LOAD Hero SECTIONS ----- -->
-  <section class="HERO banner bg-grad1" id="Top"> 
-          
-      <div class="hero-top-bar">
-          <a href="index.html">
-              <img class="Hero-logo" src="Assets/fav/Logo.svg" alt="hero-image" id="home">
-          </a>
-
-          <div class="social-icons">
-               <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
-                  <img src="Assets/fav/fb.svg" alt="Facebook">
-                  </a>
-                  <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
-                  <img src="Assets/fav/ins.svg" alt="Instagram">
-                  </a>
-                  <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
-                  <img src="Assets/fav/linked.svg" alt="LinkedIn">
-                  </a>
-
-              
-
-          </div>
-
-      </div>
-         <div class="Image-Container screen">
-             <img class="Hero-Image   " src="Assets/fav/Banner_projects.webp" alt="hero-image" id="home">
-         </div>
-         
-      
-   <div style="position: absolute; bottom: 50%;">
-    <div class="head s1 upper wrap " id="Hero-name"></div>
-    <div class="head s4   f3 upper wrap shadow" id="Hero-head">3D Projects</div>
-  </div>
-
-      
-      
-  </section>
-<!-- ---------------------------------------------------------------------------------------------------------------------------  -->
-<div class="container box"  >
-    <h1 class="head s2 b1 f2 center glow ">🚧 My digital space is still being crafted 🚧 <br> 
-<span class="head s2 b1 f2 center glow "> Some features and links may be temporarily unavailable.</span>
-</div>
-
-
-        <!-- SECTION 2 -->
-            <!-- 3D Works  -->
-            <!-- --------- -->
-            <section class="container   overflow  pad-x-50">
-                
-              
-                        <div class="grid-container  rep-3">
-
-
-                           
-                            <div class="card" onclick="openOverlay('Projects/page-1.html')">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_Axe_thumbnail.webp" alt="3D">
-                                <div class="gradient" ></div><span class="work-text" >Medieval Axe</span>
-                            </div>
-                    
-                        
-                     
-                            <div class="card" onclick="openOverlay('Projects/page-2.html')">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_Hammer_thumbnail.webp" alt="3D" >
-                                <div class="gradient" ></div><span class="work-text" >Medieval Hammer</span>
-                            </div>
-                      
-
-                        <a href="">
-                             <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_katana1_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text">Samurai Tachi</span>
-                            </div>
-                        </a>
-                        <a href="">
-                             <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_katana2_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text">Katana Sword</span>
-                            </div>
-                        </a>
-                    
-                        <a href="">
-                            <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_FireSword_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text">FireSword</span>
-                            </div>
-                        </a>
-                           <a href="">
-                            <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_IncursioSword_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text">Incursio Sword</span>
-                            </div>
-                        </a>
-                         <a href=""> 
-                            <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_Royal_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text">Royal Sword</span>
-                            </div>
-                        </a>
-                            <a href="">
-                             <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_Dagger_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text">Dagger</span>
-                            </div>
-                        </a>
-                            <a href="">
-                              <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_Handgun_Scifi_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text">Sci-fi Handgun</span>
-                            </div>
-                        </a>
-                          <a href="">
-                             <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_SR_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text">Sniper Rifle</span>
-                            </div>
-                        </a>
-                             <a href="">
-                              <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_MilitaryCrate_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text">Military Crate</span>
-                            </div>
-                        </a>
-                        <a href=""> 
-                            <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_MilitaryRadio_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text">Military Radio</span>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_Granada_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text">Sci-fi Grenade</span>
-                            </div>
-                        </a>
-                        <a href="">
-                             <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_Grenade_M67_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text"> M67 Grenade </span>
-                            </div>
-                        </a>
-                    
-                      
-                   
-                <a href="">
-                             <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_Windmill_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text"> Windmill </span>
-                            </div>
-                        </a>
-
-                <a href="">
-                             <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_SunSword_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text"> SunSword </span>
-                            </div>
-                        </a>
-
-                             <a href=""> 
-                            <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_Mortar_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text">Mortar</span>
-                            </div>
-                        </a>
-
-                           <a href=""> 
-                            <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_Shoes_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text">Shoes</span>
-                            </div>
-                        </a>
-
-                            <a href=""> 
-                            <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_MusicBox_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text">Music Box</span>
-                            </div>
-                        </a>
-
-                             <a href=""> 
-                            <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_DaggerP_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text">Dagger</span>
-                            </div>
-                        </a>
-
-                            <a href=""> 
-                            <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_Pooltable_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text">Pool Table</span>
-                            </div>
-                        </a>
-
-                         <a href=""> 
-                            <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_Bats_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text">Scrap Bats</span>
-                            </div>
-                        </a>
-
-                         <a href=""> 
-                            <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_Bow_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text">Bow</span>
-                            </div>
-                        </a>
-
-                             <a href=""> 
-                            <div class="card">
-                                <img class="thumbnail" src="Assets/Thumbnails/3D_Barrel_thumbnail.webp" alt="3D">
-                                <div class="gradient"></div><span class="work-text">Toxic Barrel</span>
-                            </div>
-                        </a>
-
-                          
-
-                           
-
-                        </div>
+    <section class="container overflow swiper-top">
+    <h2 class="title section-title ">- <span class="color">Melee Weapons</span> -</h2>
+        <!-- Swiper Melee Weapons-->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <div class="card" onclick="openOverlay('Projects/page-1.html')">
+                        <img class="thumbnail" src="Assets/Thumbnails/3D_Axe_thumbnail.webp" alt="3D">
+                        <div class="gradient"></div><span class="work-text">Medieval Axe</span>
                     </div>
-                
                 </div>
-            </section>
-     
-<!-- ---------------------------- Overlay ------------------------------------- -->
-<div id="overlay" class="overlay">
-  <div class="overlay-content">
-    <span class="close-btn" onclick="closeOverlay()">×</span>
-    <iframe id="overlayFrame" src="" frameborder="0" scrolling="no"></iframe>
-</div></div>
-<!-- -------------------------------------------------------------------------- -->
 
-<!-- ----- LOAD FOOTER ----- -->
-  <footer class="footer" id="footer">
-      <p class="copyrights">&copy; <span id="current-year"></span> MohJeha-Artist. All Rights Reserved.</p>
-      <div class="footer-content">
-          <div class="ft-b"><img src="Assets/fav/3d-art-designer.svg" alt="Logo" class="footer-logo"></div>
-          <div class="ft-b">
-              <div class="social-icons">
-                  <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
-                  <img src="Assets/fav/fb.svg" alt="Facebook">
-                  </a>
-                  <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
-                  <img src="Assets/fav/ins.svg" alt="Instagram">
-                  </a>
-                  <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
-                  <img src="Assets/fav/linked.svg" alt="LinkedIn">
-                  </a>
-                  
-                  <svg xmlns="http://www.w3.org/2000/svg"  width="50" height="50" class="arrowback" viewBox="0 0 16 16" class="bk-btn" onclick="document.getElementById('Top').scrollIntoView({ behavior: 'smooth' })">
-                      <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
-                  </svg>
-                  
-              </div>
-          </div>
-      </div>
-      
-  </footer>
-<!-- ---------------------------------------------------------------------------------------------------------------------------  -->
- <script>
+                <div class="swiper-slide">
+                    <div class="card" onclick="openOverlay('Projects/page-2.html')">
+                        <img class="thumbnail" src="Assets/Thumbnails/3D_Hammer_thumbnail.webp" alt="3D">
+                        <div class="gradient"></div><span class="work-text">Medieval Hammer</span>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_katana1_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Samurai Tachi</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_katana2_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Katana Sword</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_FireSword_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">FireSword</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_IncursioSword_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Incursio Sword</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Royal_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Royal Sword</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Dagger_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Dagger</span>
+                        </div>
+                    </a>
+                </div>
+
+
+
+
+
+
+
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_SunSword_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text"> SunSword </span>
+                        </div>
+                    </a>
+                </div>
+
+
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_DaggerP_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Dagger</span>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Bats_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Scrap Bats</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Bow_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Bow</span>
+                        </div>
+                    </a>
+                </div>
+
+
+            </div>
+           
+        </div>
+    </section>
+
+    
+    <section class="container overflow swiper-top" style="margin: 0 auto !important;">
+    <h2 class="title section-title ">- <span class="color">Firearms & Tactical</span> -</h2>
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Handgun_Scifi_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Sci-fi Handgun</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_SR_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Sniper Rifle</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_MilitaryCrate_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Military Crate</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_MilitaryRadio_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Military Radio</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Granada_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Sci-fi Grenade</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Grenade_M67_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text"> M67 Grenade </span>
+                        </div>
+                    </a>
+                </div>
+
+
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Mortar_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Mortar</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Duplicated for seamless loop -->
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Handgun_Scifi_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Sci-fi Handgun</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_SR_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Sniper Rifle</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_MilitaryCrate_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Military Crate</span>
+                        </div>
+                    </a>
+                </div>
+
+
+            </div>
+        
+        </div>
+    </section>
+
+    
+    <section class="container overflow swiper-top">
+    <h2 class="title section-title ">- <span class="color">Environment & Props</span> -</h2>
+        <!-- Swiper a-->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Windmill_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text"> Windmill </span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Shoes_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Shoes</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_MusicBox_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Music Box</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Pooltable_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Pool Table</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Barrel_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Toxic Barrel</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Duplicated for seamless loop -->
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Windmill_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text"> Windmill </span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Shoes_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Shoes</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_MusicBox_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Music Box</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Pooltable_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Pool Table</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="">
+                        <div class="card">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Barrel_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Toxic Barrel</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+
+    
+    <!-- ---------------------------- Overlay ------------------------------------- -->
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <span class="close-btn" onclick="closeOverlay()">×</span>
+            <iframe id="overlayFrame" src="" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
+    <!-- -------------------------------------------------------------------------- -->
+
+    <!-- ----- LOAD FOOTER ----- -->
+    <footer class="footer" id="footer">
+        <p class="copyrights">&copy; <span id="current-year"></span> MohJeha-Artist. All Rights Reserved.</p>
+        <div class="footer-content">
+            <div class="ft-b"><img src="Assets/fav/3d-art-designer.svg" alt="Logo" class="footer-logo"></div>
+            <div class="ft-b">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
+                        <img src="Assets/fav/fb.svg" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
+                        <img src="Assets/fav/ins.svg" alt="Instagram">
+                    </a>
+                    <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
+                        <img src="Assets/fav/linked.svg" alt="LinkedIn">
+                    </a>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" class="arrowback" viewBox="0 0 16 16"
+                        class="bk-btn" onclick="document.getElementById('Top').scrollIntoView({ behavior: 'smooth' })">
+                        <path fill-rule="evenodd"
+                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
+                    </svg>
+
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- ---------------------------------------------------------------------------------------------------------------------------  -->
+    <script>
         function openOverlay(page) {
             const overlay = document.getElementById('overlay');
             document.getElementById('overlayFrame').src = page;
             overlay.style.display = 'flex';
             overlay.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden'; // Prevent background scroll
-            
+
             // Add a small delay to ensure display:flex is applied before adding active class
             requestAnimationFrame(() => {
                 overlay.classList.add('active');
@@ -381,7 +630,7 @@
             const overlay = document.getElementById('overlay');
             overlay.classList.remove('active');
             overlay.setAttribute('aria-hidden', 'true');
-            
+
             // Wait for animation to complete before hiding
             setTimeout(() => {
                 overlay.style.display = 'none';
@@ -391,24 +640,24 @@
         }
 
         // Listen for ESC key
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             if (event.key === "Escape") {
                 closeOverlay();
             }
         });
 
         // Click outside overlay to close
-        document.getElementById('overlay').addEventListener('click', function(e) {
+        document.getElementById('overlay').addEventListener('click', function (e) {
             if (e.target === this) {
                 closeOverlay();
             }
         });
 
         // Listen for messages from iframe
-        window.addEventListener('message', function(event) {
+        window.addEventListener('message', function (event) {
             // Validate origin for security
             if (event.origin !== window.location.origin) return;
-            
+
             if (event.data === 'closeOverlay') {
                 closeOverlay();
             }
@@ -416,7 +665,7 @@
 
         // Add keyboard support for cards
         document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('keydown', function(e) {
+            card.addEventListener('keydown', function (e) {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
                     this.click();
@@ -424,12 +673,34 @@
             });
         });
     </script>
-<!-- ----------------------------------------------------------------------- -->
-          
- <!-- Smooth Scroll -->
-<script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
-<script src="Js/lenis.js"></script>
-<!-- ---------------- -->
+    <!-- ----------------------------------------------------------------------- -->
+
+    <!-- Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
+    <script src="Js/lenis.js"></script>
+    <!-- ---------------- -->
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.mySwiper', {
+            loop: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            spaceBetween: 30,
+            loopedSlides: 12,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
 
 </body>
+
 </html>

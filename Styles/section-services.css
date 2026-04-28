@@ -53,7 +53,7 @@ padding: 10px;
       }
 
 
-    .services-card:not(:hover) 
+    .services-card:not(:hover):not(.active) 
       {
         .s1-title1 
           {
