@@ -4,7 +4,7 @@
    DEVELOPER MODE: 
    Uncomment the line below to HIDE the preloader and transitions while working.
 */
-#preloader, #transition-overlay { display: none !important; }
+/* #preloader, #transition-overlay { display: none !important; } */
 
 :root {
     --transition-speed: 0.6s;
