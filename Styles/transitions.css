@@ -1,0 +1,146 @@
+/* Page Preloader & Transition Styles */
+
+/* 
+   DEVELOPER MODE: 
+   Uncomment the line below to HIDE the preloader and transitions while working.
+*/
+#preloader, #transition-overlay { display: none !important; }
+
+:root {
+    --transition-speed: 0.6s;
+    --transition-easing: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* Base style for both to ensure NO BLINKING */
+#preloader,
+#transition-overlay {
+    position: fixed;
+    top: 0;
+    /* Both start at the top to cover the page immediately */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+    transition: transform var(--transition-speed) var(--transition-easing),
+        top var(--transition-speed) var(--transition-easing);
+}
+
+/* Transition Overlay Specifics */
+#transition-overlay {
+    z-index: 1000000;
+    /* Default state is NOT active, so we move it down ONLY if not transitioning */
+    /* But to prevent blinking, we handle the 'down' state via JS or a class */
+}
+
+/* When NOT transitioning and NOT loading, these are hidden */
+#preloader.exit {
+    transform: translateY(100%);
+}
+
+#transition-overlay.exit {
+    top: 100% !important;
+}
+
+/* Default state for overlay when it's NOT the active transition */
+#transition-overlay.hidden {
+    top: 100%;
+    transition: none;
+    /* Instant move when hidden */
+}
+
+/* Active state (covering the page) */
+#transition-overlay.active {
+    top: 0 !important;
+    pointer-events: all;
+}
+
+/* Loader Content */
+.loader-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.loader-logo {
+    width: 120px;
+    height: auto;
+    filter: drop-shadow(0 0 15px var(--3));
+    animation: pulse-logo 2s infinite ease-in-out;
+}
+
+.loader-bar-container {
+    width: 200px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.loader-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: var(--3);
+    box-shadow: 0 0 10px var(--3);
+    transition: width 0.4s ease;
+}
+
+@keyframes pulse-logo {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
+
+body.is-transitioning {
+    overflow: hidden !important;
+}
+
+.reveal-content {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.btn-style {
+    padding: 10px 25px;
+    border: 2px solid var(--3);
+    border-radius: 10px;
+    background-color: transparent;
+    color: var(--1);
+    font-family: var(--f1);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-style:hover {
+    background-color: var(--3);
+    color: var(--1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(84, 44, 219, 0.4);
+}

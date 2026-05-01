@@ -26,10 +26,31 @@
     <link rel="stylesheet" href="Styles/section-swiper.css">
     <link rel="stylesheet" href="Styles/section-videos.css">
     <link rel="stylesheet" href="Styles/section-footer.css">
+    <link rel="stylesheet" href="Styles/transitions.css">
 
 </head>
 
-<body>
+<body class="is-transitioning">
+
+    <!-- Page Preloader (Initial Load) -->
+    <div id="preloader">
+        <div class="loader-content">
+            <img src="Assets/fav/Logo.svg" alt="MohJeha Logo" class="loader-logo">
+            <div class="loader-bar-container">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Transition Overlay (Navigation) -->
+    <div id="transition-overlay">
+        <div class="loader-content">
+            <img src="Assets/fav/Logo.svg" alt="MohJeha Logo" class="loader-logo">
+            <div class="loader-bar-container">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- ----- LOAD Hero SECTIONS ----- -->
     <section class="HERO bg-grad1" id="Top">
@@ -60,10 +81,10 @@
         </div>
 
 
-        <div class="Hero-text">
-            <h1 class=" subhead    left">Mohamad Jeha</h1>
-            <h1 class="head1  left">3D ART DESIGNER</h1>
-            <h1 class="subhead   left"> Specializing in 3D Product Rendering, Concept Design, and Dynamic Digital Media.
+        <div class="Hero-text reveal-content">
+            <h1 class="subhead left">Mohamad Jeha</h1>
+            <h1 class="head left">3D ART <span class="color">DESIGNER</span></h1>
+            <h1 class="para left"> Specializing in 3D Product Rendering, Concept Design, and Dynamic Digital Media.
                 <br>Expertise in Unreal Engine, Substance 3D Painter, and Advanced Animation Techniques.
             </h1>
             </h1>
@@ -79,8 +100,8 @@
     <!-- -------------------------------------------------->
 
     <div class="container ">
-        <h1 class="head s2 b1 f2 center glow ">🚧 My digital space is still being crafted 🚧 <br>
-            <span class="head s2 b1 f2 center glow "> Some features and links may be temporarily unavailable.</span>
+        <h1 class="subhead   center glow ">🚧 My digital space is still being crafted 🚧 <br>
+            <span class="subhead  center glow "> Some features and links may be temporarily unavailable.</span>
     </div>
 
     <!-- --------------------------- SPACE | Divider ------>
@@ -93,9 +114,9 @@
 
         <!-- Section Title  -->
         <!-- -------------- -->
-        <div class="sct-title">
-            <div class="head f1 b1 s1 center color"> Visual Innovation </div>
-            <div class="head f2 b2 s2 center upper"> From concept to life</div>
+        <div class="sct-title reveal-content">
+            <div class="subhead f1  center color"> Visual Innovation </div>
+            <div class="head center upper"> From concept to life</div>
         </div>
         <!-- -------------- -->
 
@@ -122,8 +143,8 @@
                             modeling, sculpting, and texturing.</h2>
                     </div>
                     <div class="services-image">
-                        <!-- <img  src="https://i.pinimg.com/736x/da/7c/49/da7c49177911ecf92059700d9ae5dd33.jpg" alt="3D"> -->
-                        <img src="Assets/Thumbnails/Product2_thumbnail.jpeg" alt="3D">
+                        <img  src="https://i.pinimg.com/736x/da/7c/49/da7c49177911ecf92059700d9ae5dd33.jpg" alt="3D">
+                        <!-- <img src="Assets/Thumbnails/Product2_thumbnail.jpeg" alt="3D"> -->
                     </div>
                 </div>
 
@@ -159,14 +180,14 @@
 
 
             <div class="wrk-port    ">
-                <div class=" center  ">
-                    <h1 class="head1  upper"> 3D Works </h1>
+                <div class=" center reveal-content ">
+                    <h1 class="head upper"> 3D Works </h1>
                     <h1 class="subhead">From concept to completion. assets modeled, textured, and crafted with detail.
                     </h1>
 
-                    <button class="f3 subhead" style="margin-top: 20px;"
-                        onclick="window.location.href='3D-Projects.html'"> Explore My Portfolio and Experiments
-                    </button>
+                    <a href="3D-Projects.html" class="btn-style f3 subhead" style="margin-top: 20px; display: inline-block; text-decoration: none;"> 
+                        Explore My Portfolio and Experiments
+                    </a>
 
                 </div>
                 <div class="grid-container rep-3 margintop50 ">
@@ -237,8 +258,9 @@
                 <h1 class="subhead  ">
                     Explore my approach to logo design <br> clean, creative, and built to stand out. </a>
                 </h1>
-                <button style="margin-top: 20px;" onclick="window.location.href='2D-Graphics.html'"> Show more.
-                </button>
+                <a href="2D-Graphics.html" class="btn-style" style="margin-top: 20px; display: inline-block; text-decoration: none;"> 
+                    Show more.
+                </a>
 
             </div>
 
@@ -323,7 +345,9 @@
             <h1 class="subhead  ">
                 Step into my world of Motion <br> Animations, Motion Design, and Visual Effects. </a>
             </h1>
-            <button style="margin-top: 20px;" onclick="window.location.href='Motion.html'"> Show more. </button>
+            <a href="Motion.html" class="btn-style" style="margin-top: 20px; display: inline-block; text-decoration: none;"> 
+                Show more. 
+            </a>
         </div>
         <div class="fit pad-xy-20 round-t3 style3 margin-t-50">
 
@@ -361,7 +385,9 @@
             <h1 class="subhead">
                 Step into my world of Motion <br> Animations, Motion Design, and Visual Effects.
             </h1>
-            <button style="margin-top: 20px;" onclick="window.location.href='Motion.html'"> Show more. </button>
+            <a href="Motion.html" class="btn-style" style="margin-top: 20px; display: inline-block; text-decoration: none;"> 
+                Show more. 
+            </a>
         </div>
 
     </section>
@@ -420,6 +446,10 @@
 
     <!-- Swiper -->
     <script src="Js/cardswiper.js"></script>
+    <!-- ---------------- -->
+
+    <!-- Page Transitions -->
+    <script src="Js/transitions.js"></script>
     <!-- ---------------- -->
 
 

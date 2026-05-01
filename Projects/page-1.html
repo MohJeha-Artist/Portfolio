@@ -23,6 +23,7 @@
     <!-- Include GLightbox -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <link rel="stylesheet" href="../Styles/transitions.css">
     
 <style>
   html   
@@ -36,7 +37,17 @@
 </head>
 
 
-    <body class="body">
+    <body class="body is-transitioning">
+
+        <!-- Navigation Transition Overlay -->
+        <div id="transition-overlay">
+            <div class="loader-content">
+                <img src="../Assets/fav/Logo.svg" alt="MohJeha Logo" class="loader-logo">
+                <div class="loader-bar-container">
+                    <div class="loader-bar"></div>
+                </div>
+            </div>
+        </div>
 
         <!-- TOP BAR -->
         <section class="container" style=" height: 50px; margin: 0 auto;">    
@@ -189,6 +200,10 @@
       }
     });
   </script>
+
+        <!-- Page Transitions -->
+        <script src="../Js/transitions.js"></script>
+        <!-- ---------------- -->
 
     </body>   
 </html>
