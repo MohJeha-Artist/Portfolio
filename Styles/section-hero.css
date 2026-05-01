@@ -58,7 +58,7 @@
 
 @media (max-width: 768px) {
   .Profile {
-    transform: translateX(30%);
+    transform: scale(1.2) translateX(12%); 
   }
 
 }

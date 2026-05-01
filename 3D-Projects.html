@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="Styles/section-hero.css">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="Styles/cinematic-swiper.css">
     <link rel="stylesheet" href="Styles/transitions.css">
 </head>
 <style>
@@ -97,78 +98,6 @@
     }
 
     /* Swiper Custom Styles */
-    .swiper {
-        width: 100%;
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-
-    .swiper-top {
-        margin-top: 25px;
-        !important;
-        border-top: 3px solid var(--2);
-    }
-
-    .section-title {
-        margin-top: 15px;
-        margin-bottom: 10px;
-        padding-left: 50px;
-    }
-
-    @media (max-width: 768px) {
-        .section-title {
-            padding-left: 20px;
-            text-align: center;
-        }
-    }
-
-    .swiper-slide {
-        background-position: center;
-        background-size: cover;
-        width: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .swiper-slide .card {
-        width: 450px;
-        /* Fixed width for cards in swiper */
-        margin: 0;
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-        color: #542cdb;
-        background: rgba(255, 255, 255, 0.1);
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        backdrop-filter: blur(5px);
-    }
-
-    .swiper-button-next:after,
-    .swiper-button-prev:after {
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    .swiper-pagination-bullet {
-        background: #542cdb;
-    }
-
-    @media (max-width: 768px) {
-        .swiper-slide .card {
-            width: 330px;
-            aspect-ratio: 1/1;
-        }
-
-        .swiper-button-next,
-        .swiper-button-prev {
-            display: none;
-            /* Hide nav on mobile for cleaner look if preferred */
-        }
-    }
 </style>
 
 <body class="is-transitioning">
@@ -221,9 +150,9 @@
 
     </section>
     <!-- ---------------------------------------------------------------------------------------------------------------------------  -->
-    <div class="container box">
-        <h1 class="head s2 b1 f2 center glow ">🚧 My digital space is still being crafted 🚧 <br>
-            <span class="head s2 b1 f2 center glow "> Some features and links may be temporarily unavailable.</span>
+   <div class="container ">
+        <h1 class="subhead   center glow ">🚧 My digital space is still being crafted 🚧 <br>
+            <span class="subhead  center glow "> Some features and links may be temporarily unavailable.</span>
     </div>
 
 
@@ -234,24 +163,24 @@
     <section class="swiper-top overflow">
         <h2 class="title section-title ">- <span class="color">Melee Weapons</span> -</h2>
         <!-- Swiper Melee Weapons-->
-        <div class="swiper mySwiper" id="swiperMelee">
-            <div class="swiper-wrapper">
+        <div class="cinematic-carousel" id="swiperMelee" data-autoplay-delay="2500">
+            <div class="cinematic-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <div class="card" onclick="openOverlay('Projects/page-1.html')">
                         <img class="thumbnail" src="Assets/Thumbnails/3D_Axe_thumbnail.webp" alt="3D">
                         <div class="gradient"></div><span class="work-text">Medieval Axe</span>
                     </div>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <div class="card" onclick="openOverlay('Projects/page-2.html')">
                         <img class="thumbnail" src="Assets/Thumbnails/3D_Hammer_thumbnail.webp" alt="3D">
                         <div class="gradient"></div><span class="work-text">Medieval Hammer</span>
                     </div>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_katana1_thumbnail.webp" alt="3D">
@@ -260,7 +189,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_katana2_thumbnail.webp" alt="3D">
@@ -269,7 +198,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_FireSword_thumbnail.webp" alt="3D">
@@ -278,7 +207,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_IncursioSword_thumbnail.webp" alt="3D">
@@ -287,7 +216,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Royal_thumbnail.webp" alt="3D">
@@ -296,7 +225,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Dagger_thumbnail.webp" alt="3D">
@@ -312,7 +241,7 @@
 
 
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_SunSword_thumbnail.webp" alt="3D">
@@ -323,7 +252,7 @@
 
 
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_DaggerP_thumbnail.webp" alt="3D">
@@ -333,7 +262,7 @@
                 </div>
 
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Bats_thumbnail.webp" alt="3D">
@@ -342,7 +271,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Bow_thumbnail.webp" alt="3D">
@@ -361,11 +290,11 @@
     <section class="swiper-top overflow">
         <h2 class="title section-title">- <span class="color">Firearms & Tactical</span> -</h2>
         <!-- Swiper -->
-        <div class="swiper mySwiper" id="swiperFirearms">
-            <div class="swiper-wrapper">
+        <div class="cinematic-carousel" id="swiperFirearms" data-autoplay-delay="4000">
+            <div class="cinematic-wrapper">
                 <!-- Slides -->
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Handgun_Scifi_thumbnail.webp" alt="3D">
@@ -374,7 +303,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_SR_thumbnail.webp" alt="3D">
@@ -383,7 +312,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_MilitaryCrate_thumbnail.webp" alt="3D">
@@ -392,7 +321,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_MilitaryRadio_thumbnail.webp" alt="3D">
@@ -401,7 +330,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Granada_thumbnail.webp" alt="3D">
@@ -410,7 +339,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Grenade_M67_thumbnail.webp" alt="3D">
@@ -421,7 +350,7 @@
 
 
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Mortar_thumbnail.webp" alt="3D">
@@ -431,7 +360,7 @@
                 </div>
 
                 <!-- Duplicated for seamless loop -->
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Handgun_Scifi_thumbnail.webp" alt="3D">
@@ -440,7 +369,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_SR_thumbnail.webp" alt="3D">
@@ -449,7 +378,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_MilitaryCrate_thumbnail.webp" alt="3D">
@@ -468,12 +397,12 @@
     <section class="swiper-top overflow">
         <h2 class="title section-title ">- <span class="color">Environment & Props</span> -</h2>
         <!-- Swiper a-->
-        <div class="swiper mySwiper" id="swiperEnvironment">
-            <div class="swiper-wrapper">
+        <div class="cinematic-carousel" id="swiperEnvironment" data-autoplay-delay="5500">
+            <div class="cinematic-wrapper">
                 <!-- Slides -->
 
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Windmill_thumbnail.webp" alt="3D">
@@ -482,7 +411,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Shoes_thumbnail.webp" alt="3D">
@@ -491,7 +420,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_MusicBox_thumbnail.webp" alt="3D">
@@ -500,7 +429,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Pooltable_thumbnail.webp" alt="3D">
@@ -509,7 +438,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Barrel_thumbnail.webp" alt="3D">
@@ -519,7 +448,7 @@
                 </div>
 
                 <!-- Duplicated for seamless loop -->
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Windmill_thumbnail.webp" alt="3D">
@@ -528,7 +457,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Shoes_thumbnail.webp" alt="3D">
@@ -537,7 +466,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_MusicBox_thumbnail.webp" alt="3D">
@@ -546,7 +475,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Pooltable_thumbnail.webp" alt="3D">
@@ -555,7 +484,7 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="cinematic-slide">
                     <a href="">
                         <div class="card">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Barrel_thumbnail.webp" alt="3D">
@@ -583,6 +512,10 @@
     <section class="spacer" style="height:50px;"></section>
     <!-- -------------------------------------------------->
 
+    <div class="container ">
+        <h1 class="subhead   center glow ">🚧 My digital space is still being crafted 🚧 <br>
+            <span class="subhead  center glow "> Some features and links may be temporarily unavailable.</span>
+    </div>
 
     <!-- ----- LOAD FOOTER ----- -->
     <footer class="footer" id="footer">
@@ -613,105 +546,7 @@
 
     </footer>
     <!-- ---------------------------------------------------------------------------------------------------------------------------  -->
-    <script>
-        function openOverlay(page) {
-            const overlay = document.getElementById('overlay');
-            const iframe = document.getElementById('overlayFrame');
-            
-            iframe.src = page;
-            overlay.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; 
-
-            // Trigger animation after display change
-            setTimeout(() => {
-                overlay.classList.add('active');
-            });
-        }
-
-        function openOverlay(page) {
-            const overlay = document.getElementById('overlay');
-            const iframe = document.getElementById('overlayFrame');
-            
-            iframe.src = page;
-            overlay.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; 
-
-            // Trigger animation after display change
-            setTimeout(() => {
-                overlay.classList.add('active');
-                overlay.setAttribute('aria-hidden', 'false');
-            }, 10);
-
-            history.pushState({ overlay: true }, "");
-        }
-
-        function closeOverlay() {
-            const overlay = document.getElementById('overlay');
-            if (!overlay.classList.contains('active')) return;
-
-            overlay.classList.remove('active');
-            overlay.setAttribute('aria-hidden', 'true');
-
-            // Wait for animation to complete before hiding
-            setTimeout(() => {
-                overlay.style.display = 'none';
-                document.getElementById('overlayFrame').src = "";
-                document.body.style.overflow = ''; // Restore scrolling
-            }, 800); // Match the new transition duration
-
-            if (history.state && history.state.overlay) {
-                history.back();
-            }
-        }
-
-        // Listen for browser Back button
-        window.addEventListener('popstate', function (event) {
-            const overlay = document.getElementById('overlay');
-            if (overlay.classList.contains('active')) {
-                overlay.classList.remove('active');
-                overlay.setAttribute('aria-hidden', 'true');
-                setTimeout(() => {
-                    overlay.style.display = 'none';
-                    document.getElementById('overlayFrame').src = "";
-                    document.body.style.overflow = '';
-                }, 800);
-            }
-        });
-
-        // Listen for ESC key
-        document.addEventListener('keydown', function (event) {
-            if (event.key === "Escape") {
-                closeOverlay();
-            }
-        });
-
-        // Click outside overlay to close
-        document.getElementById('overlay').addEventListener('click', function (e) {
-            if (e.target === this) {
-                closeOverlay();
-            }
-        });
-
-        // Listen for messages from iframe
-        window.addEventListener('message', function (event) {
-            // Validate origin for security
-            if (event.origin !== window.location.origin) return;
-
-            if (event.data === 'closeOverlay') {
-                closeOverlay();
-            }
-        });
-
-        // Add keyboard support for cards
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('keydown', function (e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    this.click();
-                }
-            });
-        });
-    </script>
+    <script src="Js/overlay.js"></script>
     <!-- ----------------------------------------------------------------------- -->
 
     <!-- Smooth Scroll -->
@@ -721,48 +556,7 @@
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <script>
-        // Shared configuration options
-        const sharedConfig = {
-            loop: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            spaceBetween: 30,
-            loopedSlides: 12,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        };
-
-        // Initialize Melee Weapons (Fast)
-        new Swiper('#swiperMelee', {
-            ...sharedConfig,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            }
-        });
-
-        // Initialize Firearms & Tactical (Medium)
-        new Swiper('#swiperFirearms', {
-            ...sharedConfig,
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            }
-        });
-
-        // Initialize Environment & Props (Slow)
-        new Swiper('#swiperEnvironment', {
-            ...sharedConfig,
-            autoplay: {
-                delay: 5500,
-                disableOnInteraction: false,
-            }
-        });
-    </script>
+    <script src="Js/cinematic-swiper.js"></script>
 
     <!-- Page Transitions -->
     <script src="Js/transitions.js"></script>

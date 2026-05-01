@@ -41,6 +41,8 @@ html {
   margin: 0;
   padding: 0;
   min-height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 
@@ -68,18 +70,22 @@ body {
 }
 
 .index1 {
-  z-index: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .index2 {
+  position: relative;
   z-index: 5;
 }
 
-
+.gap {
+  margin: 20px 0 !important;    
+}
 
 .container {
   position: relative;
-
+ 
   margin: 50px auto;
   display: flex;
   justify-content: center;
@@ -514,10 +520,7 @@ body {
 
 
 /* ------------Base TEXT Styling --- >>  */
-.sct-title {
-  padding: 50px 0;
-  /* border: 1px solid rgb(77, 77, 77); */
-}
+
 
 .text-box {
   display: flex;
@@ -580,9 +583,13 @@ body {
 
 
 
+
+
+
 .head {
+   
   color: var(--1);
-  font-family: var(--f0);
+  font-family: var(--f1);
   font-size: 4rem;
   font-weight: 700;
   font-style: normal;
@@ -596,6 +603,51 @@ body {
   font-style: normal;
 }
 
+.center-mobile { 
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .center-mobile {
+    text-align: center;
+  }
+}
+
+/* ----------------- Section Title Styling ----------------- */
+
+.sct-title 
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ 
+  max-width: 90%;
+  margin: 0 auto;
+
+  padding: 50px 0;
+}
+
+.title {
+
+  color: var(--1);
+  text-align: center;
+  font-family: var(--f0);
+  /* text-transform: uppercase; */
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.subtitle {
+
+  color: var(--1);
+  font-family: var(--f1);
+  font-size: 2rem;
+  font-weight: 200;
+  font-style: normal;
+}
+
 .para {
   color: var(--1);
   font-family: var(--f1);
@@ -604,33 +656,29 @@ body {
   font-style: normal;
 }
 
-.title {
-  color: var(--1);
-  text-align: center;
-  font-family: var(--f1);
-  /* text-transform: uppercase; */
-  font-size: 2rem;
-  font-weight: 400;
-  font-style: normal;
-}
-
 
 
 @media (max-width: 768px) {
-  .head1 {
-    font-size: 3rem;
+  .head {
+    max-width: 95%;  
+    font-size: 2rem;
     font-weight: 700;
     font-style: normal;
   }
 
   .subhead {
-    font-size: 1rem;
+    font-size: 1.2rem; 
     font-weight: 200;
     font-style: normal;
   }
 
+  .para {   
+    max-width: 95%;
+    font-size: 1rem; 
+  }
+
   .title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 400;
     font-style: normal;
   }
@@ -829,11 +877,11 @@ button:hover {
 /* --------------------------------------------------------------------------------------------*/
 
 .mobile {
-  display: none;
+  display: none !important;
 }
 
 .desktop {
-  display: block;
+  display: block !important;
 }
 
 .--none {
@@ -842,13 +890,13 @@ button:hover {
 
 @media (max-width: 768px) {
   .desktop {
-    display: none;
+    display: none !important;
   }
 }
 
 
 @media (max-width: 768px) {
   .mobile {
-    display: block;
+    display: block !important;
   }
 }

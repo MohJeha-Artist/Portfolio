@@ -1,0 +1,119 @@
+/* 
+   Cinematic Horizontal Carousel 
+   Shared Styles for 3D Works, Melee Weapons, Firearms, etc.
+*/
+
+/* Core structure previously provided by default 'swiper' class */
+.cinematic-carousel {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    overflow: visible !important;
+}
+
+.cinematic-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+}
+
+.cinematic-slide {
+    flex-shrink: 0;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    display: flex;
+    background-position: center;
+    background-size: cover;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-top {
+    margin-top: 25px !important;
+    border-top: 3px solid var(--2);
+}
+
+.section-title {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding-left: 50px;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        padding-left: 20px;
+        text-align: center;
+    }
+}
+
+.cinematic-carousel .cinematic-slide .card {
+    height: 480px;
+    margin: 0;
+}
+
+/* Custom Navigation Buttons */
+.cinematic-carousel .carousel-button-next,
+.cinematic-carousel .carousel-button-prev {
+    color: #542cdb;
+    background: rgba(255, 255, 255, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.cinematic-carousel .carousel-button-next { right: 10px; }
+.cinematic-carousel .carousel-button-prev { left: 10px; }
+
+.cinematic-carousel .carousel-button-next:hover,
+.cinematic-carousel .carousel-button-prev:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.cinematic-carousel .carousel-button-next:after,
+.cinematic-carousel .carousel-button-prev:after {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cinematic-carousel .carousel-pagination-bullet {
+    background: #542cdb;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .cinematic-carousel .cinematic-slide .card {
+        width: 330px; 
+        height: auto;
+        aspect-ratio: 1/1 !important;
+    }
+
+    .cinematic-carousel .carousel-button-next,
+    .cinematic-carousel .carousel-button-prev {
+        display: none;
+        /* Hide nav on mobile for cleaner look */
+    }
+}

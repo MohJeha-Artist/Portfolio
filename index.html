@@ -22,10 +22,13 @@
     <link rel="stylesheet" href="Styles/section-services.css">
     <link rel="stylesheet" href="Styles/section-3dwork.css">
     <link rel="stylesheet" href="Styles/section-logos.css">
-    <link rel="stylesheet" href="Styles/section-cardswipe.css">
-    <link rel="stylesheet" href="Styles/section-swiper.css">
-    <link rel="stylesheet" href="Styles/section-videos.css">
+
+    <link rel="stylesheet" href="Styles/logo-design.css">
     <link rel="stylesheet" href="Styles/section-footer.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="Styles/cinematic-swiper.css">
     <link rel="stylesheet" href="Styles/transitions.css">
 
 </head>
@@ -95,6 +98,8 @@
     </section>
     <!-- ---------------------------------------------------------------------------------------------------------------------------  -->
 
+
+
     <!-- --------------------------- SPACE | Divider ------>
     <section class="spacer" style="height:50px;"></section>
     <!-- -------------------------------------------------->
@@ -103,6 +108,9 @@
         <h1 class="subhead   center glow ">🚧 My digital space is still being crafted 🚧 <br>
             <span class="subhead  center glow "> Some features and links may be temporarily unavailable.</span>
     </div>
+
+
+
 
     <!-- --------------------------- SPACE | Divider ------>
     <section class="spacer" style="height:50px;"></section>
@@ -115,8 +123,8 @@
         <!-- Section Title  -->
         <!-- -------------- -->
         <div class="sct-title reveal-content">
-            <div class="subhead f1  center color"> Visual Innovation </div>
-            <div class="head center upper"> From concept to life</div>
+            <div class="subtitle f1  center color"> Visual Innovation </div>
+            <div class="title center upper"> From concept to life</div>
         </div>
         <!-- -------------- -->
 
@@ -143,7 +151,7 @@
                             modeling, sculpting, and texturing.</h2>
                     </div>
                     <div class="services-image">
-                        <img  src="https://i.pinimg.com/736x/da/7c/49/da7c49177911ecf92059700d9ae5dd33.jpg" alt="3D">
+                        <img src="https://i.pinimg.com/736x/da/7c/49/da7c49177911ecf92059700d9ae5dd33.jpg" alt="3D">
                         <!-- <img src="Assets/Thumbnails/Product2_thumbnail.jpeg" alt="3D"> -->
                     </div>
                 </div>
@@ -170,22 +178,17 @@
     <!-- -------------------------------------------------->
 
     <!-- ----- LOAD 3D Work SECTIONS ----- -->
-    <section class="container box overflow border-t round-t3 pad-100 style3 ">
-
-        <!-- <div class="wrk-bg ">
-                        <img class="wrk-bg-img" src="Assets/backgrounds/bg.webp" alt="">
-                    </div> -->
-        <div class="wrk-section index1 ">
-
-
-
-            <div class="wrk-port    ">
-                <div class=" center reveal-content ">
+    <!-- 3D works Desktop -->
+    <section class="container box overflow border-t round-t3 pad-100 style3 desktop">
+        <div class="wrk-section index1 "> 
+            <div class="wrk-port">
+                <div class=" center  ">
                     <h1 class="head upper"> 3D Works </h1>
                     <h1 class="subhead">From concept to completion. assets modeled, textured, and crafted with detail.
                     </h1>
 
-                    <a href="3D-Projects.html" class="btn-style f3 subhead" style="margin-top: 20px; display: inline-block; text-decoration: none;"> 
+                    <a href="3D-Projects.html" class="btn-style f3 subhead"
+                        style="margin-top: 20px; display: inline-block; text-decoration: none;">
                         Explore My Portfolio and Experiments
                     </a>
 
@@ -244,8 +247,132 @@
 
 
             </div>
+    </section>
+
+    <!-- 3D works Mobile -->
+    <section class="container box overflow border-t round-t3 pad-100 style2 mobile">
+
+        <div class=" center ">
+            <h1 class="head center-mobile upper"> 3D Works </h1>
+            <h1 class="subhead">From concept to completion. assets modeled, textured, and crafted with detail.
+            </h1>
+
 
         </div>
+
+
+        <div class="cinematic-carousel gap" id="swiperFirearms" data-autoplay-delay="4000">
+            <div class="cinematic-wrapper">
+                <!-- Slides -->
+
+                <div class="cinematic-slide">
+                    <a href="">
+                        <div class="card vertical">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Handgun_Scifi_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Sci-fi Handgun</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="cinematic-slide">
+                    <a href="">
+                        <div class="card vertical">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_SR_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Sniper Rifle</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="cinematic-slide">
+                    <a href="">
+                        <div class="card vertical">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_MilitaryCrate_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Military Crate</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="cinematic-slide">
+                    <a href="">
+                        <div class="card vertical">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_MilitaryRadio_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Military Radio</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="cinematic-slide">
+                    <a href="">
+                        <div class="card vertical">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Granada_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Sci-fi Grenade</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="cinematic-slide">
+                    <a href="">
+                        <div class="card vertical">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Grenade_M67_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text"> M67 Grenade </span>
+                        </div>
+                    </a>
+                </div>
+
+
+
+                <div class="cinematic-slide">
+                    <a href="">
+                        <div class="card vertical">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Mortar_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Mortar</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Duplicated for seamless loop -->
+                <div class="cinematic-slide">
+                    <a href="">
+                        <div class="card vertical">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_Handgun_Scifi_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Sci-fi Handgun</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="cinematic-slide">
+                    <a href="">
+                        <div class="card vertical">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_SR_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Sniper Rifle</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="cinematic-slide">
+                    <a href="">
+                        <div class="card vertical">
+                            <img class="thumbnail" src="Assets/Thumbnails/3D_MilitaryCrate_thumbnail.webp" alt="3D">
+                            <div class="gradient"></div><span class="work-text">Military Crate</span>
+                        </div>
+                    </a>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+         <div class=" center  index1">
+            <h1 class="subhead">Explore My Portfolio and Experiments</h1>
+            <a href="3D-Projects.html" class="btn-style f3 subhead"
+                style="z-index: 1000; margin-top: 20px;  "> Show More
+            </a>
+        </div>
+          
+       
+
     </section>
 
     <!-- ----- LOAD Logo SECTIONS ----- -->
@@ -254,11 +381,12 @@
         <div class="containerZ  fixLocation  ">
             <div class="text-box    index2 ">
 
-                <h1 class="head1  "> Logo Design </h1>
-                <h1 class="subhead  ">
-                    Explore my approach to logo design <br> clean, creative, and built to stand out. </a>
+                <h1 class="head upper center-mobile "> Logo Design </h1>
+                <h1 class="subhead center-mobile  ">
+                    Explore my approach to logo design <br> clean, creative, and built to stand out.
                 </h1>
-                <a href="2D-Graphics.html" class="btn-style" style="margin-top: 20px; display: inline-block; text-decoration: none;"> 
+                <a href="2D-Graphics.html" class="btn-style desktop"
+                    style="margin-top: 20px; display: inline-block; text-decoration: none;">
                     Show more.
                 </a>
 
@@ -266,7 +394,8 @@
 
 
 
-            <div class="swiper index2  ">
+            <div class="swiper index2" id="logoSwiper">
+                <div class="swiper-glow"></div>
                 <div class="swiper-wrapper  ">
 
                     <div class="swiper-slide card1">
@@ -324,6 +453,10 @@
                 </div>
             </div>
 
+            <a href="2D-Graphics.html" class="btn-style mobile" style="margin-top: 40px; text-decoration: none;">
+                Show more.
+            </a>
+
         </div>
 
     </section>
@@ -335,18 +468,22 @@
     <section class="spacer" style="height:100px;"></section>
     <!-- -------------------------------------------------->
 
+
+
+
     <!-- ----- LOAD Motion SECTIONS ----- -->
 
     <!-- Desktop -->
     <section class="container box flex-col style1 no-wrap pad-100 desktop">
 
         <div class=" center">
-            <h1 class="head1  "> Motion Graphics </h1>
-            <h1 class="subhead  ">
+            <h1 class="head upper"> Motion Graphics </h1>
+            <h1 class="subhead">
                 Step into my world of Motion <br> Animations, Motion Design, and Visual Effects. </a>
             </h1>
-            <a href="Motion.html" class="btn-style" style="margin-top: 20px; display: inline-block; text-decoration: none;"> 
-                Show more. 
+            <a href="Motion.html" class="btn-style"
+                style="margin-top: 20px; display: inline-block; text-decoration: none;">
+                Show more.
             </a>
         </div>
         <div class="fit pad-xy-20 round-t3 style3 margin-t-50">
@@ -377,16 +514,18 @@
         </div>
 
         <div class="center" style="position: absolute; top: 40px; left: 0; width: 100%; z-index: 2;">
-            <h1 class="head1">Motion Graphics</h1>
+            <h1 class="head">Motion Graphics</h1>
+            <h1 class="subhead">
+                Step into my world of Motion <br> Animations, Motion Design, and Visual Effects.
+            </h1>
         </div>
 
         <div class="center"
             style="position: absolute; bottom: 40px; left: 0; width: 100%; z-index: 2; text-align: center; padding: 0 20px;">
-            <h1 class="subhead">
-                Step into my world of Motion <br> Animations, Motion Design, and Visual Effects.
-            </h1>
-            <a href="Motion.html" class="btn-style" style="margin-top: 20px; display: inline-block; text-decoration: none;"> 
-                Show more. 
+            
+            <a href="Motion.html" class="btn-style"
+                style="margin-top: 20px; display: inline-block; text-decoration: none;">
+                Show more.
             </a>
         </div>
 
@@ -397,9 +536,9 @@
     <section class="spacer" style="height:50px;"></section>
     <!-- -------------------------------------------------->
 
-    <div class="container">
-        <h1 class="head s2 b1 f2 center glow ">🚧 My digital space is still being crafted 🚧 <br>
-            <span class="head s2 b1 f2 center glow "> Some features and links may be temporarily unavailable.</span>
+    <div class="container ">
+        <h1 class="subhead   center glow ">🚧 My digital space is still being crafted 🚧 <br>
+            <span class="subhead  center glow "> Some features and links may be temporarily unavailable.</span>
     </div>
 
     <!-- --------------------------- SPACE | Divider ------>
@@ -446,6 +585,8 @@
 
     <!-- Swiper -->
     <script src="Js/cardswiper.js"></script>
+    <script src="Js/cinematic-swiper.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- ---------------- -->
 
     <!-- Page Transitions -->
@@ -454,42 +595,7 @@
 
 
     <!-- Scroll Activation for Services Cards on Mobile -->
-    <script>
-        const servicesCards = document.querySelectorAll('.services-card');
-
-        // Function to handle observer
-        function initServicesObserver() {
-            if (window.innerWidth <= 768) {
-                const observerOptions = {
-                    root: null,
-                    rootMargin: '-30% 0px -30% 0px', // Triggers when the card is in the center 40% of the screen
-                    threshold: 0
-                };
-
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('active');
-                        } else {
-                            entry.target.classList.remove('active');
-                        }
-                    });
-                }, observerOptions);
-
-                servicesCards.forEach(card => observer.observe(card));
-            }
-        }
-
-        // Initialize on load
-        initServicesObserver();
-
-        // Re-check on resize
-        window.addEventListener('resize', () => {
-            // Simple check to see if we should re-init or disconnect
-            // For simplicity, we just keep it running if it's mobile
-            initServicesObserver();
-        });
-    </script>
+    <script src="Js/services-hover.js"></script>
 </body>
 
 </html>

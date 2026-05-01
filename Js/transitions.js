@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const isDevMode = preloader && getComputedStyle(preloader).display === 'none';
 
     // 2. Timings & State
+    const isPreview = window.name === 'preview';
     const isIndex = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/');
     const isTransition = sessionStorage.getItem('pageTransition') === 'true';
     const swipeDir = sessionStorage.getItem('swipeDirection');
@@ -100,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.setItem('pageTransition', 'true');
         
         setTimeout(() => {
-            if (targetParent || (window.self !== window.top && href.includes('index.html'))) {
+            if ((targetParent || (window.self !== window.top && href.includes('index.html'))) && !isPreview) {
                 window.top.location.href = href;
             } else {
                 window.location.href = href;
@@ -136,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // --- NORMAL / EXIT LOGIC ---
         const isExit = href.includes('index.html') || href.includes('about.html') || href.includes('2D-Graphics.html') || href.includes('3D-Projects.html') || href.includes('Motion.html');
-        const shouldTargetParent = window.self !== window.top && isExit;
+        const shouldTargetParent = window.self !== window.top && isExit && !isPreview;
 
         if (isExit) {
             e.preventDefault();

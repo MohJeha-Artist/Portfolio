@@ -157,11 +157,19 @@
   aspect-ratio: 21/9;
 }
 
+.vertical{
+  height: 500px !important; 
+  aspect-ratio: 3/4 !important;
+}
+
 
 @media (max-width: 768px) {
   .wide {
     aspect-ratio: 3/4;
   }
+    .vertical{
+  aspect-ratio: 3/4 !important;
+}
 }
 
 .log-card {

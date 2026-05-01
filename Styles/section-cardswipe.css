@@ -17,8 +17,6 @@
   box-shadow: 0 0.5px 0 1px rgba(255, 255, 255, 0.23) inset,
     0 1px 0 0 rgba(255, 255, 255, 0.66) inset, 0 4px 16px rgba(0, 0, 0, 0.12);
   z-index: 10;
-
-  border: 1px solid red;
 }
 
 
@@ -42,17 +40,41 @@
 /* SWIPER */
 
 .swiper {
- 
+  position: relative;
   width: 250px;
   height: 450px;
   padding: 50px 0;
+  /* Allow the glow to bleed out */
+  overflow: visible !important;
+}
+
+.swiper-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(84, 44, 219, 0.45) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(50px);
+  opacity: 0.8; 
+}
+
+/* Fix for mobile overflow */
+@media (max-width: 768px) {
+  .swiper-glow {
+    width: 280px;
+    height: 280px;
+    filter: blur(30px);
+  }
 }
 
 .swiper-slide {
   position: relative;
-  /* box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2); */
-  /* border-radius: 10px; */
   user-select: none;
+  /* Reverting to previous card styling */
 }
 
 .swiper-slide img {
@@ -62,6 +84,11 @@
   height: 100%;
   object-fit: contain;
   transform: scale(1.4);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.swiper-slide-active img {
+  transform: scale(1.6); /* Keeping the active 'pop' you liked */
 }
 
 .img-position {

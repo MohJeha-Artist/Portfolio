@@ -1,0 +1,90 @@
+@import url(https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css);
+
+/* Logo Design Section Container Styles */
+.fixLocation { transform: translateX(0); }
+
+@media (min-width: 768px) {
+  .fixLocation { transform: translateX(8%); }
+}
+
+/* Specific Swiper Styles for Logo Design */
+#logoSwiper.swiper {
+  position: relative;
+  width: 250px;
+  height: 450px;
+  padding: 50px 0;
+  overflow: visible !important; /* Allow the glow to bleed out */
+}
+
+#logoSwiper .swiper-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(84, 44, 219, 0.45) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(50px);
+  opacity: 0.8; 
+}
+
+@media (max-width: 768px) {
+  #logoSwiper .swiper-glow {
+    width: 280px;
+    height: 280px;
+    filter: blur(30px);
+  }
+}
+
+#logoSwiper .swiper-slide {
+  position: relative;
+  user-select: none;
+}
+
+#logoSwiper .swiper-slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(1.4);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#logoSwiper .swiper-slide-active img {
+  transform: scale(1.6);
+}
+
+/* Card Styling for Logos */
+#logoSwiper .card1 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: 1s ease;
+  background-color: var(--0);
+  box-shadow: inset 3px 3px 10px 0 var(--4);
+  border: 1px solid var(--3);
+}
+
+#logoSwiper .card1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--4), transparent 80%);
+  transition: transform 0.5s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#logoSwiper .img-position {
+  object-position: 50% 0%;
+}
