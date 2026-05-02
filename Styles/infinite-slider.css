@@ -1,0 +1,53 @@
+/* Styles/infinite-slider.css */
+.infinite-slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* Fading edges */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  padding: 20px 0; /* Vertical padding to prevent hover effects from being clipped */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Gap between rows */
+}
+
+.infinite-slider-track {
+  display: flex;
+  width: max-content;
+  gap: 10px; /* Matching the original grid gap */
+  align-items: center;
+}
+
+.infinite-slider-track.animate {
+  animation: infinite-scroll 30s linear infinite;
+}
+
+.infinite-slider-track.track-2.animate {
+  animation: infinite-scroll 22s linear infinite; /* Slightly faster */
+}
+
+.infinite-slider-wrapper:hover .infinite-slider-track.animate {
+  animation-play-state: paused;
+}
+
+@keyframes infinite-scroll {
+  0% { transform: translateX(0); }
+  /* Translate by 50% of total width plus half the gap (5px) for perfect seamless loop */
+  100% { transform: translateX(calc(-50% - 5px)); }
+}
+
+/* Adjust card sizing for the horizontal slider */
+.infinite-slider-track .card2 {
+  flex: 0 0 auto;
+  width: 250px; 
+  height: 187.5px; /* Maintaining 4/3 aspect ratio */
+  margin: 0; /* Reset margins */
+}
+
+@media (max-width: 768px) {
+  .infinite-slider-track .card2 {
+    width: 150px;
+    height: 150px; /* 1/1 aspect ratio on mobile based on base-grid-card.css */
+  }
+}

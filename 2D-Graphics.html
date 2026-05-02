@@ -2,212 +2,366 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Work in Progress - Motion Graphics</title>
-  <link rel="icon" href="Assets/fav/Fav.svg" type="image/x-icon">
-  <link rel="stylesheet" href="Styles/base.css">
-  <link rel="stylesheet" href="Styles/transitions.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D-Projects</title>
+    <link rel="icon" href="Assets/fav/Fav.svg" type="image/x-icon">
+    <link rel="stylesheet" href="Styles/base.css">
+    <link rel="stylesheet" href="Styles/base-grid-card.css">
+    <link rel="stylesheet" href="Styles/section-footer.css">
+<link rel="stylesheet" href="Styles/section-logos.css">
+    <link rel="stylesheet" href="Styles/section-hero.css"> 
+      <link rel="stylesheet" href="Styles/section-grid.css">
+      <link rel="stylesheet" href="Styles/section-hover-cards.css">
 
-  <style>
-    /* Premium WIP Page Styles */
-    html, body {
-      background-color: var(--0);
-      overflow: hidden !important;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      width: 100%;
-    }
+<link rel="stylesheet" href="Styles/custom-grid-swiper.css">
 
-    .wip-container {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 10;
-    }
-
-    /* Animated Background Elements */
-    .bg-blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(100px);
-      z-index: 1;
-      animation: float-blob 10s ease-in-out infinite alternate;
-    }
-
-    .blob-1 {
-      width: 40vw;
-      height: 40vw;
-      background: rgba(84, 44, 219, 0.4);
-      top: -10%;
-      left: -10%;
+    <!-- Swiper CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="Styles/cinematic-swiper.css">
+    <link rel="stylesheet" href="Styles/transitions.css">
+    <link rel="stylesheet" href="Styles/infinite-slider.css">
+</head>
+<style>
+    /* Improved Cinematic Overlay Styles */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(0px); /* Animated */
+        z-index: 10000; /* Above regular content */
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transition: backdrop-filter 0.5s ease, background 0.5s ease;
     }
 
-    .blob-2 {
-      width: 30vw;
-      height: 30vw;
-      background: rgba(17, 139, 167, 0.3);
-      bottom: -10%;
-      right: -10%;
-      animation-delay: -5s;
-    }
-    
-    .blob-3 {
-      width: 25vw;
-      height: 25vw;
-      background: rgba(255, 255, 255, 0.1);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation: pulse-blob 8s ease-in-out infinite alternate;
+    .overlay.active {
+        backdrop-filter: blur(20px);
+        background: rgba(0, 0, 0, 0.8);
     }
 
-    @keyframes float-blob {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(10%, 10%) scale(1.1); }
+    .overlay-content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border-radius: 0;
+        opacity: 0;
+        transform: translateY(100%); /* Slide from bottom */
+        transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.5s ease;
+        box-shadow: 0 -20px 50px rgba(0,0,0,0.5);
     }
 
-    @keyframes pulse-blob {
-      0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-      100% { transform: translate(-50%, -50%) scale(1.5); opacity: 1; }
+    .overlay.active .overlay-content {
+        opacity: 1;
+        transform: translateY(0);
     }
 
-    /* Glassmorphism Card */
-    .wip-card {
-      position: relative;
-      z-index: 10;
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 30px;
-      padding: 60px;
-      max-width: 650px;
-      width: 90%;
-      text-align: center;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.05);
-      animation: slide-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-      opacity: 0;
-      transform: translateY(50px);
-    }
-
-    @keyframes slide-up {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .wip-title {
-      font-family: var(--f1);
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--1);
-      margin-bottom: 25px;
-      text-shadow: 0 0 20px rgba(84, 44, 219, 0.8);
-      letter-spacing: -1px;
-      animation: gentle-pulse 2s infinite alternate;
-    }
-
-    @keyframes gentle-pulse {
-      from { opacity: 1; transform: scale(1); }
-      to { opacity: 0.8; transform: scale(1.02); }
-    }
-
-    .wip-desc {
-      font-family: var(--f0);
-      font-size: 1.25rem;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 40px;
-    }
-
-    .wip-desc span {
-      color: #9d7cff;
-      font-weight: 600;
-      text-shadow: 0 0 10px rgba(157, 124, 255, 0.5);
-    }
-
-    .btn-about {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 15px 40px;
-      background: linear-gradient(45deg, var(--3), #7e22ce);
-      color: var(--1);
-      font-family: var(--f1);
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 50px;
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 10px 30px rgba(84, 44, 219, 0.4);
-    }
-
-    .btn-about:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 15px 40px rgba(84, 44, 219, 0.6);
-      background: linear-gradient(45deg, #7e22ce, var(--3));
-    }
-    
-    .btn-about span.arrow {
-      transition: transform 0.3s ease;
-      display: inline-block;
-    }
-
-    .btn-about:hover span.arrow {
-      transform: translateX(5px);
+    .close-btn {
+        position: absolute;
+        top: 25px;
+        right: 40px;
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 20000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        backdrop-filter: blur(5px);
     }
 
     @media (max-width: 768px) {
-      .wip-title { font-size: 2rem; }
-      .wip-desc { font-size: 1.05rem; }
-      .wip-card { padding: 40px 25px; }
-      .blob-1 { width: 60vw; height: 60vw; }
-      .blob-2 { width: 50vw; height: 50vw; }
+        .close-btn {
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+        }
     }
-  </style>
-</head>
+
+    .close-btn:hover {
+        background: var(--3); /* Purple accent */
+        transform: scale(1.1) rotate(90deg);
+        border-color: transparent;
+    }
+
+    #overlayFrame {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    /* Swiper Custom Styles */
+</style>
 
 <body class="is-transitioning">
 
-  <!-- Navigation Transition Overlay -->
-  <div id="transition-overlay">
-    <div class="loader-content">
-      <img src="Assets/fav/Logo.svg" alt="MohJeha Logo" class="loader-logo">
-      <div class="loader-bar-container">
-        <div class="loader-bar"></div>
-      </div>
+    <!-- Navigation Transition Overlay -->
+    <div id="transition-overlay">
+        <div class="loader-content">
+            <img src="Assets/fav/Logo.svg" alt="MohJeha Logo" class="loader-logo">
+            <div class="loader-bar-container">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
     </div>
+
+    <!-- ----- LOAD Hero SECTIONS ----- -->
+    <section class="HERO banner bg-grad1" id="Top">
+
+        <div class="hero-top-bar">
+            <a href="index.html">
+                <img class="Hero-logo" src="Assets/fav/Logo.svg" alt="hero-image" id="home">
+            </a>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
+                    <img src="Assets/fav/fb.svg" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
+                    <img src="Assets/fav/ins.svg" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
+                    <img src="Assets/fav/linked.svg" alt="LinkedIn">
+                </a>
+
+
+
+            </div>
+
+        </div>
+        <div class="Image-Container screen">
+            <img class="Hero-Image   " src="Assets/fav/Banner_projects.webp" alt="hero-image" id="home">
+        </div>
+
+
+        <div style="position: absolute; bottom: 50%;">
+            <div class="head " id="Hero-name">3D Projects</div>
+            <div class="subhead   f3 upper wrap shadow" id="Hero-head"></div>
+        </div>
+
+
+
+    </section>
+    <!-- ---------------------------------------------------------------------------------------------------------------------------  -->
+   <div class="container ">
+        <h1 class="subhead   center glow ">🚧 My digital space is still being crafted 🚧 <br>
+            <span class="subhead  center glow "> Some features and links may be temporarily unavailable.</span>
+    </div>
+
+
+ <section class="container pad-100">
+          <!-- Infinite Slider of images -->
+          <div class="infinite-slider-wrapper">
+              <div class="infinite-slider-track track-1">
+
+   <div class="card2">
+              <img src="assets/Graphics/logos/DigitalWorld_logo.webp" alt="Brand 1 cover" class="thumb-in">
+              <img src="assets/Graphics/logos/DigitalWorld_Thumb.webp" alt="Brand 1" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
+            </div>
+
+
+            <div class="card2">
+              <img src="assets/Graphics/logos/Dabbous_logo.webp" alt="Brand 2 cover" class="thumb-in" >
+              <img src="assets/Graphics/logos/Dabbous_Thumb.webp" alt="Brand 2" class="thumb-img" onclick="openOverlay('Logos/page-3.html')">
+            </div>
+
+            <div class="card2">
+              <img src="assets/Graphics/logos/SIS_logo.webp" alt="Brand 3 cover" class="thumb-in" >
+              <img src="assets/Graphics/logos/SIS_Thumb.webp" alt="Brand 3" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
+            </div>
+
+            <div class="card2">
+              <img src="assets/Graphics/logos/Atelier_logo.webp" alt="Brand 4 cover" class="thumb-in" >
+              <img src="assets/Graphics/logos/Atelier_Thumb.webp" alt="Brand 4" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
+            </div>
+
+            <div class="card2">
+              <img src="assets/Graphics/logos/Arz_logo.webp" alt="Brand 5 cover" class="thumb-in">
+              <img src="assets/Graphics/logos/Arz_Thumb.webp" alt="Brand 5" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
+            </div>
+
+            <div class="card2">
+              <img src="assets/Graphics/logos/EarthLinks_logo.webp" alt="Brand 6 cover" class="thumb-in">
+              <img src="assets/Graphics/logos/EarthLinks_Thumb.webp" alt="Brand 6" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
+            </div>
+
+              </div>
+              <div class="infinite-slider-track track-2">
+
+            <div class="card2">
+              <img src="assets/Graphics/logos/Abusalah_logo.webp" alt="Brand 1 cover" class="thumb-in">
+              <img src="assets/Graphics/logos/Abusalah_Thumb.webp" alt="Brand 1" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
+            </div>
+
+            <div class="card2">
+              <img src="assets/Graphics/logos/ibnbalad_logo.webp" alt="Brand 2 cover" class="thumb-in" >
+              <img src="assets/Graphics/logos/ibnbalad_Thumb.webp" alt="Brand 2" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
+            </div>
+
+            <div class="card2">
+              <img src="assets/Graphics/logos/Summer_logo.webp" alt="Brand 3 cover" class="thumb-in" >
+              <img src="assets/Graphics/logos/Summer_Thumb.webp" alt="Brand 3" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
+            </div>
+
+            <div class="card2">
+              <img src="assets/Graphics/logos/vistamar_logo.webp" alt="Brand 4 cover" class="thumb-in" >
+              <img src="assets/Graphics/logos/vistamar_Thumb.webp" alt="Brand 4" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
+            </div>
+
+            <div class="card2">
+              <img src="assets/Graphics/logos/Arz_logo.webp" alt="Brand 5 cover" class="thumb-in">
+              <img src="assets/Graphics/logos/Arz_Thumb.webp" alt="Brand 5" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
+            </div>
+
+            <div class="card2">
+              <img src="assets/Graphics/logos/EarthLinks_logo.webp" alt="Brand 6 cover" class="thumb-in">
+              <img src="assets/Graphics/logos/EarthLinks_Thumb.webp" alt="Brand 6" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
+            </div>
+
+              </div>
+          </div>
+        </section>
+
+
+     <section class="sct-title">
+        <div class="subhead center color glow"> ____________________________</div>
+        <div class="title center upper"> Gaming Logos</div>
+    </section>
+    
+    <section class="container">
+
+  <div class="X-section ">
+
+      <div class="containerX">
+        <div class="cardX"><img class="cardimg" src="assets/Graphics/logos/Gaming_0AW.webp"><img class="cardlogo" src="assets/Graphics/logos/Gaming_0A.webp" alt="Gaming logo"  ></div>
+        <div class="cardX"><img class="cardimg" src="assets/Graphics/logos/Gaming_2AW.webp"><img class="cardlogo" src="assets/Graphics/logos/Gaming_2A.webp" alt="Gaming logo"  ></div>
+        <div class="cardX"><img class="cardimg" src="assets/Graphics/logos/Gaming_1AW.webp"><img class="cardlogo" src="assets/Graphics/logos/Gaming_1AW.webp" alt="Gaming logo"  ></div>
+        <div class="cardX"><img class="cardimg" src="assets/Graphics/logos/Gaming_4AW.webp"><img class="cardlogo" src="assets/Graphics/logos/Gaming_4A.webp" alt="Gaming logo"  ></div>
+        <div class="cardX"><img class="cardimg" src="assets/Graphics/logos/Gaming_3AW.webp"><img class="cardlogo" src="assets/Graphics/logos/Gaming_3A.webp" alt="Gaming logo"  ></div>
+        <div class="cardX"><img class="cardimg" src="assets/Graphics/logos/Gaming_0AW.webp"><img class="cardlogo" src="assets/Graphics/logos/Gaming_0A.webp" alt="Gaming logo"  ></div>
+        <div class="cardX"><img class="cardimg" src="assets/Graphics/logos/Gaming_2AW.webp"><img class="cardlogo" src="assets/Graphics/logos/Gaming_2A.webp" alt="Gaming logo"  ></div>
+        <div class="cardX"><img class="cardimg" src="assets/Graphics/logos/Gaming_1AW.webp"><img class="cardlogo" src="assets/Graphics/logos/Gaming_1AW.webp" alt="Gaming logo"  ></div>
+      </div>
+      
   </div>
 
-  <!-- Animated Background -->
-  <div class="bg-blob blob-1"></div>
-  <div class="bg-blob blob-2"></div>
-  <div class="bg-blob blob-3"></div>
+</section>
 
-  <!-- Main Content -->
-  <section class="wip-container">
-    <div class="wip-card">
-      <h1 class="wip-title">🚧 Work in Progress 🚧</h1>
-      <p class="wip-desc">
-        My digital space is still being crafted — like a 3D model waiting for its final render.
-        While I polish the details, you can explore the <span>About Page</span>
-        that’s almost ready!
-      </p>
+ <section class="container pad-100">
+        <h1 class="title center upper" style="margin-bottom: 2rem;">Branding</h1>
 
-      <a href="about.html" class="btn-about">
-        Go to About Page <span class="arrow">→</span>
-      </a>
+        <!-- Swiper Container for the Slide Effect -->
+        <div class="swiper custom-grid-swiper">
+            <div class="swiper-wrapper">
+
+                <!-- We place the entire grid as ONE wide slide so Swiper can slide it smoothly -->
+                <div class="swiper-slide custom-grid-slide">
+                    <div class="parent">
+                        <!-- Div 1 to 17 -->
+                        <div class="div1 card1"><img src="assets/Graphics/logos/Abusalah_logo.webp"></div>
+                        <div class="div2 card1"><img src="assets/Graphics/logos/ibnbalad_logo.webp"></div>
+                        <div class="div3 card1"><img src="assets/Graphics/logos/SIS_logo.webp"></div>
+                        <div class="div4 card1"><img src="assets/Graphics/logos/Atelier_logo.webp"></div>
+                        <div class="div5 card1"><img src="assets/Graphics/logos/Arz_logo.webp"></div>
+                        <div class="div6 card1"><img src="assets/Graphics/logos/EarthLinks_logo.webp"></div>
+                        <div class="div7 card1"><img src="assets/Graphics/logos/Abusalah_logo.webp"></div>
+                        <div class="div8 card1"><img src="assets/Graphics/logos/Sirius_logo.webp"></div>
+                        <div class="div9 card1"><img src="assets/Graphics/logos/Summer_logo.webp"></div>
+                        <div class="div10 card1"><img src="assets/Graphics/logos/vistamar_logo.webp"></div>
+                        <div class="div11 card1"><img src="assets/Graphics/logos/Arz_logo.webp"></div>
+                        <div class="div12 card1"><img src="assets/Graphics/logos/EarthLinks_logo.webp"></div>
+                        <div class="div13 card1"><img src="assets/Graphics/logos/DigitalWorld_logo.webp"></div>
+                        <div class="div14 card1"><img src="assets/Graphics/logos/Dabbous_logo.webp"></div>
+                        <div class="div15 card1"><img src="assets/Graphics/logos/SIS_logo.webp"></div>
+                        <div class="div16 card1"><img src="assets/Graphics/logos/Atelier_logo.webp"></div>
+                        <div class="div17 card1"><img src="assets/Graphics/logos/Lebaniz_logo.webp"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------------------------- Overlay ------------------------------------- -->
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <span class="close-btn" onclick="closeOverlay()">×</span>
+            <iframe id="overlayFrame" src="" frameborder="0"></iframe>
+        </div>
     </div>
-  </section>
+    <!-- -------------------------------------------------------------------------- -->
 
-  <!-- Page Transitions -->
-  <script src="Js/transitions.js"></script>
+
+    <!-- --------------------------- SPACE | Divider ------>
+    <section class="spacer" style="height:50px;"></section>
+    <!-- -------------------------------------------------->
+
+    <div class="container ">
+        <h1 class="subhead   center glow ">🚧 My digital space is still being crafted 🚧 <br>
+            <span class="subhead  center glow "> Some features and links may be temporarily unavailable.</span>
+    </div>
+
+    <!-- ----- LOAD FOOTER ----- -->
+    <footer class="footer" id="footer">
+        <p class="copyrights">&copy; <span id="current-year"></span> MohJeha-Artist. All Rights Reserved.</p>
+        <div class="footer-content">
+            <div class="ft-b"> <a href="index.html"><img src="Assets/fav/3d-art-designer.svg" alt="Logo" class="footer-logo"></a></div>
+            <div class="ft-b">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
+                        <img src="Assets/fav/fb.svg" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
+                        <img src="Assets/fav/ins.svg" alt="Instagram">
+                    </a>
+                    <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
+                        <img src="Assets/fav/linked.svg" alt="LinkedIn">
+                    </a>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" class="arrowback" viewBox="0 0 16 16"
+                        class="bk-btn" onclick="document.getElementById('Top').scrollIntoView({ behavior: 'smooth' })">
+                        <path fill-rule="evenodd"
+                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
+                    </svg>
+
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- ---------------------------------------------------------------------------------------------------------------------------  -->
+    <script src="Js/overlay.js"></script>
+    <!-- ----------------------------------------------------------------------- -->
+
+    <!-- Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
+    <script src="Js/lenis.js"></script>
+    <!-- ---------------- -->
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="Js/cinematic-swiper.js"></script>
+    <script src="Js/custom-grid-swiper.js"></script>
+    <!-- Page Transitions -->
+    <script src="Js/transitions.js"></script>
+    <!-- ---------------- -->
+    <script src="Js/infinite-slider.js"></script>
 
 </body>
+</html>
+
 </html>

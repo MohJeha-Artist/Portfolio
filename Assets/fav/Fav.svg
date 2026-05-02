@@ -20,7 +20,7 @@
     </style>
   </defs>
   <circle class="cls-1" cx="25" cy="25" r="25"/>
-  <rect class="cls-2" width="50" height="50" rx="15" ry="15"/>
+  <rect class="cls-2" y="0" width="50" height="50" rx="15" ry="15"/>
   <g>
     <polygon class="cls-2" points="38.7 13.7 38.7 14.1 32.9 22.2 32.9 18.8 38.7 13.7"/>
     <polygon class="cls-3" points="38.7 14.1 38.7 32.9 32.9 38 24.9 45 17.7 38.7 17.7 30.9 24.9 37.3 32.9 30.1 32.9 22.2 38.7 14.1"/>

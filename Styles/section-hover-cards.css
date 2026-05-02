@@ -29,8 +29,9 @@
   position: relative;
   /* margin-top: 10%; */
   width: 100%;
-  max-width: 70%;
-  height: 70vh;
+  max-width: 50%;
+  aspect-ratio: 16/9;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: stretch;
