@@ -1,43 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light">
     <meta name="supported-color-schemes" content="light">
-    
-    <title> 3D Projects - Medieval Axe </title>
-    <link rel="icon" href="Assets/fav/Fav.svg" type="image/x-icon">
+
+    <title> 3D Projects - Medieval Hammer </title>
+    <link rel="icon" href="../Assets/fav/Fav.svg" type="image/x-icon">
     <!-- ------------------------------------------------------ -->
 
-  
+
     <link rel="stylesheet" href="../Styles/base.css">
     <link rel="stylesheet" href="../Styles/base-grid-card.css">
-    
+
     <link rel="stylesheet" href="../Styles/section-hero.css">
     <link rel="stylesheet" href="../Styles/section-3dwork.css">
-    
+
     <link rel="stylesheet" href="../Styles/section-footer.css">
 
 
     <!-- Include GLightbox -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    
-<style>
-  html   
-  { margin-top: 30px; background-color: rgba(0,0,0,0.9) !important; } 
-  .body { margin-top: 30px;  width: 70%; margin: 0 auto; background-color:transparent }
-@media (max-width: 768px) { .body { width: 97%;} }
-</style>
+    <link rel="stylesheet" href="../Styles/transitions.css">
+
+    <style>
+        html {
+            margin-top: 30px;
+            background-color: rgba(0, 0, 0, 0.9) !important;
+        }
+
+        .body {
+            margin-top: 30px;
+            max-width: 910px;
+            width: 60%;
+            margin: 0 auto;
+            background-color: transparent
+        }
+
+        @media (max-width: 768px) {
+            .body {
+                width: 97%;
+            }
+        }
+    </style>
 </head>
 
 
-    <body class="body">
+<body class="body is-transitioning">
 
-        <!-- TOP BAR -->
-        <section class="container" style=" height: 50px; margin: 0 auto;">    
-        <div  class="hero-top-bar " style="top: 0;">
+    <!-- Navigation Transition Overlay -->
+    <div id="transition-overlay">
+        <div class="loader-content">
+            <img src="../Assets/fav/Logo.svg" alt="MohJeha Logo" class="loader-logo">
+            <div class="loader-bar-container">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOP BAR -->
+    <section class="container" style=" height: 50px; margin: 0 auto;">
+        <div class="hero-top-bar " style="top: 0;">
             <a href="../index.html">
                 <img class="Hero-logo" src="../Assets/fav/Logo.svg" alt="hero-image" id="home">
             </a>
@@ -45,20 +71,20 @@
             <div class="social-icons">
                 <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
                     <img src="../Assets/fav/fb.svg" alt="Facebook">
-                    </a>
-                    <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
+                </a>
+                <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
                     <img src="../Assets/fav/ins.svg" alt="Instagram">
-                    </a>
-                    <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
+                </a>
+                <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
                     <img src="../Assets/fav/linked.svg" alt="LinkedIn">
-                    </a>
-                </div>
+                </a>
+            </div>
 
-        </div> 
-        </section>
+        </div>
+    </section>
 
-        <!-- ----- LOAD Hero SECTIONS ----- -->
-        <section  class="HERO banner " style="width: 100%;" id="Top"> 
+    <!-- ----- LOAD Hero SECTIONS ----- -->
+    <section class="HERO banner " style="width: 100%;" id="Top">
 
 
         <div class="Image-Container screen">
@@ -67,126 +93,158 @@
 
 
         <div class=" " style="position: absolute; bottom: 40%;">
-        <div class="subhead upper wrap shadow " id="Hero-name">Hero Name</div>
-        <div class="head1 upper wrap shadow" id="Hero-head">Medieval Axe</div>
+            <div class="subhead upper wrap shadow " id="Hero-name">Hero Name</div>
+            <div class="head upper wrap shadow" id="Hero-head">Medieval Axe</div>
         </div>
 
 
 
-        </section>
+    </section>
 
-        <!-- IMAGES -->
-        <section class="container " style=";border-top: 2px solid var(--3); border-radius: 50px;  ">
-            <div  >
-                <a href="../Assets/3DProjects/Axe(1).webp" class="glightbox">
-                <img src="../Assets/3DProjects/Axe(1)_thumb.webp" width="100%">
-                </a>
-                <a href="../Assets/3DProjects/Axe(1).webp" class="glightbox">
-                <img src="../Assets/3DProjects/Axe(1)_thumb.webp" width="100%">
-                </a>
-                <a href="../Assets/3DProjects/Axe(1).webp" class="glightbox">
-                <img src="../Assets/3DProjects/Axe(1)_thumb.webp" width="100%">
-                </a>
-                <a href="../Assets/3DProjects/Axe(1).webp" class="glightbox">
-                <img src="../Assets/3DProjects/Axe(1)_thumb.webp" width="100%">
-                </a>
-            </div>
-        </section>       
-
-        <!-- Embed Sketchfab Viewer via iframe -->
-        <div class="sketchfab-embed-wrapper" style="width: 100%;"><iframe 
-            title="Medieval Axe" 
-            frameborder="0" 
-            allowfullscreen 
-            mozallowfullscreen="true" 
-            webkitallowfullscreen="true" 
-            allow="autoplay; fullscreen; xr-spatial-tracking" 
-            xr-spatial-tracking execution-while-out-of-viewport 
-            execution-while-not-rendered web-share 
-            src="https://sketchfab.com/models/4f44adf8b1ad461bbda0008ec2ac4343/embed?preload=1&ui_hint=0&ui_theme=dark&dnt=1">
-        </iframe></div>
-     
-        <!-- BOTTONS        -->
-        <section class="container ">
-            <div class="buttons">
-                <a class="side-btn-pg" id="prev">
-                    <svg class="side-btn" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
-                    </svg> <span>Previous</span>
-                </a>
-
-        <a class="side-btn-pg" id="next">
-            <svg class="side-btn" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
-            </svg><span>Next</span>
-        </a>
-
-        <a class="side-btn-pg" href="../index.html">
-            <svg class="side-btn" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"/>
-            </svg>
-            <span>Home</span>
-        </a>
+    <!-- IMAGES -->
+    <section class="container " style=";border-top: 2px solid var(--3); border-radius: 20px; ">
+        <div id="dynamic-gallery">
         </div>
-        </section>
+        <script>
+            const galleryContainer = document.getElementById('dynamic-gallery');
+
+            // Configure folder and naming convention here
+            const folderPath = "../Assets/3DProjects/melee/";
+            const baseName = "Hammer";
+            const maxImagesToCheck = 5; // Max number of images to try loading
+
+            for (let i = 1; i <= maxImagesToCheck; i++) {
+                const link = document.createElement('a');
+                link.href = `${folderPath}${baseName}(${i}).webp`;
+                link.className = 'glightbox';
+                link.style.display = 'none'; // Hide until thumbnail loads
+
+                const img = document.createElement('img');
+                img.src = `${folderPath}${baseName}(${i})_thumb.webp`;
+                img.setAttribute('width', '100%');
+
+                // If thumbnail loads successfully, show the link
+                img.onload = function () {
+                    link.style.display = 'block';
+                    // Refresh GLightbox to recognize the new dynamic link
+                    if (typeof lightbox !== 'undefined') {
+                        lightbox.reload();
+                    }
+                };
+
+                // If thumbnail fails to load (file doesn't exist), remove the link
+                img.onerror = function () {
+                    link.remove();
+                };
+
+                link.appendChild(img);
+                galleryContainer.appendChild(link);
+            }
+        </script>
+    </section>
+
+    <!-- Embed Sketchfab Viewer via iframe -->
+    <div class="sketchfab-embed-wrapper" style="width: 100%;">
+        <iframe title="Medieval Axe" frameborder="0"
+            allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport
+            execution-while-not-rendered web-share
+            src="https://sketchfab.com/models/c210605ff49347ad8049d22e22a000a2/embed?preload=1&ui_hint=0&ui_theme=dark&dnt=1">
+        </iframe>
+    </div>
+
+    <!-- BOTTONS        -->
+    <section class="container ">
+        <div class="buttons">
+            <a class="side-btn-pg" id="prev">
+                <svg class="side-btn" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M5 12h14M5 12l4-4m-4 4 4 4" />
+                </svg> <span>Previous</span>
+            </a>
+
+            <a class="side-btn-pg" id="next">
+                <svg class="side-btn" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 12H5m14 0-4 4m4-4-4-4" />
+                </svg><span>Next</span>
+            </a>
+
+            <a class="side-btn-pg" href="../index.html">
+                <svg class="side-btn" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5" />
+                </svg>
+                <span>Home</span>
+            </a>
+        </div>
+    </section>
 
 
-       
-            <!-- --------------------------- SPACE | Divider ------>
-<section class="spacer" style="height:50px;"></section> 
-<!-- -------------------------------------------------->
+
+    <!-- --------------------------- SPACE | Divider ------>
+    <section class="spacer" style="height:50px;"></section>
+    <!-- -------------------------------------------------->
     <!-- ----- LOAD FOOTER ----- -->
     <footer class="footer" id="footer">
-      <p class="copyrights">&copy; <span id="current-year"></span> MohJeha-Artist. All Rights Reserved.</p>
-      <div class="footer-content">
-          <div class="ft-b"><img src="../Assets/fav/3d-art-designer.svg" alt="Logo" class="footer-logo"></div>
-          <div class="ft-b">
-              <div class="social-icons">
-                  <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
-                  <img src="../Assets/fav/fb.svg" alt="Facebook">
-                  </a>
-                  <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
-                  <img src="../Assets/fav/ins.svg" alt="Instagram">
-                  </a>
-                  <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
-                  <img src="../Assets/fav/linked.svg" alt="LinkedIn">
-                  </a>
-                  
-                  <svg xmlns="http://www.w3.org/2000/svg"  width="50" height="50" class="arrowback" viewBox="0 0 16 16" class="bk-btn" onclick="document.getElementById('Top').scrollIntoView({ behavior: 'smooth' })">
-                      <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
-                  </svg>
-                  
-              </div>
-          </div>
-      </div>
-      
-  </footer>
+        <p class="copyrights">&copy; <span id="current-year"></span> MohJeha-Artist. All Rights Reserved.</p>
+        <div class="footer-content">
+            <div class="ft-b"><img src="../Assets/fav/3d-art-designer.svg" alt="Logo" class="footer-logo"></div>
+            <div class="ft-b">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
+                        <img src="../Assets/fav/fb.svg" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
+                        <img src="../Assets/fav/ins.svg" alt="Instagram">
+                    </a>
+                    <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
+                        <img src="../Assets/fav/linked.svg" alt="LinkedIn">
+                    </a>
 
-</div>
-        <!-- ----------------------------------------------- Scripts ------ -->  
-        <script src="../html/hero-banner.js"></script>
-        <script src="../html/footer.js"></script>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" class="arrowback" viewBox="0 0 16 16"
+                        class="bk-btn" onclick="document.getElementById('Top').scrollIntoView({ behavior: 'smooth' })">
+                        <path fill-rule="evenodd"
+                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
+                    </svg>
 
-        <!-- Init -->
-        <script>
-            const lightbox = GLightbox({ selector: '.glightbox' });
-        </script>
+                </div>
+            </div>
+        </div>
 
-        <!-- LENIS -->
-        <script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
-        <script src="../js/lenis.js"></script>
-        <!-- ---------------- -->
+    </footer>
 
-        <script src="page.js"></script>
+    </div>
 
 
-<script>
-    document.addEventListener('keydown', function(e) {
-      if (e.key === "Escape") {
-        window.parent.postMessage('closeOverlay', '*');
-      }
-    });
-  </script>
+    <!-- Init -->
+    <script>
+        const lightbox = GLightbox({ selector: '.glightbox' });
+    </script>
 
-    </body>   
+    <!-- LENIS -->
+    <script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
+    <script src="../js/lenis.js"></script>
+    <!-- ---------------- -->
+
+    <script src="page.js"></script>
+
+
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.key === "Escape") {
+                window.parent.postMessage('closeOverlay', '*');
+            }
+        });
+    </script>
+
+    <!-- Page Transitions -->
+    <script src="../Js/transitions.js"></script>
+    <!-- ---------------- -->
+
+</body>
+
 </html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work in Progress - Motion Graphics</title>
+  <link rel="icon" href="Assets/fav/Fav.svg" type="image/x-icon">
+  <link rel="stylesheet" href="Styles/base.css">
+  <link rel="stylesheet" href="Styles/transitions.css">
+
+  <style>
+    /* Premium WIP Page Styles */
+    html, body {
+      background-color: var(--0);
+      overflow: hidden !important;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .wip-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 10;
+    }
+
+    /* Animated Background Elements */
+    .bg-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      z-index: 1;
+      animation: float-blob 10s ease-in-out infinite alternate;
+    }
+
+    .blob-1 {
+      width: 40vw;
+      height: 40vw;
+      background: rgba(84, 44, 219, 0.4);
+      top: -10%;
+      left: -10%;
+    }
+
+    .blob-2 {
+      width: 30vw;
+      height: 30vw;
+      background: rgba(17, 139, 167, 0.3);
+      bottom: -10%;
+      right: -10%;
+      animation-delay: -5s;
+    }
+    
+    .blob-3 {
+      width: 25vw;
+      height: 25vw;
+      background: rgba(255, 255, 255, 0.1);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: pulse-blob 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes float-blob {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(10%, 10%) scale(1.1); }
+    }
+
+    @keyframes pulse-blob {
+      0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+      100% { transform: translate(-50%, -50%) scale(1.5); opacity: 1; }
+    }
+
+    /* Glassmorphism Card */
+    .wip-card {
+      position: relative;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 30px;
+      padding: 60px;
+      max-width: 650px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.05);
+      animation: slide-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    @keyframes slide-up {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .wip-title {
+      font-family: var(--f1);
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--1);
+      margin-bottom: 25px;
+      text-shadow: 0 0 20px rgba(84, 44, 219, 0.8);
+      letter-spacing: -1px;
+      animation: gentle-pulse 2s infinite alternate;
+    }
+
+    @keyframes gentle-pulse {
+      from { opacity: 1; transform: scale(1); }
+      to { opacity: 0.8; transform: scale(1.02); }
+    }
+
+    .wip-desc {
+      font-family: var(--f0);
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 40px;
+    }
+
+    .wip-desc span {
+      color: #9d7cff;
+      font-weight: 600;
+      text-shadow: 0 0 10px rgba(157, 124, 255, 0.5);
+    }
+
+    .btn-about {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 40px;
+      background: linear-gradient(45deg, var(--3), #7e22ce);
+      color: var(--1);
+      font-family: var(--f1);
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 10px 30px rgba(84, 44, 219, 0.4);
+    }
+
+    .btn-about:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 40px rgba(84, 44, 219, 0.6);
+      background: linear-gradient(45deg, #7e22ce, var(--3));
+    }
+    
+    .btn-about span.arrow {
+      transition: transform 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-about:hover span.arrow {
+      transform: translateX(5px);
+    }
+
+    @media (max-width: 768px) {
+      .wip-title { font-size: 2rem; }
+      .wip-desc { font-size: 1.05rem; }
+      .wip-card { padding: 40px 25px; }
+      .blob-1 { width: 60vw; height: 60vw; }
+      .blob-2 { width: 50vw; height: 50vw; }
+    }
+  </style>
+</head>
+
+<body class="is-transitioning">
+
+  <!-- Navigation Transition Overlay -->
+  <div id="transition-overlay">
+    <div class="loader-content">
+      <img src="Assets/fav/Logo.svg" alt="MohJeha Logo" class="loader-logo">
+      <div class="loader-bar-container">
+        <div class="loader-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Animated Background -->
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+
+  <!-- Main Content -->
+  <section class="wip-container">
+    <div class="wip-card">
+      <h1 class="wip-title">🚧 Work in Progress 🚧</h1>
+      <p class="wip-desc">
+        My digital space is still being crafted — like a 3D model waiting for its final render.
+        While I polish the details, you can explore the <span>About Page</span>
+        that’s almost ready!
+      </p>
+
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+        <a href="about.html" class="btn-about">
+            Go to About Page <span class="arrow">→</span>
+        </a>
+        <a href="index.html" class="btn-about" style="background: rgba(255, 255, 255, 0.05);">
+            Back to Home <span class="arrow">⌂</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page Transitions -->
+  <script src="Js/transitions.js"></script>
+
+</body>
+</html>

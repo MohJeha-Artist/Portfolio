@@ -4,210 +4,465 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Work in Progress - Motion Graphics</title>
+  <title>Motion | MohJeha</title>
   <link rel="icon" href="Assets/fav/Fav.svg" type="image/x-icon">
+
   <link rel="stylesheet" href="Styles/base.css">
   <link rel="stylesheet" href="Styles/transitions.css">
+  <link rel="stylesheet" href="Styles/section-footer.css">
 
   <style>
-    /* Premium WIP Page Styles */
-    html, body {
-      background-color: var(--0);
-      overflow: hidden !important;
-      height: 100%;
+    :root {
+      --bg: #050308;
+      --text: #fff;
+      --accent: #542cdb;
+      --gray: #1a1a1a;
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      width: 100%;
+      box-sizing: border-box;
     }
 
-    .wip-container {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 10;
-    }
-
-    /* Animated Background Elements */
-    .bg-blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(100px);
-      z-index: 1;
-      animation: float-blob 10s ease-in-out infinite alternate;
-    }
-
-    .blob-1 {
-      width: 40vw;
-      height: 40vw;
-      background: rgba(84, 44, 219, 0.4);
-      top: -10%;
-      left: -10%;
-    }
-
-    .blob-2 {
-      width: 30vw;
-      height: 30vw;
-      background: rgba(17, 139, 167, 0.3);
-      bottom: -10%;
-      right: -10%;
-      animation-delay: -5s;
-    }
-    
-    .blob-3 {
-      width: 25vw;
-      height: 25vw;
-      background: rgba(255, 255, 255, 0.1);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation: pulse-blob 8s ease-in-out infinite alternate;
-    }
-
-    @keyframes float-blob {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(10%, 10%) scale(1.1); }
-    }
-
-    @keyframes pulse-blob {
-      0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-      100% { transform: translate(-50%, -50%) scale(1.5); opacity: 1; }
-    }
-
-    /* Glassmorphism Card */
-    .wip-card {
-      position: relative;
-      z-index: 10;
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 30px;
-      padding: 60px;
-      max-width: 650px;
-      width: 90%;
-      text-align: center;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.05);
-      animation: slide-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-      opacity: 0;
-      transform: translateY(50px);
-    }
-
-    @keyframes slide-up {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .wip-title {
+    body {
+      background-color: var(--bg);
+      color: var(--text);
       font-family: var(--f1);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      /* cursor: none; */
+    }
+
+    /* --- Film Grain Overlay --- */
+    .grain {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image: url("https://media.giphy.com/media/oEI9uWU9HSIWk/giphy.gif");
+    }
+
+    /* --- Custom Cursor --- */
+    .cursor {
+      width: 10px;
+      height: 10px;
+      background: var(--text);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 10000;
+      mix-blend-mode: difference;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      transform: translate(-50%, -50%);
+    }
+
+    .cursor.hover {
+      transform: translate(-50%, -50%) scale(8);
+    }
+
+    /* --- Cinematic Intro --- */
+    .intro {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 10%;
+      position: relative;
+    }
+
+    .intro-title {
+      font-size: clamp(5rem, 15vw, 12rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.8;
+      letter-spacing: -0.05em;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .intro-title span {
+      display: block;
+      overflow: hidden;
+    }
+
+    .intro-title span i {
+      display: block;
+      font-style: normal;
+      animation: slideUp 1.5s cubic-bezier(0.19, 1, 0.22, 1) both;
+    }
+
+    .intro-title span:nth-child(2) i {
+      animation-delay: 0.2s;
+      color: var(--accent);
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(100%);
+      }
+
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .intro-video {
+      position: absolute;
+      top: 50%;
+      right: 10%;
+      transform: translateY(-50%);
+      width: 40vw;
+      height: 60vh;
+      overflow: hidden;
+      border-radius: 10px;
+      z-index: 1;
+      opacity: 0.6;
+      filter: grayscale(1);
+      transition: all 1s ease;
+    }
+
+    .intro:hover .intro-video {
+      opacity: 1;
+      filter: grayscale(0);
+      transform: translateY(-52%) scale(1.05);
+    }
+
+    .intro-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* --- Projects Grid --- */
+    .projects {
+      padding: 100px 10%;
+    }
+
+    .project-row {
+      display: flex;
+      gap: 100px;
+      margin-bottom: 200px;
+      align-items: center;
+    }
+
+    .project-row:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .project-media {
+      flex: 1.5;
+      aspect-ratio: 16/9;
+      background: var(--gray);
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .project-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .project-media:hover img {
+      transform: scale(1.1);
+    }
+
+    .project-info {
+      flex: 1;
+    }
+
+    .project-category {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .project-name {
       font-size: 3rem;
       font-weight: 800;
-      color: var(--1);
-      margin-bottom: 25px;
-      text-shadow: 0 0 20px rgba(84, 44, 219, 0.8);
-      letter-spacing: -1px;
-      animation: gentle-pulse 2s infinite alternate;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      line-height: 1;
     }
 
-    @keyframes gentle-pulse {
-      from { opacity: 1; transform: scale(1); }
-      to { opacity: 0.8; transform: scale(1.02); }
+    .project-desc {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #888;
+      max-width: 400px;
     }
 
-    .wip-desc {
-      font-family: var(--f0);
-      font-size: 1.25rem;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 40px;
+    /* --- Full Width Statement --- */
+    .statement {
+      padding: 200px 10%;
+      text-align: left;
     }
 
-    .wip-desc span {
-      color: #9d7cff;
-      font-weight: 600;
-      text-shadow: 0 0 10px rgba(157, 124, 255, 0.5);
+    .statement-text {
+      font-size: clamp(2rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: #333;
+      transition: color 0.5s ease;
     }
 
-    .btn-about {
-      display: inline-flex;
-      align-items: center;
+    .statement:hover .statement-text {
+      color: #fff;
+    }
+
+    .statement-text span {
+      color: var(--accent);
+    }
+
+    /* --- Video Overlay --- */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      z-index: 1000;
+      display: none;
       justify-content: center;
-      gap: 10px;
-      padding: 15px 40px;
-      background: linear-gradient(45deg, var(--3), #7e22ce);
-      color: var(--1);
-      font-family: var(--f1);
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 50px;
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 10px 30px rgba(84, 44, 219, 0.4);
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.5s ease;
     }
 
-    .btn-about:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 15px 40px rgba(84, 44, 219, 0.6);
-      background: linear-gradient(45deg, #7e22ce, var(--3));
-    }
-    
-    .btn-about span.arrow {
-      transition: transform 0.3s ease;
-      display: inline-block;
+    .overlay.active {
+      display: flex;
+      opacity: 1;
     }
 
-    .btn-about:hover span.arrow {
-      transform: translateX(5px);
+    .video-container {
+      width: 80%;
+      aspect-ratio: 16/9;
+      position: relative;
+    }
+
+    .close-overlay {
+      position: absolute;
+      top: -60px;
+      right: 0;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* --- Footer --- */
+    footer {
+      padding: 100px 10%;
+      border-top: 1px solid var(--gray);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      height: 30px;
+      opacity: 0.5;
+    }
+
+    .copyright {
+      font-size: 0.8rem;
+      color: #555;
     }
 
     @media (max-width: 768px) {
-      .wip-title { font-size: 2rem; }
-      .wip-desc { font-size: 1.05rem; }
-      .wip-card { padding: 40px 25px; }
-      .blob-1 { width: 60vw; height: 60vw; }
-      .blob-2 { width: 50vw; height: 50vw; }
+      .project-row {
+        flex-direction: column !important;
+        gap: 40px;
+        margin-bottom: 100px;
+      }
+
+      .intro-video {
+        display: none;
+      }
+
+      .intro {
+        padding: 0 5%;
+      }
+
+      .project-name {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 
-<body class="is-transitioning">
+<body>
 
-  <!-- Navigation Transition Overlay -->
+  <!-- Transition Overlay -->
   <div id="transition-overlay">
     <div class="loader-content">
-      <img src="Assets/fav/Logo.svg" alt="MohJeha Logo" class="loader-logo">
+      <img src="Assets/fav/Logo.svg" alt="Logo" class="loader-logo">
       <div class="loader-bar-container">
         <div class="loader-bar"></div>
       </div>
     </div>
   </div>
 
-  <!-- Animated Background -->
-  <div class="bg-blob blob-1"></div>
-  <div class="bg-blob blob-2"></div>
-  <div class="bg-blob blob-3"></div>
-
-  <!-- Main Content -->
-  <section class="wip-container">
-    <div class="wip-card">
-      <h1 class="wip-title">🚧 Work in Progress 🚧</h1>
-      <p class="wip-desc">
-        My digital space is still being crafted — like a 3D model waiting for its final render.
-        While I polish the details, you can explore the <span>About Page</span>
-        that’s almost ready!
-      </p>
-
-      <a href="about.html" class="btn-about">
-        Go to About Page <span class="arrow">→</span>
-      </a>
+  <!-- Intro -->
+  <section class="intro">
+    <h1 class="intro-title">
+      <span><i>Motion</i></span>
+      <span><i>Design</i></span>
+      <span><i>Studio</i></span>
+    </h1>
+    <div class="intro-video">
+      <video autoplay muted loop playsinline src="Assets/Media/Enhanced Media(1).mp4"></video>
     </div>
   </section>
 
-  <!-- Page Transitions -->
+  <!-- Statement -->
+  <section class="statement">
+    <h2 class="statement-text">
+      We create <span>rhythmic</span> visual experiences that translate complex ideas into <span>cinematic</span>
+      reality.
+    </h2>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects">
+    <!-- Project 1 -->
+    <div class="project-row">
+      <div class="project-media" onclick="openVideo('1-iPgOj-8P4peuGogFJiHcACd0lIFbsrS')">
+        <img src="Assets/Thumbnails/motion_brand.png" alt="Microsoft">
+      </div>
+      <div class="project-info">
+        <span class="project-category">Brand Identity</span>
+        <h3 class="project-name">Microsoft Dynamics</h3>
+        <p class="project-desc">A fluid exploration of digital connectivity and system architecture through abstract
+          motion.</p>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-row">
+      <div class="project-media" onclick="openVideo('1COV5pq55Kddwei8jIYJ6vlfj0vq5ioQR')">
+        <img src="Assets/Thumbnails/motion_abstract.png" alt="Project Alpha">
+      </div>
+      <div class="project-info">
+        <span class="project-category">Commercial</span>
+        <h3 class="project-name">Project Alpha</h3>
+        <p class="project-desc">High-energy commercial edit focusing on product speed and precision engineering.</p>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-row">
+      <div class="project-media" onclick="openVideo('1NJCuWvPGtnj1Tl5AhiVoAc4qy73zsc1q')">
+        <img src="Assets/Thumbnails/motion_typo.png" alt="Showreel">
+      </div>
+      <div class="project-info">
+        <span class="project-category">Showreel</span>
+        <h3 class="project-name">2024 Showcase</h3>
+        <p class="project-desc">A curated montage of my best work across 3D, 2D, and visual effects.</p>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-row">
+      <div class="project-media" onclick="openVideo('1tR4t12xtf-OqmZUxmAoGy8zlI03vnEY8')">
+        <img src="Assets/Thumbnails/motion_hud.png" alt="HUD">
+      </div>
+      <div class="project-info">
+        <span class="project-category">UI Motion</span>
+        <h3 class="project-name">Futuristic HUD</h3>
+        <p class="project-desc">Interactive data visualization and user interface concepts for cinematic productions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Overlay -->
+  <div class="overlay" id="overlay">
+    <div class="video-container">
+      <div class="close-overlay" onclick="closeVideo()">Close</div>
+      <iframe id="videoFrame" allowfullscreen allow="autoplay"></iframe>
+    </div>
+  </div>
+
+  <!-- ----- LOAD FOOTER ----- -->
+  <footer class="footer" id="footer">
+    <p class="copyrights">&copy; <span id="current-year"></span> MohJeha-Artist. All Rights Reserved.</p>
+    <div class="footer-content">
+      <div class="ft-b"><img src="Assets/fav/3d-art-designer.svg" alt="Logo" class="footer-logo"></div>
+      <div class="ft-b">
+        <div class="social-icons">
+          <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
+            <img src="Assets/fav/fb.svg" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
+            <img src="Assets/fav/ins.svg" alt="Instagram">
+          </a>
+          <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
+            <img src="Assets/fav/linked.svg" alt="LinkedIn">
+          </a>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" class="arrowback" viewBox="0 0 16 16"
+            class="bk-btn" onclick="document.getElementById('Top').scrollIntoView({ behavior: 'smooth' })">
+            <path fill-rule="evenodd"
+              d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
+          </svg>
+
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+
+
   <script src="Js/transitions.js"></script>
 
+  <!-- Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
+  <script src="Js/lenis.js"></script>
+  <!-- ---------------- -->
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function openVideo(id) {
+      const overlay = document.getElementById('overlay');
+      const frame = document.getElementById('videoFrame');
+      frame.src = `https://drive.google.com/file/d/${id}/preview`;
+      overlay.style.display = 'flex';
+      setTimeout(() => overlay.classList.add('active'), 10);
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeVideo() {
+      const overlay = document.getElementById('overlay');
+      const frame = document.getElementById('videoFrame');
+      overlay.classList.remove('active');
+      setTimeout(() => {
+        overlay.style.display = 'none';
+        frame.src = '';
+      }, 500);
+      document.body.style.overflow = 'auto';
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeVideo();
+    });
+  </script>
 </body>
+
 </html>

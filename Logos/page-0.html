@@ -27,7 +27,7 @@
     <style>
         html {
             margin-top: 30px;
-            /* background-color: rgba(0, 0, 0, 0.9) !important; */
+            background-color: rgba(0, 0, 0, 0.9) !important;
         }
 
         .body {
@@ -61,6 +61,9 @@
 
     <!-- IMAGES -->
     <section class="container " style=";border-top: 2px solid var(--3); border-radius: 20px; overflow: hidden;">
+        <script>
+            const lightbox = GLightbox({ selector: '.glightbox' });
+        </script>
         <div id="dynamic-gallery">
         </div>
         <script>
@@ -72,22 +75,31 @@
             const maxImagesToCheck = 5; // Max number of images to try loading
 
             for (let i = 1; i <= maxImagesToCheck; i++) {
+                const link = document.createElement('a');
+                link.href = `${folderPath}${baseName}(${i}).webp`;
+                link.className = 'glightbox';
+                link.style.display = 'none'; // Hide until thumbnail loads
+
                 const img = document.createElement('img');
                 img.src = `${folderPath}${baseName}(${i}).webp`;
                 img.setAttribute('width', '100%');
-                img.style.display = 'none'; // Hide until loaded
 
-                // If image loads successfully, show it
+                // If thumbnail loads successfully, show the link
                 img.onload = function () {
-                    img.style.display = 'block';
+                    link.style.display = 'block';
+                    // Refresh GLightbox to recognize the new dynamic link
+                    if (typeof lightbox !== 'undefined') {
+                        lightbox.reload();
+                    }
                 };
 
-                // If image fails to load (file doesn't exist), remove it
+                // If thumbnail fails to load (file doesn't exist), remove the link
                 img.onerror = function () {
-                    img.remove();
+                    link.remove();
                 };
 
-                galleryContainer.appendChild(img);
+                link.appendChild(img);
+                galleryContainer.appendChild(link);
             }
         </script>
 

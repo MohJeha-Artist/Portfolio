@@ -6,8 +6,8 @@
     <meta name="color-scheme" content="light">
     <meta name="supported-color-schemes" content="light">
     
-    <title> 3D Projects - Medieval Axe </title>
-    <link rel="icon" href="Assets/fav/Fav.svg" type="image/x-icon">
+    <title> 3D Projects -  </title>
+    <link rel="icon" href="../Assets/fav/Fav.svg" type="image/x-icon">
     <!-- ------------------------------------------------------ -->
 
   
@@ -23,17 +23,31 @@
     <!-- Include GLightbox -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <link rel="stylesheet" href="../Styles/transitions.css">
     
 <style>
   html   
-  { margin-top: 30px; background-color: rgba(0,0,0,0.9) !important; } 
-  .body { margin-top: 30px;  width: 70%; margin: 0 auto; background-color:transparent }
-@media (max-width: 768px) { .body { width: 97%;} }
+    { margin-top: 30px; background-color: rgba(0,0,0,0.9) !important; } 
+
+    .body { margin-top: 30px; max-width: 910px;  width: 60%; margin: 0 auto; background-color:transparent }
+
+    @media (max-width: 768px) { .body { width: 97%;} }
+
 </style>
 </head>
 
 
-    <body class="body">
+    <body class="body is-transitioning">
+
+        <!-- Navigation Transition Overlay -->
+        <div id="transition-overlay">
+            <div class="loader-content">
+                <img src="../Assets/fav/Logo.svg" alt="MohJeha Logo" class="loader-logo">
+                <div class="loader-bar-container">
+                    <div class="loader-bar"></div>
+                </div>
+            </div>
+        </div>
 
         <!-- TOP BAR -->
         <section class="container" style=" height: 50px; margin: 0 auto;">    
@@ -76,19 +90,18 @@
         </section>
 
         <!-- IMAGES -->
-        <section class="container " style=";border-top: 2px solid var(--3); border-radius: 50px;  ">
-            <div  >
-                <a href="../Assets/3DProjects/Axe(1).webp" class="glightbox">
-                <img src="../Assets/3DProjects/Axe(1)_thumb.webp" width="100%">
+        <section class="container " style=";border-top: 2px solid var(--3); border-radius: 20px; ">
+            <div class=" " >
+             
+            
+                <a href="../Assets/3DProjects/Axe(5).webp" class="glightbox">
+                <img src="../Assets/3DProjects/Axe(5)_thumb.webp" width="100%">
                 </a>
-                <a href="../Assets/3DProjects/Axe(1).webp" class="glightbox">
-                <img src="../Assets/3DProjects/Axe(1)_thumb.webp" width="100%">
+                 <a href="../Assets/3DProjects/Axe(6).webp" class="glightbox">
+                <img src="../Assets/3DProjects/Axe(6)_thumb.webp" width="100%">
                 </a>
-                <a href="../Assets/3DProjects/Axe(1).webp" class="glightbox">
-                <img src="../Assets/3DProjects/Axe(1)_thumb.webp" width="100%">
-                </a>
-                <a href="../Assets/3DProjects/Axe(1).webp" class="glightbox">
-                <img src="../Assets/3DProjects/Axe(1)_thumb.webp" width="100%">
+                 <a href="../Assets/3DProjects/Axe(8).webp" class="glightbox">
+                <img src="../Assets/3DProjects/Axe(8)_thumb.webp" width="100%">
                 </a>
             </div>
         </section>       
@@ -163,9 +176,7 @@
   </footer>
 
 </div>
-        <!-- ----------------------------------------------- Scripts ------ -->  
-        <script src="../html/hero-banner.js"></script>
-        <script src="../html/footer.js"></script>
+       
 
         <!-- Init -->
         <script>
@@ -187,6 +198,10 @@
       }
     });
   </script>
+
+        <!-- Page Transitions -->
+        <script src="../Js/transitions.js"></script>
+        <!-- ---------------- -->
 
     </body>   
 </html>
