@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="Styles/base.css">
   <link rel="stylesheet" href="Styles/transitions.css">
   <link rel="stylesheet" href="Styles/section-footer.css">
+  <link rel="stylesheet" href="Styles/section-hero.css">
 
   <style>
     :root {
@@ -62,78 +63,192 @@
       transform: translate(-50%, -50%) scale(8);
     }
 
-    /* --- Cinematic Intro --- */
+    /* --- Cinematic Cover Header --- */
+    @keyframes slideUp {
+      from { transform: translateY(110%); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(10px); }
+    }
+
     .intro {
+      position: relative;
       height: 100vh;
       width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 0 10%;
-      position: relative;
-    }
-
-    .intro-title {
-      font-size: clamp(5rem, 15vw, 12rem);
-      font-weight: 900;
-      text-transform: uppercase;
-      line-height: 0.8;
-      letter-spacing: -0.05em;
-      z-index: 10;
-      pointer-events: none;
-    }
-
-    .intro-title span {
-      display: block;
+      align-items: center;
+      text-align: center;
       overflow: hidden;
     }
 
-    .intro-title span i {
-      display: block;
-      font-style: normal;
-      animation: slideUp 1.5s cubic-bezier(0.19, 1, 0.22, 1) both;
-    }
-
-    .intro-title span:nth-child(2) i {
-      animation-delay: 0.2s;
-      color: var(--accent);
-    }
-
-    @keyframes slideUp {
-      from {
-        transform: translateY(100%);
-      }
-
-      to {
-        transform: translateY(0);
-      }
-    }
-
-    .intro-video {
+    /* Full-bleed background video */
+    .intro-bg-video {
       position: absolute;
-      top: 50%;
-      right: 10%;
-      transform: translateY(-50%);
-      width: 40vw;
-      height: 60vh;
-      overflow: hidden;
-      border-radius: 10px;
-      z-index: 1;
-      opacity: 0.6;
-      filter: grayscale(1);
-      transition: all 1s ease;
-    }
-
-    .intro:hover .intro-video {
-      opacity: 1;
-      filter: grayscale(0);
-      transform: translateY(-52%) scale(1.05);
-    }
-
-    .intro-video video {
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      opacity: 0.35;
+      filter: saturate(0.6);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Multi-layer vignette */
+    .intro-vignette {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        linear-gradient(to bottom,  rgba(5,3,8,0.75) 0%,  transparent 30%),
+        linear-gradient(to top,     rgba(5,3,8,1)    0%,  transparent 40%),
+        linear-gradient(to right,   rgba(5,3,8,0.5)  0%,  transparent 35%),
+        linear-gradient(to left,    rgba(5,3,8,0.5)  0%,  transparent 35%),
+        radial-gradient(ellipse at center, transparent 40%, rgba(5,3,8,0.6) 100%);
+    }
+
+    /* Eyebrow label */
+    .intro-eyebrow {
+      position: relative;
+      z-index: 10;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--f3);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+      animation: fadeIn 1.2s ease 0.3s both;
+    }
+
+    .intro-eyebrow::before,
+    .intro-eyebrow::after {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.7;
+    }
+
+    /* Main title block */
+    .intro-content {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    .intro-title {
+      font-family: var(--f1);
+      font-size: clamp(3.2rem, 9vw, 7.5rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.85;
+      letter-spacing: -0.04em;
+    }
+
+    .intro-title .line {
+      display: block;
+      /* overflow: hidden; */
+    }
+
+    .intro-title .line i {
+      display: block;
+      font-style: normal;
+      animation: slideUp 1.4s cubic-bezier(0.19, 1, 0.22, 1) both;
+    }
+
+    .intro-title .line:nth-child(1) i { animation-delay: 0.05s; }
+    .intro-title .line:nth-child(2) i {
+      animation-delay: 0.18s;
+      color: var(--accent);
+      -webkit-text-stroke: 0px;
+    }
+    .intro-title .line:nth-child(3) i {
+      animation-delay: 0.32s;
+      -webkit-text-stroke: 1.5px rgba(255,255,255,0.35);
+      color: transparent;
+    }
+
+    /* Tagline */
+    .intro-tagline {
+      position: relative;
+      z-index: 10;
+      margin-top: 28px;
+      font-family: var(--f3);
+      font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.55);
+      max-width: 480px;
+      line-height: 1.7;
+      animation: fadeIn 1.4s ease 0.7s both;
+    }
+
+    /* Scroll indicator */
+    .intro-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      animation: fadeIn 1.4s ease 1.2s both;
+    }
+
+    .intro-scroll span {
+      font-family: var(--f3);
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .intro-scroll svg {
+      animation: scrollBounce 2s ease-in-out infinite;
+    }
+
+    /* Accent glow blob */
+    .intro-glow {
+      position: absolute;
+      bottom: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60vw;
+      height: 30vh;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(84,44,219,0.18) 0%, transparent 70%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      .intro-title {
+        font-size: clamp(3rem, 18vw, 6rem);
+      }
+      .intro-title .line:nth-child(3) i {
+        -webkit-text-stroke: 1px rgba(255,255,255,0.35);
+      }
     }
 
     /* --- Projects Grid --- */
@@ -227,13 +342,13 @@
     .overlay {
       position: fixed;
       inset: 0;
-      background: #000;
+      background: rgba(0,0,0,0.95);
       z-index: 1000;
       display: none;
       justify-content: center;
       align-items: center;
       opacity: 0;
-      transition: opacity 0.5s ease;
+      transition: opacity 0.4s ease;
     }
 
     .overlay.active {
@@ -247,15 +362,33 @@
       position: relative;
     }
 
+    /* Fixed × button — always visible in top-right corner */
     .close-overlay {
-      position: absolute;
-      top: -60px;
-      right: 0;
+      position: fixed;
+      top: 24px;
+      right: 28px;
+      z-index: 1100;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
       color: #fff;
-      font-size: 1rem;
+      font-size: 1.4rem;
+      line-height: 1;
       cursor: pointer;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
+      transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .close-overlay:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.5);
+      transform: rotate(90deg);
     }
 
     iframe {
@@ -290,14 +423,6 @@
         margin-bottom: 100px;
       }
 
-      .intro-video {
-        display: none;
-      }
-
-      .intro {
-        padding: 0 5%;
-      }
-
       .project-name {
         font-size: 2rem;
       }
@@ -317,16 +442,62 @@
     </div>
   </div>
 
-  <!-- Intro -->
-  <section class="intro">
-    <h1 class="intro-title">
-      <span><i>Motion</i></span>
-      <span><i>Design</i></span>
-      <span><i>Studio</i></span>
-    </h1>
-    <div class="intro-video">
-      <video autoplay muted loop playsinline src="Assets/Media/Enhanced Media(1).mp4"></video>
+  <!-- Cover Header -->
+  <section class="intro" id="Top">
+
+    <!-- Background video -->
+    <video class="intro-bg-video" autoplay muted loop playsinline
+      src="Assets/Media/Enhanced Media(1).mp4"></video>
+
+    <!-- Vignette -->
+    <div class="intro-vignette"></div>
+
+    <!-- Nav bar -->
+    <div class="hero-top-bar">
+      <a href="index.html">
+        <img class="Hero-logo" src="Assets/fav/Logo.svg" alt="MohJeha logo" id="home">
+      </a>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
+          <img src="Assets/fav/fb.svg" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
+          <img src="Assets/fav/ins.svg" alt="Instagram">
+        </a>
+        <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
+          <img src="Assets/fav/linked.svg" alt="LinkedIn">
+        </a>
+      </div>
     </div>
+
+    <!-- Accent glow -->
+    <div class="intro-glow"></div>
+
+    <!-- Eyebrow -->
+    <p class="intro-eyebrow">MohJeha Studio &nbsp;·&nbsp; Visual Motion</p>
+
+    <!-- Main headline -->
+    <div class="intro-content">
+      <h1 class="intro-title ">
+        <span class="line  f3"><i>Motion</i></span>
+        <span class="line "><i>Design</i></span>
+        <span class="line"><i>Studio</i></span>
+      </h1>
+    </div>
+
+    <!-- Tagline -->
+    <p class="intro-tagline">Rhythmic visuals. Cinematic storytelling.<br>Where creativity meets motion.</p>
+
+    <!-- Scroll indicator -->
+    <div class="intro-scroll">
+      <span>Scroll</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+        stroke="rgba(255,255,255,0.4)" stroke-width="1.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </div>
+
   </section>
 
   <!-- Statement -->
@@ -391,9 +562,10 @@
   </section>
 
   <!-- Video Overlay -->
-  <div class="overlay" id="overlay">
-    <div class="video-container">
-      <div class="close-overlay" onclick="closeVideo()">Close</div>
+  <div class="overlay" id="overlay" onclick="handleOverlayClick(event)">
+    <!-- Close button: fixed top-right, always visible -->
+    <button class="close-overlay" id="closeBtn" onclick="closeVideo()" aria-label="Close video">&times;</button>
+    <div class="video-container" id="videoContainer">
       <iframe id="videoFrame" allowfullscreen allow="autoplay"></iframe>
     </div>
   </div>
@@ -459,9 +631,18 @@
       document.body.style.overflow = 'auto';
     }
 
+    // Close on Escape
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeVideo();
     });
+
+    // Close when clicking the dark backdrop (not the video itself)
+    function handleOverlayClick(e) {
+      if (!document.getElementById('videoContainer').contains(e.target) &&
+          e.target.id !== 'closeBtn') {
+        closeVideo();
+      }
+    }
   </script>
 </body>
 
