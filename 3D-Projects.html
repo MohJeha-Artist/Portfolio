@@ -6,11 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D-Projects</title>
     <link rel="icon" href="Assets/fav/Fav.svg" type="image/x-icon">
+    <!-- Include GLightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
     <link rel="stylesheet" href="Styles/base.css">
     <link rel="stylesheet" href="Styles/base-grid-card.css">
     <link rel="stylesheet" href="Styles/section-footer.css">
 
+    <link rel="stylesheet" href="Styles/section-banner.css">
     <link rel="stylesheet" href="Styles/section-hero.css">
+
+    <link rel="stylesheet" href="Styles/masonry.css">
+
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="Styles/cinematic-swiper.css">
@@ -26,8 +34,10 @@
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(0px); /* Animated */
-        z-index: 10000; /* Above regular content */
+        backdrop-filter: blur(0px);
+        /* Animated */
+        z-index: 10000;
+        /* Above regular content */
         justify-content: center;
         align-items: center;
         overflow: hidden;
@@ -46,9 +56,10 @@
         background: transparent;
         border-radius: 0;
         opacity: 0;
-        transform: translateY(100%); /* Slide from bottom */
+        transform: translateY(100%);
+        /* Slide from bottom */
         transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.5s ease;
-        box-shadow: 0 -20px 50px rgba(0,0,0,0.5);
+        box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.5);
     }
 
     .overlay.active .overlay-content {
@@ -86,7 +97,8 @@
     }
 
     .close-btn:hover {
-        background: var(--3); /* Purple accent */
+        background: var(--3);
+        /* Purple accent */
         transform: scale(1.1) rotate(90deg);
         border-color: transparent;
     }
@@ -142,15 +154,15 @@
 
 
         <div style="position: absolute; bottom: 50%;">
-            <div class="head1 f1" id="Hero-name">3D Projects</div>
-            <div class="subhead   f3 upper wrap shadow" id="Hero-head"></div>
+            <div class="head upper shadow" id="Hero-name">3D Projects</div>
+            <div class="subhead   f3 upper wrap shadow" id="Hero-head"> and Artworks</div>
         </div>
 
 
 
     </section>
     <!-- ---------------------------------------------------------------------------------------------------------------------------  -->
-   <div class="container ">
+    <div class="container ">
         <h1 class="subhead   center glow ">🚧 My digital space is still being crafted 🚧 <br>
             <span class="subhead  center glow "> Some features and links may be temporarily unavailable.</span>
     </div>
@@ -166,15 +178,15 @@
         <div class="cinematic-carousel" id="swiperMelee" data-autoplay-delay="2500">
             <div class="cinematic-wrapper">
                 <!-- Slides -->
-                <div class="cinematic-slide">
-                    <div class="card" onclick="openOverlay('Projects/page-1.html')">
+                <div class="cinematic-slide green">
+                    <div class="card small " onclick="openOverlay('Projects/page-1.html')">
                         <img class="thumbnail" src="Assets/Thumbnails/3D_Axe_thumbnail.webp" alt="3D">
                         <div class="gradient"></div><span class="work-text">Medieval Axe</span>
                     </div>
                 </div>
 
                 <div class="cinematic-slide">
-                    <div class="card" onclick="openOverlay('Projects/page-2.html')">
+                    <div class="card small" onclick="openOverlay('Projects/page-2.html')">
                         <img class="thumbnail" src="Assets/Thumbnails/3D_Hammer_thumbnail.webp" alt="3D">
                         <div class="gradient"></div><span class="work-text">Medieval Hammer</span>
                     </div>
@@ -182,7 +194,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_katana1_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Samurai Tachi</span>
                         </div>
@@ -191,7 +203,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_katana2_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Katana Sword</span>
                         </div>
@@ -200,7 +212,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_FireSword_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">FireSword</span>
                         </div>
@@ -209,7 +221,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_IncursioSword_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Incursio Sword</span>
                         </div>
@@ -218,7 +230,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Royal_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Royal Sword</span>
                         </div>
@@ -227,7 +239,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Dagger_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Dagger</span>
                         </div>
@@ -243,7 +255,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_SunSword_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text"> SunSword </span>
                         </div>
@@ -252,9 +264,9 @@
 
 
 
-                <div class="cinematic-slide">
+                <div class="cinematic-slide ">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_DaggerP_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Dagger</span>
                         </div>
@@ -264,7 +276,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Bats_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Scrap Bats</span>
                         </div>
@@ -273,7 +285,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Bow_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Bow</span>
                         </div>
@@ -296,7 +308,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Handgun_Scifi_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Sci-fi Handgun</span>
                         </div>
@@ -305,7 +317,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_SR_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Sniper Rifle</span>
                         </div>
@@ -314,7 +326,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_MilitaryCrate_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Military Crate</span>
                         </div>
@@ -323,7 +335,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_MilitaryRadio_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Military Radio</span>
                         </div>
@@ -332,7 +344,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Granada_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Sci-fi Grenade</span>
                         </div>
@@ -341,7 +353,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Grenade_M67_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text"> M67 Grenade </span>
                         </div>
@@ -352,7 +364,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Mortar_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Mortar</span>
                         </div>
@@ -362,7 +374,7 @@
                 <!-- Duplicated for seamless loop -->
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Handgun_Scifi_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Sci-fi Handgun</span>
                         </div>
@@ -371,7 +383,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_SR_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Sniper Rifle</span>
                         </div>
@@ -380,7 +392,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_MilitaryCrate_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Military Crate</span>
                         </div>
@@ -404,7 +416,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Windmill_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text"> Windmill </span>
                         </div>
@@ -413,7 +425,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Shoes_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Shoes</span>
                         </div>
@@ -422,7 +434,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_MusicBox_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Music Box</span>
                         </div>
@@ -431,7 +443,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Pooltable_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Pool Table</span>
                         </div>
@@ -440,7 +452,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Barrel_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Toxic Barrel</span>
                         </div>
@@ -450,7 +462,7 @@
                 <!-- Duplicated for seamless loop -->
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Windmill_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text"> Windmill </span>
                         </div>
@@ -459,7 +471,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Shoes_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Shoes</span>
                         </div>
@@ -468,7 +480,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_MusicBox_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Music Box</span>
                         </div>
@@ -477,7 +489,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Pooltable_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Pool Table</span>
                         </div>
@@ -486,7 +498,7 @@
 
                 <div class="cinematic-slide">
                     <a href="">
-                        <div class="card">
+                        <div class="card small">
                             <img class="thumbnail" src="Assets/Thumbnails/3D_Barrel_thumbnail.webp" alt="3D">
                             <div class="gradient"></div><span class="work-text">Toxic Barrel</span>
                         </div>
@@ -508,6 +520,36 @@
     <!-- -------------------------------------------------------------------------- -->
 
 
+    
+ 
+
+    <div id="section-banner" 
+        style="margin-top: 100px;"
+        data-section-image="Assets/sections/section1.webp"
+        data-section-head="Visual Innovation"
+        data-section-title="From Concept to Life"> 
+    </div>
+
+    <section class="container">  
+        <img class="full-img" src="Assets/Thumbnails/use.png" alt="3D Shoes">
+    </section>
+
+    <!-- ---------------------------- ARTWORKS ------------------------------------- -->
+
+     <section class="art-showcase">
+        <div class="art-header">
+            <span class="eyebrow">Virtual Realities & CG Worlds</span>
+            <h2 class="art-title">Digital Art Portfolio</h2>
+        </div>
+
+        <div class="art-grid" id="dynamic-masonry-gallery"> 
+            <!-- Dynamic items will render inside here safely -->
+        </div>
+    </section>
+
+    <!-- -------------------------------------------------------------------------- -->
+
+
     <!-- --------------------------- SPACE | Divider ------>
     <section class="spacer" style="height:50px;"></section>
     <!-- -------------------------------------------------->
@@ -517,11 +559,15 @@
             <span class="subhead  center glow "> Some features and links may be temporarily unavailable.</span>
     </div>
 
+
+
+
     <!-- ----- LOAD FOOTER ----- -->
     <footer class="footer" id="footer">
         <p class="copyrights">&copy; <span id="current-year"></span> MohJeha-Artist. All Rights Reserved.</p>
         <div class="footer-content">
-            <div class="ft-b"> <a href="index.html"><img src="Assets/fav/3d-art-designer.svg" alt="Logo" class="footer-logo"></a></div>
+            <div class="ft-b"> <a href="index.html"><img src="Assets/fav/3d-art-designer.svg" alt="Logo"
+                        class="footer-logo"></a></div>
             <div class="ft-b">
                 <div class="social-icons">
                     <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
@@ -558,11 +604,18 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="Js/cinematic-swiper.js"></script>
 
+    <!-- Masonry -->
+    <script src="js/masonry-pro.js"></script>  
+
+    <!-- section-banner -->
+    <script src="Js/section-banner.js"></script>
+
     <!-- Page Transitions -->
     <script src="Js/transitions.js"></script>
     <!-- ---------------- -->
 
 </body>
+
 </html>
 
 </html>

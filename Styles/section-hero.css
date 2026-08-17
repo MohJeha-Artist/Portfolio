@@ -128,9 +128,10 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  height: 110%;
+  height: 100%;
   object-fit: contain;
   object-position: bottom;
+  
 }
 
 /* ── Mobile: stack columns ── */
@@ -149,7 +150,7 @@
   }
 
   .Profile {
-    /* height: 80%; */
+    height: 90%;
     right: -35%;
   }
 

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+
+    <title>Brand Showcase Portfolio</title>
+    <link rel="icon" href="../Assets/fav/Fav.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="../Styles/base.css">
+    <link rel="stylesheet" href="../Styles/base-grid-card.css">
+    <link rel="stylesheet" href="../Styles/branding.css">
+    <link rel="stylesheet" href="../Styles/section-footer.css">
+    <link rel="stylesheet" href="../Styles/transitions.css">
+
+    <style>
+        html {
+            margin-top: 30px;
+            background-color: rgba(0, 0, 0, 0.9) !important;
+        }
+
+        .body {
+            margin-top: 30px;
+            max-width: 910px;
+            width: 60%;
+            margin: 0 auto;
+            background-color: transparent;
+        }
+
+        #dynamic-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 100%;
+        }
+
+        #dynamic-gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .body {
+                width: 97%;
+            }
+        }
+    </style>
+</head>
+
+
+<body class="body is-transitioning">
+
+    <!-- Navigation Transition Overlay -->
+    <div id="transition-overlay">
+        <div class="loader-content">
+            <img src="../Assets/fav/Logo.svg" alt="MohJeha Logo" class="loader-logo">
+            <div class="loader-bar-container">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- IMAGES -->
+    <section class="container" style="border-top: 2px solid var(--3); border-radius: 20px; overflow: hidden;">
+        <div id="dynamic-gallery"></div>
+
+        <script>
+            const galleryContainer = document.getElementById('dynamic-gallery');
+
+            // Parse brand parameter from URL (default to "Brand" if unspecified)
+            const urlParams = new URLSearchParams(window.location.search);
+            const brandParam = urlParams.get('brand') || 'Brand';
+
+            // Resolve folder and prefix
+            const brandMap = {
+                "Summer": { folder: "SummerLive", prefix: "Summer" },
+                "SummerLive": { folder: "SummerLive", prefix: "Summer" },
+                "AbuSalah": { folder: "AbuSalah", prefix: "Abusalah" },
+                "Abusalah": { folder: "AbuSalah", prefix: "Abusalah" },
+                "Vistamar": { folder: "Vistamar", prefix: "vistamar" },
+                "vistamar": { folder: "Vistamar", prefix: "vistamar" }
+            };
+
+            const mapped = brandMap[brandParam] || { folder: brandParam, prefix: brandParam };
+            const folderPath = `../Assets/Graphics/logos/${mapped.folder}/`;
+            const baseName = mapped.prefix;
+
+            const candidateSources = [
+                `${folderPath}${baseName}_logo.webp`,
+                `${folderPath}${baseName}_logo.png`,
+                `${folderPath}${baseName}_Stack.webp`,
+                `${folderPath}${baseName}_Thumb.webp`,
+                `${folderPath}Birlesik Zirve_Thumb.webp`,
+                `${folderPath}invoice.webp`,
+                `${folderPath}invoice.png`
+            ];
+
+            for (let i = 1; i <= 15; i++) {
+                candidateSources.push(`${folderPath}${baseName} (${i}).webp`);
+                candidateSources.push(`${folderPath}${baseName}(${i}).webp`);
+                candidateSources.push(`${folderPath}${baseName}_${i}.webp`);
+                candidateSources.push(`${folderPath}${baseName} (${i}).png`);
+                candidateSources.push(`${folderPath}${mapped.folder} (${i}).webp`);
+            }
+
+            const addedSrcs = new Set();
+
+            candidateSources.forEach(src => {
+                const img = new Image();
+                img.src = src;
+                img.onload = function () {
+                    if (!addedSrcs.has(src)) {
+                        addedSrcs.add(src);
+                        const displayImg = document.createElement('img');
+                        displayImg.src = src;
+                        displayImg.alt = `${baseName} Presentation`;
+                        galleryContainer.appendChild(displayImg);
+                    }
+                };
+            });
+        </script>
+
+
+        <div class="closing">
+            <img src="../Assets/fav/Fav.svg" alt="Logo" class="logo">
+            <p>Like what you see?</p>
+            <p>Let's build the next brand that stands out<br>and stands for something meaningful.</p>
+        </div>
+
+    </section>
+
+    <!-- LENIS SMOOTH SCROLL -->
+    <script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
+    <script src="../js/lenis.js"></script>
+
+    <script src="page.js"></script>
+
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.key === "Escape") {
+                window.parent.postMessage('closeOverlay', '*');
+            }
+        });
+    </script>
+
+    <!-- Page Transitions -->
+    <script src="../Js/transitions.js"></script>
+
+</body>
+
+</html>

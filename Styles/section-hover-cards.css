@@ -1,127 +1,331 @@
 
-.X-section
-{
-  /* position: relative; */
+/* ==========================================================
+   VIDEO GAME / ESPORTS HUD STYLE GAMING LOGOS SECTION
+   ========================================================== */
+
+.X-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
-  padding: 10px 0;
+  padding: 40px 0 60px 0;
+  position: relative;
   overflow: hidden;
-
-  /* border: 1px solid red; */
 }
 
-
-
-.X-bg-img
-{
-  width: 100%; 
-  height: auto; 
-  /* aspect-ratio: 21/3; */
-  object-fit: cover;
-  object-position: center;
+/* Cyber HUD Sub-header Info */
+.gaming-hud-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 20px 18px 20px;
+  box-sizing: border-box;
+  font-family: var(--f2, monospace);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
 }
 
+.gaming-hud-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #00ffcc;
+  font-weight: bold;
+}
+
+.gaming-hud-status::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00ffcc;
+  box-shadow: 0 0 10px #00ffcc;
+  animation: pulse-dot 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.7); }
+}
+
+/* Container for Cards - Expanded for Video Game View */
 .containerX {
   position: relative;
-  /* margin-top: 10%; */
   width: 100%;
-  max-width: 50%;
-  aspect-ratio: 16/9;
-  height: auto;
+  max-width: 1300px;
+  height: 480px;
   display: flex;
   justify-content: center;
   align-items: stretch;
-  gap: 1.25rem;
-  transition: all 1s;
+  gap: 0.85rem;
+  padding: 10px;
+  box-sizing: border-box;
   z-index: 10;
-
 }
 
+/* Individual Gaming Card */
 .cardX {
   flex: 1;
   height: 100%;
-
-  
-
-  border-radius: 10px;
-  transition: all 1s;
+  border-radius: 16px;
+  position: relative;
   cursor: pointer;
-  
-  filter: grayscale(0);
   overflow: hidden;
-   border: 1px solid var(--2);
-    box-shadow: inset 3px 3px 10px 0 var(--2);
+  background: #07070d;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.8),
+    inset 0 0 20px rgba(0, 0, 0, 0.9);
+  transition: flex 0.65s cubic-bezier(0.2, 1, 0.3, 1), 
+              border-color 0.4s ease, 
+              box-shadow 0.5s ease, 
+              filter 0.5s ease,
+              transform 0.4s ease;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
 }
 
-.cardX::before{
-     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-    linear-gradient(20deg, var(--2), transparent);
-    transition: transform 0.5s ease;
-    z-index: 1;
+.cardX:nth-child(1) { transition-delay: 0ms; }
+.cardX:nth-child(2) { transition-delay: 40ms; }
+.cardX:nth-child(3) { transition-delay: 80ms; }
+.cardX:nth-child(4) { transition-delay: 120ms; }
+.cardX:nth-child(5) { transition-delay: 160ms; }
+.cardX:nth-child(6) { transition-delay: 200ms; }
+.cardX:nth-child(7) { transition-delay: 240ms; }
+.cardX:nth-child(8) { transition-delay: 280ms; }
+
+/* Cyber Scanlines & Dynamic Glow Overlays */
+.cardX::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, 
+    var(--card-glow, rgba(139, 92, 246, 0.25)) 0%, 
+    transparent 35%, 
+    rgba(0, 0, 0, 0.6) 80%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  opacity: 0.4;
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
 }
 
-.cardimg
-{
+.cardX::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.25) 3px,
+    rgba(0, 0, 0, 0.25) 4px
+  );
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Background Artwork Image */
+.cardimg {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
   width: 100%;
   height: 100%;
-
-  transition: .6s ease;
+  object-fit: cover;
+  object-position: center;
+  transform: translate(-50%, -50%) scale(1);
+  filter: brightness(0.7) contrast(1.1) saturate(0.85);
+  transition: transform 0.7s cubic-bezier(0.2, 1, 0.3, 1), 
+              filter 0.6s ease;
+  z-index: 1;
 }
 
-.cardlogo 
-{
+/* Center Emblem Logo */
+.cardlogo {
   position: absolute;
-  top: 90%;
+  top: 50%;
   left: 50%;
-  width: 60%;
-  transform: translate(-50%, -50%);
-
-  transition: .6s ease;
-  z-index: 2;
+  width: 70%;
+  max-height: 55%;
+  object-fit: contain;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0.7;
+  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.9));
+  transition: transform 0.6s cubic-bezier(0.34, 1.3, 0.64, 1), 
+              opacity 0.4s ease, 
+              filter 0.5s ease, 
+              width 0.6s ease;
+  z-index: 4;
 }
 
+/* Gaming HUD Badge at Bottom */
+.card-hud-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  right: 14px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: transform 0.45s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.4s ease;
+  pointer-events: none;
+}
 
+.card-hud-tag {
+  font-family: var(--f2, monospace);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--card-glow, #00ffcc);
+  text-shadow: 0 0 10px var(--card-glow, rgba(0, 255, 204, 0.6));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
+.card-hud-rank {
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--card-glow, rgba(139, 92, 246, 0.7));
+  box-shadow: 0 0 8px var(--card-glow, rgba(139, 92, 246, 0.4));
+  border-radius: 4px;
+  color: #fff;
+  letter-spacing: 1px;
+}
 
+/* Dim other cards on hover */
 .containerX:hover > .cardX:not(:hover) {
-  filter: grayscale(100%);
+  filter: brightness(0.4) grayscale(60%);
+  border-color: rgba(255, 255, 255, 0.05);
 }
 
-
+/* Active Hover Card (Video Game Hero Pop) */
 .cardX:hover {
-  box-shadow: inset 3px 3px 50px 0 rgba(84, 44, 219,0.5);
-  flex: 5;
- border: 1px solid var(--3);
-  .cardlogo
-  {
-    width: 80%;
-    top: 50%;
+  flex: 5.5;
+  border-color: var(--card-glow, #00ffcc);
+  box-shadow: 
+    0 15px 45px rgba(0, 0, 0, 0.95),
+    0 0 35px var(--card-glow, rgba(0, 255, 204, 0.45)),
+    inset 0 0 25px var(--card-glow, rgba(0, 255, 204, 0.2));
+  transform: translateY(-4px);
+}
+
+.cardX:hover::before {
+  opacity: 0.8;
+}
+
+.cardX:hover .cardimg {
+  filter: brightness(0.85) contrast(1.15) saturate(1.2);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.cardX:hover .cardlogo {
+  opacity: 1;
+  width: 75%;
+  transform: translate(-50%, -50%) scale(1.1);
+  filter: drop-shadow(0 0 25px var(--card-glow, #00ffcc)) drop-shadow(0 8px 15px rgba(0, 0, 0, 0.9));
+}
+
+/* Responsive Adjustments: Mobile 2-Column Cyber Grid */
+@media (max-width: 768px) {
+  .X-section {
+    padding: 20px 0 40px 0;
   }
 
+  .gaming-hud-header {
+    padding: 0 10px 14px 10px;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+  }
 
-}
+  .containerX {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 8px 10px 20px 10px;
+    box-sizing: border-box;
+  }
 
-.cardX:hover {
-  .cardimg
-  {
-    filter: blur(7px);
-   
+  .cardX {
+    aspect-ratio: 4 / 5;
+    height: auto;
+    min-height: 180px;
+    border-radius: 12px;
+    position: relative;
+    border-color: var(--card-glow, rgba(139, 92, 246, 0.4));
+    box-shadow: 
+      0 8px 22px rgba(0, 0, 0, 0.8),
+      0 0 12px var(--card-glow, rgba(0, 255, 204, 0.2));
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .containerX:hover > .cardX:not(:hover) {
+    filter: none;
+    border-color: var(--card-glow, rgba(139, 92, 246, 0.4));
+  }
+
+  .cardX .cardlogo {
+    opacity: 1;
+    width: 75%;
+    max-height: 60%;
+    transform: translate(-50%, -50%) scale(1);
+    filter: drop-shadow(0 0 16px var(--card-glow, #00ffcc)) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.9));
+  }
+
+  .cardX .cardimg {
+    filter: brightness(0.7) contrast(1.1);
+  }
+
+  .cardX .card-hud-badge {
+    display: none !important;
+  }
+
+  .cardX:active,
+  .cardX:hover {
+    flex: initial;
+    transform: scale(1.03);
+    border-color: var(--card-glow, #00ffcc);
+    box-shadow: 
+      0 12px 28px rgba(0, 0, 0, 0.95),
+      0 0 22px var(--card-glow, rgba(0, 255, 204, 0.5));
+    z-index: 5;
   }
 }
+
+
+@media (max-width: 420px) {
+  .containerX {
+    gap: 8px;
+    padding: 6px 6px 16px 6px;
+  }
+
+  .cardX {
+    aspect-ratio: 1 / 1.25;
+    min-height: 160px;
+  }
+
+  .card-hud-tag {
+    font-size: 0.62rem;
+  }
+}
+
+
+
+
 
 

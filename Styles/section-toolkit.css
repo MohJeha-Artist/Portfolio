@@ -1,0 +1,92 @@
+/* Styles/section-toolkit.css */
+
+.toolkit-section {
+    background: linear-gradient(to bottom, transparent, var(--0));
+    padding-bottom: 80px;
+}
+
+.toolkit-wrapper {
+    width: 100%;
+    position: relative;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.toolkit-track {
+    display: grid;
+    /* Create a grid with 5 columns for desktop, wrapping to 2 rows */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 60px 80px;
+    align-items: center;
+    justify-items: center;
+    max-width: 1000px; /* Constrain width to keep it centered and readable */
+}
+
+/* Base state for software icons */
+.software-item {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: grayscale(1) opacity(0.4);
+    position: relative;
+}
+
+.software-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Hover effects */
+.software-item:hover {
+    filter: grayscale(0) opacity(1);
+    transform: scale(1.2) translateY(-10px);
+}
+
+/* Add a subtle glow behind icons on hover */
+.software-item::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: var(--3);
+    border-radius: 50%;
+    filter: blur(30px);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease;
+}
+
+.software-item:hover::after {
+    opacity: 0.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .toolkit-track {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .toolkit-track {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 40px;
+    }
+    .software-item {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .toolkit-track {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 30px;
+    }
+}

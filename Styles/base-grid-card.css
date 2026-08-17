@@ -1,9 +1,19 @@
 /* GRID STYLING   */
 
-
 .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 10px;                             /* Strict 10px gap */
+    width: 100%;                           /* Fits perfectly in parent width */
+    max-width: 100%;                       /* Prevents overflowing */
+    box-sizing: border-box;
+  }
+
+.grid-containerzz {
   gap: 10px;
   width: 100%;
+  max-width: 100%;  
+  box-sizing: border-box;
   height: auto;
   display: grid;
 
@@ -131,15 +141,14 @@
 .card {
 
   position: relative;
-  width: auto;
-
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-  aspect-ratio: 16/9;
+  /* aspect-ratio: 16/9; */
   border-radius: 5px;
-  cursor: pointer;
-
+  cursor: progress;
+    
   background: no-repeat;
   background-size: cover;
   overflow: hidden;
@@ -148,17 +157,19 @@
   transition: all .5s, transform 1s ease;
 }
 
+.small { max-height: 300px; }
+
 .square {
   aspect-ratio: 1/1 !important;
 }
 
 .wide {
   max-height: 300px;
-  aspect-ratio: 21/9;
+  aspect-ratio: 21/9 !important;
 }
 
-.vertical{
-  height: 500px !important; 
+.vertical {
+  height: 500px !important;
   aspect-ratio: 3/4 !important;
 }
 
@@ -167,9 +178,10 @@
   .wide {
     aspect-ratio: 3/4;
   }
-    .vertical{
-  aspect-ratio: 3/4 !important;
-}
+
+  .vertical {
+    aspect-ratio: 3/4 !important;
+  }
 }
 
 .log-card {
@@ -247,7 +259,12 @@
 
 
 
-
+.full-img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  mix-blend-mode: screen; 
+}
 
 
 

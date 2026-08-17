@@ -790,9 +790,9 @@ body {
 /* ----------------------------------------------------------*/
 
 /* Hide scrollbar for all browsers */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */
 
 html {
   scrollbar-width: none; /* Firefox */

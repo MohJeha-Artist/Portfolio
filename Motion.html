@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="Styles/transitions.css">
   <link rel="stylesheet" href="Styles/section-footer.css">
   <link rel="stylesheet" href="Styles/section-hero.css">
+  <link rel="stylesheet" href="Styles/showcase.css">
 
   <style>
     :root {
@@ -508,12 +509,101 @@
     </h2>
   </section>
 
+
+
+ <section class="showcase-section">
+        <div class="content-left">
+            <h1>Visual<br>Motion</h1>
+            <p>Capturing the essence of movement through cinematic storytelling and high-fidelity motion graphics. A collection of selected vertical narratives.</p>
+            <a href="#" class="explore-btn">View All Works</a>
+        </div>
+
+        <div class="video-gallery">
+            <!-- Video Card 1 -->
+            <div class="video-card" data-video-id="13OKyJ43pFo6jGH-4AmCMHiJw3WT9Kq7z">
+                <img src="Assets/Thumbnails/Video_Frisky (1).jpg" class="poster-img" alt="Dynamics Poster">
+                <video muted loop playsinline preload="metadata">
+                    <source src="Assets/Media/ShowCase_Frisky_Apples.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">
+                    <h3>Dynamics</h3>
+                    <span>Microsoft Project</span>
+                </div>
+            </div>
+
+            <!-- Video Card 2 -->
+            <div class="video-card" data-video-id="13JLTVOaF68tdJNWxZO1pT3I7msXvVvVS">
+                <img src="Assets/Thumbnails/Video_Frisky (2).jpg" class="poster-img" alt="Alpha Poster">
+                <video muted loop playsinline preload="metadata">
+                    <source src="Assets/Media/ShowCase_Frisky_Apples.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">
+                    <h3>Alpha</h3>
+                    <span>Brand Reveal</span>
+                </div>
+            </div>
+
+            <!-- Video Card 3 -->
+            <div class="video-card" data-video-id="13JkywTsvNjXHhy8KkXBUGcRfUudRDNS8">
+                <img src="Assets/Thumbnails/Video_Frisky (3).jpg" class="poster-img" alt="Studio Poster">
+                <video muted loop playsinline preload="metadata">
+                    <source src="Assets/Media/ShowCase_Frisky_Apples.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">
+                    <h3>Studio</h3>
+                    <span>Creative Flow</span>
+                </div>
+            </div>
+
+            <!-- Video Card 4 -->
+            <div class="video-card" data-video-id="13SAMY1LUJLyQA7gI_Uzb2fq5U7zT1rZn">
+                <img src="Assets/Thumbnails/Video_Frisky (4).jpg" class="poster-img" alt="Vision Poster">
+                <video muted loop playsinline preload="metadata">
+                    <source src="Assets/Media/ShowCase_Frisky_Apples.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">
+                    <h3>Vision</h3>
+                    <span>Motion Study</span>
+                </div>
+            </div>
+ 
+            <!-- Video Card 5 -->
+            <div class="video-card" data-video-id="13QQVuuj5WWj-LkA4YjNPkrD0Dzpkx-fP">
+                <img src="Assets/Thumbnails/Video_Frisky (4).jpg" class="poster-img" alt="Vision Poster">
+                <video muted loop playsinline preload="metadata">
+                    <source src="Assets/Media/ShowCase_Frisky_Apples.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">
+                    <h3>Vision</h3>
+                    <span>Motion Study</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+     <!-- Cinematic Modal -->
+    <div class="video-modal" id="videoModal">
+        <button class="modal-close" id="closeModal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12"></path>
+            </svg>
+        </button>
+        <div class="modal-container">
+            <iframe id="modalIframe" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+    </div>
+
+
   <!-- Projects -->
   <section class="projects">
     <!-- Project 1 -->
     <div class="project-row">
-      <div class="project-media" onclick="openVideo('1-iPgOj-8P4peuGogFJiHcACd0lIFbsrS')">
-        <img src="Assets/Thumbnails/motion_brand.png" alt="Microsoft">
+      <!-- Standalone Video Card -->
+      <div class="video-card video-card-standalone" data-video-id="13OKyJ43pFo6jGH-4AmCMHiJw3WT9Kq7z">
+          <img src="Assets/Thumbnails/Video_Frisky (1).jpg" class="poster-img" alt="Dynamics Poster">
+          <video muted loop playsinline preload="metadata">
+              <source src="Assets/Media/ShowCase_Frisky_Apples.mp4" type="video/mp4">
+          </video>
       </div>
       <div class="project-info">
         <span class="project-category">Brand Identity</span>
@@ -525,8 +615,11 @@
 
     <!-- Project 2 -->
     <div class="project-row">
-      <div class="project-media" onclick="openVideo('1COV5pq55Kddwei8jIYJ6vlfj0vq5ioQR')">
-        <img src="Assets/Thumbnails/motion_abstract.png" alt="Project Alpha">
+        <div class="video-card video-card-standalone" data-video-id="13OKyJ43pFo6jGH-4AmCMHiJw3WT9Kq7z">
+          <img src="Assets/Thumbnails/Video_Frisky (1).jpg" class="poster-img" alt="Dynamics Poster">
+          <video muted loop playsinline preload="metadata">
+              <source src="Assets/Media/ShowCase_Frisky_Apples.mp4" type="video/mp4">
+          </video>
       </div>
       <div class="project-info">
         <span class="project-category">Commercial</span>
@@ -537,8 +630,11 @@
 
     <!-- Project 3 -->
     <div class="project-row">
-      <div class="project-media" onclick="openVideo('1NJCuWvPGtnj1Tl5AhiVoAc4qy73zsc1q')">
-        <img src="Assets/Thumbnails/motion_typo.png" alt="Showreel">
+       <div class="video-card video-card-standalone" data-video-id="13OKyJ43pFo6jGH-4AmCMHiJw3WT9Kq7z">
+          <img src="Assets/Thumbnails/Video_Frisky (1).jpg" class="poster-img" alt="Dynamics Poster">
+          <video muted loop playsinline preload="metadata">
+              <source src="Assets/Media/ShowCase_Frisky_Apples.mp4" type="video/mp4">
+          </video>
       </div>
       <div class="project-info">
         <span class="project-category">Showreel</span>
@@ -549,8 +645,11 @@
 
     <!-- Project 4 -->
     <div class="project-row">
-      <div class="project-media" onclick="openVideo('1tR4t12xtf-OqmZUxmAoGy8zlI03vnEY8')">
-        <img src="Assets/Thumbnails/motion_hud.png" alt="HUD">
+       <div class="video-card video-card-standalone" data-video-id="13OKyJ43pFo6jGH-4AmCMHiJw3WT9Kq7z">
+          <img src="Assets/Thumbnails/Video_Frisky (1).jpg" class="poster-img" alt="Dynamics Poster">
+          <video muted loop playsinline preload="metadata">
+              <source src="Assets/Media/ShowCase_Frisky_Apples.mp4" type="video/mp4">
+          </video>
       </div>
       <div class="project-info">
         <span class="project-category">UI Motion</span>
@@ -644,6 +743,7 @@
       }
     }
   </script>
+  <script src="Js/showcase.js"></script>
 </body>
 
 </html>

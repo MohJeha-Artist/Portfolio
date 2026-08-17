@@ -1,0 +1,263 @@
+.art-showcase {
+      background-color: var(--0);
+      color: var(--1);
+      padding: 80px 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .art-header {
+      max-width: 1400px;
+      margin: 0 auto 40px auto;
+    }
+
+    .eyebrow {
+      color: var(--3);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      font-weight: 700;
+    }
+
+    .art-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-top: 8px;
+    }
+
+    /* --- The Masonry Grid Layout --- */
+    .art-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-auto-rows: 220px;
+      gap: 5px; /* Restored beautiful spacing gap */
+      max-width: 1400px;
+      margin: 0 auto;
+      grid-auto-flow: dense; /* Instructs browser to automatically fill structural gaps */
+    }
+
+    /* Card Structural Base */
+    .art-card {
+      position: relative;
+      background-color: var(--4);
+      border: 1px solid rgba(84, 44, 219, 0.25);
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .art-card:hover {
+      border-color: var(--3);
+      box-shadow: 0 0 25px rgba(84, 44, 219, 0.5), inset 0 0 15px rgba(84, 44, 219, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .art-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* --- Aspect Ratio Flow Mechanics --- */
+    .aspect-standard {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+
+    /* Desktops & Large Tablets */
+    @media (min-width: 768px) {
+      .aspect-landscape {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+      .aspect-portrait {
+        grid-column: span 1;
+        grid-row: span 2;
+      }
+      .aspect-square {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+    }
+
+    /* Mobile Rules */
+    @media (max-width: 767px) {
+      .art-grid {
+        grid-template-columns: repeat(2, 1fr); /* Restore 2 structural tracks on mobile */
+        grid-auto-rows: 160px;
+        gap: 5px; /* Nicely proportioned gap on mobile */
+      }
+      
+      /* Landscapes span completely across both mobile columns */
+      .aspect-landscape {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+
+      /* Verticals split nicely inside the 2-column tracks */
+      .aspect-portrait {
+        grid-column: span 1;
+        grid-row: span 2;
+      }
+      
+      .aspect-square {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+    }
+
+    /* Hover States & Overlay */
+    .art-card:hover img { 
+      transform: scale(1.05); 
+    }
+    
+    .art-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.35) 40%, transparent 100%);
+      opacity: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      box-sizing: border-box;
+      transition: opacity 0.3s ease;
+    }
+
+    .art-card:hover .art-overlay { 
+      opacity: 1; 
+    }
+    
+    .art-meta h3 { 
+      font-size: 1.15rem; 
+      margin: 0 0 4px 0; 
+      color: var(--1);
+      font-weight: 700;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    
+    .art-meta p { 
+      font-size: 0.85rem; 
+      color: var(--3); 
+      margin: 0; 
+      font-weight: 500;
+      text-shadow: 0 0 8px var(--3);
+    }
+
+
+    /* --- Fullscreen Lightbox View --- */
+    .art-lightbox {
+      position: fixed;
+      inset: 0;
+      background-color: var(--0); /* Pitch black veil to maximize image contrast */
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 20px;
+    }
+
+    .art-lightbox.open { 
+      opacity: 1; 
+      pointer-events: auto; 
+    }
+
+    .lightbox-content {
+      position: relative;
+      z-index: 1010;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 90%;
+    }
+
+    .lightbox-click-close {
+      position: absolute;
+      inset: 0;
+      z-index: 1005;
+    }
+
+    .art-lightbox img { 
+      max-width: 95%; 
+      max-height: 80vh; 
+      object-fit: contain; 
+      border-radius: 8px;
+    }
+
+    .close-btn { 
+      position: absolute; 
+      top: 20px; 
+      right: 25px; 
+      font-size: 2.5rem; 
+      color: var(--3); 
+      cursor: pointer; 
+      z-index: 1020;
+      transition: color 0.2s ease;
+    }
+    
+    .close-btn:hover { 
+      color: var(--1); 
+    }
+
+    .lightbox-caption { 
+      margin-top: 16px; 
+      color: var(--3); 
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    /* --- Lightbox Switch Controls --- */
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--1);
+      font-size: 2rem;
+      padding: 16px 22px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 1020;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(4px);
+    }
+
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .prev-btn { left: 30px; }
+    .next-btn { right: 30px; }
+
+    /* Mobile Adjustments for Navigation Buttons */
+    @media (max-width: 767px) {
+      .nav-btn {
+        padding: 12px 18px;
+        font-size: 1.5rem;
+      }
+      .prev-btn { left: 15px; }
+      .next-btn { right: 15px; }
+    }
+
+    /* --- Remove GLightbox White Text Bar --- */
+    .glightbox-clean .gslide-description,
+    .gslide-description,
+    .gdesc-inner,
+    .gslide-title,
+    .gslide-desc {
+      display: none !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    .glightbox-clean .gslide-media {
+      box-shadow: none !important;
+    }

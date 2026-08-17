@@ -48,28 +48,6 @@
   overflow: visible !important;
 }
 
-.swiper-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(84, 44, 219, 0.45) 0%, transparent 70%);
-  z-index: -1;
-  pointer-events: none;
-  filter: blur(50px);
-  opacity: 0.8; 
-}
-
-/* Fix for mobile overflow */
-@media (max-width: 768px) {
-  .swiper-glow {
-    width: 280px;
-    height: 280px;
-    filter: blur(30px);
-  }
-}
 
 .swiper-slide {
   position: relative;

@@ -6,22 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D-Projects</title>
     <link rel="icon" href="Assets/fav/Fav.svg" type="image/x-icon">
+    <!-- Include GLightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
     <link rel="stylesheet" href="Styles/base.css">
     <link rel="stylesheet" href="Styles/base-grid-card.css">
     <link rel="stylesheet" href="Styles/section-footer.css">
-<link rel="stylesheet" href="Styles/section-logos.css">
-    <link rel="stylesheet" href="Styles/section-hero.css"> 
-      <link rel="stylesheet" href="Styles/section-grid.css">
-      <link rel="stylesheet" href="Styles/section-hover-cards.css">
+    <link rel="stylesheet" href="Styles/section-logos.css">
+    <link rel="stylesheet" href="Styles/section-hero.css">
+    <link rel="stylesheet" href="Styles/section-grid.css">
+    <link rel="stylesheet" href="Styles/section-hover-cards.css">
 
-<link rel="stylesheet" href="Styles/custom-grid-swiper.css">
+    <link rel="stylesheet" href="Styles/masonry.css">
+    <link rel="stylesheet" href="Styles/custom-grid-swiper.css">
 
     <!-- Swiper CSS -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="Styles/cinematic-swiper.css">
     <link rel="stylesheet" href="Styles/transitions.css">
     <link rel="stylesheet" href="Styles/infinite-slider.css">
+    <link rel="stylesheet" href="Styles/logo-pair-rows.css">
+    <link rel="stylesheet" href="Styles/full-screen-brand-hero.css">
 </head>
 <style>
     /* Improved Cinematic Overlay Styles */
@@ -32,9 +39,10 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: transparent
-        backdrop-filter: blur(0px); /* Animated */
-        z-index: 10000; /* Above regular content */
+        background: transparent backdrop-filter: blur(0px);
+        /* Animated */
+        z-index: 10000;
+        /* Above regular content */
         justify-content: center;
         align-items: center;
         overflow: hidden;
@@ -43,7 +51,7 @@
 
     .overlay.active {
         backdrop-filter: blur(20px);
-        background: rgba(0, 0, 0, 0.4); 
+        background: rgba(0, 0, 0, 0.4);
     }
 
     .overlay-content {
@@ -53,7 +61,8 @@
         background: transparent;
         border-radius: 0;
         opacity: 0;
-        transform: translateY(100%); /* Slide from bottom */
+        transform: translateY(100%);
+        /* Slide from bottom */
         transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.5s ease;
 
     }
@@ -93,7 +102,8 @@
     }
 
     .close-btn:hover {
-        background: var(--3); /* Purple accent */
+        background: var(--3);
+        /* Purple accent */
         transform: scale(1.1) rotate(90deg);
         border-color: transparent;
     }
@@ -157,145 +167,141 @@
 
     </section>
     <!-- ---------------------------------------------------------------------------------------------------------------------------  -->
-   <div class="container ">
+    <div class="container ">
         <h1 class="subhead   center glow ">🚧 My digital space is still being crafted 🚧 <br>
             <span class="subhead  center glow "> Some features and links may be temporarily unavailable.</span>
     </div>
 
 
- <section class="container pad-100">
-          <!-- Infinite Slider of images -->
-          <div class="infinite-slider-wrapper">
-              <div class="infinite-slider-track track-1">
-
-   <div class="card2">
-              <img src="Assets/Graphics/logos/DigitalWorld_logo.webp" alt="Brand 1 cover" class="thumb-in">
-              <img src="Assets/Graphics/logos/DigitalWorld_Thumb.webp" alt="Brand 1" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
+    <!-- Full-Width Full-Height Auto-Detect Brand Hero Section -->
+    <section class="brand-hero-section">
+        <div class="swiper brand-swiper-container">
+            <div class="swiper-wrapper" id="auto-brand-swiper-wrapper">
+                <!-- Slides auto-generated dynamically from Brand folders via auto-brand-hero.js -->
             </div>
 
-
-            <div class="card2">
-              <img src="Assets/Graphics/logos/Dabbous_logo.webp" alt="Brand 2 cover" class="thumb-in" >
-              <img src="Assets/Graphics/logos/Dabbous_Thumb.webp" alt="Brand 2" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
-            </div>
-
-            <div class="card2">
-              <img src="Assets/Graphics/logos/SIS_logo.webp" alt="Brand 3 cover" class="thumb-in" >
-              <img src="Assets/Graphics/logos/SIS_Thumb.webp" alt="Brand 3" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
-            </div>
-
-            <div class="card2">
-              <img src="Assets/Graphics/logos/Atelier_logo.webp" alt="Brand 4 cover" class="thumb-in" >
-              <img src="Assets/Graphics/logos/Atelier_Thumb.webp" alt="Brand 4" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
-            </div>
-
-            <div class="card2">
-              <img src="Assets/Graphics/logos/Arz_logo.webp" alt="Brand 5 cover" class="thumb-in">
-              <img src="Assets/Graphics/logos/Arz_Thumb.webp" alt="Brand 5" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
-            </div>
-
-            <div class="card2">
-              <img src="Assets/Graphics/logos/EarthLinks_logo.webp" alt="Brand 6 cover" class="thumb-in">
-              <img src="Assets/Graphics/logos/EarthLinks_Thumb.webp" alt="Brand 6" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
-            </div>
-
-              </div>
-              <div class="infinite-slider-track track-2">
-
-            <div class="card2">
-              <img src="Assets/Graphics/logos/Abusalah_logo.webp" alt="Brand 1 cover" class="thumb-in">
-              <img src="Assets/Graphics/logos/Abusalah_Thumb.webp" alt="Brand 1" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
-            </div>
-
-            <div class="card2">
-              <img src="Assets/Graphics/logos/ibnbalad_logo.webp" alt="Brand 2 cover" class="thumb-in" >
-              <img src="Assets/Graphics/logos/ibnbalad_Thumb.webp" alt="Brand 2" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
-            </div>
-
-            <div class="card2">
-              <img src="Assets/Graphics/logos/Summer_logo.webp" alt="Brand 3 cover" class="thumb-in" >
-              <img src="Assets/Graphics/logos/Summer_Thumb.webp" alt="Brand 3" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
-            </div>
-
-            <div class="card2">
-              <img src="Assets/Graphics/logos/vistamar_logo.webp" alt="Brand 4 cover" class="thumb-in" >
-              <img src="Assets/Graphics/logos/vistamar_Thumb.webp" alt="Brand 4" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
-            </div>
-
-            <div class="card2">
-              <img src="Assets/Graphics/logos/Arz_logo.webp" alt="Brand 5 cover" class="thumb-in">
-              <img src="Assets/Graphics/logos/Arz_Thumb.webp" alt="Brand 5" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
-            </div>
-
-            <div class="card2">
-              <img src="Assets/Graphics/logos/EarthLinks_logo.webp" alt="Brand 6 cover" class="thumb-in">
-              <img src="Assets/Graphics/logos/EarthLinks_Thumb.webp" alt="Brand 6" class="thumb-img" onclick="openOverlay('Logos/page-1.html')">
-            </div>
-
-              </div>
-          </div>
-        </section>
-
-
-     <section class="sct-title">
-        <div class="subhead center color glow"> ____________________________</div>
-        <div class="title center upper"> Gaming Logos</div>
-    </section>
-    
-    <section class="container">
-
-  <div class="X-section ">
-
-      <div class="containerX">
-        <div class="cardX"><img class="cardimg" src="Assets/Graphics/logos/Gaming_0AW.webp"><img class="cardlogo" src="Assets/Graphics/logos/Gaming_0A.webp" alt="Gaming logo"  ></div>
-        <div class="cardX"><img class="cardimg" src="Assets/Graphics/logos/Gaming_2AW.webp"><img class="cardlogo" src="Assets/Graphics/logos/Gaming_2A.webp" alt="Gaming logo"  ></div>
-        <div class="cardX"><img class="cardimg" src="Assets/Graphics/logos/Gaming_1AW.webp"><img class="cardlogo" src="Assets/Graphics/logos/Gaming_1AW.webp" alt="Gaming logo"  ></div>
-        <div class="cardX"><img class="cardimg" src="Assets/Graphics/logos/Gaming_4AW.webp"><img class="cardlogo" src="Assets/Graphics/logos/Gaming_4A.webp" alt="Gaming logo"  ></div>
-        <div class="cardX"><img class="cardimg" src="Assets/Graphics/logos/Gaming_3AW.webp"><img class="cardlogo" src="Assets/Graphics/logos/Gaming_3A.webp" alt="Gaming logo"  ></div>
-        <div class="cardX"><img class="cardimg" src="Assets/Graphics/logos/Gaming_0AW.webp"><img class="cardlogo" src="Assets/Graphics/logos/Gaming_0A.webp" alt="Gaming logo"  ></div>
-        <div class="cardX"><img class="cardimg" src="Assets/Graphics/logos/Gaming_2AW.webp"><img class="cardlogo" src="Assets/Graphics/logos/Gaming_2A.webp" alt="Gaming logo"  ></div>
-        <div class="cardX"><img class="cardimg" src="Assets/Graphics/logos/Gaming_1AW.webp"><img class="cardlogo" src="Assets/Graphics/logos/Gaming_1AW.webp" alt="Gaming logo"  ></div>
-      </div>
-      
-  </div>
-
-</section>
-
- <section class="container pad-100">
-        <h1 class="title center upper" style="margin-bottom: 2rem;">Branding</h1>
-
-        <!-- Swiper Container for the Slide Effect -->
-        <div class="swiper custom-grid-swiper">
-            <div class="swiper-wrapper">
-
-                <!-- We place the entire grid as ONE wide slide so Swiper can slide it smoothly -->
-                <div class="swiper-slide custom-grid-slide">
-                    <div class="parent">
-                        <!-- Div 1 to 17 -->
-                        <div class="div1 card1"><img src="Assets/Graphics/logos/Abusalah_logo.webp"></div>
-                        <div class="div2 card1"><img src="Assets/Graphics/logos/ibnbalad_logo.webp"></div>
-                        <div class="div3 card1"><img src="Assets/Graphics/logos/SIS_logo.webp"></div>
-                        <div class="div4 card1"><img src="Assets/Graphics/logos/Atelier_logo.webp"></div>
-                        <div class="div5 card1"><img src="Assets/Graphics/logos/Arz_logo.webp"></div>
-                        <div class="div6 card1"><img src="Assets/Graphics/logos/EarthLinks_logo.webp"></div>
-                        <div class="div7 card1"><img src="Assets/Graphics/logos/Abusalah_logo.webp"></div>
-                        <div class="div8 card1"><img src="Assets/Graphics/logos/Sirius_logo.webp"></div>
-                        <div class="div9 card1"><img src="Assets/Graphics/logos/Summer_logo.webp"></div>
-                        <div class="div10 card1"><img src="Assets/Graphics/logos/vistamar_logo.webp"></div>
-                        <div class="div11 card1"><img src="Assets/Graphics/logos/Arz_logo.webp"></div>
-                        <div class="div12 card1"><img src="Assets/Graphics/logos/EarthLinks_logo.webp"></div>
-                        <div class="div13 card1"><img src="Assets/Graphics/logos/DigitalWorld_logo.webp"></div>
-                        <div class="div14 card1"><img src="Assets/Graphics/logos/Dabbous_logo.webp"></div>
-                        <div class="div15 card1"><img src="Assets/Graphics/logos/SIS_logo.webp"></div>
-                        <div class="div16 card1"><img src="Assets/Graphics/logos/Atelier_logo.webp"></div>
-                        <div class="div17 card1"><img src="Assets/Graphics/logos/Lebaniz_logo.webp"></div>
-                    </div>
-                </div>
-
-            </div>
+            <!-- Navigation Buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 
+
+
+
+
+
+
+    <!-- ---------------------------- ARTWORKS ------------------------------------- -->
+
+    <section class="art-showcase">
+        <div class="art-header">
+            <span class="eyebrow">Branding and Visual Identity</span>
+            <h2 class="art-title">Design Mockups</h2>
+        </div>
+
+        <div class="art-grid" id="dynamic-masonry-gallery">
+            <!-- Dynamic items will render inside here safely -->
+        </div>
+    </section>
+
+    <!-- -------------------------------------------------------------------------- -->
+
+    <section class="container" style=" width: 95%;">
+
+        <div class="X-section">
+
+            <div class="gaming-hud-header">
+                <span>OLD DAYS || PUBG SQUAD</span>
+                <span class="gaming-hud-status">Gaming Logos</span>
+            </div>
+
+            <div class="containerX">
+                <!-- Card 1 -->
+                <div class="cardX" style="--card-glow: #ff2a5f;">
+                    <img class="cardimg" src="Assets/Graphics/logos/Gaming/Gaming_0AW.webp" alt="Gaming Artwork 1">
+                    <img class="cardlogo" src="Assets/Graphics/logos/Gaming/Gaming_0A.webp" alt="Gaming Emblem 1">
+                    <div class="card-hud-badge">
+                        <span class="card-hud-tag">01 // Patriots</span>
+                        <!-- <span class="card-hud-rank">RANK S</span> -->
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="cardX" style="--card-glow: #00ff80;">
+                    <img class="cardimg" src="Assets/Graphics/logos/Gaming/Gaming_1AW.webp" alt="Gaming Artwork 2">
+                    <img class="cardlogo" src="Assets/Graphics/logos/Gaming/Gaming_1A.webp" alt="Gaming Emblem 2">
+                    <div class="card-hud-badge">
+                        <span class="card-hud-tag">02 // The Master</span>
+                        <span class="card-hud-rank">Squad Leader</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="cardX" style="--card-glow: #55bcf7;">
+                    <img class="cardimg" src="Assets/Graphics/logos/Gaming/Gaming_2AW.webp" alt="Gaming Artwork 3">
+                    <img class="cardlogo" src="Assets/Graphics/logos/Gaming/Gaming_2A.webp" alt="Gaming Emblem 3">
+                    <div class="card-hud-badge">
+                        <span class="card-hud-tag">03 // The Legend</span>
+                        <span class="card-hud-rank">ELITE</span>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="cardX" style="--card-glow: #ffe600;">
+                    <img class="cardimg" src="Assets/Graphics/logos/Gaming/Gaming_3AW.webp" alt="Gaming Artwork 4">
+                    <img class="cardlogo" src="Assets/Graphics/logos/Gaming/Gaming_3A.webp" alt="Gaming Emblem 4">
+                    <div class="card-hud-badge">
+                        <span class="card-hud-tag">04 // The Sleeping Panda</span>
+                        <span class="card-hud-rank">Support</span>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="cardX" style="--card-glow: #ff2a5f;">
+                    <img class="cardimg" src="Assets/Graphics/logos/Gaming/Gaming_4AW.webp" alt="Gaming Artwork 5">
+                    <img class="cardlogo" src="Assets/Graphics/logos/Gaming/Gaming_4A.webp" alt="Gaming Emblem 5">
+                    <div class="card-hud-badge">
+                        <span class="card-hud-tag">05 // Mr.Nobody</span>
+                        <span class="card-hud-rank">Defender</span> 
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+               <div class="cardX" style="--card-glow: #ffd000;">
+                    <img class="cardimg" src="Assets/Graphics/logos/Gaming/Gaming_5AW.webp" alt="Gaming Artwork 3">
+                    <img class="cardlogo" src="Assets/Graphics/logos/Gaming/Gaming_5A.webp" alt="Gaming Emblem 3">
+                    <div class="card-hud-badge">
+                        <span class="card-hud-tag">03 // HELLBOYS</span>
+                        <span class="card-hud-rank">RANK A | Lebanon</span>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="cardX" style="--card-glow: #ec4899;">
+                    <img class="cardimg" src="Assets/Graphics/logos/Gaming/Gaming_9.webp" alt="Gaming Artwork 7">
+                    <img class="cardlogo" src="Assets/Graphics/logos/Gaming/Gaming_9A.webp" alt="Gaming Emblem 7">
+                    <div class="card-hud-badge">
+                        <span class="card-hud-tag">07 // CYBER</span>
+                        <span class="card-hud-rank">LEGEND</span>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="cardX" style="--card-glow: #008cff;">
+                    <img class="cardimg" src="Assets/Graphics/logos/Gaming/Gaming_10.webp" alt="Gaming Artwork 8">
+                    <img class="cardlogo" src="Assets/Graphics/logos/Gaming/Gaming_10A.webp" alt="Gaming Emblem 8">
+                    <div class="card-hud-badge">
+                        <span class="card-hud-tag">08 // SHADOW</span>
+                        <span class="card-hud-rank">PILOT</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
     <!-- ---------------------------- Overlay ------------------------------------- -->
     <div id="overlay" class="overlay">
         <div class="overlay-content">
@@ -319,7 +325,8 @@
     <footer class="footer" id="footer">
         <p class="copyrights">&copy; <span id="current-year"></span> MohJeha-Artist. All Rights Reserved.</p>
         <div class="footer-content">
-            <div class="ft-b"> <a href="index.html"><img src="Assets/fav/3d-art-designer.svg" alt="Logo" class="footer-logo"></a></div>
+            <div class="ft-b"> <a href="index.html"><img src="Assets/fav/3d-art-designer.svg" alt="Logo"
+                        class="footer-logo"></a></div>
             <div class="ft-b">
                 <div class="social-icons">
                     <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
@@ -352,6 +359,7 @@
     <script src="Js/lenis.js"></script>
     <!-- ---------------- -->
 
+    <script src="Js/masonry-graphics.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="Js/cinematic-swiper.js"></script>
@@ -360,8 +368,31 @@
     <script src="Js/transitions.js"></script>
     <!-- ---------------- -->
     <script src="Js/infinite-slider.js"></script>
+    <script src="Js/auto-brand-hero.js"></script>
+
+    <!-- Initialize Logo Pair Swiper Carousel -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            new Swiper('.logo-pair-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                grabCursor: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.logo-pair-swiper .swiper-pagination',
+                    clickable: true,
+                },
+                keyboard: {
+                    enabled: true,
+                }
+            });
+        });
+    </script>
 
 </body>
-</html>
 
 </html>
