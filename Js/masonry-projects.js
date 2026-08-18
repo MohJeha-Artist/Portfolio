@@ -1,5 +1,5 @@
 // Js/masonry-projects.js
-// Dynamic Digital Art Portfolio Gallery Loader for Assets/3DProjects/masonry/
+// High-Performance Instant Masonry Loader for Assets/3DProjects/masonry/
 
 document.addEventListener('DOMContentLoaded', () => {
     const galleryContainer = document.getElementById('dynamic-masonry-gallery');
@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const folderPath = "Assets/3DProjects/masonry/";
     const baseName = "artwork";
-    const maxImagesToCheck = 50; // Scan up to 50 artworks automatically
+    const totalArtworks = 23; // Exact count of current artworks in Assets/3DProjects/masonry/
 
-    // Deterministic aspect ratios for masonry tiling
+    // Deterministic aspect ratios for masonry mosaic
     const aspectRatios = [
         'aspect-landscape', // 2x1
         'aspect-portrait',  // 1x2
@@ -23,15 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'aspect-standard'   // 1x1
     ];
 
-    // Initialize GLightbox for the Digital Art gallery
-    const lightbox = (typeof GLightbox !== 'undefined') ? GLightbox({
-        selector: '.art-card.glightbox',
-        touchNavigation: true,
-        loop: true
-    }) : null;
-
-    // Scan & load artwork files
-    for (let i = 1; i <= maxImagesToCheck; i++) {
+    // Build all cards synchronously for instant zero-delay rendering
+    for (let i = 1; i <= totalArtworks; i++) {
         const filePath = `${folderPath}${baseName} (${i}).webp`;
 
         const card = document.createElement('a');
@@ -39,12 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
         card.className = `art-card glightbox ${aspectRatios[(i - 1) % aspectRatios.length]}`;
         card.setAttribute('data-gallery', 'digital-art-portfolio');
         card.setAttribute('data-title', `Digital Artwork #${i}`);
-        card.style.display = 'none';
 
         const img = document.createElement('img');
         img.src = filePath;
         img.alt = `Digital Artwork ${i}`;
         img.loading = 'lazy';
+
+        // Auto-remove if any specific file is deleted
+        img.onerror = function () {
+            card.remove();
+        };
 
         const overlay = document.createElement('div');
         overlay.className = 'art-overlay';
@@ -64,16 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
         card.appendChild(img);
         card.appendChild(overlay);
         galleryContainer.appendChild(card);
+    }
 
-        img.onload = function () {
-            card.style.display = 'block';
-            if (lightbox) {
-                lightbox.reload();
-            }
-        };
-
-        img.onerror = function () {
-            card.remove();
-        };
+    // Initialize GLightbox immediately
+    if (typeof GLightbox !== 'undefined') {
+        GLightbox({
+            selector: '.art-card.glightbox',
+            touchNavigation: true,
+            loop: true
+        });
     }
 });

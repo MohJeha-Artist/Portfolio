@@ -35,10 +35,22 @@
       grid-auto-flow: dense; /* Instructs browser to automatically fill structural gaps */
     }
 
+    /* SKELETON SHIMMER LOADING ANIMATION */
+    @keyframes skeleton-shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+      100% {
+        background-position: 200% 0;
+      }
+    }
+
     /* Card Structural Base */
     .art-card {
       position: relative;
-      background-color: var(--4);
+      background: linear-gradient(90deg, #111215 25%, #1d2026 50%, #111215 75%);
+      background-size: 200% 100%;
+      animation: skeleton-shimmer 2s infinite ease-in-out;
       border: 1px solid rgba(84, 44, 219, 0.25);
       border-radius: 12px;
       overflow: hidden;
