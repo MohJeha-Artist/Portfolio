@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     wrapper.innerHTML = '';
 
-    // Generate all cards synchronously for instant zero-delay rendering
+    // Generate all cards synchronously with explicit dimensions for immediate rendering
     catData.models.forEach((m) => {
       const thumbPath = `Assets/3DProjects/${catData.category}/${m.id}/${m.id}_thumb.webp`;
 
@@ -76,11 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
       img.alt = m.title;
       img.loading = 'lazy';
 
-      // If a card's image is missing or deleted, remove the slide gracefully
-      img.onerror = () => {
-        slide.remove();
-      };
-
       const gradient = document.createElement('div');
       gradient.className = 'gradient';
 
@@ -95,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
       wrapper.appendChild(slide);
     });
 
-    // Initialize swiper instantly
+    // Initialize swiper cleanly
     if (typeof initCinematicSwiper === 'function') {
       initCinematicSwiper(swiperEl);
     }

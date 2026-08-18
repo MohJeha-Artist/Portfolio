@@ -52,9 +52,12 @@ function initCinematicSwiper(el) {
 window.initCinematicSwiper = initCinematicSwiper;
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Only init static ones that are not dynamically managed
-    const swiperElements = document.querySelectorAll('.cinematic-carousel:not(#swiperMelee):not(#swiperFirearms):not(#swiperEnvironment)');
+    // Initialize any carousel that already contains slides in its HTML
+    const swiperElements = document.querySelectorAll('.cinematic-carousel');
     swiperElements.forEach((el) => {
-        initCinematicSwiper(el);
+        const wrapper = el.querySelector('.cinematic-wrapper');
+        if (wrapper && wrapper.children.length > 0) {
+            initCinematicSwiper(el);
+        }
     });
 });

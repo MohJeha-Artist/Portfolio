@@ -1,92 +1,200 @@
 /* Styles/section-toolkit.css */
 
 .toolkit-section {
-    background: linear-gradient(to bottom, transparent, var(--0));
-    padding-bottom: 80px;
+    background: radial-gradient(circle at 50% 30%, rgba(84, 44, 219, 0.12) 0%, transparent 70%),
+                linear-gradient(to bottom, transparent, var(--0));
+    padding: 70px 20px 80px 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100%;
+}
+
+.toolkit-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(84, 44, 219, 0.5), transparent);
+}
+
+/* Centered Title on Top */
+.toolkit-section .sct-title {
+    width: 100%;
+    margin: 0 auto 30px auto;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .toolkit-wrapper {
+    max-width: 1200px;
     width: 100%;
-    position: relative;
-    padding: 40px 0;
-    display: flex;
-    justify-content: center;
+    margin: 0 auto;
 }
 
-.toolkit-track {
+.toolkit-grid {
     display: grid;
-    /* Create a grid with 5 columns for desktop, wrapping to 2 rows */
     grid-template-columns: repeat(5, 1fr);
-    gap: 60px 80px;
-    align-items: center;
-    justify-items: center;
-    max-width: 1000px; /* Constrain width to keep it centered and readable */
+    gap: 14px;
+    width: 100%;
 }
 
-/* Base state for software icons */
-.software-item {
-    width: 80px;
-    height: 80px;
+/* Minimal Wide Grey Rectangle Card (Border hidden when idle) */
+.tool-card {
+    --tool-glow: rgba(84, 44, 219, 0.3);
+    position: relative;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid transparent; /* No box border when not highlighted */
+    border-radius: 10px;
+    padding: 12px 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    cursor: default;
+    box-sizing: border-box;
+    transition: transform 0.3s ease,
+                border-color 0.3s ease,
+                background-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-3px);
+    background-color: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.5),
+                0 0 16px 0 var(--tool-glow);
+}
+
+/* Icon to the Left */
+.tool-icon-wrap {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    filter: grayscale(1) opacity(0.4);
-    position: relative;
 }
 
-.software-item img {
-    max-width: 100%;
-    max-height: 100%;
+.tool-icon-wrap img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+    display: block;
+    opacity: 0.85;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover effects */
-.software-item:hover {
-    filter: grayscale(0) opacity(1);
-    transform: scale(1.2) translateY(-10px);
+.tool-card:hover .tool-icon-wrap img {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
-/* Add a subtle glow behind icons on hover */
-.software-item::after {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background: var(--3);
-    border-radius: 50%;
-    filter: blur(30px);
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 0.4s ease;
+/* Text Title to the Right */
+.tool-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+    overflow: hidden;
+    min-width: 0;
 }
 
-.software-item:hover::after {
-    opacity: 0.4;
+.tool-name {
+    color: #f0f0f5;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.2s ease;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-    .toolkit-track {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 40px 60px;
+.tool-card:hover .tool-name {
+    color: #ffffff;
+}
+
+.tool-tag {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.2s ease;
+}
+
+.tool-card:hover .tool-tag {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Tool Signature Glow Accents */
+.tool-ue { --tool-glow: rgba(0, 180, 255, 0.35); }
+.tool-blender { --tool-glow: rgba(245, 121, 0, 0.35); }
+.tool-painter { --tool-glow: rgba(235, 60, 45, 0.35); }
+.tool-c4d { --tool-glow: rgba(0, 115, 255, 0.35); }
+.tool-zbrush { --tool-glow: rgba(230, 40, 40, 0.35); }
+.tool-ps { --tool-glow: rgba(49, 168, 255, 0.35); }
+.tool-ae { --tool-glow: rgba(160, 130, 255, 0.35); }
+.tool-ai { --tool-glow: rgba(255, 154, 0, 0.35); }
+.tool-octane { --tool-glow: rgba(0, 220, 255, 0.35); }
+.tool-vray { --tool-glow: rgba(30, 120, 255, 0.35); }
+.tool-html { --tool-glow: rgba(227, 79, 38, 0.35); }
+
+/* Responsive Layout */
+@media (max-width: 1100px) {
+    .toolkit-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
     }
 }
 
 @media (max-width: 768px) {
-    .toolkit-track {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px 40px;
+    .toolkit-section {
+        padding: 50px 15px 60px 15px;
     }
-    .software-item {
-        width: 60px;
-        height: 60px;
+    .toolkit-section .sct-title {
+        margin-bottom: 20px;
+    }
+    .toolkit-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .tool-card {
+        padding: 10px 14px;
+        gap: 10px;
+    }
+    .tool-icon-wrap {
+        width: 26px;
+        height: 26px;
+    }
+    .tool-name {
+        font-size: 0.82rem;
+    }
+    .tool-tag {
+        font-size: 0.62rem;
     }
 }
 
-@media (max-width: 480px) {
-    .toolkit-track {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px 30px;
+@media (max-width: 440px) {
+    .toolkit-grid {
+        grid-template-columns: 1fr;
     }
 }
