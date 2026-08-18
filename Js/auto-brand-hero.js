@@ -1,54 +1,144 @@
 // Js/auto-brand-hero.js
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Brand Configuration Mapping: Each brand maps to its folder & logo asset
-  // List of all brand folders inside Assets/Graphics/logos/
-  // Brand Configuration Mapping: Each brand maps to its actual folder & file prefix
-  const BRAND_KEYS = [
-    { key: "Brand", folder: "Brand", prefix: "Brand", name: "Brand Portfolio" },
-    { key: "DigitalWorld", folder: "DigitalWorld", prefix: "DigitalWorld", name: "Digital World" },
-    { key: "Dabbous", folder: "Dabbous", prefix: "Dabbous", name: "Dabbous Brand" },
-    { key: "Atelier", folder: "Atelier", prefix: "Atelier", name: "Atelier Studio" },
-    { key: "Arz", folder: "Arz", prefix: "Arz", name: "Arz Cultural" },
-    { key: "SIS", folder: "SIS", prefix: "SIS", name: "SIS Enterprise" },
-    { key: "EarthLinks", folder: "EarthLinks", prefix: "EarthLinks", name: "EarthLinks Tech" },
-    { key: "AbuSalah", folder: "AbuSalah", prefix: "Abusalah", name: "Abu Salah Monogram" },
-    { key: "BirlesikZirve", folder: "BirlesikZirve", prefix: "BirlesikZirve", name: "Birleşik Zirve" },
-    { key: "ibnbalad", folder: "ibnbalad", prefix: "ibnbalad", name: "Ibn Balad Cultural" },
-    { key: "Lebaniz", folder: "Lebaniz", prefix: "Lebaniz", name: "Lebaniz Studio" },
-    { key: "NanoStitch", folder: "NanoStitch", prefix: "NanoStitch", name: "NanoStitch" },
-    { key: "Nova", folder: "Nova", prefix: "Nova", name: "Nova Media Studio" },
-    { key: "Sirius", folder: "Sirius", prefix: "Sirius", name: "Sirius Emblem" },
-    { key: "SummerLive", folder: "SummerLive", prefix: "Summer", name: "Summer Live" },
-    { key: "Vistamar", folder: "Vistamar", prefix: "vistamar", name: "Vistamar Resort" }
+  // Brand Configuration Mapping: Exact folder, logo file, and mockup assets
+  const BRAND_REGISTRY = [
+    {
+      key: "Brand",
+      name: "Brand Portfolio",
+      folder: "Brand",
+      logo: "Brand_logo.webp",
+      images: [
+        "Brand (1).webp", "Brand (2).webp", "Brand (3).webp", "Brand (4).webp",
+        "Brand (5).webp", "Brand (6).webp", "Brand (7).webp", "Brand (8).webp", "Brand (9).webp"
+      ]
+    },
+    {
+      key: "DigitalWorld",
+      name: "Digital World",
+      folder: "DigitalWorld",
+      logo: "DigitalWorld_logo.webp",
+      images: ["DigitalWorld_Stack.webp", "DigitalWorld_Thumb.webp"]
+    },
+    {
+      key: "Dabbous",
+      name: "Dabbous Brand",
+      folder: "Dabbous",
+      logo: "Dabbous_logo.webp",
+      images: ["Dabbous_Stack.webp", "Dabbous_Thumb.webp"]
+    },
+    {
+      key: "Atelier",
+      name: "Atelier Studio",
+      folder: "Atelier",
+      logo: "Atelier_logo.webp",
+      images: ["Atelier_Stack.webp", "Atelier_Thumb.webp"]
+    },
+    {
+      key: "Arz",
+      name: "Arz Cultural",
+      folder: "Arz",
+      logo: "Arz_logo.webp",
+      images: ["Arz (1).webp", "Arz (2).webp", "Arz (3).webp", "Arz (4).webp"]
+    },
+    {
+      key: "SIS",
+      name: "SIS Enterprise",
+      folder: "SIS",
+      logo: "SIS_logo.webp",
+      images: ["SIS_Thumb.webp"]
+    },
+    {
+      key: "EarthLinks",
+      name: "EarthLinks Tech",
+      folder: "EarthLinks",
+      logo: "EarthLinks_logo.webp",
+      images: ["EarthLinks_Thumb.webp"]
+    },
+    {
+      key: "AbuSalah",
+      name: "Abu Salah Monogram",
+      folder: "AbuSalah",
+      logo: "Abusalah_logo.webp",
+      images: ["Abusalah_Thumb.webp"]
+    },
+    {
+      key: "BirlesikZirve",
+      name: "Birleşik Zirve",
+      folder: "BirlesikZirve",
+      logo: "BirlesikZirve_logo.webp",
+      images: ["Birlesik Zirve_Thumb.webp"]
+    },
+    {
+      key: "ibnbalad",
+      name: "Ibn Balad Cultural",
+      folder: "ibnbalad",
+      logo: "ibnbalad_logo.webp",
+      images: ["ibnbalad_Thumb.webp"]
+    },
+    {
+      key: "Lebaniz",
+      name: "Lebaniz Studio",
+      folder: "Lebaniz",
+      logo: "Lebaniz_logo.webp",
+      images: ["Lebaniz_Thumb.webp"]
+    },
+    {
+      key: "NanoStitch",
+      name: "NanoStitch",
+      folder: "NanoStitch",
+      logo: "NanoStitch_logo.webp",
+      images: ["invoice.webp"]
+    },
+    {
+      key: "Nova",
+      name: "Nova Media Studio",
+      folder: "Nova",
+      logo: "Nova_logo.webp",
+      images: ["Nova_Thumb.webp"]
+    },
+    {
+      key: "Sirius",
+      name: "Sirius Emblem",
+      folder: "Sirius",
+      logo: "Sirius_logo.webp",
+      images: ["Sirius_Thumb.webp"]
+    },
+    {
+      key: "SummerLive",
+      name: "Summer Live",
+      folder: "SummerLive",
+      logo: "Summer_logo.webp",
+      images: ["Summer_Thumb.webp"]
+    },
+    {
+      key: "Vistamar",
+      name: "Vistamar Resort",
+      folder: "Vistamar",
+      logo: "vistamar_logo.webp",
+      images: ["vistamar_Thumb.webp"]
+    }
   ];
 
-  // Helper window function to dynamically register new brand folders on the fly
-  window.registerBrandFolder = (folderName, displayName) => {
-    if (!BRAND_KEYS.some(b => (b.folder || b.key).toLowerCase() === folderName.toLowerCase())) {
-      BRAND_KEYS.push({ key: folderName, folder: folderName, prefix: folderName, name: displayName || folderName });
-    }
-  };
+  // Global pool of fallback mockup images
+  const GLOBAL_FALLBACKS = [
+    "Assets/Graphics/Logos/Brand/Brand (1).webp",
+    "Assets/Graphics/Logos/Brand/Brand (3).webp",
+    "Assets/Graphics/Logos/Brand/Brand (5).webp",
+    "Assets/Graphics/Logos/Brand/Brand (6).webp",
+    "Assets/Graphics/Logos/Brand/Brand (7).webp",
+    "Assets/Graphics/Logos/Brand/Brand (8).webp",
+    "Assets/Graphics/Logos/Brand/Brand (9).webp",
+    "Assets/Graphics/Logos/Arz/Arz (1).webp",
+    "Assets/Graphics/Logos/Atelier/Atelier_Stack.webp",
+    "Assets/Graphics/Logos/DigitalWorld/DigitalWorld_Stack.webp"
+  ];
 
   const swiperWrapper = document.getElementById('auto-brand-swiper-wrapper');
   if (!swiperWrapper) return;
 
-  // Global pool of fallback mockup images
-  const GLOBAL_FALLBACKS = [
-    "Assets/Graphics/logos/Brand/Brand (1).webp",
-    "Assets/Graphics/logos/Brand/Brand (3).webp",
-    "Assets/Graphics/logos/Brand/Brand (5).webp",
-    "Assets/Graphics/logos/Brand/Brand (6).webp",
-    "Assets/Graphics/logos/Brand/Brand (7).webp",
-    "Assets/Graphics/logos/Brand/Brand (8).webp",
-    "Assets/Graphics/logos/Brand/Brand (9).webp",
-    "Assets/Graphics/logos/Arz/Arz (1).webp",
-    "Assets/Graphics/logos/Atelier/Atelier_Stack.webp",
-    "Assets/Graphics/logos/DigitalWorld/DigitalWorld_Stack.webp"
-  ];
-
-  // Render slides automatically per brand folder (Strict Folder Isolation)
-  BRAND_KEYS.forEach((brand) => {
+  // Render slides automatically per brand
+  BRAND_REGISTRY.forEach((brand) => {
     const slide = document.createElement('div');
     slide.className = 'swiper-slide';
 
@@ -56,75 +146,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.createElement('div');
     grid.className = 'surrounding-mockups-grid';
 
-    const folderName = brand.folder || brand.key;
-    const prefix = brand.prefix || brand.key;
-    const folder = `Assets/Graphics/logos/${folderName}`;
-    const logoSrc = `${folder}/${prefix}_logo.webp`;
-    const fallbackLogoSrc = `Assets/Graphics/logos/${prefix}_logo.webp`;
+    const folder = `Assets/Graphics/Logos/${brand.folder}`;
+    const logoSrc = `${folder}/${brand.logo}`;
 
-    // Candidate paths within this brand's folder with case & format variations
-    const candidatePaths = [
-      `${folder}/${prefix}_logo.webp`,
-      `${folder}/${prefix}_logo.png`,
-      `${folder}/${prefix}_logo.jpg`,
-      `${folder}/${folderName}_logo.webp`,
-      `${folder}/${folderName}_logo.png`,
-      `${folder}/${prefix}_Thumb.webp`,
-      `${folder}/${prefix}_Thumb.png`,
-      `${folder}/${prefix} (1).webp`,
-      `${folder}/${prefix}_Stack.webp`,
-      `${folder}/Birlesik Zirve_Thumb.webp`,
-      `${folder}/invoice.webp`,
-      `${folder}/invoice.png`
-    ];
+    // Collect all valid brand images
+    let brandImages = (brand.images && brand.images.length > 0)
+      ? brand.images.map(img => `${folder}/${encodeURI(img)}`)
+      : [];
 
-    for (let i = 1; i <= 15; i++) {
-      candidatePaths.push(`${folder}/${prefix} (${i}).webp`);
-      candidatePaths.push(`${folder}/${prefix}(${i}).webp`);
-      candidatePaths.push(`${folder}/${prefix}_${i}.webp`);
-      candidatePaths.push(`${folder}/${prefix} (${i}).png`);
-      candidatePaths.push(`${folder}/${folderName} (${i}).webp`);
+    if (brandImages.length === 0) {
+      brandImages = [logoSrc, ...GLOBAL_FALLBACKS];
     }
 
-    const validBrandImages = [];
-    let loadedChecked = 0;
-
-    const buildGrid = () => {
-      if (validBrandImages.length === 0) {
-        // Fallback to logo image if no mockup images exist yet in this folder
-        validBrandImages.push(logoSrc);
-      }
-
-      // Create 8 tiles using ONLY this brand's images (repeating if fewer than 8)
-      for (let i = 0; i < 8; i++) {
-        const tile = document.createElement('div');
-        tile.className = 'mockup-tile';
-        const img = document.createElement('img');
-        const src = validBrandImages[i % validBrandImages.length];
-        img.src = src;
-        img.alt = `${brand.name} Mockup`;
-        tile.appendChild(img);
-        grid.appendChild(tile);
-      }
-    };
-
-    // Pre-filter to only load images that actually exist in this brand folder
-    const uniquePaths = [...new Set(candidatePaths)];
-    uniquePaths.forEach((src) => {
-      const testImg = new Image();
-      testImg.src = src;
-      testImg.onload = () => {
-        if (!validBrandImages.includes(src)) {
-          validBrandImages.push(src);
-        }
-        loadedChecked++;
-        if (loadedChecked === uniquePaths.length) buildGrid();
-      };
-      testImg.onerror = () => {
-        loadedChecked++;
-        if (loadedChecked === uniquePaths.length) buildGrid();
-      };
-    });
+    // Create 8 tiles using this brand's images (repeating if fewer than 8)
+    for (let i = 0; i < 8; i++) {
+      const tile = document.createElement('div');
+      tile.className = 'mockup-tile';
+      const img = document.createElement('img');
+      img.src = brandImages[i % brandImages.length];
+      img.alt = `${brand.name} Mockup`;
+      img.loading = 'lazy';
+      tile.appendChild(img);
+      grid.appendChild(tile);
+    }
 
     // 2. Central Spotlight Radial Gradient Shield
     const shield = document.createElement('div');
@@ -143,15 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
     logoImg.src = logoSrc;
     logoImg.alt = `${brand.name} Logo`;
 
-    // If logo not inside folder, fallback to alternative formats or root
-    logoImg.onerror = () => {
-      logoImg.onerror = () => {
-        logoImg.onerror = null;
-        logoImg.src = fallbackLogoSrc;
-      };
-      logoImg.src = `${folder}/${prefix}_logo.png`;
-    };
-
     logoCard.appendChild(logoImg);
 
     // Assemble Slide
@@ -160,7 +195,6 @@ document.addEventListener('DOMContentLoaded', () => {
     slide.appendChild(logoCard);
     swiperWrapper.appendChild(slide);
   });
-
 
   // Initialize Swiper after dynamic markup insertion
   setTimeout(() => {
@@ -184,5 +218,5 @@ document.addEventListener('DOMContentLoaded', () => {
         clickable: true
       }
     });
-  }, 300);
+  }, 100);
 });

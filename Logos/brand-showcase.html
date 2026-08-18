@@ -75,52 +75,138 @@
             const urlParams = new URLSearchParams(window.location.search);
             const brandParam = urlParams.get('brand') || 'Brand';
 
-            // Resolve folder and prefix
-            const brandMap = {
-                "Summer": { folder: "SummerLive", prefix: "Summer" },
-                "SummerLive": { folder: "SummerLive", prefix: "Summer" },
-                "AbuSalah": { folder: "AbuSalah", prefix: "Abusalah" },
-                "Abusalah": { folder: "AbuSalah", prefix: "Abusalah" },
-                "Vistamar": { folder: "Vistamar", prefix: "vistamar" },
-                "vistamar": { folder: "Vistamar", prefix: "vistamar" }
+            // Brand registry with exact disk folders and presentation images
+            const BRAND_REGISTRY = {
+                "Brand": {
+                    folder: "Brand",
+                    logo: "Brand_logo.webp",
+                    images: [
+                        "Brand (1).webp", "Brand (2).webp", "Brand (3).webp", "Brand (4).webp",
+                        "Brand (5).webp", "Brand (6).webp", "Brand (7).webp", "Brand (8).webp", "Brand (9).webp"
+                    ]
+                },
+                "DigitalWorld": {
+                    folder: "DigitalWorld",
+                    logo: "DigitalWorld_logo.webp",
+                    images: ["DigitalWorld_Stack.webp", "DigitalWorld_Thumb.webp"]
+                },
+                "Dabbous": {
+                    folder: "Dabbous",
+                    logo: "Dabbous_logo.webp",
+                    images: ["Dabbous_Stack.webp", "Dabbous_Thumb.webp"]
+                },
+                "Atelier": {
+                    folder: "Atelier",
+                    logo: "Atelier_logo.webp",
+                    images: ["Atelier_Stack.webp", "Atelier_Thumb.webp"]
+                },
+                "Arz": {
+                    folder: "Arz",
+                    logo: "Arz_logo.webp",
+                    images: ["Arz (1).webp", "Arz (2).webp", "Arz (3).webp", "Arz (4).webp"]
+                },
+                "SIS": {
+                    folder: "SIS",
+                    logo: "SIS_logo.webp",
+                    images: ["SIS_Thumb.webp"]
+                },
+                "EarthLinks": {
+                    folder: "EarthLinks",
+                    logo: "EarthLinks_logo.webp",
+                    images: ["EarthLinks_Thumb.webp"]
+                },
+                "AbuSalah": {
+                    folder: "AbuSalah",
+                    logo: "Abusalah_logo.webp",
+                    images: ["Abusalah_Thumb.webp"]
+                },
+                "Abusalah": {
+                    folder: "AbuSalah",
+                    logo: "Abusalah_logo.webp",
+                    images: ["Abusalah_Thumb.webp"]
+                },
+                "BirlesikZirve": {
+                    folder: "BirlesikZirve",
+                    logo: "BirlesikZirve_logo.webp",
+                    images: ["Birlesik Zirve_Thumb.webp"]
+                },
+                "ibnbalad": {
+                    folder: "ibnbalad",
+                    logo: "ibnbalad_logo.webp",
+                    images: ["ibnbalad_Thumb.webp"]
+                },
+                "Lebaniz": {
+                    folder: "Lebaniz",
+                    logo: "Lebaniz_logo.webp",
+                    images: ["Lebaniz_Thumb.webp"]
+                },
+                "NanoStitch": {
+                    folder: "NanoStitch",
+                    logo: "NanoStitch_logo.webp",
+                    images: ["invoice.webp"]
+                },
+                "Nova": {
+                    folder: "Nova",
+                    logo: "Nova_logo.webp",
+                    images: ["Nova_Thumb.webp"]
+                },
+                "Sirius": {
+                    folder: "Sirius",
+                    logo: "Sirius_logo.webp",
+                    images: ["Sirius_Thumb.webp"]
+                },
+                "Summer": {
+                    folder: "SummerLive",
+                    logo: "Summer_logo.webp",
+                    images: ["Summer_Thumb.webp"]
+                },
+                "SummerLive": {
+                    folder: "SummerLive",
+                    logo: "Summer_logo.webp",
+                    images: ["Summer_Thumb.webp"]
+                },
+                "Vistamar": {
+                    folder: "Vistamar",
+                    logo: "vistamar_logo.webp",
+                    images: ["vistamar_Thumb.webp"]
+                },
+                "vistamar": {
+                    folder: "Vistamar",
+                    logo: "vistamar_logo.webp",
+                    images: ["vistamar_Thumb.webp"]
+                }
             };
 
-            const mapped = brandMap[brandParam] || { folder: brandParam, prefix: brandParam };
-            const folderPath = `../Assets/Graphics/logos/${mapped.folder}/`;
-            const baseName = mapped.prefix;
+            const brandData = BRAND_REGISTRY[brandParam] || {
+                folder: brandParam,
+                logo: `${brandParam}_logo.webp`,
+                images: []
+            };
 
-            const candidateSources = [
-                `${folderPath}${baseName}_logo.webp`,
-                `${folderPath}${baseName}_logo.png`,
-                `${folderPath}${baseName}_Stack.webp`,
-                `${folderPath}${baseName}_Thumb.webp`,
-                `${folderPath}Birlesik Zirve_Thumb.webp`,
-                `${folderPath}invoice.webp`,
-                `${folderPath}invoice.png`
-            ];
+            const folderPath = `../Assets/Graphics/Logos/${brandData.folder}/`;
 
-            for (let i = 1; i <= 15; i++) {
-                candidateSources.push(`${folderPath}${baseName} (${i}).webp`);
-                candidateSources.push(`${folderPath}${baseName}(${i}).webp`);
-                candidateSources.push(`${folderPath}${baseName}_${i}.webp`);
-                candidateSources.push(`${folderPath}${baseName} (${i}).png`);
-                candidateSources.push(`${folderPath}${mapped.folder} (${i}).webp`);
+            // Prepare list of images to render
+            const imagesToRender = [];
+
+            // Add logo if available
+            if (brandData.logo) {
+                imagesToRender.push(`${folderPath}${encodeURI(brandData.logo)}`);
             }
 
-            const addedSrcs = new Set();
+            // Add specific brand images
+            if (brandData.images && brandData.images.length > 0) {
+                brandData.images.forEach(img => {
+                    imagesToRender.push(`${folderPath}${encodeURI(img)}`);
+                });
+            }
 
-            candidateSources.forEach(src => {
-                const img = new Image();
-                img.src = src;
-                img.onload = function () {
-                    if (!addedSrcs.has(src)) {
-                        addedSrcs.add(src);
-                        const displayImg = document.createElement('img');
-                        displayImg.src = src;
-                        displayImg.alt = `${baseName} Presentation`;
-                        galleryContainer.appendChild(displayImg);
-                    }
-                };
+            // Render images directly into gallery
+            imagesToRender.forEach((src, idx) => {
+                const displayImg = document.createElement('img');
+                displayImg.src = src;
+                displayImg.alt = `${brandParam} Presentation ${idx + 1}`;
+                displayImg.loading = idx === 0 ? 'eager' : 'lazy';
+                galleryContainer.appendChild(displayImg);
             });
         </script>
 
