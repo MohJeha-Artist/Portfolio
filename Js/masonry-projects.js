@@ -1,75 +1,79 @@
-    // Configuration Settings
-        const folderPath = "Assets/3DProjects/masonry/"; // Target folder changed to masonry
-        const baseName = "artwork";
-        const maxImagesToCheck = 23; // Increased to give the masonry grid a rich flow
+// Js/masonry-projects.js
+// Dynamic Digital Art Portfolio Gallery Loader for Assets/3DProjects/masonry/
 
-        // Layout Arrays (Deterministic pattern that tiles perfectly on both mobile & desktop)
-        const aspectRatios = [
-            'aspect-landscape', // 2x1
-            'aspect-portrait',  // 1x2
-            'aspect-standard',  // 1x1
-            'aspect-square',    // 2x2
-            'aspect-standard',  // 1x1
-            'aspect-landscape', // 2x1
-            'aspect-portrait',  // 1x2
-            'aspect-square',    // 2x2
-            'aspect-standard',  // 1x1
-            'aspect-standard'   // 1x1
-        ];
-        const galleryContainer = document.getElementById('dynamic-masonry-gallery');
+document.addEventListener('DOMContentLoaded', () => {
+    const galleryContainer = document.getElementById('dynamic-masonry-gallery');
+    if (!galleryContainer) return;
 
-        // Initialize GLightbox
-        const lightbox = GLightbox({
-            selector: '.glightbox'
-        });
+    const folderPath = "Assets/3DProjects/masonry/";
+    const baseName = "artwork";
+    const maxImagesToCheck = 50; // Scan up to 50 artworks automatically
 
-        // Loop & look for images
-        for (let i = 1; i <= maxImagesToCheck; i++) {
-            // 1. Create the parent .art-card container as an anchor link for GLightbox
-            const card = document.createElement('a');
-            card.href = `${folderPath}${baseName} (${i}).webp`;
-            card.className = `art-card glightbox ${aspectRatios[(i - 1) % aspectRatios.length]}`;
-            card.setAttribute('data-gallery', 'portfolio-gallery');
-            card.setAttribute('data-title', `${baseName} Render #${i}`);
-            card.setAttribute('data-description', 'Automated System Scan');
-            card.style.display = 'none'; // Hide element until file validation completes
+    // Deterministic aspect ratios for masonry tiling
+    const aspectRatios = [
+        'aspect-landscape', // 2x1
+        'aspect-portrait',  // 1x2
+        'aspect-standard',  // 1x1
+        'aspect-square',    // 2x2
+        'aspect-standard',  // 1x1
+        'aspect-landscape', // 2x1
+        'aspect-portrait',  // 1x2
+        'aspect-square',    // 2x2
+        'aspect-standard',  // 1x1
+        'aspect-standard'   // 1x1
+    ];
 
-            // 2. Build the inner Image structure
-            const img = document.createElement('img');
-            img.src = `${folderPath}${baseName} (${i}).webp`;
-            img.alt = `${baseName} Structure ${i}`;
+    // Initialize GLightbox for the Digital Art gallery
+    const lightbox = (typeof GLightbox !== 'undefined') ? GLightbox({
+        selector: '.art-card.glightbox',
+        touchNavigation: true,
+        loop: true
+    }) : null;
 
-            // 3. Create the text overlay context
-            const overlay = document.createElement('div');
-            overlay.className = 'art-overlay';
+    // Scan & load artwork files
+    for (let i = 1; i <= maxImagesToCheck; i++) {
+        const filePath = `${folderPath}${baseName} (${i}).webp`;
 
-            const meta = document.createElement('div');
-            meta.className = 'art-meta';
+        const card = document.createElement('a');
+        card.href = filePath;
+        card.className = `art-card glightbox ${aspectRatios[(i - 1) % aspectRatios.length]}`;
+        card.setAttribute('data-gallery', 'digital-art-portfolio');
+        card.setAttribute('data-title', `Digital Artwork #${i}`);
+        card.style.display = 'none';
 
-            const title = document.createElement('h3');
-            title.innerText = `${baseName} Render #${i}`;
+        const img = document.createElement('img');
+        img.src = filePath;
+        img.alt = `Digital Artwork ${i}`;
+        img.loading = 'lazy';
 
-            const desc = document.createElement('p');
-            desc.innerText = "Automated System Scan";
+        const overlay = document.createElement('div');
+        overlay.className = 'art-overlay';
 
-            // Nest the elements together
-            meta.appendChild(title);
-            meta.appendChild(desc);
-            overlay.appendChild(meta);
-            card.appendChild(img);
-            card.appendChild(overlay);
-            galleryContainer.appendChild(card);
+        const meta = document.createElement('div');
+        meta.className = 'art-meta';
 
-            // If file exists and loads cleanly, display it and reload GLightbox
-            img.onload = function () {
-                card.style.display = 'block';
-                if (typeof lightbox !== 'undefined') {
-                    lightbox.reload();
-                }
-            };
+        const title = document.createElement('h3');
+        title.innerText = `Artwork #${i}`;
 
-            // If item missing, remove completely from layout tree
-            img.onerror = function () {
-                card.remove();
-            };
-        }
+        const desc = document.createElement('p');
+        desc.innerText = "3D & Digital Concept";
+
+        meta.appendChild(title);
+        meta.appendChild(desc);
+        overlay.appendChild(meta);
+        card.appendChild(img);
+        card.appendChild(overlay);
+        galleryContainer.appendChild(card);
+
+        img.onload = function () {
+            card.style.display = 'block';
+            if (lightbox) {
+                lightbox.reload();
+            }
+        };
+
+        img.onerror = function () {
+            card.remove();
+        };
+    }
+});

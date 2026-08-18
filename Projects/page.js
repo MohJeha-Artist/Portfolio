@@ -6,7 +6,9 @@ function setupNavigation(prevBtn, nextBtn) {
     if (!prevBtn || !nextBtn) return;
 
     const match = location.pathname.match(/page-(\d+)\.html$/);
-    const currentPage = match ? parseInt(match[1], 10) : 1;
+    if (!match) return;
+
+    const currentPage = parseInt(match[1], 10);
     const IS_LAST_PAGE = false; // or your logic
     
     // Previous button

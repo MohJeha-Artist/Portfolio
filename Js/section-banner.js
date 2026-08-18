@@ -6,25 +6,23 @@
  *          data-section-subtitle="Page Subtitle"></div>
  */
 class sectionBanner {
-    static async init() {
+    static init() {
         const sectionContainer = document.getElementById('section-banner');
         if (!sectionContainer) return;
 
-        try {
-            // Load section banner template from specified path
-            const response = await fetch('../html/section-banner.html');
-            if (!response.ok) throw new Error('section banner template not found');
-            
-            // Inject the template
-            sectionContainer.innerHTML = await response.text();
-            
-            // Set dynamic content
-            this.setDynamicContent(sectionContainer);
-            
-        } catch (error) {
-            console.error('section Banner Error:', error);
-            sectionContainer.innerHTML = '<!-- section banner placeholder -->';
-        }
+        // Render template directly (immune to path/depth issues)
+        sectionContainer.innerHTML = `
+            <section class="sct-banner">
+                <div class="sct-highlight" id="sct-highlight"></div>
+                <div class="sct-head" id="sct-head"></div>
+                <div class="sct-frame">
+                    <div class="frame-depth"><img src="" class="frame-img" id="sect-image"></div>
+                </div>
+            </section>
+        `;
+
+        // Set dynamic content
+        this.setDynamicContent(sectionContainer);
     }
 
     static setDynamicContent(container) {

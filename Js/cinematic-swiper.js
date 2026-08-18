@@ -4,43 +4,57 @@
  * Supports 'data-autoplay-delay' attribute for custom speeds
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-    const swiperElements = document.querySelectorAll('.cinematic-carousel');
+function initCinematicSwiper(el) {
+    if (!el || el.swiper) return el.swiper;
 
-    swiperElements.forEach((el) => {
-        // Get custom delay from data attribute or default to 3000
-        const delay = parseInt(el.getAttribute('data-autoplay-delay')) || 3000;
-        
-        // Check if we should disable it on desktop (for index.html grid logic)
-        const disableOnDesktop = el.classList.contains('mobile-only-swiper');
+    const delay = parseInt(el.getAttribute('data-autoplay-delay')) || 3000;
+    const disableOnDesktop = el.classList.contains('mobile-only-swiper');
 
-        new Swiper(el, {
-            wrapperClass: 'cinematic-wrapper',
-            slideClass: 'cinematic-slide',
-            loop: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            spaceBetween: 30,
-            speed: 800,
-            autoplay: {
-                delay: delay,
-                disableOnInteraction: false,
-            },
-            navigation: {
-                nextEl: el.querySelector('.carousel-button-next'),
-                prevEl: el.querySelector('.carousel-button-prev'),
-            },
-            pagination: {
-                el: el.querySelector('.carousel-pagination'),
-                clickable: true,
-                bulletClass: 'carousel-pagination-bullet',
-                bulletActiveClass: 'carousel-pagination-bullet-active'
-            },
-            breakpoints: {
-                769: {
-                    enabled: !disableOnDesktop,
-                }
-            }
+    // Duplicate slides if fewer than 6 to ensure smooth infinite loop
+    const wrapper = el.querySelector('.cinematic-wrapper');
+    if (wrapper && wrapper.children.length > 0 && wrapper.children.length < 6) {
+        const originalChildren = Array.from(wrapper.children);
+        originalChildren.forEach(child => {
+            wrapper.appendChild(child.cloneNode(true));
         });
+    }
+
+    return new Swiper(el, {
+        wrapperClass: 'cinematic-wrapper',
+        slideClass: 'cinematic-slide',
+        loop: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        spaceBetween: 30,
+        speed: 800,
+        autoplay: {
+            delay: delay,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: el.querySelector('.carousel-button-next'),
+            prevEl: el.querySelector('.carousel-button-prev'),
+        },
+        pagination: {
+            el: el.querySelector('.carousel-pagination'),
+            clickable: true,
+            bulletClass: 'carousel-pagination-bullet',
+            bulletActiveClass: 'carousel-pagination-bullet-active'
+        },
+        breakpoints: {
+            769: {
+                enabled: !disableOnDesktop,
+            }
+        }
+    });
+}
+
+window.initCinematicSwiper = initCinematicSwiper;
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Only init static ones that are not dynamically managed
+    const swiperElements = document.querySelectorAll('.cinematic-carousel:not(#swiperMelee):not(#swiperFirearms):not(#swiperEnvironment)');
+    swiperElements.forEach((el) => {
+        initCinematicSwiper(el);
     });
 });
