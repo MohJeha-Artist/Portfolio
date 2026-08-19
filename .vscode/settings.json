@@ -1,4 +1,8 @@
 {
     "livePreview.defaultPreviewPath": "/index.html",
-    "liveServer.settings.port": 5591
+    "livePreview.customExternalBrowser": "Custom",
+    "livePreview.customBrowserPath": "C:\\Users\\MohJeha\\AppData\\Local\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
+
+    "liveServer.settings.port": 5591,
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": "C:\\Users\\MohJeha\\AppData\\Local\\BraveSoftware\\Brave-Browser\\Application\\brave.exe"
 }

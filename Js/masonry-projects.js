@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleryContainer = document.getElementById('dynamic-masonry-gallery');
     if (!galleryContainer) return;
 
-    const folderPath = "Assets/3DProjects/masonry/";
+    const isSubfolder = window.location.pathname.replace(/\\/g, '/').includes('/html/');
+    const pathPrefix = isSubfolder ? '../' : '';
+    const folderPath = `${pathPrefix}Assets/3DProjects/masonry/`;
     const baseName = "artwork";
     const totalArtworks = 23; // Exact count of current artworks in Assets/3DProjects/masonry/
 

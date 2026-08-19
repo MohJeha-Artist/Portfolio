@@ -157,12 +157,23 @@
 .tool-octane { --tool-glow: rgba(0, 220, 255, 0.35); }
 .tool-vray { --tool-glow: rgba(30, 120, 255, 0.35); }
 .tool-html { --tool-glow: rgba(227, 79, 38, 0.35); }
+.tool-claude { --tool-glow: rgba(217, 119, 6, 0.35); }
+.tool-gemini { --tool-glow: rgba(78, 130, 238, 0.35); }
+.tool-veo { --tool-glow: rgba(52, 168, 83, 0.35); }
+.tool-chatgpt { --tool-glow: rgba(16, 163, 127, 0.35); }
 
-/* Responsive Layout */
+.ai-toolkit-grid {
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 14px;
+}
+
 @media (max-width: 1100px) {
     .toolkit-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 12px;
+    }
+    .ai-toolkit-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -176,6 +187,9 @@
     .toolkit-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
+    }
+    .ai-toolkit-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     .tool-card {
         padding: 10px 14px;
@@ -194,7 +208,8 @@
 }
 
 @media (max-width: 440px) {
-    .toolkit-grid {
+    .toolkit-grid,
+    .ai-toolkit-grid {
         grid-template-columns: 1fr;
     }
 }

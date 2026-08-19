@@ -55,18 +55,127 @@
 }
 
 .hero-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--f3);
   font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--3);
-  border: 1px solid rgba(84,44,219,0.35);
+  border: 1px solid rgba(84, 44, 219, 0.35);
   border-radius: 100px;
-  padding: 5px 14px;
+  padding: 6px 18px;
   width: fit-content;
-  background: rgba(84,44,219,0.08);
+  background: rgba(84, 44, 219, 0.08);
+  pointer-events: auto;
+  text-decoration: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Badge Hover Transition Effect */
+.hero-badge-hover {
+  cursor: pointer;
+  overflow: hidden;
+  min-width: 195px;
+  justify-content: center;
+}
+
+.hero-badge-hover:hover {
+  background: rgba(84, 44, 219, 0.3);
+  border-color: var(--3);
+  box-shadow: 0 0 20px rgba(84, 44, 219, 0.55);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.hero-badge-hover .badge-text-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  overflow: hidden;
+}
+
+.hero-badge-hover .badge-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+  white-space: nowrap;
+}
+
+.hero-badge-hover .badge-text.default-text {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hero-badge-hover .badge-text.hover-text {
+  position: absolute;
+  transform: translateY(120%);
+  opacity: 0;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.hero-badge-hover:hover .badge-text.default-text {
+  transform: translateY(-120%);
+  opacity: 0;
+}
+
+.hero-badge-hover:hover .badge-text.hover-text {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hero-badge-hover .badge-dot {
+  color: #00ff88;
+  font-size: 0.65rem;
+  animation: blink-dot 2s infinite ease-in-out;
+}
+
+.hero-about-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  pointer-events: auto;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 6px;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(84, 44, 219, 0.45), rgba(84, 44, 219, 0.15));
+  border: 1px solid var(--3);
+  box-shadow: 0 0 16px rgba(84, 44, 219, 0.35);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  padding: 8px 22px;
+  font-size: 0.78rem;
+  border-radius: 100px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-about-badge:hover {
+  background: var(--3);
+  box-shadow: 0 0 25px rgba(84, 44, 219, 0.7);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.hero-about-badge .badge-arrow {
+  transition: transform 0.3s ease;
+  font-weight: 700;
+}
+
+.hero-about-badge:hover .badge-arrow {
+  transform: translateX(4px);
+}
+
+@keyframes blink-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.75); }
 }
 
 .hero-name {
@@ -75,7 +184,7 @@
   font-weight: 300;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
   margin: 0;
 }
 
@@ -84,7 +193,7 @@
   font-size: clamp(3rem, 6.5vw, 6rem);
   font-weight: 900;
   text-transform: uppercase;
-  
+
   line-height: 0.9;
   letter-spacing: -0.03em;
   color: #fff;
@@ -97,7 +206,7 @@
   height: 2px;
   background: var(--3);
   border-radius: 2px;
-  box-shadow: 0 0 12px rgba(84,44,219,0.7);
+  box-shadow: 0 0 12px rgba(84, 44, 219, 0.7);
 }
 
 .hero-desc {
@@ -105,7 +214,7 @@
   font-size: clamp(0.82rem, 1.2vw, 0.95rem);
   font-weight: 300;
   line-height: 1.8;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255, 255, 255, 0.45);
   margin: 0;
   max-width: 420px;
 }
@@ -114,8 +223,8 @@
 .Image-Container {
   position: relative;
   height: 100%;
-  width: 100%;    
-  
+  width: 100%;
+
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -131,7 +240,7 @@
   height: 100%;
   object-fit: contain;
   object-position: bottom;
-  
+
 }
 
 /* ── Mobile: stack columns ── */
@@ -199,9 +308,8 @@
   height: 50dvh;
 }
 
-.banner-Title
-{
-  border-bottom: 3px solid var(--2); 
+.banner-Title {
+  border-bottom: 3px solid var(--2);
   font-size: 10rem;
   text-shadow: 0 0 40px rgba(0, 0, 0, 1);
   color: #fff;

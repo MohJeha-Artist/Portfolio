@@ -7,22 +7,21 @@
   <meta name="color-scheme" content="light">
   <meta name="supported-color-schemes" content="light">
 
-  <title> MohJeha-Artist </title>
+  <title>About | Mohamad Jeha - Visual Artist</title>
   <link rel="icon" href="Assets/fav/Fav.svg" type="image/x-icon">
   <!-- ------------------------------------------------------ -->
   <!-- Styles Loader -->
   <link rel="stylesheet" href="Styles/base.css">
   <link rel="stylesheet" href="Styles/base-grid-card.css">
-  <link rel="stylesheet" href="Styles/section-softwares.css">
+  <link rel="stylesheet" href="Styles/section-hero.css">
+  <link rel="stylesheet" href="Styles/section-toolkit.css">
   <link rel="stylesheet" href="Styles/section-footer.css">
   <link rel="stylesheet" href="Styles/about.css">
   <link rel="stylesheet" href="Styles/transitions.css">
   <!-- ------------- -->
-
-
 </head>
 
-<body class="is-transitioning">
+<body>
 
   <!-- Navigation Transition Overlay -->
   <div id="transition-overlay">
@@ -34,38 +33,108 @@
     </div>
   </div>
 
-  <!-- Navigation Bar -->
-  <!-- <div id="navbar"></div> -->
-  <script src="main/navbar/navbar.js"></script>
-
-  <!-- ---------- -->
-
   <div class="personal">
-    <div class="profile-image">
-
-      <div class="MyName">
-        <p class="Head s3 b3 f1 upper color">3D Art <br> Designer</p>
-        <p class="Head s2 b1 f2 upper color"><br>Mohamad Jeha</p>
+    <!-- Left Column: Fixed Profile Hero Card (Desktop) -->
+    <div class="profile-image desktop">
+      <!-- Desktop Top Bar inside Personal Hero -->
+      <div class="profile-top-bar">
+        <a href="index.html" class="profile-brand-logo">
+          <img src="Assets/fav/Logo.svg" alt="MohJeha Logo">
+        </a>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
+            <img src="Assets/fav/fb.svg" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
+            <img src="Assets/fav/ins.svg" alt="Instagram">
+          </a>
+          <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
+            <img src="Assets/fav/linked.svg" alt="LinkedIn">
+          </a>
+        </div>
       </div>
 
-      <img src="Assets/fav/profileS.webp" alt="profile-picture" class="P-image">
+      <div class="profile-bg-glow"></div>
+      <img src="Assets/fav/profileS.webp" alt="Mohamad Jeha portrait" class="P-image">
+      <div class="profile-gradient-overlay"></div>
 
+      <!-- Hero Overlay Identity -->
+      <div class="profile-hero-info">
+        <div class="hero-badge">
+          <span class="badge-dot">●</span> Available for projects
+        </div>
+        <p class="hero-name">Mohamad Jeha</p>
+        <h1 class="hero-headline">Visual<br><span class="text-glow">Artist</span></h1>
+        <div class="hero-divider"></div>
+        <span class="profile-role">3D & CGI · Motion · Concept</span>
+      </div>
     </div>
 
+    <!-- Right Column: Content -->
     <div class="about-me">
+
+      <!-- Mobile Top Navigation Bar -->
+      <div class="about-top-bar">
+        <a href="index.html" class="about-brand-logo">
+          <img src="Assets/fav/Logo.svg" alt="MohJeha Logo">
+        </a>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
+            <img src="Assets/fav/fb.svg" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
+            <img src="Assets/fav/ins.svg" alt="Instagram">
+          </a>
+          <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
+            <img src="Assets/fav/linked.svg" alt="LinkedIn">
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile Profile Hero Card (Visible on Mobile/Tablet) -->
+      <div class="mobile-profile-hero mobile">
+        <div class="mobile-avatar-wrap">
+          <img src="Assets/fav/profileS.webp" alt="Mohamad Jeha portrait" class="mobile-avatar">
+        </div>
+        <div class="hero-badge">
+          <span class="badge-dot">●</span> Available for projects
+        </div>
+        <p class="hero-name">Mohamad Jeha</p>
+        <h1 class="hero-headline">Visual <span class="text-glow">Artist</span></h1>
+        <div class="hero-divider"></div>
+      </div>
+
+      <!-- Bio / Summary Section -->
       <div class="abt-sct" id="Top">
-        <P class="Summary">
-          <span class="h1">Hello! <br><br></span>
-          I'm Mohamad Jeha <br><br>
+        <div class="bio-header">
+          <span class="bio-greeting">Hello!</span>
+          <h2 class="bio-title">I'm Mohamad Jeha</h2>
+        </div>
 
-          3D Artist Specialized in 3D Product Rendering for Product Design and Commercial Purposes, Concept Design, and
-          3D Environment Props & Weapons for Gaming and Digital Media.
+        <div class="summary-columns">
+          <div class="summary-col">
+            <p class="Summary">
+              <strong>3D & Visual Artist</strong> specialized in <strong>3D Product Rendering</strong> for product
+              design and commercial purposes, concept design, and 3D environment props & weapons for gaming and digital
+              media.
+            </p>
+          </div>
 
-          Experienced with Substance 3D Painter and a strong knowledge in Unreal Engine.
+          <div class="summary-col">
+            <p class="Summary">
+              Over the recent years, my work has expanded into <strong>Lead Design & Visual Identity</strong>, crafting
+              end-to-end <strong>Brand Packaging</strong>, graphic design systems, and dynamic digital content.
+            </p>
+          </div>
 
-          Skilled in VFX, 2D and 3D animation, 3D camera tracking, virtual set creation, motion graphics, CG operating,
-          and graphic design.
-        </P>
+          <div class="summary-col">
+            <p class="Summary">
+              Experienced with <strong>Substance 3D Painter</strong> and a strong knowledge in <strong>Unreal
+                Engine</strong>. Skilled in VFX, 2D and 3D animation, 3D camera tracking, virtual set creation, motion
+              graphics, CG operating, and graphic design.
+            </p>
+          </div>
+        </div>
       </div>
 
       <div class="abt-sct">
@@ -367,28 +436,187 @@
 
 
 
-      <!-- Softwares -->
-      <!-- --------- -->
-      <section class="sft-sct">
-        <div class="sft-title">
-          <h2 class="sct-head left">Software Toolkit</h2>
-          <span class="sct-head">Industry standard 3D, CGI & Creative Suite tools</span>
+      <!-- ----- LOAD Toolkit SECTION ----- -->
+      <section class="toolkit-section" id="toolkit" style="border-radius: 20px; margin: 35px 0;">
+
+        <div class="sct-title">
+          <div class="subtitle f1 center color">The Engine</div>
+          <div class="title center upper">My Creative Toolbox</div>
         </div>
-        <div class="sft-cat">
-          <img class="sft-card" src="Assets/icons/Blender.svg" alt="Blender" title="Blender">
-          <img class="sft-card" src="Assets/icons/UE.svg" alt="Unreal Engine" title="Unreal Engine">
-          <img class="sft-card" src="Assets/icons/Cinema4D.svg" alt="Cinema 4D" title="Cinema 4D">
-          <img class="sft-card" src="Assets/icons/Painter.svg" alt="Substance 3D Painter" title="Substance 3D Painter">
-          <img class="sft-card" src="Assets/icons/zBrush3.png" alt="ZBrush" title="ZBrush">
-          <img class="sft-card" src="Assets/icons/Octane.svg" alt="Octane Render" title="Octane Render">
-          <img class="sft-card" src="Assets/icons/Vray.svg" alt="V-Ray" title="V-Ray">
-          <img class="sft-card" src="Assets/icons/adobe_PS.svg" alt="Photoshop" title="Photoshop">
-          <img class="sft-card" src="Assets/icons/adobe_AI.svg" alt="Illustrator" title="Illustrator">
-          <img class="sft-card" src="Assets/icons/adobe_AE.svg" alt="After Effects" title="After Effects">
-          <img class="sft-card" src="Assets/icons/adobe_ID.svg" alt="InDesign" title="InDesign">
+
+        <div class="toolkit-wrapper">
+          <div class="toolkit-grid">
+
+            <!-- Cinema 4D -->
+            <div class="tool-card tool-c4d">
+              <div class="tool-icon-wrap">
+                <img src="Assets/icons/Cinema4D.svg" alt="Cinema 4D">
+              </div>
+              <div class="tool-info">
+                <h4 class="tool-name">Cinema 4D</h4>
+                <span class="tool-tag">Motion Design</span>
+              </div>
+            </div>
+
+            <!-- Blender -->
+            <div class="tool-card tool-blender">
+              <div class="tool-icon-wrap">
+                <img src="Assets/icons/Blender.svg" alt="Blender">
+              </div>
+              <div class="tool-info">
+                <h4 class="tool-name">Blender</h4>
+                <span class="tool-tag">3D & Modeling</span>
+              </div>
+            </div>
+
+            <!-- Substance 3D Painter -->
+            <div class="tool-card tool-painter">
+              <div class="tool-icon-wrap">
+                <img src="Assets/icons/Painter.svg" alt="Substance 3D Painter">
+              </div>
+              <div class="tool-info">
+                <h4 class="tool-name">Substance 3D</h4>
+                <span class="tool-tag">PBR Texturing</span>
+              </div>
+            </div>
+
+            <!-- Octane Render -->
+            <div class="tool-card tool-octane">
+              <div class="tool-icon-wrap">
+                <img src="Assets/icons/Octane.svg" alt="Octane Render">
+              </div>
+              <div class="tool-info">
+                <h4 class="tool-name">Octane Render</h4>
+                <span class="tool-tag">GPU Rendering</span>
+              </div>
+            </div>
+
+            <!-- V-Ray -->
+            <div class="tool-card tool-vray">
+              <div class="tool-icon-wrap">
+                <img src="Assets/icons/Vray.svg" alt="V-Ray">
+              </div>
+              <div class="tool-info">
+                <h4 class="tool-name">V-Ray</h4>
+                <span class="tool-tag">Photorealism</span>
+              </div>
+            </div>
+
+            <!-- Unreal Engine -->
+            <div class="tool-card tool-ue">
+              <div class="tool-icon-wrap">
+                <img src="Assets/icons/UE.svg" alt="Unreal Engine">
+              </div>
+              <div class="tool-info">
+                <h4 class="tool-name">Unreal Engine</h4>
+                <span class="tool-tag">CGI & Real-Time</span>
+              </div>
+            </div>
+
+            <!-- Photoshop -->
+            <div class="tool-card tool-ps">
+              <div class="tool-icon-wrap">
+                <img src="Assets/icons/adobe_PS.svg" alt="Photoshop">
+              </div>
+              <div class="tool-info">
+                <h4 class="tool-name">Photoshop</h4>
+                <span class="tool-tag">Concept & Retouch</span>
+              </div>
+            </div>
+
+            <!-- After Effects -->
+            <div class="tool-card tool-ae">
+              <div class="tool-icon-wrap">
+                <img src="Assets/icons/adobe_AE.svg" alt="After Effects">
+              </div>
+              <div class="tool-info">
+                <h4 class="tool-name">After Effects</h4>
+                <span class="tool-tag">VFX & Compositing</span>
+              </div>
+            </div>
+
+            <!-- Illustrator -->
+            <div class="tool-card tool-ai">
+              <div class="tool-icon-wrap">
+                <img src="Assets/icons/adobe_AI.svg" alt="Illustrator">
+              </div>
+              <div class="tool-info">
+                <h4 class="tool-name">Illustrator</h4>
+                <span class="tool-tag">Vector & Identity</span>
+              </div>
+            </div>
+
+            <!-- HTML / Web -->
+            <div class="tool-card tool-html">
+              <div class="tool-icon-wrap">
+                <img src="Assets/icons/html5.svg" alt="HTML5">
+              </div>
+              <div class="tool-info">
+                <h4 class="tool-name">HTML</h4>
+                <span class="tool-tag">Web & UI</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- AI & Foundational Tools Sub-row -->
+          <div class="toolkit-divider" style="margin: 28px 0 16px 0; text-align: center; border-top: 1px solid rgba(84, 44, 219, 0.2); padding-top: 18px;">
+            <span style="font-family: var(--f3); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6);">AI Assisted Workflows · Certified Basics</span>
+          </div>
+
+          <div class="toolkit-grid ai-toolkit-grid">
+             <!-- ChatGPT -->
+            <div class="tool-card tool-chatgpt">
+              <div class="tool-icon-wrap">
+                <img src="Assets/icons/chatgpt.svg" alt="ChatGPT">
+              </div>
+              <div class="tool-info">
+                <h4 class="tool-name">ChatGPT</h4>
+                <span class="tool-tag">Certified Basics</span>
+              </div>
+            </div>
+
+             <!-- Google Gemini -->
+            <div class="tool-card tool-gemini">
+              <div class="tool-icon-wrap">
+                <img src="Assets/icons/gemini.svg" alt="Google Gemini">
+              </div>
+              <div class="tool-info">
+                <h4 class="tool-name">Gemini</h4>
+                <span class="tool-tag">Certified Basics</span>
+              </div>
+            </div>
+            
+            <!-- Claude AI -->
+            <div class="tool-card tool-claude">
+              <div class="tool-icon-wrap">
+                <img src="Assets/icons/claude.svg" alt="Claude AI">
+              </div>
+              <div class="tool-info">
+                <h4 class="tool-name">Claude AI</h4>
+                <span class="tool-tag">Certified Basics</span>
+              </div>
+            </div>
+
+           
+
+            <!-- Google Veo -->
+            <div class="tool-card tool-veo">
+              <div class="tool-icon-wrap">
+                <img src="Assets/icons/veo.svg" alt="Google Veo">
+              </div>
+              <div class="tool-info">
+                <h4 class="tool-name">Google Veo</h4>
+                <span class="tool-tag">Certified Basics</span>
+              </div>
+            </div>
+
+           
+
+          </div>
+
         </div>
       </section>
-
 
       <!-- PROJECTS -->
       <!-- --------- -->
@@ -489,14 +717,11 @@
       <script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
       <script src="Js/lenis.js"></script>
       <!-- ---------------- -->
-      <script src="../html/footer.js"></script>
-      
+
       <!-- Page Transitions -->
       <script src="Js/transitions.js"></script>
       <!-- ---------------- -->
 
 </body>
-
-</html>
 
 </html>

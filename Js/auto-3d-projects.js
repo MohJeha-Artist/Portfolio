@@ -1,53 +1,20 @@
 // Js/auto-3d-projects.js
-// High-performance Instant Carousel Loader for 3D Projects
+// High-Performance Instant Carousel Loader for 3D Projects
 
 document.addEventListener('DOMContentLoaded', () => {
-  const CATEGORIES = [
-    {
-      containerId: 'swiperMelee',
-      category: 'melee',
-      models: [
-        { id: 'Axe', title: 'Medieval Axe' },
-        { id: 'Hammer', title: 'Medieval Hammer' },
-        { id: 'katana1', title: 'Samurai Tachi' },
-        { id: 'katana2', title: 'Katana Sword' },
-        { id: 'FireSword', title: 'FireSword' },
-        { id: 'Royal', title: 'Royal Sword' },
-        { id: 'Dagger', title: 'Dagger' },
-        { id: 'SunSword', title: 'SunSword' },
-        { id: 'DaggerP', title: 'Dagger' },
-        { id: 'Bats', title: 'Scrap Bats' },
-        { id: 'Bow', title: 'Bow' }
-      ]
-    },
-    {
-      containerId: 'swiperFirearms',
-      category: 'firearms',
-      models: [
-        { id: 'Handgun_Scifi', title: 'Sci-fi Handgun' },
-        { id: 'SR', title: 'Sniper Rifle' },
-        { id: 'MilitaryCrate', title: 'Military Crate' },
-        { id: 'MilitaryRadio', title: 'Military Radio' },
-        { id: 'Granada', title: 'Sci-fi Grenade' },
-        { id: 'Grenade_M67', title: 'M67 Grenade' },
-        { id: 'Mortar', title: 'Mortar' }
-      ]
-    },
-    {
-      containerId: 'swiperEnvironment',
-      category: 'props',
-      models: [
-        { id: 'Windmill', title: 'Windmill' },
-        { id: 'Shoes', title: 'Shoes' },
-        { id: 'MusicBox', title: 'Music Box' },
-        { id: 'Pooltable', title: 'Pool Table' },
-        { id: 'Barrel', title: 'Toxic Barrel' }
-      ]
-    }
+  const data = window.PROJECTS_DATA || window.PROJECTS_3D || {};
+
+  const CATEGORY_MAP = [
+    { containerId: 'swiperMelee', category: 'melee' },
+    { containerId: 'swiperFirearms', category: 'firearms' },
+    { containerId: 'swiperEnvironment', category: 'props' }
   ];
 
-  CATEGORIES.forEach((catData) => {
-    const swiperEl = document.getElementById(catData.containerId);
+  // Detect whether running in root or html/ subfolder
+  const isSubfolder = window.location.pathname.replace(/\\/g, '/').includes('/html/');
+
+  CATEGORY_MAP.forEach(({ containerId, category }) => {
+    const swiperEl = document.getElementById(containerId);
     if (!swiperEl) return;
 
     const wrapper = swiperEl.querySelector('.cinematic-wrapper');
@@ -55,9 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     wrapper.innerHTML = '';
 
-    // Generate all cards synchronously with explicit dimensions for immediate rendering
-    catData.models.forEach((m) => {
-      const thumbPath = `Assets/3DProjects/${catData.category}/${m.id}/${m.id}_thumb.webp`;
+    // Filter projects matching current category
+    const projects = Object.values(data).filter(p => p.category === category);
+
+    // Generate cards synchronously for instant zero-delay rendering
+    projects.forEach((m) => {
+      let folder = m.folder.endsWith('/') ? m.folder : `${m.folder}/`;
+      if (!folder.startsWith('../') && isSubfolder) {
+        folder = `../${folder}`;
+      }
+      const thumbPath = `${folder}${m.id}_thumb.webp`;
 
       const slide = document.createElement('div');
       slide.className = 'cinematic-slide';
@@ -66,7 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
       card.className = 'card small';
       card.onclick = () => {
         if (typeof openOverlay === 'function') {
-          openOverlay(`Projects/projects-showcase.html?project=${encodeURIComponent(m.id)}&category=${encodeURIComponent(catData.category)}`);
+          const overlayTarget = isSubfolder
+            ? `projects-showcase.html?project=${encodeURIComponent(m.id)}&category=${encodeURIComponent(m.category)}`
+            : `html/projects-showcase.html?project=${encodeURIComponent(m.id)}&category=${encodeURIComponent(m.category)}`;
+          openOverlay(overlayTarget);
         }
       };
 

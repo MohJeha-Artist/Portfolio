@@ -1,85 +1,82 @@
 /* Footer Styles */
-.footer 
-    {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center; 
-        text-align: center;
+.footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
-        margin: 0 auto;
-        padding: 20px 10px;
-        border-radius: 30px 30px 0 0;
-        color: var(--1); 
-        border-top: 3px solid var(--3);
-        width: 97%;
-        height: 100px;
-        background-color: var(--0);
-        overflow: hidden;
+    margin: 0 auto;
+    padding: 20px 10px;
+    border-radius: 30px 30px 0 0;
+    color: var(--1);
+    border-top: 3px solid var(--3);
+    width: 97%;
+    height: 100px;
+    background-color: var(--0);
+    overflow: hidden;
 
-        /* border: 1px solid red; */
-    }
+    /* border: 1px solid red; */
+}
 
-    #abt-footer 
-    {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center; 
-        text-align: center;
-        margin-top: 100px;
+#abt-footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
 
-        /* padding: 20px 10px; */
-        border-radius: 30px 30px 0 0;
-        color: var(--1); 
-        border-top: 3px solid var(--3);
-        width: 100%;
-        height: 100px;
-        /* background-color: var(--4); */
-        overflow: hidden;
-
-    
-   
-        z-index: 200000;
-    }
-.footer-content 
-    {
-        display: flex;
-        width: 90%;
-     top: 0;
-        justify-content: space-between;
-
-        align-items: center; 
-        /* height: 200px;  */
-        /* border: 1px solid yellow; */
-    }
+    /* padding: 20px 10px; */
+    border-radius: 30px 30px 0 0;
+    color: var(--1);
+    border-top: 3px solid var(--3);
+    width: 100%;
+    height: 100px;
+    /* background-color: var(--4); */
+    overflow: hidden;
 
 
 
-    .ft-b {
-        display: flex;
-        width: auto;
-        justify-content: center;
-        align-items: center;
-        font-size: 1rem;
+    z-index: 200000;
+}
+
+.footer-content {
+    display: flex;
+    width: 90%;
+    top: 0;
+    justify-content: space-between;
+
+    align-items: center;
+    /* height: 200px;  */
+    /* border: 1px solid yellow; */
+}
+
+
+
+.ft-b {
+    display: flex;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
     /* border: 3px solid lime; */
-    }
+}
 
-.footer-logo 
-    {
-        height: 40px;
-    }
+.footer-logo {
+    height: 40px;
+}
 
-    .copyrights {
-        position: absolute;
-        font-size: 1rem;
-        justify-content: center;
-        align-self: center;
+.copyrights {
+    position: absolute;
+    font-size: 1rem;
+    justify-content: center;
+    align-self: center;
 
-        /* border: 1px solid greenyellow; */
-    }
+    /* border: 1px solid greenyellow; */
+}
 
 
 
@@ -90,7 +87,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px; 
+    gap: 15px;
 }
 
 .scl-icon {
@@ -109,8 +106,8 @@
 
 
 
-.arrowback:hover{
-        transform: translateY(-5px);
+.arrowback:hover {
+    transform: translateY(-5px);
     fill: var(--3);
 
 }
@@ -119,46 +116,42 @@
     background: rgba(255, 0, 0, 0);
 }
 
-.scl-icon img 
-    {
-        width: 30px; 
-        height: 30px;
-        transition: transform 0.3s ease; 
-    }
+.scl-icon img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
 
-.scl-icon img:hover 
-    {
-        transform: scale(1.2);
-    }
+.scl-icon img:hover {
+    transform: scale(1.2);
+}
 
 /* @MOBILE ----------- >>>>  */
 
 @media (max-width: 1280px) {
-    .footer
-        {
-            flex-direction: column;
-            min-height: 200px;
-        }
-        .footer-content 
-        {
-            flex-direction: column;
-           top: 1px;
-           gap: 30px;
-           margin-bottom: 30px;
-           /* height: 500px; */
-        }
-        .footer-logo 
-    {
+    .footer {
+        flex-direction: column;
+        min-height: 200px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        top: 1px;
+        gap: 30px;
+        margin-bottom: 30px;
+        /* height: 500px; */
+    }
+
+    .footer-logo {
         max-height: 70px;
     }
-    .copyrights
-        {
-            
-           bottom: 10%;
-        }
 
-        .arrowback
-        {
-            display: none;
-        }
+    .copyrights {
+
+        bottom: 10%;
+    }
+
+    .arrowback {
+        display: none;
+    }
 }

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D-Graphics</title>
+    <link rel="icon" href="../Assets/fav/Fav.svg" type="image/x-icon">
+    <!-- Include GLightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+    <link rel="stylesheet" href="../Styles/base.css">
+    <link rel="stylesheet" href="../Styles/base-grid-card.css">
+    <link rel="stylesheet" href="../Styles/section-footer.css">
+    <link rel="stylesheet" href="../Styles/section-logos.css">
+    <link rel="stylesheet" href="../Styles/section-hero.css">
+    <link rel="stylesheet" href="../Styles/section-grid.css">
+    <link rel="stylesheet" href="../Styles/section-hover-cards.css">
+
+    <link rel="stylesheet" href="../Styles/masonry.css">
+    <link rel="stylesheet" href="../Styles/custom-grid-swiper.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../Styles/cinematic-swiper.css">
+    <link rel="stylesheet" href="../Styles/transitions.css">
+    <link rel="stylesheet" href="../Styles/infinite-slider.css">
+    <link rel="stylesheet" href="../Styles/logo-pair-rows.css">
+    <link rel="stylesheet" href="../Styles/full-screen-brand-hero.css">
+</head>
+<style>
+    /* Improved Cinematic Overlay Styles */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        backdrop-filter: blur(0px);
+        z-index: 10000;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transition: backdrop-filter 0.5s ease, background 0.5s ease;
+    }
+
+    .overlay.active {
+        backdrop-filter: blur(20px);
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    .overlay-content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border-radius: 0;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.5s ease;
+    }
+
+    .overlay.active .overlay-content {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 25px;
+        right: 40px;
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 20000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        backdrop-filter: blur(5px);
+    }
+
+    @media (max-width: 768px) {
+        .close-btn {
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .close-btn:hover {
+        background: var(--3);
+        transform: scale(1.1) rotate(90deg);
+        border-color: transparent;
+    }
+
+    #overlayFrame {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+</style>
+
+<body class="is-transitioning">
+
+    <!-- Navigation Transition Overlay -->
+    <div id="transition-overlay">
+        <div class="loader-content">
+            <img src="../Assets/fav/Logo.svg" alt="MohJeha Logo" class="loader-logo">
+            <div class="loader-bar-container">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ----- LOAD Hero SECTIONS ----- -->
+    <section class="HERO banner bg-grad1" id="Top">
+
+        <div class="hero-top-bar">
+            <a href="../index.html">
+                <img class="Hero-logo" src="../Assets/fav/Logo.svg" alt="hero-image" id="home">
+            </a>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
+                    <img src="../Assets/fav/fb.svg" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
+                    <img src="../Assets/fav/ins.svg" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
+                    <img src="../Assets/fav/linked.svg" alt="LinkedIn">
+                </a>
+            </div>
+
+        </div>
+        <div class="Image-Container screen">
+            <img class="Hero-Image" src="../Assets/fav/Banner_projects.webp" alt="hero-image" id="home">
+        </div>
+
+        <div style="position: absolute; bottom: 50%;">
+            <div class="head" id="Hero-name">2D Graphics</div>
+            <div class="subhead f3 upper wrap shadow" id="Hero-head"> & Visual Identities</div>
+        </div>
+
+    </section>
+
+    <div class="container">
+        <h1 class="subhead center glow ">🚧 My digital space is still being crafted 🚧 <br>
+            <span class="subhead center glow "> Some features and links may be temporarily unavailable.</span>
+    </div>
+
+    <!-- Full-Width Full-Height Auto-Detect Brand Hero Section -->
+    <section class="brand-hero-section">
+        <div class="swiper brand-swiper-container">
+            <div class="swiper-wrapper" id="auto-brand-swiper-wrapper">
+                <!-- Slides auto-generated dynamically via auto-brand-hero.js -->
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- ARTWORKS -->
+    <section class="art-showcase">
+        <div class="art-header">
+            <span class="eyebrow">Branding and Visual Identity</span>
+            <h2 class="art-title">Design Mockups</h2>
+        </div>
+
+        <div class="art-grid" id="dynamic-masonry-gallery">
+            <!-- Dynamic items render safely here -->
+        </div>
+    </section>
+
+    <section class="container" style="width: 95%;">
+
+        <div class="X-section">
+
+            <div class="gaming-hud-header">
+                <span>OLD DAYS || PUBG SQUAD</span>
+                <span class="gaming-hud-status">Gaming Logos</span>
+            </div>
+
+            <div class="containerX">
+                <!-- Card 1 -->
+                <div class="cardX" style="--card-glow: #ff2a5f;">
+                    <img class="cardimg" src="../Assets/Graphics/Logos/Gaming/Gaming_0AW.webp" alt="Gaming Artwork 1">
+                    <img class="cardlogo" src="../Assets/Graphics/Logos/Gaming/Gaming_0A.webp" alt="Gaming Emblem 1">
+                    <div class="card-hud-badge">
+                        <span class="card-hud-tag">01 // Patriots</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="cardX" style="--card-glow: #00ff80;">
+                    <img class="cardimg" src="../Assets/Graphics/Logos/Gaming/Gaming_1AW.webp" alt="Gaming Artwork 2">
+                    <img class="cardlogo" src="../Assets/Graphics/Logos/Gaming/Gaming_1A.webp" alt="Gaming Emblem 2">
+                    <div class="card-hud-badge">
+                        <span class="card-hud-tag">02 // The Master</span>
+                        <span class="card-hud-rank">Squad Leader</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="cardX" style="--card-glow: #55bcf7;">
+                    <img class="cardimg" src="../Assets/Graphics/Logos/Gaming/Gaming_2AW.webp" alt="Gaming Artwork 3">
+                    <img class="cardlogo" src="../Assets/Graphics/Logos/Gaming/Gaming_2A.webp" alt="Gaming Emblem 3">
+                    <div class="card-hud-badge">
+                        <span class="card-hud-tag">03 // The Legend</span>
+                        <span class="card-hud-rank">ELITE</span>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="cardX" style="--card-glow: #ffe600;">
+                    <img class="cardimg" src="../Assets/Graphics/Logos/Gaming/Gaming_3AW.webp" alt="Gaming Artwork 4">
+                    <img class="cardlogo" src="../Assets/Graphics/Logos/Gaming/Gaming_3A.webp" alt="Gaming Emblem 4">
+                    <div class="card-hud-badge">
+                        <span class="card-hud-tag">04 // The Sleeping Panda</span>
+                        <span class="card-hud-rank">Support</span>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="cardX" style="--card-glow: #ff2a5f;">
+                    <img class="cardimg" src="../Assets/Graphics/Logos/Gaming/Gaming_4AW.webp" alt="Gaming Artwork 5">
+                    <img class="cardlogo" src="../Assets/Graphics/Logos/Gaming/Gaming_4A.webp" alt="Gaming Emblem 5">
+                    <div class="card-hud-badge">
+                        <span class="card-hud-tag">05 // Mr.Nobody</span>
+                        <span class="card-hud-rank">Defender</span>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="cardX" style="--card-glow: #ffd000;">
+                    <img class="cardimg" src="../Assets/Graphics/Logos/Gaming/Gaming_5AW.webp" alt="Gaming Artwork 3">
+                    <img class="cardlogo" src="../Assets/Graphics/Logos/Gaming/Gaming_5A.webp" alt="Gaming Emblem 3">
+                    <div class="card-hud-badge">
+                        <span class="card-hud-tag">03 // HELLBOYS</span>
+                        <span class="card-hud-rank">RANK A | Lebanon</span>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="cardX" style="--card-glow: #ec4899;">
+                    <img class="cardimg" src="../Assets/Graphics/Logos/Gaming/Gaming_9.webp" alt="Gaming Artwork 7">
+                    <img class="cardlogo" src="../Assets/Graphics/Logos/Gaming/Gaming_9A.webp" alt="Gaming Emblem 7">
+                    <div class="card-hud-badge">
+                        <span class="card-hud-tag">07 // CYBER</span>
+                        <span class="card-hud-rank">LEGEND</span>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="cardX" style="--card-glow: #008cff;">
+                    <img class="cardimg" src="../Assets/Graphics/Logos/Gaming/Gaming_10.webp" alt="Gaming Artwork 8">
+                    <img class="cardlogo" src="../Assets/Graphics/Logos/Gaming/Gaming_10A.webp" alt="Gaming Emblem 8">
+                    <div class="card-hud-badge">
+                        <span class="card-hud-tag">08 // SHADOW</span>
+                        <span class="card-hud-rank">PILOT</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <span class="close-btn" onclick="closeOverlay()">×</span>
+            <iframe id="overlayFrame" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <section class="spacer" style="height:50px;"></section>
+
+    <div class="container">
+        <h1 class="subhead center glow ">🚧 My digital space is still being crafted 🚧 <br>
+            <span class="subhead center glow "> Some features and links may be temporarily unavailable.</span>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+        <p class="copyrights">&copy; <span id="current-year"></span> MohJeha-Artist. All Rights Reserved.</p>
+        <div class="footer-content">
+            <div class="ft-b"> <a href="../index.html"><img src="../Assets/fav/3d-art-designer.svg" alt="Logo"
+                        class="footer-logo"></a></div>
+            <div class="ft-b">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
+                        <img src="../Assets/fav/fb.svg" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
+                        <img src="../Assets/fav/ins.svg" alt="Instagram">
+                    </a>
+                    <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
+                        <img src="../Assets/fav/linked.svg" alt="LinkedIn">
+                    </a>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" class="arrowback" viewBox="0 0 16 16"
+                        onclick="document.getElementById('Top').scrollIntoView({ behavior: 'smooth' })">
+                        <path fill-rule="evenodd"
+                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../Js/overlay.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
+    <script src="../Js/lenis.js"></script>
+
+    <!-- Master 2D Graphics & Brand Data -->
+    <script src="../Js/data/graphics-data.js"></script>
+
+    <script src="../Js/masonry-graphics.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../Js/cinematic-swiper.js"></script>
+    <script src="../Js/custom-grid-swiper.js"></script>
+    <script src="../Js/transitions.js"></script>
+    <script src="../Js/infinite-slider.js"></script>
+    <script src="../Js/auto-brand-hero.js"></script>
+
+    <!-- Initialize Logo Pair Swiper Carousel -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Swiper('.logo-pair-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                grabCursor: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.logo-pair-swiper .swiper-pagination',
+                    clickable: true,
+                },
+                keyboard: {
+                    enabled: true,
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

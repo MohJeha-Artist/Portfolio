@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D-Projects</title>
+    <link rel="icon" href="../Assets/fav/Fav.svg" type="image/x-icon">
+    <!-- Include GLightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+    <link rel="stylesheet" href="../Styles/base.css">
+    <link rel="stylesheet" href="../Styles/base-grid-card.css">
+    <link rel="stylesheet" href="../Styles/section-footer.css">
+
+    <link rel="stylesheet" href="../Styles/section-banner.css">
+    <link rel="stylesheet" href="../Styles/section-hero.css">
+
+    <link rel="stylesheet" href="../Styles/masonry.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../Styles/cinematic-swiper.css">
+    <link rel="stylesheet" href="../Styles/transitions.css">
+</head>
+<style>
+    /* Improved Cinematic Overlay Styles */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(0px);
+        z-index: 10000;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transition: backdrop-filter 0.5s ease, background 0.5s ease;
+    }
+
+    .overlay.active {
+        backdrop-filter: blur(20px);
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .overlay-content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border-radius: 0;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.5s ease;
+        box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .overlay.active .overlay-content {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 25px;
+        right: 40px;
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 20000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        backdrop-filter: blur(5px);
+    }
+
+    @media (max-width: 768px) {
+        .close-btn {
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .close-btn:hover {
+        background: var(--3);
+        transform: scale(1.1) rotate(90deg);
+        border-color: transparent;
+    }
+
+    #overlayFrame {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+</style>
+
+<body class="is-transitioning">
+
+    <!-- Navigation Transition Overlay -->
+    <div id="transition-overlay">
+        <div class="loader-content">
+            <img src="../Assets/fav/Logo.svg" alt="MohJeha Logo" class="loader-logo">
+            <div class="loader-bar-container">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ----- LOAD Hero SECTIONS ----- -->
+    <section class="HERO banner bg-grad1" id="Top">
+
+        <div class="hero-top-bar">
+            <a href="../index.html">
+                <img class="Hero-logo" src="../Assets/fav/Logo.svg" alt="hero-image" id="home">
+            </a>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
+                    <img src="../Assets/fav/fb.svg" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
+                    <img src="../Assets/fav/ins.svg" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
+                    <img src="../Assets/fav/linked.svg" alt="LinkedIn">
+                </a>
+            </div>
+
+        </div>
+        <div class="Image-Container screen">
+            <img class="Hero-Image" src="../Assets/fav/Banner_projects.webp" alt="hero-image" id="home">
+        </div>
+
+        <div style="position: absolute; bottom: 50%;">
+            <div class="head upper shadow" id="Hero-name">3D Projects</div>
+            <div class="subhead f3 upper wrap shadow" id="Hero-head"> and Artworks</div>
+        </div>
+
+    </section>
+
+    <div class="container">
+        <h1 class="subhead center glow ">🚧 My digital space is still being crafted 🚧 <br>
+            <span class="subhead center glow "> Some features and links may be temporarily unavailable.</span>
+    </div>
+
+    <!-- SECTION 2: 3D Works -->
+    <section class="swiper-top overflow">
+        <h2 class="title section-title">- <span class="color">Melee Weapons</span> -</h2>
+        <div class="cinematic-carousel" id="swiperMelee" data-autoplay-delay="2500">
+            <div class="cinematic-wrapper"></div>
+        </div>
+    </section>
+
+    <section class="swiper-top overflow">
+        <h2 class="title section-title">- <span class="color">Firearms & Tactical</span> -</h2>
+        <div class="cinematic-carousel" id="swiperFirearms" data-autoplay-delay="4000">
+            <div class="cinematic-wrapper"></div>
+        </div>
+    </section>
+
+    <section class="swiper-top overflow">
+        <h2 class="title section-title">- <span class="color">Environment & Props</span> -</h2>
+        <div class="cinematic-carousel" id="swiperEnvironment" data-autoplay-delay="5500">
+            <div class="cinematic-wrapper"></div>
+        </div>
+    </section>
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <span class="close-btn" onclick="closeOverlay()">×</span>
+            <iframe id="overlayFrame" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <div id="section-banner" style="margin-top: 100px;" data-section-image="../Assets/sections/section1.webp"
+        data-section-head="Visual Innovation" data-section-title="From Concept to Life">
+    </div>
+
+    <section class="container">
+        <img class="full-img" src="../Assets/Thumbnails/use.png" alt="3D Shoes">
+    </section>
+
+    <!-- ARTWORKS -->
+    <section class="art-showcase">
+        <div class="art-header">
+            <span class="eyebrow">Virtual Realities & CG Worlds</span>
+            <h2 class="art-title">Digital Art Portfolio</h2>
+        </div>
+
+        <div class="art-grid" id="dynamic-masonry-gallery">
+            <!-- Dynamic items render safely here -->
+        </div>
+    </section>
+
+    <section class="spacer" style="height:50px;"></section>
+
+    <div class="container">
+        <h1 class="subhead center glow ">🚧 My digital space is still being crafted 🚧 <br>
+            <span class="subhead center glow "> Some features and links may be temporarily unavailable.</span>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+        <p class="copyrights">&copy; <span id="current-year"></span> MohJeha-Artist. All Rights Reserved.</p>
+        <div class="footer-content">
+            <div class="ft-b"> <a href="../index.html"><img src="../Assets/fav/3d-art-designer.svg" alt="Logo"
+                        class="footer-logo"></a></div>
+            <div class="ft-b">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/mohjeha1" target="_blank" class="scl-icon">
+                        <img src="../Assets/fav/fb.svg" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/mohjeha_/" target="_blank" class="scl-icon">
+                        <img src="../Assets/fav/ins.svg" alt="Instagram">
+                    </a>
+                    <a href="https://www.linkedin.com/in/mohjeha/" target="_blank" class="scl-icon">
+                        <img src="../Assets/fav/linked.svg" alt="LinkedIn">
+                    </a>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" class="arrowback" viewBox="0 0 16 16"
+                        onclick="document.getElementById('Top').scrollIntoView({ behavior: 'smooth' })">
+                        <path fill-rule="evenodd"
+                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../Js/overlay.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
+    <script src="../Js/lenis.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../Js/cinematic-swiper.js"></script>
+    <script src="../Js/data/projects-data.js"></script>
+    <script src="../Js/auto-3d-projects.js"></script>
+
+    <!-- Masonry -->
+    <script src="../Js/masonry-projects.js"></script>
+    <script src="../Js/section-banner.js"></script>
+    <script src="../Js/transitions.js"></script>
+
+</body>
+
+</html>

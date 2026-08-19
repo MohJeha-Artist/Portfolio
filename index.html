@@ -82,15 +82,27 @@
 
             <!-- Left: text -->
             <div class="Hero-text reveal-content">
-                <span class="hero-badge">&#9654; Available for projects</span>
+                <a href="about.html" class="hero-badge hero-badge-hover">
+                    <span class="badge-dot">●</span>
+                    <span class="badge-text-wrapper">
+                        <span class="badge-text default-text">Available for projects</span>
+                        <span class="badge-text hover-text">About Me →</span>
+                    </span>
+                </a>
                 <p class="hero-name">Mohamad Jeha</p>
                 <h1 class="hero-headline">Visual<br><span class="text-glow">Artist</span></h1>
                 <div class="hero-divider"></div>
+
                 <p class="hero-desc">
                     Specializing in 3D Product Rendering, Concept Design,
                     and Dynamic Digital Media.<br> Expertise in Unreal Engine,
                     Substance 3D Painter, and Advanced Animation Techniques.
                 </p>
+
+                <!-- About Me Button -->
+                <a href="about.html" class="hero-badge hero-about-badge">
+                    About Me <span class="badge-arrow">→</span>
+                </a>
             </div>
 
             <!-- Right: profile image -->
@@ -193,7 +205,7 @@
                     <h1 class="subhead">From concept to completion. assets modeled, textured, and crafted with detail.
                     </h1>
 
-                    <a href="3D-Projects.html" class="btn-style f3 subhead"
+                    <a href="html/3D-Projects.html" class="btn-style f3 subhead"
                         style="margin-top: 20px; display: inline-block; text-decoration: none;">
                         Explore My Portfolio and Experiments
                     </a>
@@ -349,7 +361,8 @@
 
         <div class=" center  index1">
             <h1 class="subhead">Explore My Portfolio and Experiments</h1>
-            <a href="3D-Projects.html" class="btn-style f3 subhead" style="z-index: 1000; margin-top: 20px;  "> Show
+            <a href="html/3D-Projects.html" class="btn-style f3 subhead" style="z-index: 1000; margin-top: 20px;  ">
+                Show
                 More
             </a>
         </div>
@@ -368,7 +381,7 @@
                 <h1 class="subhead center-mobile  ">
                     Explore my approach to logo design <br> clean, creative, and built to stand out.
                 </h1>
-                <a href="2D-Graphics.html" class="btn-style desktop"
+                <a href="html/2D-Graphics.html" class="btn-style desktop"
                     style="margin-top: 20px; display: inline-block; text-decoration: none;">
                     Show more.
                 </a>
@@ -379,64 +392,12 @@
 
             <div class="swiper index2" id="logoSwiper">
                 <div class="swiper-glow"></div>
-                <div class="swiper-wrapper  ">
-
-                    <div class="swiper-slide card1">
-                        <img src="Assets/Graphics/Logos/ibnbalad/ibnbalad_Thumb.webp" alt="Brand 3 cover">
-                    </div>
-
-                    <div class="swiper-slide card1">
-                        <img src="Assets/Graphics/Logos/SIS/SIS_Thumb.webp" alt="Brand 3 cover">
-                    </div>
-
-                    <div class="swiper-slide card1">
-                        <img src="Assets/Graphics/Logos/AbuSalah/Abusalah_Thumb.webp" alt="Brand 5 cover">
-                    </div>
-
-                    <div class="swiper-slide card1">
-                        <img src="Assets/Graphics/Logos/Nova/Nova_Thumb.webp" alt="Brand 5 cover">
-                    </div>
-
-                    <div class="swiper-slide card1">
-                        <img src="Assets/Graphics/Logos/Arz/Arz (4).webp" alt="Brand 5 cover">
-                    </div>
-
-                    <div class="swiper-slide card1">
-                        <img src="Assets/Graphics/Logos/Atelier/Atelier_Thumb.webp" alt="Brand 5 cover">
-                    </div>
-
-                    <div class="swiper-slide card1">
-                        <img src="Assets/Graphics/Logos/Vistamar/vistamar_Thumb.webp" alt="Brand 5 cover">
-                    </div>
-
-                    <div class="swiper-slide card1">
-                        <img src="Assets/Graphics/Logos/Lebaniz/Lebaniz_Thumb.webp" alt="Brand 5 cover">
-                    </div>
-
-                    <div class="swiper-slide card1">
-                        <img src="Assets/Graphics/Logos/DigitalWorld/DigitalWorld_Thumb.webp" alt="Brand 5 cover">
-                    </div>
-
-                    <div class="swiper-slide card1">
-                        <img src="Assets/Graphics/Logos/Sirius/Sirius_Thumb.webp" alt="Brand 5 cover">
-                    </div>
-
-                    <div class="swiper-slide card1">
-                        <img src="Assets/Graphics/Logos/Dabbous/Dabbous_Thumb.webp" alt="Brand 5 cover">
-                    </div>
-
-                    <div class="swiper-slide card1">
-                        <img src="Assets/Graphics/Logos/SummerLive/Summer_Thumb.webp" alt="Brand 5 cover">
-                    </div>
-
-                    <div class="swiper-slide card1">
-                        <img src="Assets/Graphics/Logos/EarthLinks/EarthLinks_Thumb.webp" alt="Brand 5 cover">
-                    </div>
-
+                <div class="swiper-wrapper">
+                    <!-- Dynamically populated from Js/data/graphics-data.js via Js/logo-showcase.js -->
                 </div>
             </div>
 
-            <a href="2D-Graphics.html" class="btn-style mobile" style="margin-top: 40px; text-decoration: none;">
+            <a href="html/2D-Graphics.html" class="btn-style mobile" style="margin-top: 40px; text-decoration: none;">
                 Show more.
             </a>
 
@@ -453,63 +414,15 @@
             <h1 class="subhead">
                 Explore my approach to logo design <br> clean, creative, and built to stand out. </a>
             </h1>
-            <a href="2D-Graphics.html" class="btn-style"
+            <a href="html/2D-Graphics.html" class="btn-style"
                 style="margin-top: 20px; display: inline-block; text-decoration: none;">
                 Show more.
             </a>
         </div>
 
-
-
-
         <div class="slider-container">
             <div class="slider-track">
-                <!-- Card 1 -->
-                <div class="showcase-card" style="--brand-glow: #c0a250;">
-                    <div class="card-media">
-                        <img src="Assets/Graphics/Logos/Atelier/Atelier_logo.webp" alt="Logo 1">
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="showcase-card" style="--brand-glow: #e61f3a;">
-                    <div class="card-media">
-                        <img src="Assets/Graphics/Logos/AbuSalah/Abusalah_logo.webp" alt="Logo 3">
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="showcase-card" style="--brand-glow: #f8d079;">
-                    <div class="card-media">
-                        <img src="Assets/Graphics/Logos/SIS/SIS_logo.webp" alt="Logo 2">
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="showcase-card" style="--brand-glow: #066a7c;">
-                    <div class="card-media">
-                        <img src="Assets/Graphics/Logos/Nova/Nova_logo.webp" alt="Logo 4">
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="showcase-card" style="--brand-glow: #ffe058;">
-                    <div class="card-media">
-                        <img src="Assets/Graphics/Logos/Arz/Arz_logo.webp" alt="Logo 5">
-                    </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="showcase-card " style="--brand-glow: #2aaee2;">
-                    <div class="card-media ">
-                        <img src="Assets/Graphics/Logos/ibnbalad/ibnbalad_logo.webp" alt="Logo 1">
-                    </div>
-                </div>
-                <!-- Card 7 -->
-                <div class="showcase-card" style="--brand-glow: #ffd000;">
-                    <div class="card-media">
-                        <img src="Assets/Graphics/Logos/Vistamar/vistamar_logo.webp" alt="Logo 1">
-                    </div>
-                </div>
-
-
+                <!-- Dynamically populated from Js/data/graphics-data.js via Js/logo-showcase.js -->
             </div>
         </div>
 
@@ -535,7 +448,7 @@
             <h1 class="subhead">
                 Step into my world of Motion <br> Animations, Motion Design, and Visual Effects. </a>
             </h1>
-            <a href="WIP.html" class="btn-style"
+            <a href="html/WIP.html" class="btn-style"
                 style="margin-top: 20px; display: inline-block; text-decoration: none;">
                 Show more.
             </a>
@@ -577,7 +490,7 @@
         <div class="center"
             style="position: absolute; bottom: 40px; left: 0; width: 100%; z-index: 2; text-align: center; padding: 0 20px;">
 
-            <a href="WIP.html" class="btn-style"
+            <a href="html/WIP.html" class="btn-style"
                 style="margin-top: 20px; display: inline-block; text-decoration: none;">
                 Show more.
             </a>
@@ -586,7 +499,7 @@
     </section>
     <!-- ---------------------------------------------------------------------------------------------------------------------------  -->
 
-   <!-- --------------------------- SPACE | Divider ------>
+    <!-- --------------------------- SPACE | Divider ------>
     <section class="spacer" style="height:50px;"></section>
     <!-- -------------------------------------------------->
 
@@ -602,9 +515,8 @@
 
         <div class="toolkit-wrapper">
             <div class="toolkit-grid">
-            
 
-                  <!-- Cinema 4D -->
+                <!-- Cinema 4D -->
                 <div class="tool-card tool-c4d">
                     <div class="tool-icon-wrap">
                         <img src="Assets/icons/Cinema4D.svg" alt="Cinema 4D">
@@ -637,9 +549,7 @@
                     </div>
                 </div>
 
-                  
-
-                 <!-- Octane Render -->
+                <!-- Octane Render -->
                 <div class="tool-card tool-octane">
                     <div class="tool-icon-wrap">
                         <img src="Assets/icons/Octane.svg" alt="Octane Render">
@@ -671,7 +581,7 @@
                         <span class="tool-tag">CGI & Real-Time</span>
                     </div>
                 </div>
-                
+
                 <!-- Photoshop -->
                 <div class="tool-card tool-ps">
                     <div class="tool-icon-wrap">
@@ -705,8 +615,6 @@
                     </div>
                 </div>
 
-               
-
                 <!-- HTML / Web -->
                 <div class="tool-card tool-html">
                     <div class="tool-icon-wrap">
@@ -717,7 +625,60 @@
                         <span class="tool-tag">Web & UI</span>
                     </div>
                 </div>
+
             </div>
+
+            <!-- AI & Foundational Tools Sub-row -->
+            <div class="toolkit-divider" style="margin: 28px 0 16px 0; text-align: center; border-top: 1px solid rgba(84, 44, 219, 0.2); padding-top: 18px;">
+                <span style="font-family: var(--f3); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6);">AI Assisted Workflows · Certified Basics</span>
+            </div>
+
+            <div class="toolkit-grid ai-toolkit-grid">
+                <!-- ChatGPT -->
+                <div class="tool-card tool-chatgpt">
+                    <div class="tool-icon-wrap">
+                        <img src="Assets/icons/chatgpt.svg" alt="ChatGPT">
+                    </div>
+                    <div class="tool-info">
+                        <h4 class="tool-name">ChatGPT</h4>
+                        <span class="tool-tag">Certified Basics</span>
+                    </div>
+                </div>
+
+                <!-- Google Gemini -->
+                <div class="tool-card tool-gemini">
+                    <div class="tool-icon-wrap">
+                        <img src="Assets/icons/gemini.svg" alt="Google Gemini">
+                    </div>
+                    <div class="tool-info">
+                        <h4 class="tool-name">Gemini</h4>
+                        <span class="tool-tag">Certified Basics</span>
+                    </div>
+                </div>
+
+                <!-- Claude AI -->
+                <div class="tool-card tool-claude">
+                    <div class="tool-icon-wrap">
+                        <img src="Assets/icons/claude.svg" alt="Claude AI">
+                    </div>
+                    <div class="tool-info">
+                        <h4 class="tool-name">Claude AI</h4>
+                        <span class="tool-tag">Certified Basics</span>
+                    </div>
+                </div>
+
+                <!-- Google Veo -->
+                <div class="tool-card tool-veo">
+                    <div class="tool-icon-wrap">
+                        <img src="Assets/icons/veo.svg" alt="Google Veo">
+                    </div>
+                    <div class="tool-info">
+                        <h4 class="tool-name">Google Veo</h4>
+                        <span class="tool-tag">Certified Basics</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -778,6 +739,9 @@
     <script src="Js/infinite-slider.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- ---------------- -->
+
+    <!-- Master 2D Graphics & Brand Data -->
+    <script src="Js/data/graphics-data.js"></script>
 
     <!-- Logo Showcase Slider -->
     <script src="Js/logo-showcase.js"></script>

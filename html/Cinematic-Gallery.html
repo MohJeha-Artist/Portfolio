@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematic Showcase | MohJeha Artist</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Styles/showcase.css">
+
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.6);
+            --accent-color: #e0aaff;
+            --transition-speed: 0.7s;
+            --easing: cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .showcase-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 8%;
+            gap: 4rem;
+            position: relative;
+        }
+
+        .showcase-section::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -10%;
+            width: 50%;
+            height: 50%;
+            background: radial-gradient(circle, rgba(224, 170, 255, 0.05) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .content-left {
+            flex: 1;
+            max-width: 450px;
+            z-index: 1;
+        }
+
+        .content-left h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(to bottom, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .content-left p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 90%;
+        }
+
+        .explore-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="showcase-section">
+        <div class="content-left">
+            <h1>Visual<br>Motion</h1>
+            <p>Capturing the essence of movement through cinematic storytelling and high-fidelity motion graphics. A collection of selected vertical narratives.</p>
+            <a href="Motion.html" class="explore-btn">View All Works</a>
+        </div>
+
+        <div class="video-gallery">
+            <!-- Video Card 1 -->
+            <div class="video-card" data-video-id="13OKyJ43pFo6jGH-4AmCMHiJw3WT9Kq7z">
+                <img src="../Assets/Thumbnails/Video_Frisky (1).jpg" class="poster-img" alt="Dynamics Poster">
+                <video muted loop playsinline preload="metadata">
+                    <source src="../Assets/Media/ShowCase_Frisky_Apples.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">
+                    <h3>Dynamics</h3>
+                    <span>Microsoft Project</span>
+                </div>
+            </div>
+
+            <!-- Video Card 2 -->
+            <div class="video-card" data-video-id="13JLTVOaF68tdJNWxZO1pT3I7msXvVvVS">
+                <img src="../Assets/Thumbnails/Video_Frisky (2).jpg" class="poster-img" alt="Alpha Poster">
+                <video muted loop playsinline preload="metadata">
+                    <source src="../Assets/Media/ShowCase_Frisky_Apples.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">
+                    <h3>Alpha</h3>
+                    <span>Brand Reveal</span>
+                </div>
+            </div>
+
+            <!-- Video Card 3 -->
+            <div class="video-card" data-video-id="13JkywTsvNjXHhy8KkXBUGcRfUudRDNS8">
+                <img src="../Assets/Thumbnails/Video_Frisky (3).jpg" class="poster-img" alt="Studio Poster">
+                <video muted loop playsinline preload="metadata">
+                    <source src="../Assets/Media/ShowCase_Frisky_Apples.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">
+                    <h3>Studio</h3>
+                    <span>Creative Flow</span>
+                </div>
+            </div>
+
+            <!-- Video Card 4 -->
+            <div class="video-card" data-video-id="1tR4t12xtf-OqmZUxmAoGy8zlI03vnEY8">
+                <img src="../Assets/Thumbnails/Video_Frisky (4).jpg" class="poster-img" alt="Vision Poster">
+                <video muted loop playsinline preload="metadata">
+                    <source src="../Assets/Media/ShowCase_Frisky_Apples.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">
+                    <h3>Vision</h3>
+                    <span>Motion Study</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standalone Video Card -->
+    <div class="video-card video-card-standalone" data-video-id="13OKyJ43pFo6jGH-4AmCMHiJw3WT9Kq7z">
+        <img src="../Assets/Thumbnails/Video_Frisky (1).jpg" class="poster-img" alt="Dynamics Poster">
+        <video muted loop playsinline preload="metadata">
+            <source src="../Assets/Media/ShowCase_Frisky_Apples.mp4" type="video/mp4">
+        </video>
+        <div class="video-label">
+            <h3>Dynamics</h3>
+            <span>Featured Project</span>
+        </div>
+    </div>
+
+    <!-- Cinematic Modal -->
+    <div class="video-modal" id="videoModal">
+        <button class="modal-close" id="closeModal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12"></path>
+            </svg>
+        </button>
+        <div class="modal-container">
+            <iframe id="modalIframe" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script src="../Js/showcase.js"></script>
+</body>
+</html>

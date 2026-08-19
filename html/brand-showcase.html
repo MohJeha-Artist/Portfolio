@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+
+    <title>Brand Showcase Portfolio</title>
+    <link rel="icon" href="../Assets/fav/Fav.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="../Styles/base.css">
+    <link rel="stylesheet" href="../Styles/base-grid-card.css">
+    <link rel="stylesheet" href="../Styles/branding.css">
+    <link rel="stylesheet" href="../Styles/section-footer.css">
+    <link rel="stylesheet" href="../Styles/transitions.css">
+
+    <style>
+        html {
+            margin-top: 30px;
+            background-color: rgba(0, 0, 0, 0.9) !important;
+        }
+
+        .body {
+            margin-top: 30px;
+            max-width: 910px;
+            width: 60%;
+            margin: 0 auto;
+            background-color: transparent;
+        }
+
+        #dynamic-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 100%;
+        }
+
+        #dynamic-gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .body {
+                width: 97%;
+            }
+        }
+    </style>
+</head>
+
+<body class="body is-transitioning">
+
+    <!-- Navigation Transition Overlay -->
+    <div id="transition-overlay">
+        <div class="loader-content">
+            <img src="../Assets/fav/Logo.svg" alt="MohJeha Logo" class="loader-logo">
+            <div class="loader-bar-container">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- IMAGES -->
+    <section class="container" style="border-top: 2px solid var(--3); border-radius: 20px; overflow: hidden;">
+        <div id="dynamic-gallery"></div>
+
+        <!-- Load Master Brand Registry -->
+        <script src="../Js/data/graphics-data.js"></script>
+
+        <script>
+            const galleryContainer = document.getElementById('dynamic-gallery');
+
+            // Parse brand parameter from URL (default to "Brand" if unspecified)
+            const urlParams = new URLSearchParams(window.location.search);
+            const brandParam = urlParams.get('brand') || 'Brand';
+
+            const registry = (typeof BRANDS_DATA !== 'undefined') ? BRANDS_DATA : ((typeof GRAPHICS_DATA !== 'undefined') ? GRAPHICS_DATA : {});
+            const brandData = registry[brandParam] || {
+                key: brandParam,
+                folder: brandParam,
+                logo: `${brandParam}_logo.webp`,
+                rendersCount: 5
+            };
+
+            const folderPath = `../Assets/Graphics/Logos/${brandData.folder}/`;
+
+            function appendImage(src, altSuffix) {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = `${brandParam} ${altSuffix}`;
+                img.loading = 'lazy';
+                img.onerror = function () {
+                    this.remove();
+                };
+                galleryContainer.appendChild(img);
+            }
+
+            // 1. Logo (Automatic resolution from folder name)
+            const logoFile = brandData.logo || (brandData.folder === 'SummerLive' ? 'Summer_logo.webp' : brandData.folder === 'AbuSalah' ? 'Abusalah_logo.webp' : brandData.folder === 'Vistamar' ? 'vistamar_logo.webp' : `${brandData.folder}_logo.webp`);
+            appendImage(`${folderPath}${encodeURI(logoFile)}`, 'Logo');
+
+            // 2. Numbered Renders based on rendersCount (e.g. Brand (1).webp .. Brand (9).webp)
+            const count = (typeof brandData.rendersCount === 'number') ? brandData.rendersCount : 5;
+            for (let i = 1; i <= count; i++) {
+                appendImage(`${folderPath}${encodeURI(brandData.folder)} (${i}).webp`, `Presentation ${i}`);
+            }
+
+            // 3. Stack / Thumb / Invoice Mockups
+            appendImage(`${folderPath}${encodeURI(brandData.folder)}_Stack.webp`, 'Mockup Stack');
+            appendImage(`${folderPath}${encodeURI(brandData.folder)}_Thumb.webp`, 'Mockup');
+            appendImage(`${folderPath}invoice.webp`, 'Invoice');
+        </script>
+
+        <div class="closing">
+            <img src="../Assets/fav/Fav.svg" alt="Logo" class="logo">
+            <p>Like what you see?</p>
+            <p>Let's build the next brand that stands out<br>and stands for something meaningful.</p>
+        </div>
+
+    </section>
+
+    <!-- LENIS SMOOTH SCROLL -->
+    <script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
+    <script src="../Js/lenis.js"></script>
+
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.key === "Escape") {
+                window.parent.postMessage('closeOverlay', '*');
+            }
+        });
+        document.querySelectorAll('a[href*="index.html"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (window.self !== window.top) {
+                    e.preventDefault();
+                    window.parent.postMessage('closeOverlay', '*');
+                }
+            });
+        });
+    </script>
+
+    <!-- Page Transitions -->
+    <script src="../Js/transitions.js"></script>
+
+</body>
+
+</html>
